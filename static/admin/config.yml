@@ -21,3 +21,18 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Content"
+        name: "content"
+        widget: list
+        types:
+          - label: "Text Block"
+            name: "text_block"
+            widget: object
+            fields:
+              - {
+                  label: "Title",
+                  name: "text",
+                  widget: "markdown",
+                  required: false,
+                }
+              - { label: "Text", name: "text", widget: "markdown" }
