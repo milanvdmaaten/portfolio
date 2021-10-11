@@ -22,20 +22,26 @@ collections:
       - { label: "Full width", name: "fullWidth", widget: "boolean" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
+      - label: "Text color"
+        name: "textColor"
+        widget: "select"
+        options:
+          - { label: "Black", value: "text-black" }
+          - { label: "White", value: "text-white" }
       - {
-          label: "Detail gradient start",
-          name: "detailGradientStart",
+          label: "Gradient start",
+          name: "gradientStart",
           widget: "color",
           allowInput: true,
         }
       - {
-          label: "Detail gradient end",
-          name: "detailGradientEnd",
+          label: "Gradient end",
+          name: "gradientEnd",
           widget: "color",
           allowInput: true,
         }
       - {
-          label: "Post Image",
+          label: "Featured Image",
           name: "featuredImage",
           widget: "image",
           allow_multiple: false,
