@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -10,6 +10,7 @@ const BlogIndex = ({ data, location }) => {
   const description = data.site.siteMetadata.description
   const posts = data.allMarkdownRemark.nodes
 
+  // eslint-disable-next-line no-useless-escape
   const name = author?.name.match(/^([\w\-]+)/)[0]
 
   const timeOfDay = () => {
@@ -34,12 +35,17 @@ const BlogIndex = ({ data, location }) => {
       <ol>
         {posts?.map(post => {
           console.log(post)
+          const image = getImage(post.frontmatter.featuredImage)
           return (
             <li key={post.fields.slug}>
               <Link to={post.fields.slug} itemProp="url">
                 <article itemScope itemType="http://schema.org/Article">
                   <header>
                     <figure>
+                      <GatsbyImage
+                        image={image}
+                        alt={post.frontmatter.tagline}
+                      />
                       <figcaption className="hidden" itemProp="headline">
                         {post.frontmatter.title} | {post.frontmatter.tagline}
                       </figcaption>
