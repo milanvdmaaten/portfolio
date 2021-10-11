@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  branch: main
 
 media_folder: static/img
 public_folder: /img
@@ -11,16 +11,22 @@ collections:
     folder: "content/blog"
     create: true
     slug: "index"
-    media_folder: ""
-    public_folder: ""
+    media_folder: static/img
+    public_folder: /img
     path: "{{title}}/index"
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - {
+          label: "Post Image",
+          name: "featuredImage",
+          widget: "image",
+          allow_multiple: false,
+        }
       - label: "Content"
         name: "content"
         widget: list
@@ -32,7 +38,24 @@ collections:
               - {
                   label: "Title",
                   name: "text_title",
-                  widget: "markdown",
+                  widget: "string",
                   required: false,
                 }
               - { label: "Text", name: "text_body", widget: "markdown" }
+          - {
+              label: "Inline image",
+              name: "image_block",
+              widget: "image",
+              allow_multiple: false,
+            }
+          - label: "Carrousel"
+            name: "carrousel"
+            widget: object
+            fields:
+              - { label: "Full width", name: "full_width", widget: "boolean" }
+              - {
+                  label: "Images",
+                  name: "images",
+                  widget: "image",
+                  allow_multiple: true,
+                }
