@@ -31,8 +31,8 @@ collections:
             fields:
               - {
                   label: "Title",
-                  name: "text",
+                  name: "text_title",
                   widget: "markdown",
                   required: false,
                 }
-              - { label: "Text", name: "text", widget: "markdown" }
+              - { label: "Text", name: "text_body", widget: "markdown" }
