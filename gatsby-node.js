@@ -113,7 +113,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       fullWidth: Boolean
       description: String
       date: Date @dateformat
-      featuredImage: File! @fileByRelativePath
+      featuredImage: File @fileByRelativePath
     }
 
     type Fields {
