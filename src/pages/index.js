@@ -1,34 +1,38 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.site.siteMetadata?.title
+  const siteSummary = data.site.siteMetadata?.author?.summary
+  const description = data.site.siteMetadata?.description ?? "test"
   const posts = data.allMarkdownRemark.nodes
 
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={siteTitle}>
-        <Seo title="All posts" />
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    )
+  const name = siteTitle.match(/^([\w\-]+)/)[0]
+
+  const timeOfDay = () => {
+    const time = new Date().getHours()
+
+    if (time < 6 || time >= 20) return "evening"
+    if (time >= 12) return "afternoon"
+    if (time >= 6) return "morning"
+
+    return "evening"
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" />
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
+    <Layout location={location} owner={siteTitle}>
+      <Seo title={siteSummary} />
+      <div className="container m-auto py-32">
+        <h1 className="font-bold text-7xl text-center mb-5">
+          Good {timeOfDay()} <br /> my name is {name}
+        </h1>
+        <h2 className="text-center text-2xl">{description}</h2>
+      </div>
+      <ol>
+        {posts?.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
@@ -70,6 +74,10 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        author {
+          summary
+        }
+        description
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -82,6 +90,8 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          tagline
+          featuredImage
         }
       }
     }

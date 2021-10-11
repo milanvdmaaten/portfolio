@@ -11,14 +11,15 @@ collections:
     folder: "content/blog"
     create: true
     slug: "index"
-    media_folder: static/img
-    public_folder: /img
+    media_folder: ""
+    public_folder: ""
     path: "{{title}}/index"
     editor:
       preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Subtitle", name: "subtitle", widget: "string" }
+      - { label: "Tagline", name: "tagline", widget: "string" }
+      - { label: "Full width", name: "fullWidth", widget: "boolean" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
       - {
@@ -32,19 +33,19 @@ collections:
         widget: list
         types:
           - label: "Text Block"
-            name: "text_block"
+            name: "textBlock"
             widget: object
             fields:
               - {
                   label: "Title",
-                  name: "text_title",
+                  name: "textTitle",
                   widget: "string",
                   required: false,
                 }
-              - { label: "Text", name: "text_body", widget: "markdown" }
+              - { label: "Text", name: "textBody", widget: "markdown" }
           - {
               label: "Inline image",
-              name: "image_block",
+              name: "imageBlock",
               widget: "image",
               allow_multiple: false,
             }
@@ -52,7 +53,7 @@ collections:
             name: "carrousel"
             widget: object
             fields:
-              - { label: "Full width", name: "full_width", widget: "boolean" }
+              - { label: "Full width", name: "fullWidth", widget: "boolean" }
               - {
                   label: "Images",
                   name: "images",
