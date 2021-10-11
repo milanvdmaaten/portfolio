@@ -1,16 +1,16 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title
-  const siteSummary = data.site.siteMetadata?.author?.summary
-  const description = data.site.siteMetadata?.description ?? "test"
+  const author = data.site.siteMetadata.author
+  const description = data.site.siteMetadata.description
   const posts = data.allMarkdownRemark.nodes
 
-  const name = siteTitle.match(/^([\w\-]+)/)[0]
+  const name = author?.name.match(/^([\w\-]+)/)[0]
 
   const timeOfDay = () => {
     const time = new Date().getHours()
@@ -23,8 +23,8 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} owner={siteTitle}>
-      <Seo title={siteSummary} />
+    <Layout location={location} owner={author.name}>
+      <Seo title={author.summary} />
       <div className="container m-auto py-32">
         <h1 className="font-bold text-7xl text-center mb-5">
           Good {timeOfDay()} <br /> my name is {name}
@@ -33,32 +33,40 @@ const BlogIndex = ({ data, location }) => {
       </div>
       <ol>
         {posts?.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-
+          console.log(post)
           return (
             <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
+              <Link to={post.fields.slug} itemProp="url">
+                <article itemScope itemType="http://schema.org/Article">
+                  <header>
+                    <figure>
+                      <figcaption className="hidden" itemProp="headline">
+                        {post.frontmatter.title} | {post.frontmatter.tagline}
+                      </figcaption>
+                    </figure>
+                    {/* <h2>
                     <Link to={post.fields.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
+                  <small>{post.frontmatter.date}</small> */}
+                  </header>
+                  <p itemProp="datePublished" className="hidden">
+                    {post.frontmatter.date}
+                  </p>
+                  <p itemProp="author" className="hidden">
+                    {author.name}
+                  </p>
+                  {/* <section>
                   <p
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
                     }}
                     itemProp="description"
                   />
-                </section>
-              </article>
+                </section> */}
+                </article>
+              </Link>
             </li>
           )
         })}
@@ -75,6 +83,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author {
+          name
           summary
         }
         description
@@ -90,8 +99,15 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          fullWidth
           tagline
-          featuredImage
+          featuredImage {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

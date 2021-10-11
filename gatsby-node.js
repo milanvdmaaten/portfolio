@@ -107,10 +107,13 @@ exports.createSchemaCustomization = ({ actions }) => {
       fields: Fields
     }
 
-    type Frontmatter {
+    type Frontmatter @infer {
       title: String
+      tagline: String
+      fullWidth: Boolean
       description: String
       date: Date @dateformat
+      featuredImage: File! @fileByRelativePath
     }
 
     type Fields {

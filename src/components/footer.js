@@ -10,7 +10,12 @@ export const Footer = ({ owner }) => {
         <ul className="flex">
           {["CV", "LinkedIn"].map((link, index) => (
             <li key={link} className={index < 1 ? "mx-2" : "ml-2"}>
-              <a href={`#${link}`} target="_blank" className="underline">
+              <a
+                href={`#${link}`}
+                rel="noreferrer"
+                target="_blank"
+                className="underline"
+              >
                 {link}
               </a>
             </li>
