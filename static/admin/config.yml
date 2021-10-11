@@ -23,6 +23,18 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
       - {
+          label: "Detail gradient start",
+          name: "detailGradientStart",
+          widget: "color",
+          allowInput: true,
+        }
+      - {
+          label: "Detail gradient end",
+          name: "detailGradientEnd",
+          widget: "color",
+          allowInput: true,
+        }
+      - {
           label: "Post Image",
           name: "featuredImage",
           widget: "image",

@@ -15,8 +15,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-image`, // https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`, // Needed for dynamic images
     {
       resolve: `gatsby-source-filesystem`,
       options: {

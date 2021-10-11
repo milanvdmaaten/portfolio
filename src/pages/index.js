@@ -26,44 +26,45 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} owner={author.name}>
       <Seo title={author.summary} />
-      <div className="container m-auto py-32">
+      <section className="container m-auto py-40">
         <h1 className="font-bold text-7xl text-center mb-5">
           Good {timeOfDay()} <br /> my name is {name}
         </h1>
         <h2 className="text-center text-2xl">{description}</h2>
-      </div>
-      <ol>
-        {posts?.map(post => {
-          console.log(post)
-          const image = getImage(post.frontmatter.featuredImage)
-          return (
-            <li key={post.fields.slug}>
-              <Link to={post.fields.slug} itemProp="url">
-                <article itemScope itemType="http://schema.org/Article">
-                  <header>
-                    <figure>
-                      <GatsbyImage
-                        image={image}
-                        alt={post.frontmatter.tagline}
-                      />
-                      <figcaption className="hidden" itemProp="headline">
-                        {post.frontmatter.title} | {post.frontmatter.tagline}
-                      </figcaption>
-                    </figure>
-                    {/* <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small> */}
-                  </header>
-                  <p itemProp="datePublished" className="hidden">
-                    {post.frontmatter.date}
-                  </p>
-                  <p itemProp="author" className="hidden">
-                    {author.name}
-                  </p>
-                  {/* <section>
+      </section>
+      <section className="container m-auto">
+        <ol className="grid grid-cols-12 gap-6">
+          {posts?.map(post => {
+            console.log(post.frontmatter.featuredImage)
+            const image = getImage(post.frontmatter.featuredImage)
+            return (
+              <li key={post.fields.slug} className="col-span-12">
+                <Link to={post.fields.slug} itemProp="url">
+                  <article itemScope itemType="http://schema.org/Article">
+                    <header className="mb-2">
+                      <figure>
+                        <GatsbyImage
+                          image={image}
+                          alt={post.frontmatter.tagline}
+                        />
+                        <figcaption className="hidden" itemProp="headline">
+                          {post.frontmatter.title} | {post.frontmatter.tagline}
+                        </figcaption>
+                      </figure>
+                    </header>
+                    <p>
+                      <strong className="border-r-2 border-black pr-2 mr-2">
+                        {post.frontmatter.title}
+                      </strong>
+                      {post.frontmatter.tagline}
+                    </p>
+                    <p itemProp="datePublished" className="hidden">
+                      {post.frontmatter.date}
+                    </p>
+                    <p itemProp="author" className="hidden">
+                      {author.name}
+                    </p>
+                    {/* <section>
                   <p
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
@@ -71,12 +72,13 @@ const BlogIndex = ({ data, location }) => {
                     itemProp="description"
                   />
                 </section> */}
-                </article>
-              </Link>
-            </li>
-          )
-        })}
-      </ol>
+                  </article>
+                </Link>
+              </li>
+            )
+          })}
+        </ol>
+      </section>
     </Layout>
   )
 }
@@ -109,9 +111,7 @@ export const pageQuery = graphql`
           tagline
           featuredImage {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData
             }
           }
         }
