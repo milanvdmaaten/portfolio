@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Sander Boer`,
+    title: `Milan van der Maaten`,
     author: {
-      name: `Sander Boer`,
-      summary: `developer, designer, tinkerer.`,
+      name: `Milan van der Maaten`,
+      summary: `I’m an empathic UX designer who loves to make effortless experiences. Get to know me or check out my latest work.`,
     },
-    description: `Portfolio website Sander Boer.`,
+    description: `Portfolio website Milan van der Maaten.`,
     siteUrl: `https://xiduzo.netlify.app/`,
     social: {
       instagram: `xiduz0`,

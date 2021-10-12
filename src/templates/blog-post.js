@@ -1,22 +1,30 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
+  const author = data.site.siteMetadata.author
+
+  const { frontmatter, excerpt } = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
 
+  console.log(data)
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} owner={author.name}>
       <Seo
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={frontmatter.title}
+        description={frontmatter.description || excerpt}
       />
-      <article
+      <section className="container py-5 m-auto max-w-md">
+        <h1 className="font-bold text-5xl text-center">
+          {frontmatter.title} - {frontmatter.tagline}
+        </h1>
+      </section>
+      {/* <article
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
@@ -33,17 +41,9 @@ const BlogPostTemplate = ({ data, location }) => {
         <footer>
           <Bio />
         </footer>
-      </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+      </article> */}
+      <nav>
+        <ul>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -75,6 +75,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        author {
+          name
+        }
       }
     }
     markdownRemark(id: { eq: $id }) {
@@ -83,6 +86,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        tagline
         date(formatString: "MMMM DD, YYYY")
         description
       }
