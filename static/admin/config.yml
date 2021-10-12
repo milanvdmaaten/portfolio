@@ -21,11 +21,7 @@ collections:
       - { label: "Tagline", name: "tagline", widget: "string" }
       - { label: "Full width", name: "fullWidth", widget: "boolean" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - {
-          label: "Display position",
-          name: "displayPosition",
-          widget: "number",
-        }
+      - { label: "Display position", name: "displayPosition", widget: "number" }
       - label: "Text color"
         name: "textColor"
         widget: "select"
@@ -54,19 +50,15 @@ collections:
                   required: false,
                 }
               - { label: "Text", name: "textBody", widget: "markdown" }
-          - { label: "Image block", name: "inlineImage", widget: "image" }
-          - label: "Carrousel"
-            name: "carrousel"
+          - label: "Images"
+            name: "images"
             widget: "object"
             fields:
               - { label: "Full width", name: "fullWidth", widget: "boolean" }
+              - { label: "Carrousel", name: "carrousel", widget: "boolean" }
               - {
                   label: "Images",
                   name: "images",
                   widget: "image",
                   allow_multiple: true,
                 }
-          - label: "Images"
-            name: "images"
-            widget: "image",
-            allow_multiple: true

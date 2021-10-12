@@ -107,12 +107,29 @@ exports.createSchemaCustomization = ({ actions }) => {
       fields: Fields
     }
 
+    type TextBlock {
+      textTitle: String
+      textBody: String
+    }
+
+    type Images {
+      images: [File]
+      fullWidth: Boolean
+      carrousel: Boolean
+    }
+
+    union Content = TextBlock | Images
+
     type Frontmatter @infer {
       title: String
       tagline: String
+      textColor: String
+      backgroundColor: String
+      displayPosition: Int
       fullWidth: Boolean
       date: Date @dateformat
       featuredImage: File @fileByRelativePath
+      content: [Content]
     }
 
     type Fields {

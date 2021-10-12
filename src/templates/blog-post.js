@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
   const author = data.site.siteMetadata.author
 
   const { frontmatter, excerpt } = data.markdownRemark
@@ -17,7 +16,7 @@ const BlogPostTemplate = ({ data, location }) => {
     <Layout location={location} title={siteTitle} owner={author.name}>
       <Seo
         title={frontmatter.title}
-        description={frontmatter.description || excerpt}
+        description={frontmatter.tagline || excerpt}
       />
       <section className="container py-5 m-auto max-w-md">
         <h1 className="font-bold text-5xl text-center">
@@ -90,8 +89,6 @@ export const pageQuery = graphql`
         backgroundColor
         tagline
         date(formatString: "MMMM DD, YYYY")
-        description
-        content
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

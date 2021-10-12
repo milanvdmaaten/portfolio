@@ -26,11 +26,13 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} owner={author.name}>
       <Seo title={description} />
-      <section className="container m-auto py-40">
+      <section className="container m-auto py-52">
         <h1 className="font-bold text-7xl text-center mb-5">
           Good {timeOfDay()} <br /> my name is {name}
         </h1>
-        <h2 className="text-center text-2xl">{author.summary}</h2>
+        <h2 className="text-center text-2xl max-w-2xl m-auto">
+          {author.summary}
+        </h2>
       </section>
       <section className="container m-auto">
         <ol className="grid grid-cols-12 gap-6">
@@ -97,7 +99,9 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___displayPosition], order: ASC }
+    ) {
       nodes {
         excerpt
         fields {
@@ -106,7 +110,6 @@ export const pageQuery = graphql`
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
-          description
           fullWidth
           tagline
           featuredImage {
