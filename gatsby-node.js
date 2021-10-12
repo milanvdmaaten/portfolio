@@ -111,7 +111,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       tagline: String
       fullWidth: Boolean
-      description: String
       date: Date @dateformat
       featuredImage: File @fileByRelativePath
     }
