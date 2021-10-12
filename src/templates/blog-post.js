@@ -86,9 +86,12 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        textColor
+        backgroundColor
         tagline
         date(formatString: "MMMM DD, YYYY")
         description
+        content
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
