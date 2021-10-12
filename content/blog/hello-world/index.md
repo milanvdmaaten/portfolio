@@ -1,9 +1,24 @@
 ---
-title: Hello World
-tagline: test
-fullWidth: false
+title: NPO
+tagline: " A new concept and mobile design"
+fullWidth: true
 date: 2015-05-01T22:12:03.284Z
+displayPosition: 1
+textColor: text-white
+backgroundColor: "#fff"
 featuredImage: salty_egg.jpg
+content:
+  - type: textBlock
+    textTitle: "About "
+    textBody: >-
+      **Roomplanner, part of Floorplanner**
+
+
+      Roomplanner is an extension of Floorplanner. A platform, based around a floor plan editor that runs in every browser. The tool gives users the ability to make great looking architectural visualisations of their home and interior in an easy and accessible way. Floorplanner was the first fully browser-based 2D & 3D planner, and since then over 25 million users worldwide have registered for a account and in together created over 40 million plans and a multitude of great 2D & 3D images.
+
+
+
+      Roomplanner is embedded within home and living product webshops. Users use Roomplanner to view the webshops' products in a room they created themselves.
 ---
 
 This is my first post on my new fake blog! How exciting!
