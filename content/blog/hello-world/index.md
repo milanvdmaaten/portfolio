@@ -9,7 +9,7 @@ backgroundColor: "#fff"
 featuredImage: salty_egg.jpg
 content:
   - type: textBlock
-    textTitle: "About "
+    textTitle: "About"
     textBody: >-
       **Roomplanner, part of Floorplanner**
 

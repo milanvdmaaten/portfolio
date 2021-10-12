@@ -1,3 +1,3 @@
 import * as React from "react"
 
-export const ContentSeparator = () => <div className="py-5"></div>
+export const ContentSeparator = () => <div className="mb-52"></div>

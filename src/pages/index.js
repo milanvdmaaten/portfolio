@@ -35,33 +35,35 @@ const BlogIndex = ({ data, location }) => {
         </h2>
       </section>
       <section className="container m-auto">
-        <ol className="grid grid-cols-12 gap-6">
+        <ol className="grid grid-cols-12 gap-10">
           {posts?.map(post => {
-            console.log(post.frontmatter.featuredImage)
-            const image = getImage(post.frontmatter.featuredImage)
+            const { frontmatter, fields } = post
+
+            const size = frontmatter.fullWidth ? "12" : "6"
+            const image = getImage(frontmatter.featuredImage)
             return (
-              <li key={post.fields.slug} className="col-span-12">
-                <Link to={post.fields.slug} itemProp="url">
+              <li key={fields.slug} className={`col-span-${size} mb-32`}>
+                <Link to={fields.slug} itemProp="url">
                   <article itemScope itemType="http://schema.org/Article">
                     <header className="mb-2">
                       <figure>
                         <GatsbyImage
                           image={image}
-                          alt={post.frontmatter.tagline ?? ""}
+                          alt={frontmatter.tagline ?? ""}
                         />
                         <figcaption className="hidden" itemProp="headline">
-                          {post.frontmatter.title} | {post.frontmatter.tagline}
+                          {frontmatter.title} | {frontmatter.tagline}
                         </figcaption>
                       </figure>
                     </header>
-                    <p>
-                      <strong className="border-r-2 border-black pr-2 mr-2">
-                        {post.frontmatter.title}
+                    <p className="text-xl flex items-center">
+                      <strong className="border-r-2 border-black pr-2 mr-2 font-normal text-2xl">
+                        {frontmatter.title}
                       </strong>
-                      {post.frontmatter.tagline}
+                      {frontmatter.tagline}
                     </p>
                     <p itemProp="datePublished" className="hidden">
-                      {post.frontmatter.date}
+                      {frontmatter.date}
                     </p>
                     <p itemProp="author" className="hidden">
                       {author.name}

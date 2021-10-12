@@ -1,8 +1,10 @@
 import * as React from "react"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { ContentSeparator } from "../components/contentSeparator"
 
 const BlogPostTemplate = ({ data, location }) => {
   const author = data.site.siteMetadata.author
@@ -12,13 +14,21 @@ const BlogPostTemplate = ({ data, location }) => {
   const { previous, next } = data
 
   console.log(data)
+  const image = getImage(frontmatter.featuredImage)
+
   return (
     <Layout location={location} title={siteTitle} owner={author.name}>
       <Seo
         title={frontmatter.title}
         description={frontmatter.tagline || excerpt}
       />
-      <section className="container py-5 m-auto max-w-md">
+      <GatsbyImage
+        image={image}
+        alt={frontmatter.tagline ?? ""}
+        className="-mt-16 w-full"
+      />
+      <ContentSeparator />
+      <section className="container m-auto">
         <h1 className="font-bold text-5xl text-center">
           {frontmatter.title} - {frontmatter.tagline}
         </h1>
@@ -66,6 +76,20 @@ const BlogPostTemplate = ({ data, location }) => {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
+  fragment ImagesBlock on Content {
+    type
+    imagesBlocks {
+      images {
+        image {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        alt
+      }
+    }
+  }
+
   query BlogPostBySlug(
     $id: String!
     $previousPostId: String
@@ -88,7 +112,15 @@ export const pageQuery = graphql`
         textColor
         backgroundColor
         tagline
-        date(formatString: "MMMM DD, YYYY")
+        date
+        featuredImage {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        content {
+          ...ImagesBlock
+        }
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

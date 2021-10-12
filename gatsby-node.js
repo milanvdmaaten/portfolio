@@ -76,7 +76,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-exports.createSchemaCustomization = ({ actions }) => {
+exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions
 
   // Explicitly define the siteMetadata {} object
@@ -107,18 +107,29 @@ exports.createSchemaCustomization = ({ actions }) => {
       fields: Fields
     }
 
-    type TextBlock {
+    type TextBlock implements Node @infer {
       textTitle: String
       textBody: String
     }
 
-    type Images {
-      images: [File]
+    type Images implements Node @infer {
+      image: File
+      alt: String
+    }
+
+    type ImagesBlock implements Node @infer {
+      images: [Images]
       fullWidth: Boolean
       carrousel: Boolean
     }
 
-    union Content = TextBlock | Images
+    type Content {
+      type: String
+      title: String
+      text: String
+      imagesBlocks: [ImagesBlock]
+      textBlocks: [TextBlock]
+    }
 
     type Frontmatter @infer {
       title: String

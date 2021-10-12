@@ -29,12 +29,7 @@ collections:
           - { label: "Black", value: "text-black" }
           - { label: "White", value: "text-white" }
       - { label: "Background color", name: "backgroundColor", widget: "string" }
-      - {
-          label: "Featured Image",
-          name: "featuredImage",
-          widget: "image",
-          allow_multiple: false,
-        }
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
       - label: "Content"
         name: "content"
         widget: "list"
@@ -51,14 +46,14 @@ collections:
                 }
               - { label: "Text", name: "textBody", widget: "markdown" }
           - label: "Images"
-            name: "images"
+            name: "imagesBlock"
             widget: "object"
             fields:
               - { label: "Full width", name: "fullWidth", widget: "boolean" }
               - { label: "Carrousel", name: "carrousel", widget: "boolean" }
-              - {
-                  label: "Images",
-                  name: "images",
-                  widget: "image",
-                  allow_multiple: true,
-                }
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                fields:
+                  - { label: "Image", name: "image", widget: "image" }
+                  - { label: Image Description, name: "alt", widget: string }
