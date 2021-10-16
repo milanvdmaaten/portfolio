@@ -40,11 +40,11 @@ collections:
             fields:
               - {
                   label: "Title",
-                  name: "textTitle",
+                  name: "title",
                   widget: "string",
                   required: false,
                 }
-              - { label: "Text", name: "textBody", widget: "markdown" }
+              - { label: "Text", name: "body", widget: "markdown" }
           - label: "Images"
             name: "imagesBlock"
             widget: "object"

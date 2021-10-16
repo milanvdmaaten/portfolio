@@ -102,22 +102,22 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       instagram: String
     }
 
-    type MarkdownRemark implements Node {
+    type MarkdownRemark {
       frontmatter: Frontmatter
       fields: Fields
     }
 
-    type TextBlock implements Node @infer {
-      textTitle: String
-      textBody: String
+    type TextBlock {
+      title: String
+      body: String
     }
 
-    type Images implements Node @infer {
+    type Images {
       image: File
       alt: String
     }
 
-    type ImagesBlock implements Node @infer {
+    type ImagesBlock {
       images: [Images]
       fullWidth: Boolean
       carrousel: Boolean
@@ -125,13 +125,11 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
 
     type Content {
       type: String
-      title: String
-      text: String
       imagesBlocks: [ImagesBlock]
       textBlocks: [TextBlock]
     }
 
-    type Frontmatter @infer {
+    type Frontmatter {
       title: String
       tagline: String
       textColor: String

@@ -25,10 +25,10 @@ const BlogPostTemplate = ({ data, location }) => {
       <GatsbyImage
         image={image}
         alt={frontmatter.tagline ?? ""}
-        className="-mt-16 w-full"
+        className="-mt-16 w-full max-h-screen"
       />
       <ContentSeparator />
-      <section className="container m-auto">
+      <section className="container  m-auto">
         <h1 className="font-bold text-5xl text-center">
           {frontmatter.title} - {frontmatter.tagline}
         </h1>
@@ -90,6 +90,12 @@ export const pageQuery = graphql`
     }
   }
 
+  fragment TextBlock on Content {
+    type
+    title
+    body
+  }
+
   query BlogPostBySlug(
     $id: String!
     $previousPostId: String
@@ -120,6 +126,7 @@ export const pageQuery = graphql`
         }
         content {
           ...ImagesBlock
+          ...TextBlock
         }
       }
     }
