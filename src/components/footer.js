@@ -3,7 +3,7 @@ import * as React from "react"
 export const Footer = ({ owner }) => {
   return (
     <footer className="bg-black text-white">
-      <div className="container m-auto p-6 pt-12 flex justify-between mt-32">
+      <div className="container m-auto p-6 pt-12 flex justify-between">
         <span>
           © {new Date().getFullYear()}, {owner}
         </span>

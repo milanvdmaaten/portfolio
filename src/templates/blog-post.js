@@ -5,6 +5,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { ContentSeparator } from "../components/contentSeparator"
+import { Content } from "../components/content/content"
 
 const BlogPostTemplate = ({ data, location }) => {
   const author = data.site.siteMetadata.author
@@ -13,7 +14,6 @@ const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
 
-  console.log(data)
   const image = getImage(frontmatter.featuredImage)
 
   return (
@@ -28,30 +28,22 @@ const BlogPostTemplate = ({ data, location }) => {
         className="-mt-16 w-full max-h-screen"
       />
       <ContentSeparator />
-      <section className="container  m-auto">
+      <section className="container m-auto">
         <h1 className="font-bold text-5xl text-center">
           {frontmatter.title} - {frontmatter.tagline}
         </h1>
       </section>
-      {/* <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
-        <hr />
-        <footer>
-          <Bio />
-        </footer>
-      </article> */}
-      <nav>
+      <ContentSeparator />
+      <article className="blog-post-content">
+        {frontmatter.content.map(content => (
+          <React.Fragment>
+            <Content content={content} />
+            <ContentSeparator />
+          </React.Fragment>
+        ))}
+      </article>
+      <ContentSeparator />
+      <nav className="bg-yellow-50">
         <ul>
           <li>
             {previous && (

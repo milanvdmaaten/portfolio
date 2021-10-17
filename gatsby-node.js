@@ -77,7 +77,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 }
 
 exports.createSchemaCustomization = ({ actions, schema }) => {
-  const { createTypes } = actions
+  const { createTypes, createFieldExtension } = actions
 
   // Explicitly define the siteMetadata {} object
   // This way those will always be defined even if removed from gatsby-config.js

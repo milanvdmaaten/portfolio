@@ -1,3 +1,5 @@
 import * as React from "react"
 
-export const ContentSeparator = () => <div className="mb-52"></div>
+export const ContentSeparator = ({ size }) => (
+  <div className={size ?? "mb-52"}></div>
+)
