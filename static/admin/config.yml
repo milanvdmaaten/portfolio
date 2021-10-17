@@ -49,12 +49,15 @@ collections:
             name: "imagesBlock"
             widget: "object"
             fields:
-              - {
-                  label: "Full width",
-                  name: "fullWidth",
-                  widget: "boolean",
-                  required: false,
-                }
+              - label: "Images size"
+                name: "size"
+                widget: "select"
+                default: "medium"
+                options:
+                  - { label: "Small", value: "small" }
+                  - { label: "Medium", value: "medium" }
+                  - { label: "Large", value: "large" }
+                  - { label: "Full width", value: "fullWidth" }
               - {
                   label: "Carrousel",
                   name: "carrousel",

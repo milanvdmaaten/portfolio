@@ -6,36 +6,34 @@ import Swiper from "swiper/bundle"
 export const ImagesBlock = ({ content }) => {
   const { images, fullWidth, carrousel } = content
   console.log(content)
-  const swiperIdentifier = React.useRef(
-    Array.from({ length: 10 }).reduce(
-      (previousValue, currentValue) => `${previousValue}` + currentValue,
-      ""
-    )
-  )
+  const swiperIdentifier = React.useRef(images[0].alt.replace(" ", "-"))
 
   const width = fullWidth ? "max-w-full p-0" : "max-w-5xl"
 
-  const swiper = carrousel ? `swiper swiper-${swiperIdentifier.current}` : ""
+  const swiper = carrousel
+    ? `swiper swiper-${swiperIdentifier.current} w-full`
+    : ""
   console.log(carrousel, swiper)
+
   React.useEffect(() => {
     setTimeout(() => {
       new Swiper(`.swiper-${swiperIdentifier.current}`, {
-        // Optional parameters
         slidesPerView: 1,
         loop: true,
-
-        // If we need pagination
-        pagination: {
-          el: ".swiper-pagination",
-        },
-
-        // Navigation arrows
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+        pagination: {
+          el: ".swiper-pagination",
+          type: "progressbar",
+        },
+        autoplay: {
+          pauseOnMouseEnter: true,
+          delay: 1000 * 2.5,
+        },
       })
-    }, 1000 * 5)
+    }, 1000 * 2)
   }, [swiperIdentifier])
 
   return (
@@ -44,26 +42,22 @@ export const ImagesBlock = ({ content }) => {
         {images.map(({ image, alt }, index) => {
           const renderImage = getImage(image)
           return (
-            <React.Fragment>
-              <GatsbyImage
-                image={renderImage}
-                alt={alt}
-                className={`${carrousel ? "swiper-slide" : "col-span-12"}`}
-              />
+            <div className={`${carrousel ? "swiper-slide" : "col-span-12"}`}>
+              <GatsbyImage image={renderImage} alt={alt} className="w-full" />
               {index < images.length - 1 && (
                 <ContentSeparator size="mb-20 col-span-12" />
               )}
-            </React.Fragment>
+            </div>
           )
         })}
-        {carrousel && (
-          <React.Fragment>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </React.Fragment>
-        )}
       </div>
+      {carrousel && (
+        <React.Fragment>
+          <div className="swiper-pagination"></div>
+          <div className="swiper-button-prev"></div>
+          <div className="swiper-button-next"></div>
+        </React.Fragment>
+      )}
     </section>
   )
 }

@@ -34,7 +34,6 @@ content:
       - image: image-2.png
         alt: keke tomaten
   - type: imagesBlock
-    fullWidth: true
     images:
       - image: salty_egg.jpg
         alt: keke tomaten
