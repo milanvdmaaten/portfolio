@@ -22,7 +22,7 @@ content:
     size: medium
     images:
       - image: desktop.png
-        alt: description
+        alt: description test
 ---
 
 This is my first post on my new fake blog! How exciting!
