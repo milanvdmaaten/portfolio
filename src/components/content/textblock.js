@@ -1,12 +1,13 @@
 import * as React from "react"
 import ReactMarkdown from "react-markdown"
+import { Grid } from "../Grid"
 
 export const TextBlock = ({ content }) => {
   const { title, body } = content
   return (
-    <section className="container max-w-5xl m-auto grid grid-cols-12 gap-10">
-      <aside className="col-span-2">{title}</aside>
-      <ReactMarkdown className="col-span-10">{body}</ReactMarkdown>
-    </section>
+    <Grid>
+      <aside className="col-start-2 col-span-2">{title}</aside>
+      <ReactMarkdown className="col-span-6">{body}</ReactMarkdown>
+    </Grid>
   )
 }

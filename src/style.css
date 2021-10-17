@@ -15,7 +15,11 @@ body { font-family: "Space Grotesk"; }
 }
 
 .blog-post-content p {
-   @apply text-xl mb-4;
+   @apply text-xl;
+}
+
+.blog-post-content p:not(:last-of-type) {
+   @apply mb-4;
 }
 
 .swiper {

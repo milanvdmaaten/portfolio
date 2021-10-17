@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { Grid } from "../components/Grid"
 import { ContentSeparator } from "../components/contentSeparator"
 import { Content } from "../components/content/content"
 
@@ -25,18 +26,20 @@ const BlogPostTemplate = ({ data, location }) => {
       <GatsbyImage
         image={image}
         alt={frontmatter.tagline ?? ""}
-        className="-mt-16 w-full max-h-screen"
+        className="-mt-16 w-screen max-h-screen"
       />
       <ContentSeparator />
-      <section className="container m-auto">
-        <h1 className="font-bold text-5xl text-center">
-          {frontmatter.title} - {frontmatter.tagline}
-        </h1>
-      </section>
+      <Grid>
+        <section className="col-start-2 col-span-10">
+          <h1 className="font-bold text-5xl text-center">
+            {frontmatter.title} - {frontmatter.tagline}
+          </h1>
+        </section>
+      </Grid>
       <ContentSeparator />
       <article className="blog-post-content">
-        {frontmatter.content?.map(content => (
-          <React.Fragment>
+        {frontmatter.content?.map((content, index) => (
+          <React.Fragment key={index}>
             <Content content={content} />
             <ContentSeparator />
           </React.Fragment>
@@ -78,7 +81,7 @@ export const pageQuery = graphql`
       }
       alt
     }
-    fullWidth
+    size
     carrousel
   }
 

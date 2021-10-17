@@ -119,7 +119,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
 
     type ImagesBlock {
       images: [Images]
-      fullWidth: Boolean
+      size: String
       carrousel: Boolean
     }
 

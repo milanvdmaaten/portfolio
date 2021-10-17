@@ -21,7 +21,7 @@ export const Header = ({ location, children }) => {
   //  }
 
   return (
-    <header className="flex container items-center justify-between m-auto py-4 z-50 sticky top-0">
+    <header className="flex container items-center justify-between m-auto py-4 px-0 z-50 sticky top-0">
       <div>
         <Link to="/">logo</Link>
       </div>

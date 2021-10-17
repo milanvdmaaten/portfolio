@@ -4,6 +4,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { Grid } from "../components/grid"
+import { ContentSeparator } from "../components/contentSeparator"
 
 const BlogIndex = ({ data, location }) => {
   const author = data.site.siteMetadata.author
@@ -26,49 +28,54 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} owner={author.name}>
       <Seo title={description} />
-      <section className="container m-auto py-52">
-        <h1 className="font-bold text-7xl text-center mb-5">
-          Good {timeOfDay()} <br /> my name is {name}
-        </h1>
-        <h2 className="text-center text-2xl max-w-2xl m-auto">
-          {author.summary}
-        </h2>
-      </section>
-      <section className="container m-auto">
-        <ol className="grid grid-cols-12 gap-10">
-          {posts?.map(post => {
-            const { frontmatter, fields } = post
+      <Grid>
+        <section className="py-52 col-span-12">
+          <h1 className="font-bold text-7xl text-center mb-5">
+            Good {timeOfDay()} <br /> my name is {name}
+          </h1>
+          <h2 className="text-center text-2xl max-w-2xl m-auto">
+            {author.summary}
+          </h2>
+        </section>
+      </Grid>
+      <Grid gapY="32">
+        {posts?.map(post => {
+          const { frontmatter, fields } = post
 
-            const size = frontmatter.fullWidth ? "12" : "6"
-            const image = getImage(frontmatter.featuredImage)
-            return (
-              <li key={fields.slug} className={`col-span-${size} mb-32`}>
-                <Link to={fields.slug} itemProp="url">
-                  <article itemScope itemType="http://schema.org/Article">
-                    <header className="mb-2">
-                      <figure>
-                        <GatsbyImage
-                          image={image}
-                          alt={frontmatter.tagline ?? ""}
-                        />
-                        <figcaption className="hidden" itemProp="headline">
-                          {frontmatter.title} | {frontmatter.tagline}
-                        </figcaption>
-                      </figure>
-                    </header>
-                    <p className="text-xl flex items-center">
-                      <strong className="border-r-2 border-black pr-2 mr-2 font-normal text-2xl">
-                        {frontmatter.title}
-                      </strong>
-                      {frontmatter.tagline}
-                    </p>
-                    <p itemProp="datePublished" className="hidden">
-                      {frontmatter.date}
-                    </p>
-                    <p itemProp="author" className="hidden">
-                      {author.name}
-                    </p>
-                    {/* <section>
+          const size = frontmatter.fullWidth ? "12" : "6"
+          const image = getImage(frontmatter.featuredImage)
+          return (
+            <Link
+              to={fields.slug}
+              itemProp="url"
+              key={fields.slug}
+              className={`col-span-${size}`}
+            >
+              <article itemScope itemType="http://schema.org/Article">
+                <header className="mb-2">
+                  <figure>
+                    <GatsbyImage
+                      image={image}
+                      alt={frontmatter.tagline ?? ""}
+                    />
+                    <figcaption className="hidden" itemProp="headline">
+                      {frontmatter.title} | {frontmatter.tagline}
+                    </figcaption>
+                  </figure>
+                </header>
+                <p className="text-xl flex items-center">
+                  <strong className="border-r-2 border-black pr-2 mr-2 font-normal text-2xl">
+                    {frontmatter.title}
+                  </strong>
+                  {frontmatter.tagline}
+                </p>
+                <p itemProp="datePublished" className="hidden">
+                  {frontmatter.date}
+                </p>
+                <p itemProp="author" className="hidden">
+                  {author.name}
+                </p>
+                {/* <section>
                   <p
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
@@ -76,13 +83,12 @@ const BlogIndex = ({ data, location }) => {
                     itemProp="description"
                   />
                 </section> */}
-                  </article>
-                </Link>
-              </li>
-            )
-          })}
-        </ol>
-      </section>
+              </article>
+            </Link>
+          )
+        })}
+      </Grid>
+      <ContentSeparator />
     </Layout>
   )
 }
