@@ -70,16 +70,16 @@ export default BlogPostTemplate
 export const pageQuery = graphql`
   fragment ImagesBlock on Content {
     type
-    imagesBlocks {
-      images {
-        image {
-          childImageSharp {
-            gatsbyImageData
-          }
+    images {
+      image {
+        childImageSharp {
+          gatsbyImageData
         }
-        alt
       }
+      alt
     }
+    fullWidth
+    carrousel
   }
 
   fragment TextBlock on Content {

@@ -7,13 +7,18 @@ body { font-family: "Space Grotesk"; }
 
 
 .blog-post-content aside {
-   @apply leading-9 uppercase
+   @apply leading-9 uppercase;
 } 
 
 .blog-post-content h2 {
-   @apply text-2xl font-bold mb-6
+   @apply text-2xl font-bold mb-6;
 }
 
 .blog-post-content p {
-   @apply text-xl mb-4
+   @apply text-xl mb-4;
+}
+
+.swiper {
+    width: 300px;
+    height: 300px;
 }
