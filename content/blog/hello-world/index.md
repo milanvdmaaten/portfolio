@@ -27,11 +27,11 @@ content:
   - type: imagesBlock
     carrousel: true
     images:
-      - image: salty_egg.jpg
+      - image: image-2.png
         alt: keke tomaten
-      - image: salty_egg.jpg
+      - image: image-2.png
         alt: keke tomaten
-      - image: salty_egg.jpg
+      - image: image-2.png
         alt: keke tomaten
   - type: imagesBlock
     fullWidth: true
