@@ -70,4 +70,9 @@ collections:
                 fields:
                   - { label: "Image", name: "image", widget: "image" }
                   - { label: Image Description, name: "alt", widget: string }
-                  - { label: Image title, name: "title", widget: string }
+                  - {
+                      label: Image title,
+                      name: "title",
+                      widget: string,
+                      required: false,
+                    }
