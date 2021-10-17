@@ -49,8 +49,18 @@ collections:
             name: "imagesBlock"
             widget: "object"
             fields:
-              - { label: "Full width", name: "fullWidth", widget: "boolean" }
-              - { label: "Carrousel", name: "carrousel", widget: "boolean" }
+              - {
+                  label: "Full width",
+                  name: "fullWidth",
+                  widget: "boolean",
+                  required: false,
+                }
+              - {
+                  label: "Carrousel",
+                  name: "carrousel",
+                  widget: "boolean",
+                  required: false,
+                }
               - label: "Images"
                 name: "images"
                 widget: "list"
