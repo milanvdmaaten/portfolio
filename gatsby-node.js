@@ -115,6 +115,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
     type Images {
       image: File
       alt: String
+      title: String
     }
 
     type ImagesBlock {

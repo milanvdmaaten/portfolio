@@ -80,6 +80,7 @@ export const pageQuery = graphql`
         }
       }
       alt
+      title
     }
     size
     carrousel

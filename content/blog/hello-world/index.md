@@ -22,38 +22,47 @@ content:
     size: small
     images:
       - image: salty_egg.jpg
+        title: testing
         alt: keke tomaten
       - image: salty_egg.jpg
+        title: testing
         alt: keke tomaten
   - type: imagesBlock
     size: medium
     images:
       - image: salty_egg.jpg
+        title: testing
         alt: keke tomaten
   - type: imagesBlock
     size: large
     images:
       - image: salty_egg.jpg
+        title: testing
         alt: keke tomaten
   - type: imagesBlock
     size: fullWidth
     images:
       - image: salty_egg.jpg
+        title: testing
         alt: keke tomaten
   - type: imagesBlock
     size: small
     carrousel: true
     images:
       - image: image-2.png
+        title: testing
         alt: keke tomaten
       - image: image-2.png
+        title: testing
         alt: keke tomaten
       - image: image-2.png
+        title: testing
         alt: keke tomaten
   - type: imagesBlock
     size: small
     images:
       - image: salty_egg.jpg
+        title: testing
         alt: keke tomaten
 ---
 
