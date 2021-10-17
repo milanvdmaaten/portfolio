@@ -19,51 +19,10 @@ content:
 
       Roomplanner is embedded within home and living product webshops. Users use Roomplanner to view the webshops' products in a room they created themselves.
   - type: imagesBlock
-    size: small
-    images:
-      - image: salty_egg.jpg
-        title: testing
-        alt: keke tomaten
-      - image: salty_egg.jpg
-        title: testing
-        alt: keke tomaten
-  - type: imagesBlock
     size: medium
     images:
-      - image: salty_egg.jpg
-        title: testing
-        alt: keke tomaten
-  - type: imagesBlock
-    size: large
-    images:
-      - image: salty_egg.jpg
-        title: testing
-        alt: keke tomaten
-  - type: imagesBlock
-    size: fullWidth
-    images:
-      - image: salty_egg.jpg
-        title: testing
-        alt: keke tomaten
-  - type: imagesBlock
-    size: small
-    carrousel: true
-    images:
-      - image: image-2.png
-        title: testing
-        alt: keke tomaten
-      - image: image-2.png
-        title: testing
-        alt: keke tomaten
-      - image: image-2.png
-        title: testing
-        alt: keke tomaten
-  - type: imagesBlock
-    size: small
-    images:
-      - image: salty_egg.jpg
-        title: testing
-        alt: keke tomaten
+      - image: desktop.png
+        alt: description
 ---
 
 This is my first post on my new fake blog! How exciting!
