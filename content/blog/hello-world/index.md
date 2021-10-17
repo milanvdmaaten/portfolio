@@ -22,6 +22,16 @@ content:
     images:
       - image: salty_egg.jpg
         alt: keke tomaten
+  - type: imagesBlock
+    carrousel: true
+    images:
+      - image: salty_egg.jpg
+        alt: keke tomaten
+  - type: imagesBlock
+    fullWidth: true
+    images:
+      - image: salty_egg.jpg
+        alt: keke tomaten
 ---
 
 This is my first post on my new fake blog! How exciting!
