@@ -107,18 +107,18 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       fields: Fields
     }
 
-    type TextBlock {
+    type TextBlock @infer {
       title: String
       body: String
     }
 
-    type Images {
+    type Images @infer {
       image: File
       alt: String
       title: String
     }
 
-    type ImagesBlock {
+    type ImagesBlock @infer {
       images: [Images]
       size: String
       carrousel: Boolean
@@ -130,7 +130,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       textBlocks: [TextBlock]
     }
 
-    type Frontmatter {
+    type Frontmatter @infer {
       title: String
       tagline: String
       textColor: String
