@@ -23,6 +23,24 @@ content:
     images:
       - image: desktop.png
         alt: description test
+  - type: textBlock
+    title: Challenge
+    body: >-
+      ## UX interviews
+
+
+      There are several challenges we faced during this project. First, the tool is not very user friendly, a lot of functionalities are spread over the tool without any hierarchy. Next to that, the visual style of Roomplanner doesn't fit the style of the webshops. Finally, the relevance for webshops to embed Roomplanner within their webshop is to generate leads. However, users don't see the point of leaving behind their email adress.
+
+
+
+      In order to solve these challenges we conducted user interviews, and improved the design based on the insights.
+  - type: textBlock
+    title: Solutions
+    body: >-
+      ## Adding step 1 to the step indicator
+
+
+      When opening Roomplanner, users pick a room type which is followed by step 2: selecting a room shape. A step indicator shows the current step to the user. However, this indicator is missing at step 1, which implies the user starts at step 2. That's why we added the step indicator to step 1 as well.
 ---
 
 This is my first post on my new fake blog! How exciting!
