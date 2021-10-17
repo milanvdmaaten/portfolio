@@ -63,15 +63,17 @@ export const ImagesBlock = ({ content }) => {
               carrousel ? "swiper-wrapper" : "grid grid-cols-12 gap-y-20"
             }`}
           >
-            {images.map(({ image, alt }, index) => {
+            {images.map(({ image, alt, title }, index) => {
               const renderImage = getImage(image)
               return (
                 <div
                   key={index}
                   className={`${carrousel ? "swiper-slide" : "col-span-12"}`}
                 >
+                  {title && <h3 className="text-center font-bold">{title}</h3>}
                   <GatsbyImage
                     image={renderImage}
+                    objectFit="contain"
                     alt={alt}
                     className="h-full w-full"
                   />

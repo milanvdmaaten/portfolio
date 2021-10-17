@@ -1,6 +1,6 @@
 ---
 title: NPO
-tagline: " A new concept and mobile design"
+tagline: "A new concept and mobile design"
 fullWidth: true
 date: 2015-05-01T22:12:03.284Z
 displayPosition: 1
@@ -19,6 +19,7 @@ content:
 
       Roomplanner is embedded within home and living product webshops. Users use Roomplanner to view the webshops' products in a room they created themselves.
   - type: imagesBlock
+    carrousel: false
     size: medium
     images:
       - image: desktop.png
@@ -42,6 +43,7 @@ content:
 
       When opening Roomplanner, users pick a room type which is followed by step 2: selecting a room shape. A step indicator shows the current step to the user. However, this indicator is missing at step 1, which implies the user starts at step 2. That's why we added the step indicator to step 1 as well.
   - type: imagesBlock
+    carrousel: false
     size: medium
     images:
       - image: desktop-1-.png
@@ -56,6 +58,7 @@ content:
 
       At step 2 users are asked to select a room shape, followed by step 3: the room configurator in which windows can be added and dimensions of the room can be set. Step 2 and 3 offer the possibility to add windows and doors to the room. However, test results showed that no participant made use of this functionality. That's why indicators were added to the elements that could be manipulated on the screen.
   - type: imagesBlock
+    carrousel: false
     size: fullWidth
     images:
       - image: onboarding-stap-2b-1.png
