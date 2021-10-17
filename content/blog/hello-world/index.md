@@ -41,6 +41,40 @@ content:
 
 
       When opening Roomplanner, users pick a room type which is followed by step 2: selecting a room shape. A step indicator shows the current step to the user. However, this indicator is missing at step 1, which implies the user starts at step 2. That's why we added the step indicator to step 1 as well.
+  - type: imagesBlock
+    size: medium
+    images:
+      - image: desktop-1-.png
+        alt: description
+      - image: desktop-3-.png
+        alt: description
+  - type: textBlock
+    title: ""
+    body: >-
+      ## Indicators for interactive elements
+
+
+      At step 2 users are asked to select a room shape, followed by step 3: the room configurator in which windows can be added and dimensions of the room can be set. Step 2 and 3 offer the possibility to add windows and doors to the room. However, test results showed that no participant made use of this functionality. That's why indicators were added to the elements that could be manipulated on the screen.
+  - type: imagesBlock
+    size: fullWidth
+    images:
+      - image: onboarding-stap-2b-1.png
+        alt: description
+  - type: textBlock
+    body: >-
+      ## 1 Task per step
+
+
+      In general, the onboarding lacks of focus, and some functionalities are difficult to find. That's why we divided the onboarding in 5 steps. Each step focuses on one specific task which increases a users' focus within a specific step.
+  - type: imagesBlock
+    size: medium
+    images:
+      - image: desktop-4-.png
+        alt: description
+        title: Old
+      - image: desktop-5-.png
+        alt: description
+        title: New
 ---
 
 This is my first post on my new fake blog! How exciting!
