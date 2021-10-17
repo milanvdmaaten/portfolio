@@ -9,12 +9,15 @@ backgroundColor: "#fff"
 featuredImage: salty_egg.jpg
 content:
   - type: textBlock
-    title: "About"
+    title: About
     body: >-
       **Roomplanner, part of Floorplanner**
 
 
+
+
       Roomplanner is an extension of Floorplanner. A platform, based around a floor plan editor that runs in every browser. The tool gives users the ability to make great looking architectural visualisations of their home and interior in an easy and accessible way. Floorplanner was the first fully browser-based 2D & 3D planner, and since then over 25 million users worldwide have registered for a account and in together created over 40 million plans and a multitude of great 2D & 3D images.
+
 
 
 
