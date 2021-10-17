@@ -35,7 +35,7 @@ const BlogPostTemplate = ({ data, location }) => {
       </section>
       <ContentSeparator />
       <article className="blog-post-content">
-        {frontmatter.content.map(content => (
+        {frontmatter.content?.map(content => (
           <React.Fragment>
             <Content content={content} />
             <ContentSeparator />
