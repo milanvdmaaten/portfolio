@@ -1,6 +1,6 @@
 import * as React from "react"
 import ReactMarkdown from "react-markdown"
-import { Grid } from "../grid"
+import { Grid } from "../layout/grid"
 
 export const TextBlock = ({ content }) => {
   const { title, body } = content

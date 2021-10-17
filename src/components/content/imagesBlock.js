@@ -2,7 +2,7 @@ import * as React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { ContentSeparator } from "../layout/contentSeparator"
 import Swiper from "swiper/bundle"
-import { Grid } from "../grid"
+import { Grid } from "../layout/grid"
 
 export const ImagesBlock = ({ content }) => {
   const { images, size, carrousel } = content
@@ -67,6 +67,7 @@ export const ImagesBlock = ({ content }) => {
               const renderImage = getImage(image)
               return (
                 <div
+                  key={index}
                   className={`${carrousel ? "swiper-slide" : "col-span-12"}`}
                 >
                   <GatsbyImage

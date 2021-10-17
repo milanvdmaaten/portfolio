@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* CSS Custom Properties Definitions */
-body { font-family: "Space Grotesk"; }
+body { font-family: "Space Grotesk", "Arial", "Helvetica", "sans-serif"; }
 
 
 .blog-post-content aside {
