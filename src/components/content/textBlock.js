@@ -6,8 +6,12 @@ export const TextBlock = ({ content }) => {
   const { title, body } = content
   return (
     <Grid>
-      <aside className="col-start-2 col-span-2">{title}</aside>
-      <ReactMarkdown className="col-span-6">{body}</ReactMarkdown>
+      <aside className="col-span-12 md:col-start-2 md:col-span-2">
+        {title}
+      </aside>
+      <ReactMarkdown className="col-span-12 md:col-span-6">
+        {body}
+      </ReactMarkdown>
     </Grid>
   )
 }

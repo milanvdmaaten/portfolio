@@ -9,23 +9,23 @@ export const ImagesBlock = ({ content }) => {
   console.log(content)
   const swiperIdentifier = React.useRef(images[0].alt.replace(" ", "-"))
 
-  let imageColsClass = ""
+  let imageColsClass = "col-start-0 col-span-12"
 
   switch (size) {
     case "small":
-      imageColsClass = "col-start-3 col-span-8"
+      imageColsClass += " md:col-start-3 md:col-span-8"
       break
     case "medium":
-      imageColsClass = "col-start-2 col-span-10"
+      imageColsClass += " md:col-start-2 md:col-span-10"
       break
     case "large":
-      imageColsClass = "col-span-12"
+      imageColsClass += " col-span-12"
       break
     case "fullWidth":
-      imageColsClass = "w-full"
+      imageColsClass += " w-screen"
       break
     default:
-      imageColsClass = "w-full"
+      imageColsClass += " w-full"
       break
   }
 
@@ -58,17 +58,13 @@ export const ImagesBlock = ({ content }) => {
             carrousel ? `swiper swiper-${swiperIdentifier.current}` : "w-full"
           }
         >
-          <div
-            className={`${
-              carrousel ? "swiper-wrapper" : "grid grid-cols-12 gap-y-20"
-            }`}
-          >
+          <div className={`${carrousel ? "swiper-wrapper" : "w-full"}`}>
             {images.map(({ image, alt, title }, index) => {
               const renderImage = getImage(image)
               return (
                 <div
                   key={index}
-                  className={`${carrousel ? "swiper-slide" : "col-span-12"}`}
+                  className={`${carrousel ? "swiper-slide" : ""}`}
                 >
                   {title && <h3 className="text-center font-bold">{title}</h3>}
                   <GatsbyImage
