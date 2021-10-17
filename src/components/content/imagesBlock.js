@@ -1,8 +1,8 @@
 import * as React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { ContentSeparator } from "../contentSeparator"
+import { ContentSeparator } from "../layout/contentSeparator"
 import Swiper from "swiper/bundle"
-import { Grid } from "../Grid"
+import { Grid } from "../grid"
 
 export const ImagesBlock = ({ content }) => {
   const { images, size, carrousel } = content

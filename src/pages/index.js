@@ -2,10 +2,10 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import Seo from "../components/seo"
 import { Grid } from "../components/grid"
-import { ContentSeparator } from "../components/contentSeparator"
+import { ContentSeparator } from "../components/layout/contentSeparator"
 
 const BlogIndex = ({ data, location }) => {
   const author = data.site.siteMetadata.author
