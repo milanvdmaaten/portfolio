@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo"
-import { Grid } from "../components/grid"
+import { Grid } from "../components/layout/grid"
 import { ContentSeparator } from "../components/layout/contentSeparator"
 
 const BlogIndex = ({ data, location }) => {

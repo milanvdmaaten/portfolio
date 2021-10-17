@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo"
-import { Grid } from "../components/Grid"
+import { Grid } from "../components/layout/grid"
 import { ContentSeparator } from "../components/layout/contentSeparator"
 import { Content } from "../components/content/content"
 
