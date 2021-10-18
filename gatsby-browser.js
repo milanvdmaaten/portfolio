@@ -9,5 +9,6 @@ import "prismjs/themes/prism.css"
 
 // Import space-grotesk
 import "@fontsource/space-grotesk"
+import "@fontsource/caveat"
 
 import "swiper/css/bundle"

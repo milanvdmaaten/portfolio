@@ -16,6 +16,14 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-image`, // https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
     {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/, // See below to configure properly
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,

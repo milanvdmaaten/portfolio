@@ -3,24 +3,54 @@
 @tailwind utilities;
 
 /* CSS Custom Properties Definitions */
-body { font-family: "Space Grotesk", "Arial", "Helvetica", "sans-serif"; }
-
-
-.blog-post-content aside {
-   @apply leading-9 uppercase;
-} 
+body {
+   font-family: "Space Grotesk", "Arial", "Helvetica", "sans-serif";
+}
 
 .blog-post-content h2 {
-   @apply text-2xl font-bold mb-6;
+   @apply mb-4 text-3xl leading-snug font-semibold tracking-wider;
 }
 
 .blog-post-content p {
-   @apply text-xl;
+   @apply text-2xl leading-9 font-normal tracking-normal;
 }
 
 .blog-post-content p:not(:last-of-type) {
    @apply mb-4;
 }
 
-.swiper {
+.body-small {
+   @apply text-xl leading-8 font-normal tracking-normal;
+}
+
+.body-medium {
+   @apply text-2xl leading-9 font-normal tracking-normal;
+}
+
+.body-large {
+   @apply text-3xl leading-snug font-normal tracking-normal;
+}
+
+.heading-extra-small {
+   @apply text-2xl leading-9 font-semibold tracking-wider;
+}
+
+.heading-small {
+   @apply text-3xl leading-snug font-semibold tracking-wider;
+}
+
+.heading-medium {
+   @apply text-6xl leading-tight font-semibold tracking-widest;
+}
+
+.heading-large {
+   @apply text-7xl leading-tight font-semibold tracking-widest;
+}
+
+.caption-mono {
+   @apply text-lg leading-6 font-medium tracking-widest uppercase;
+}
+
+.caption-handwritten {
+   @apply text-3xl leading-6 font-normal tracking-normal;
 }

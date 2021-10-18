@@ -29,16 +29,14 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} owner={author.name}>
       <Seo title={description} />
       <Grid>
-        <section className="py-52 col-span-12">
-          <h1 className="font-bold text-7xl text-center mb-5">
+        <section className="py-64 col-span-12 text-center ">
+          <h1 className="heading-large mb-5">
             Good {timeOfDay()} <br /> my name is {name}
           </h1>
-          <h2 className="text-center text-2xl max-w-2xl m-auto">
-            {author.summary}
-          </h2>
+          <h2 className="body-large max-w-3xl m-auto">{author.summary}</h2>
         </section>
       </Grid>
-      <Grid gapY="32">
+      <Grid>
         {posts?.map(post => {
           const { frontmatter, fields } = post
 
@@ -63,16 +61,16 @@ const BlogIndex = ({ data, location }) => {
                     </figcaption>
                   </figure>
                 </header>
-                <p className="text-xl flex items-center">
-                  <strong className="border-r-2 border-black pr-2 mr-2 font-normal text-2xl">
+                <p className="body-medium flex items-center">
+                  <strong className="border-r-2 border-black pr-2 mr-2">
                     {frontmatter.title}
                   </strong>
                   {frontmatter.tagline}
                 </p>
-                <p itemProp="datePublished" className="hidden">
+                <p itemProp="datePublished" className="sr-only">
                   {frontmatter.date}
                 </p>
-                <p itemProp="author" className="hidden">
+                <p itemProp="author" className="sr-only">
                   {author.name}
                 </p>
                 {/* <section>

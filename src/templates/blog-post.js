@@ -30,14 +30,14 @@ const BlogPostTemplate = ({ data, location }) => {
       />
       <ContentSeparator />
       <Grid>
-        <section className="col-start-2 col-span-10">
-          <h1 className="font-bold text-5xl text-center">
+        <section className="col-start-2 col-span-10 text-center">
+          <h1 className="heading-large">
             {frontmatter.title} - {frontmatter.tagline}
           </h1>
         </section>
       </Grid>
       <ContentSeparator />
-      <article className="blog-post-content">
+      <article className="blog-post-content px-4 md:px-0">
         {frontmatter.content?.map((content, index) => (
           <React.Fragment key={index}>
             <Content content={content} />

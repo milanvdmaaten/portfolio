@@ -23,7 +23,7 @@ export const ImagesBlock = ({ content }) => {
       break
     case "fullWidth":
       isFullWidth = true
-      imageColsClass += " w-screen"
+      imageColsClass += " w-full"
       break
     default:
       imageColsClass += " w-full"
@@ -67,15 +67,25 @@ export const ImagesBlock = ({ content }) => {
                   key={index}
                   className={`${carrousel ? "swiper-slide" : ""}`}
                 >
-                  {title && <h3 className="text-center font-bold">{title}</h3>}
+                  {title && (
+                    <React.Fragment>
+                      <h3 className="text-center font-bold font-caveat text-xl">
+                        {title}
+                      </h3>
+                      <div className="py-4 flex justify-center">
+                        <img
+                          src="static/admin/arrow.svg"
+                          alt={`arrow pointing towards ${alt}`}
+                        />
+                      </div>
+                    </React.Fragment>
+                  )}
                   <GatsbyImage
                     image={renderImage}
-                    objectFit={"cover"}
+                    objectFit={"initial"}
                     alt={alt}
                     className={`h-full w-full ${
-                      !isFullWidth
-                        ? "filter drop-shadow-milan rounded-2xl bg-red-400"
-                        : ""
+                      !isFullWidth ? "filter drop-shadow-milan rounded-2xl" : ""
                     }`}
                   />
                   {index < images.length - 1 && (
