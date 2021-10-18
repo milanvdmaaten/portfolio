@@ -70,11 +70,11 @@ export const ImagesBlock = ({ content }) => {
                   {title && <h3 className="text-center font-bold">{title}</h3>}
                   <GatsbyImage
                     image={renderImage}
-                    objectFit={isFullWidth ? "contain" : "cover"}
+                    objectFit={"cover"}
                     alt={alt}
-                    className={`h-full w-full drop-shadow ${
+                    className={`h-full w-full ${
                       !isFullWidth
-                        ? "drop-shadow-xl rounded-r-2xl bg-red-400"
+                        ? "filter drop-shadow-milan rounded-2xl bg-red-400"
                         : ""
                     }`}
                   />
