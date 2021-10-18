@@ -48,7 +48,7 @@ content:
     images:
       - image: desktop-1-.png
         alt: description
-      - image: desktop-3-.png
+      - image: desktop-4-.png
         alt: description
   - type: textBlock
     title: ""

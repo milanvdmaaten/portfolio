@@ -6,10 +6,10 @@ import { Grid } from "../layout/grid"
 
 export const ImagesBlock = ({ content }) => {
   const { images, size, carrousel } = content
-  console.log(content)
   const swiperIdentifier = React.useRef(images[0].alt.replace(" ", "-"))
 
   let imageColsClass = "col-start-0 col-span-12"
+  let isFullWidth = false
 
   switch (size) {
     case "small":
@@ -22,6 +22,7 @@ export const ImagesBlock = ({ content }) => {
       imageColsClass += " col-span-12"
       break
     case "fullWidth":
+      isFullWidth = true
       imageColsClass += " w-screen"
       break
     default:
@@ -51,8 +52,8 @@ export const ImagesBlock = ({ content }) => {
   }, [swiperIdentifier])
 
   return (
-    <Grid fullWidth={size === "fullWidth"}>
-      <div className={`${imageColsClass}`}>
+    <Grid fullWidth={isFullWidth}>
+      <div className={imageColsClass}>
         <div
           className={
             carrousel ? `swiper swiper-${swiperIdentifier.current}` : "w-full"
@@ -69,7 +70,7 @@ export const ImagesBlock = ({ content }) => {
                   {title && <h3 className="text-center font-bold">{title}</h3>}
                   <GatsbyImage
                     image={renderImage}
-                    objectFit="contain"
+                    objectFit={isFullWidth ? "contain" : "cover"}
                     alt={alt}
                     className="h-full w-full"
                   />
