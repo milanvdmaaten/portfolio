@@ -72,7 +72,11 @@ export const ImagesBlock = ({ content }) => {
                     image={renderImage}
                     objectFit={isFullWidth ? "contain" : "cover"}
                     alt={alt}
-                    className="h-full w-full"
+                    className={`h-full w-full drop-shadow ${
+                      !isFullWidth
+                        ? "drop-shadow-xl rounded-r-2xl bg-red-400"
+                        : ""
+                    }`}
                   />
                   {index < images.length - 1 && (
                     <ContentSeparator size="mb-20" />
