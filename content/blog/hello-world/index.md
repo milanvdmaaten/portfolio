@@ -1,12 +1,12 @@
 ---
 title: NPO
-tagline: "A new concept and mobile design"
+tagline: A new concept and mobile design
 fullWidth: true
 date: 2015-05-01T22:12:03.284Z
 displayPosition: 1
 textColor: text-white
 backgroundColor: "#fff"
-featuredImage: Floorplanner.png
+featuredImage: img-header.png
 content:
   - type: textBlock
     title: About
@@ -22,7 +22,7 @@ content:
     carrousel: false
     size: medium
     images:
-      - image: desktop.png
+      - image: img-01.png
         alt: description test
   - type: textBlock
     title: Challenge
@@ -46,9 +46,9 @@ content:
     carrousel: false
     size: medium
     images:
-      - image: desktop-1-.png
+      - image: img-02.png
         alt: description
-      - image: desktop-4-.png
+      - image: img-03.png
         alt: description
   - type: textBlock
     title: ""
@@ -61,7 +61,7 @@ content:
     carrousel: false
     size: fullWidth
     images:
-      - image: onboarding-stap-2b-1.png
+      - image: img-04.png
         alt: description
   - type: textBlock
     body: >-
@@ -72,10 +72,10 @@ content:
   - type: imagesBlock
     size: medium
     images:
-      - image: desktop-4-.png
+      - image: img-05.png
         alt: description
         title: Old
-      - image: desktop-5-.png
+      - image: img-06.png
         alt: description
         title: New
 ---
