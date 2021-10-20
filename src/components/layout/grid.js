@@ -8,7 +8,7 @@ export const Grid = ({ children, className = "", fullWidth }) => {
       className={
         fullWidth
           ? `w-full ${className}`
-          : `grid grid-cols-12 ${gaps} max-w-screen-xl m-auto ${className}`
+          : `grid grid-cols-12 ${gaps} max-w-screen-3xl m-auto ${className}`
       }
     >
       {children}

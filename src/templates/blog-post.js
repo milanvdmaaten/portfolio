@@ -26,7 +26,7 @@ const BlogPostTemplate = ({ data, location }) => {
       <GatsbyImage
         image={image}
         alt={frontmatter.tagline ?? ""}
-        className="-mt-16 w-screen max-h-screen"
+        className="-mt-16 w-full max-h-screen"
       />
       <ContentSeparator />
       <Grid>

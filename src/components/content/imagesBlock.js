@@ -72,9 +72,9 @@ export const ImagesBlock = ({ content }) => {
                       <h3 className="text-center font-bold font-caveat text-xl">
                         {title}
                       </h3>
-                      <div className="py-4 flex justify-center">
+                      <div className="pb-4 pt-2 flex justify-center">
                         <img
-                          src="static/admin/arrow.svg"
+                          src="/assets/arrow.svg"
                           alt={`arrow pointing towards ${alt}`}
                         />
                       </div>

@@ -1,11 +1,12 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo"
 import { Grid } from "../components/layout/grid"
 import { ContentSeparator } from "../components/layout/contentSeparator"
+
+import { Post } from "../components/post"
 
 const BlogIndex = ({ data, location }) => {
   const author = data.site.siteMetadata.author
@@ -38,52 +39,8 @@ const BlogIndex = ({ data, location }) => {
       </Grid>
       <Grid>
         {posts?.map(post => {
-          const { frontmatter, fields } = post
-
-          const size = frontmatter.fullWidth ? "12" : "6"
-          const image = getImage(frontmatter.featuredImage)
-          return (
-            <Link
-              to={fields.slug}
-              itemProp="url"
-              key={fields.slug}
-              className={`col-span-${size}`}
-            >
-              <article itemScope itemType="http://schema.org/Article">
-                <header className="mb-2">
-                  <figure>
-                    <GatsbyImage
-                      image={image}
-                      alt={frontmatter.tagline ?? ""}
-                    />
-                    <figcaption className="hidden" itemProp="headline">
-                      {frontmatter.title} | {frontmatter.tagline}
-                    </figcaption>
-                  </figure>
-                </header>
-                <p className="body-medium flex items-center">
-                  <strong className="border-r-2 border-black pr-2 mr-2">
-                    {frontmatter.title}
-                  </strong>
-                  {frontmatter.tagline}
-                </p>
-                <p itemProp="datePublished" className="sr-only">
-                  {frontmatter.date}
-                </p>
-                <p itemProp="author" className="sr-only">
-                  {author.name}
-                </p>
-                {/* <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section> */}
-              </article>
-            </Link>
-          )
+          const size = post.frontmatter.fullWidth ? "12" : "6"
+          return <Post post={post} author={author} size={size} />
         })}
       </Grid>
       <ContentSeparator />
