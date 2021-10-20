@@ -37,7 +37,7 @@ const BlogIndex = ({ data, location }) => {
           <h2 className="body-large max-w-3xl m-auto">{author.summary}</h2>
         </section>
       </Grid>
-      <Grid>
+      <Grid className="px-4 md:px-0">
         {posts?.map(post => {
           const size = post.frontmatter.fullWidth ? "12" : "6"
           return <Post post={post} author={author} size={size} />

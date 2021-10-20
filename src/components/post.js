@@ -16,7 +16,12 @@ export const Post = ({ post, author, size }) => {
       <article itemScope itemType="http://schema.org/Article">
         <header className="mb-2">
           <figure>
-            <GatsbyImage image={image} alt={frontmatter.tagline ?? ""} />
+            <GatsbyImage
+              style={{ width: "100%" }}
+              image={image}
+              alt={frontmatter.tagline ?? ""}
+              objectFit="initial"
+            />
             <figcaption className="hidden" itemProp="headline">
               {frontmatter.title} | {frontmatter.tagline}
             </figcaption>
