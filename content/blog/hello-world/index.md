@@ -5,7 +5,7 @@ fullWidth: true
 hasContent: true
 date: 2015-05-01T22:12:03.284Z
 displayPosition: 1
-textColor: text-white
+textColor: text-black
 backgroundColor: "#fff"
 featuredImage: img-header.png
 content:
