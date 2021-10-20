@@ -7,6 +7,8 @@ import { Grid } from "../components/layout/grid"
 import { ContentSeparator } from "../components/layout/contentSeparator"
 import { Link } from "gatsby"
 
+import { onHoverLink } from "../customCursor"
+
 const BlogIndex = ({ data, location }) => {
   const author = data.site.siteMetadata.author
   const description = data.site.siteMetadata.description
@@ -36,14 +38,15 @@ const BlogIndex = ({ data, location }) => {
           <h2 className="body-large max-w-3xl m-auto">{author.summary}</h2>
         </section>
       </Grid>
-      <Grid className="px-4 " gapY="20">
+      <Grid className="px-4 " gapY="32">
         {posts?.map(post => {
           const { slug } = post.fields
-          const { title, tagline, date } = post.frontmatter
+          const { title, tagline, date, backgroundColor } = post.frontmatter
           return (
             <Link
               key={slug}
               to={slug}
+              onMouseEnter={() => onHoverLink(backgroundColor)}
               className="md:col-start-2 col-span-12 md:col-span-11 flex"
             >
               <h2 className="case__title">{title}</h2>
@@ -86,6 +89,7 @@ export const pageQuery = graphql`
           date(formatString: "YYYY")
           title
           fullWidth
+          backgroundColor
           hasContent
           tagline
           featuredImage {

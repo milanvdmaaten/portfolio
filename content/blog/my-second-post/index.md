@@ -2,6 +2,7 @@
 title: My Second Post!
 hasContent: true
 featuredImage: img-06.png
+backgroundColor: "#ffcc00"
 date: "2015-05-06T23:46:37.121Z"
 ---
 

@@ -70,12 +70,19 @@ body {
 }
 
 .custom-cursor {
-  @apply w-6 h-6 rounded-full bg-black border-2 border-white transition ease-in-out;
+  @apply w-6 h-6 rounded-full transition ease-in-out border-2;
   transition-property: width, height ;
+  background-color: var(--mouse-color);
+  border-color: var(--mouse-border-color)
 }
 
 .custom-cursor-hover--a .custom-cursor {
   @apply w-32 h-32;
+}
+
+:root {
+  --mouse-color: #000;
+  --mouse-border-color: #fff;
 }
 
 a:hover {
