@@ -7,6 +7,7 @@ date: 2015-05-01T22:12:03.284Z
 displayPosition: 1
 textColor: text-black
 backgroundColor: "#fff"
+drawColor: "#000"
 featuredImage: img-header.png
 content:
   - type: textBlock

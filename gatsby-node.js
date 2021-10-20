@@ -131,6 +131,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       tagline: String
       textColor: String
       backgroundColor: String
+      drawColor: String
       displayPosition: Int
       fullWidth: Boolean
       hasContent: Boolean

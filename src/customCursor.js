@@ -34,8 +34,10 @@ const padZero = (str, len) => {
 
 export const onHoverLink = color => {
   document.documentElement.style.setProperty("--mouse-color", color)
+
+  const inverted = invertColor(color, true)
   document.documentElement.style.setProperty(
     "--mouse-border-color",
-    invertColor(color, true)
+    inverted === "#000000" ? inverted : "transparent"
   )
 }

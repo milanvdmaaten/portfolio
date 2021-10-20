@@ -34,6 +34,7 @@ collections:
         options:
           - { label: "Black", value: "text-black" }
           - { label: "White", value: "text-white" }
+      - { label: "Draw color", name: "drawColor", widget: "string" }
       - { label: "Background color", name: "backgroundColor", widget: "string" }
       - { label: "Featured Image", name: "featuredImage", widget: "image" }
       - label: "Content"

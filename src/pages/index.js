@@ -38,15 +38,15 @@ const BlogIndex = ({ data, location }) => {
           <h2 className="body-large max-w-3xl m-auto">{author.summary}</h2>
         </section>
       </Grid>
-      <Grid className="px-4 " gapY="32">
+      <Grid className="px-4" gapY="32">
         {posts?.map(post => {
           const { slug } = post.fields
-          const { title, tagline, date, backgroundColor } = post.frontmatter
+          const { title, tagline, date, drawColor } = post.frontmatter
           return (
             <Link
               key={slug}
               to={slug}
-              onMouseEnter={() => onHoverLink(backgroundColor)}
+              onMouseEnter={() => onHoverLink(drawColor)}
               className="md:col-start-2 col-span-12 md:col-span-11 flex"
             >
               <h2 className="case__title">{title}</h2>
@@ -88,9 +88,7 @@ export const pageQuery = graphql`
         frontmatter {
           date(formatString: "YYYY")
           title
-          fullWidth
-          backgroundColor
-          hasContent
+          drawColor
           tagline
           featuredImage {
             childImageSharp {
