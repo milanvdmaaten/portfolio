@@ -60,25 +60,43 @@ export const ImagesBlock = ({ content }) => {
           }
         >
           <div className={`${carrousel ? "swiper-wrapper" : "w-full"}`}>
-            {images.map(({ image, alt, title }, index) => {
+            {images.map(({ image, alt, title, titlePosition }, index) => {
               const renderImage = getImage(image)
+              let arrowPosition = "transform justify-"
+              let titleSpacing = "transform"
+              switch (titlePosition) {
+                case "left":
+                  titleSpacing += " translate-x-1/4"
+                  arrowPosition += "start translate-x-1/4"
+                  break
+                case "right":
+                  titleSpacing += " -translate-x-1/4"
+                  arrowPosition += "end -translate-x-1/4"
+                  break
+                default:
+                  arrowPosition += "center"
+              }
               return (
                 <div
                   key={index}
                   className={`${carrousel ? "swiper-slide" : ""}`}
                 >
                   {title && (
-                    <React.Fragment>
-                      <h3 className="text-center font-bold font-caveat text-xl">
+                    <div className="overflow-hidden">
+                      <h3
+                        className={`caption-handwritten text-${titlePosition} ${titleSpacing}`}
+                      >
                         {title}
                       </h3>
-                      <div className="pb-4 pt-2 flex justify-center">
+                      <div
+                        className={`imagesBlock-arrow pb-4 pt-2 flex ${arrowPosition}`}
+                      >
                         <img
                           src="/assets/arrow.svg"
                           alt={`arrow pointing towards ${alt}`}
                         />
                       </div>
-                    </React.Fragment>
+                    </div>
                   )}
                   <GatsbyImage
                     image={renderImage}

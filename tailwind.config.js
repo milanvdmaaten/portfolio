@@ -8,7 +8,7 @@ module.exports = {
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
-      "3xl": "2240",
+      "3xl": "2240px",
     },
     fontFamily: {
       caveat: ["Caveat", "Brush Script MT", "sans-serif"],

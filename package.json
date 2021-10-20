@@ -10,6 +10,7 @@
   "dependencies": {
     "@fontsource/caveat": "^4.5.0",
     "@fontsource/space-grotesk": "^4.5.0",
+    "custom-cursor": "^1.7.1",
     "gatsby": "^3.13.1",
     "gatsby-plugin-feed": "^3.13.0",
     "gatsby-plugin-google-analytics": "^3.13.0",

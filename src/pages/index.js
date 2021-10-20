@@ -5,8 +5,7 @@ import Layout from "../components/layout/layout"
 import Seo from "../components/seo"
 import { Grid } from "../components/layout/grid"
 import { ContentSeparator } from "../components/layout/contentSeparator"
-
-import { Post } from "../components/post"
+import { Link } from "gatsby"
 
 const BlogIndex = ({ data, location }) => {
   const author = data.site.siteMetadata.author
@@ -37,10 +36,23 @@ const BlogIndex = ({ data, location }) => {
           <h2 className="body-large max-w-3xl m-auto">{author.summary}</h2>
         </section>
       </Grid>
-      <Grid className="px-4 md:px-0">
+      <Grid className="px-4 " gapY="20">
         {posts?.map(post => {
-          const size = post.frontmatter.fullWidth ? "12" : "6"
-          return <Post post={post} author={author} size={size} />
+          const { slug } = post.fields
+          const { title, tagline, date } = post.frontmatter
+          return (
+            <Link
+              key={slug}
+              to={slug}
+              className="md:col-start-2 col-span-12 md:col-span-11 flex"
+            >
+              <h2 className="case__title">{title}</h2>
+              <div className="body-small">
+                <div>{tagline}</div>
+                <div>{date}</div>
+              </div>
+            </Link>
+          )
         })}
       </Grid>
       <ContentSeparator />
@@ -71,9 +83,10 @@ export const pageQuery = graphql`
           slug
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
+          date(formatString: "YYYY")
           title
           fullWidth
+          hasContent
           tagline
           featuredImage {
             childImageSharp {

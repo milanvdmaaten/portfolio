@@ -20,6 +20,12 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Tagline", name: "tagline", widget: "string" }
       - { label: "Full width", name: "fullWidth", widget: "boolean" }
+      - {
+          label: "Does this post has content?",
+          name: "hasContent",
+          widget: "boolean",
+          default: "false",
+        }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Display position", name: "displayPosition", widget: "number" }
       - label: "Text color"
@@ -77,3 +83,13 @@ collections:
                       widget: string,
                       required: false,
                     }
+                  - {
+                    label: "Image title position",
+                    name: "titlePosition",
+                    widget: "select",
+                    default: "center",
+                    options:
+                      - { label: "Left", value: "left" }
+                      - { label: "Center", value: "center" }
+                      - { label: "Right", value: "right" }
+                  }

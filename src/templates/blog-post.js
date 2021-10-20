@@ -1,21 +1,22 @@
-import * as React from "react"
+import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Link, graphql } from "gatsby"
-
-import Layout from "../components/layout/layout"
-import Seo from "../components/seo"
-import { Grid } from "../components/layout/grid"
-import { ContentSeparator } from "../components/layout/contentSeparator"
+import * as React from "react"
 import { Content } from "../components/content/content"
+import { ContentSeparator } from "../components/layout/contentSeparator"
+import { Grid } from "../components/layout/grid"
+import Layout from "../components/layout/layout"
+import { OtherPosts } from "../components/otherPosts"
+import Seo from "../components/seo"
 
 const BlogPostTemplate = ({ data, location }) => {
   const author = data.site.siteMetadata.author
 
   const { frontmatter, excerpt } = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
 
   const image = getImage(frontmatter.featuredImage)
+
+  const { edges } = data.allMarkdownRemark
 
   return (
     <Layout location={location} title={siteTitle} owner={author.name}>
@@ -46,24 +47,7 @@ const BlogPostTemplate = ({ data, location }) => {
         ))}
       </article>
       <ContentSeparator />
-      <nav className="bg-yellow-50">
-        <ul>
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+      <OtherPosts posts={edges.map(edge => edge.node)} author={author} />
     </Layout>
   )
 }
@@ -81,6 +65,7 @@ export const pageQuery = graphql`
       }
       alt
       title
+      titlePosition
     }
     size
     carrousel
@@ -92,16 +77,32 @@ export const pageQuery = graphql`
     body
   }
 
-  query BlogPostBySlug(
-    $id: String!
-    $previousPostId: String
-    $nextPostId: String
-  ) {
+  query BlogPostBySlug($id: String!) {
     site {
       siteMetadata {
         title
         author {
           name
+        }
+      }
+    }
+    allMarkdownRemark(
+      filter: { frontmatter: { hasContent: { eq: true } }, id: { ne: $id } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            tagline
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
         }
       }
     }
@@ -124,22 +125,6 @@ export const pageQuery = graphql`
           ...ImagesBlock
           ...TextBlock
         }
-      }
-    }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
-    }
-    next: markdownRemark(id: { eq: $nextPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
       }
     }
   }

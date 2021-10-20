@@ -4,53 +4,80 @@
 
 /* CSS Custom Properties Definitions */
 body {
-   font-family: "Space Grotesk", "Arial", "Helvetica", "sans-serif";
+  font-family: "Space Grotesk", "Arial", "Helvetica", "sans-serif";
 }
 
 .blog-post-content h2 {
-   @apply mb-4 text-3xl leading-snug font-semibold tracking-wider;
+  @apply mb-4 text-3xl leading-snug font-semibold tracking-wider;
 }
 
 .blog-post-content p {
-   @apply text-2xl leading-9 font-normal tracking-normal;
+  @apply text-2xl leading-9 font-normal tracking-normal;
 }
 
 .blog-post-content p:not(:last-of-type) {
-   @apply mb-4;
+  @apply mb-4;
 }
 
 .body-small {
-   @apply text-xl leading-8 font-normal tracking-normal;
+  @apply text-xl leading-8 font-normal tracking-normal;
 }
 
 .body-medium {
-   @apply text-2xl leading-9 font-normal tracking-normal;
+  @apply text-2xl leading-9 font-normal tracking-normal;
 }
 
 .body-large {
-   @apply text-3xl leading-snug font-normal tracking-normal;
+  @apply text-3xl leading-snug font-normal tracking-normal;
 }
 
 .heading-extra-small {
-   @apply text-2xl leading-9 font-semibold tracking-wider;
+  @apply text-2xl leading-9 font-semibold tracking-wider;
 }
 
 .heading-small {
-   @apply text-3xl leading-snug font-semibold tracking-wider;
+  @apply text-3xl leading-snug font-semibold tracking-wider;
 }
 
 .heading-medium {
-   @apply text-6xl leading-tight font-semibold tracking-widest;
+  @apply text-6xl leading-tight font-semibold tracking-widest;
 }
 
 .heading-large {
-   @apply text-7xl leading-tight font-semibold tracking-widest;
+  @apply text-7xl leading-tight font-semibold tracking-widest;
+}
+
+@media (max-width: 640px) {
+  .heading-large {
+    @apply text-5xl;
+  }
 }
 
 .caption-mono {
-   @apply text-lg leading-6 font-medium tracking-widest uppercase;
+  @apply text-lg leading-6 font-medium tracking-widest uppercase;
 }
 
 .caption-handwritten {
-   @apply text-3xl leading-6 font-normal tracking-normal;
+  @apply text-3xl leading-6 font-normal tracking-normal font-caveat lowercase;
+}
+
+.imagesBlock-arrow.justify-end img {
+  transform: scaleX(-1);
+}
+
+.case__title {
+  @apply text-9xl leading-tight font-bold tracking-widest mr-12;
+}
+
+.custom-cursor {
+  @apply w-6 h-6 rounded-full bg-black border-2 border-white transition ease-in-out;
+  transition-property: width, height ;
+}
+
+.custom-cursor-hover--a .custom-cursor {
+  @apply w-32 h-32;
+}
+
+a:hover {
+  cursor: none;
 }

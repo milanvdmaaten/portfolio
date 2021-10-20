@@ -2,6 +2,7 @@
 title: NPO
 tagline: A new concept and mobile design
 fullWidth: true
+hasContent: true
 date: 2015-05-01T22:12:03.284Z
 displayPosition: 1
 textColor: text-white
@@ -75,9 +76,25 @@ content:
       - image: img-05.png
         alt: description
         title: Old
+        titlePosition: left
       - image: img-06.png
         alt: description
         title: New
+        titlePosition: center
+      - image: img-06.png
+        alt: description
+        title: New
+        titlePosition: right
+  - type: imagesBlock
+    carrousel: true
+    size: small
+    images:
+      - image: img-01.png
+        alt: description test
+      - image: img-02.png
+        alt: description test
+      - image: img-03.png
+        alt: description test
 ---
 
 This is my first post on my new fake blog! How exciting!
