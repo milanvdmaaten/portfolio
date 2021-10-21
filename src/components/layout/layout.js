@@ -15,10 +15,9 @@ const Layout = ({ location, owner, children }) => {
   )
 
   React.useEffect(() => {
-    // new Cursor({
-    //   hoverTargets: ["a"], // Have interaction on 'A' elements
-    // }).mount()
-    // https://stackoverflow.com/questions/3783419/smooth-user-drawn-lines-in-canvas
+    new Cursor({
+      hoverTargets: ["a"], // Have interaction on 'A' elements
+    }).mount()
   }, [])
 
   return (
