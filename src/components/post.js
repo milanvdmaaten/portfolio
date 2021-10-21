@@ -8,7 +8,6 @@ export const Post = ({ post, author }) => {
   const { featuredImage, tagline, title, date, fullWidth, hasContent } =
     frontmatter
 
-  console.log(hasContent)
   const size = fullWidth ? "12" : "6"
 
   const image = getImage(featuredImage)
