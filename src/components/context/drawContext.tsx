@@ -34,7 +34,8 @@ export const DrawProvider: React.FC = props => {
   const { children } = props
 
   const svg = useRef(
-    document.createElementNS("http://www.w3.org/2000/svg", "svg")
+    typeof window !== "undefined" &&
+      document.createElementNS("http://www.w3.org/2000/svg", "svg")
   )
   const drawMethod = useRef<Draw>()
   const [drawColor, setDrawColor] = useState("#000")
