@@ -88,3 +88,8 @@ body {
 a:hover {
   cursor: none;
 }
+
+svg path {
+  @apply transition ease-in;
+  transition-property: opacity;
+}

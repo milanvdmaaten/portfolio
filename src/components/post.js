@@ -5,8 +5,7 @@ import * as React from "react"
 export const Post = ({ post, author }) => {
   const { frontmatter, fields } = post
   const { slug } = fields
-  const { featuredImage, tagline, title, date, fullWidth, hasContent } =
-    frontmatter
+  const { featuredImage, tagline, title, date, fullWidth } = frontmatter
 
   const size = fullWidth ? "12" : "6"
 

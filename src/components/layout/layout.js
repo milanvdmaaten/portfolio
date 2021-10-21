@@ -3,7 +3,8 @@ import { Header } from "./header"
 import { Footer } from "./footer"
 
 import Cursor from "custom-cursor"
-import { BackgroundDrawer } from "../backgroundDrawer"
+import { SmoothLineDrawer } from "../SmoothLineDrawer"
+import { DrawProvider } from "../context/drawContext"
 
 const Layout = ({ location, owner, children }) => {
   const isRootPath = location.pathname === `${__PATH_PREFIX__}/`
@@ -24,10 +25,12 @@ const Layout = ({ location, owner, children }) => {
 
   return (
     <div data-is-root-path={isRootPath} id="layout">
-      <BackgroundDrawer />
-      <Header />
-      <main>{children}</main>
-      <Footer owner={owner} />
+      <DrawProvider>
+        <SmoothLineDrawer />
+        <Header />
+        <main>{children}</main>
+        <Footer owner={owner} />
+      </DrawProvider>
     </div>
   )
 }
