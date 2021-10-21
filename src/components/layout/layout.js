@@ -9,7 +9,7 @@ const Layout = ({ location, owner, children }) => {
   const isRootPath = location.pathname === `${__PATH_PREFIX__}/`
 
   const [drawColor, setDrawColor] = React.useState(
-    window.getComputedStyle
+    typeof window !== "undefined"
       ? window
           .getComputedStyle(document.documentElement)
           .getPropertyPriority("--mouse-color")
