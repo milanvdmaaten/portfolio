@@ -1,23 +1,31 @@
-import * as React from "react"
-import { graphql } from "gatsby"
-
+import { motion } from "framer-motion"
+import { graphql, Link } from "gatsby"
+import React, { Fragment, useEffect, useState } from "react"
+import { ContentSeparator } from "../components/layout/contentSeparator"
+import { FullscreenIntro } from "../components/layout/fullscreenIntro"
+import { Grid } from "../components/layout/grid"
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo"
-import { Grid } from "../components/layout/grid"
-import { ContentSeparator } from "../components/layout/contentSeparator"
-import { Link } from "gatsby"
-
 import { onHoverLink } from "../customCursor"
+import { disableScroll, enableScroll } from "../utils/scrollBlocker"
 
 const BlogIndex = ({ data, location }) => {
+  /**
+   * Component state
+   */
   const author = data.site.siteMetadata.author
   const description = data.site.siteMetadata.description
   const posts = data.allMarkdownRemark.nodes
 
+  const [showIntro, setShowIntro] = useState(true)
+
   // eslint-disable-next-line no-useless-escape
   const name = author?.name.match(/^([\w\-]+)/)[0]
 
-  const timeOfDay = () => {
+  /**
+   * Methods
+   */
+  const timeOfDay = (): string => {
     const time = new Date().getHours()
 
     if (time < 6 || time >= 20) return "evening"
@@ -27,9 +35,16 @@ const BlogIndex = ({ data, location }) => {
     return "evening"
   }
 
+  const closeIntro = (): void => setShowIntro(false)
+
+  /**
+   * Render
+   */
+  console.log("render")
   return (
     <Layout location={location} owner={author.name}>
       <Seo title={description} />
+      <FullscreenIntro show={showIntro} onClick={closeIntro} />
       <Grid>
         <section className="py-64 col-span-12 text-center ">
           <h1 className="heading-large mb-5">
@@ -38,7 +53,7 @@ const BlogIndex = ({ data, location }) => {
           <h2 className="body-large max-w-3xl m-auto">{author.summary}</h2>
         </section>
       </Grid>
-      <Grid className="px-4" gapY="32">
+      <Grid className="px-4">
         {posts?.map(post => {
           const { slug } = post.fields
           const { title, tagline, date, drawColor } = post.frontmatter

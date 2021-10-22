@@ -1,5 +1,5 @@
 import * as React from "react"
-import { useDraw } from "./context/drawContext"
+import { useDraw } from "./provider/DrawProvider"
 
 // https://stackoverflow.com/a/45333834/4655177
 const lineProperties = (pointA: number[], pointB: number[]) => {
@@ -30,7 +30,7 @@ const controlPointCalc = (
   return [x, y]
 }
 
-const svgPathRender = (points: number[][]) => {
+const svgPathRender = (points: number[][], strokeWidth: number = 8) => {
   const d = points.reduce((acc, e, i, a) => {
     if (i > 0) {
       const cs = controlPointCalc(a[i - 1], a[i - 2], e)
@@ -44,7 +44,7 @@ const svgPathRender = (points: number[][]) => {
   const newPath = document.createElementNS("http://www.w3.org/2000/svg", "path")
   newPath.setAttribute("stroke", "black")
   newPath.setAttribute("fill", "none")
-  newPath.setAttribute("stroke-width", "8px")
+  newPath.setAttribute("stroke-width", `${strokeWidth}`)
   newPath.setAttribute("stroke-linecap", "round")
 
   newPath.setAttribute("d", d)
@@ -53,17 +53,18 @@ const svgPathRender = (points: number[][]) => {
 }
 
 export const SmoothLineDrawer = () => {
-  const { svg, updateDrawMethod } = useDraw()
+  const { readyToDraw, svg, drawSize, setDrawMethod } = useDraw()
 
   // Create the canvas
   React.useEffect(() => {
+    if (!readyToDraw) return
     let currentPath: SVGPathElement
     let points = []
 
     const updateCurrentPath = () => {
       currentPath?.remove()
 
-      const smoothPath = svgPathRender(points)
+      const smoothPath = svgPathRender(points, drawSize)
       svg.appendChild(smoothPath)
       currentPath = smoothPath
     }
@@ -77,54 +78,58 @@ export const SmoothLineDrawer = () => {
       points = []
     }
 
-    const draw = event => {
-      //   window?.getSelection()?.removeAllRanges()
-      //   document?.selection?.empty()
-
+    const draw = (event?: { x: number; y: number }) => {
+      if (!event) return
+      const smoothPathLength = 50
       const { x, y } = event
 
       const last = points[points.length - 1] ?? [0, 0]
       const length = Math.hypot(x - last[0], y - last[1])
 
-      if (length > 50) points.push([x, y])
+      if (length < smoothPathLength) return
 
+      points.push([x, y])
       updateCurrentPath()
     }
 
     const fadePath = (element: SVGPathElement, iteration: number = 0) => {
       const maxSteps = 15
-      if (iteration >= maxSteps) return element.remove()
+      if (iteration > maxSteps) return element.remove()
 
       setTimeout(() => {
-        element.style.opacity = `${1 - iteration / maxSteps}`
+        element.style.opacity = `${1 - iteration / (maxSteps - 1)}`
         fadePath(element, ++iteration)
-      }, 15 * iteration)
+      }, 10 * iteration)
     }
 
-    const onMouseDown = event => {
+    const onMouseDown = (event: MouseEvent) => {
       const { pageX, pageY } = event
 
       points.push([pageX, pageY])
-
       updateCurrentPath()
     }
 
-    const onMouseUp = event => {
+    const onMouseUp = (event: MouseEvent) => {
       const { pageX, pageY } = event
 
       points.push([pageX, pageY])
-
       updateCurrentPath()
+
       // Start fading
       fadePath(currentPath)
 
       setNewPath()
     }
 
-    updateDrawMethod(draw)
+    setDrawMethod(draw)
     document.onmousedown = onMouseDown
     document.onmouseup = onMouseUp
-  }, [svg, updateDrawMethod])
+
+    return () => {
+      document.onmousedown = null
+      document.onmouseup = null
+    }
+  }, [readyToDraw, svg, drawSize, setDrawMethod])
 
   return null
 }

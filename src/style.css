@@ -72,8 +72,13 @@ body {
 .custom-cursor {
   @apply w-3 h-3 rounded-full transition ease-in-out border-2;
   transition-property: width, height ;
+  z-index: 1000;
   background-color: var(--mouse-color);
   border-color: var(--mouse-border-color)
+}
+
+.custom-cursor-hover--swiper-slide .custom-cursor {
+  @apply w-32 h-12;
 }
 
 .custom-cursor-hover--a .custom-cursor {

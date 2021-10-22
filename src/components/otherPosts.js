@@ -21,8 +21,8 @@ export const OtherPosts = ({ posts, author }) => {
       <div className="swiper swiper-other-posts">
         <div className="swiper-wrapper">
           {[...posts, ...posts, ...posts, ...posts, ...posts, ...posts].map(
-            post => (
-              <div className="swiper-slide px-12" key={post.fields.slug}>
+            (post, index) => (
+              <div className="swiper-slide px-12" key={index}>
                 <Post post={post} author={author} />
               </div>
             )

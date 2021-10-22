@@ -31,24 +31,22 @@ export const ImagesBlock = ({ content }) => {
   }
 
   React.useEffect(() => {
-    setTimeout(() => {
-      new Swiper(`.swiper-${swiperIdentifier.current}`, {
-        slidesPerView: 1,
-        loop: true,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          type: "progressbar",
-        },
-        autoplay: {
-          pauseOnMouseEnter: true,
-          delay: 1000 * 2.5,
-        },
-      })
-    }, 1000 * 2)
+    new Swiper(`.swiper-${swiperIdentifier.current}`, {
+      slidesPerView: 1,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+      autoplay: {
+        pauseOnMouseEnter: true,
+        delay: 1000 * 2.5,
+      },
+    })
   }, [swiperIdentifier])
 
   return (
