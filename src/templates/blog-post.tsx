@@ -7,19 +7,19 @@ import { Grid } from "../components/layout/grid"
 import Layout from "../components/layout/layout"
 import { OtherPosts } from "../components/otherPosts"
 import Seo from "../components/seo"
+import Zoom from "react-reveal/Zoom"
 
 const BlogPostTemplate = ({ data, location }) => {
   const author = data.site.siteMetadata.author
 
   const { frontmatter, excerpt } = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
 
   const image = getImage(frontmatter.featuredImage)
 
   const { edges } = data.allMarkdownRemark
 
   return (
-    <Layout location={location} title={siteTitle} owner={author.name}>
+    <Layout location={location} owner={author.name}>
       <Seo
         title={frontmatter.title}
         description={frontmatter.tagline || excerpt}
@@ -41,7 +41,9 @@ const BlogPostTemplate = ({ data, location }) => {
       <article className="blog-post-content px-4 md:px-0">
         {frontmatter.content?.map((content, index) => (
           <React.Fragment key={index}>
-            <Content content={content} />
+            <Zoom ssrFadeout>
+              <Content content={content} />
+            </Zoom>
             <ContentSeparator />
           </React.Fragment>
         ))}
