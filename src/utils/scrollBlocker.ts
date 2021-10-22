@@ -20,8 +20,12 @@ try {
 const wheelOpt = supportsPassive
   ? ({ passive: false } as EventListenerOptions)
   : false
-const wheelEvent =
-  "onwheel" in document.createElement("div") ? "wheel" : "mousewheel"
+let wheelEvent = "mousewheel"
+
+try {
+  wheelEvent =
+    "onwheel" in document.createElement("div") ? "wheel" : "mousewheel"
+} catch (e) {}
 
 const preventDefault = (e: any) => {
   e.preventDefault()
@@ -35,16 +39,22 @@ const preventDefaultForScrollKeys = (e: any) => {
 }
 // call this to Disable
 export const disableScroll = () => {
-  window.addEventListener("DOMMouseScroll", preventDefault, false) // older FF
-  window.addEventListener(wheelEvent, preventDefault, wheelOpt) // modern desktop
-  window.addEventListener("touchmove", preventDefault, wheelOpt) // mobile
-  window.addEventListener("keydown", preventDefaultForScrollKeys, false)
+  try {
+    window.addEventListener("DOMMouseScroll", preventDefault, false) // older FF
+    window.addEventListener(wheelEvent, preventDefault, wheelOpt) // modern desktop
+    window.addEventListener("touchmove", preventDefault, wheelOpt) // mobile
+    window.addEventListener("keydown", preventDefaultForScrollKeys, false)
+  } catch (e) {
+    console.log(e)
+  }
 }
 
 // call this to Enable
 export const enableScroll = () => {
-  window.removeEventListener("DOMMouseScroll", preventDefault, false)
-  window.removeEventListener(wheelEvent, preventDefault, wheelOpt)
-  window.removeEventListener("touchmove", preventDefault, wheelOpt)
-  window.removeEventListener("keydown", preventDefaultForScrollKeys, false)
+  try {
+    window.removeEventListener("DOMMouseScroll", preventDefault, false)
+    window.removeEventListener(wheelEvent, preventDefault, wheelOpt)
+    window.removeEventListener("touchmove", preventDefault, wheelOpt)
+    window.removeEventListener("keydown", preventDefaultForScrollKeys, false)
+  } catch (e) {}
 }
