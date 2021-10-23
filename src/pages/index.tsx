@@ -1,13 +1,14 @@
-import { motion } from "framer-motion"
-import { graphql, Link } from "gatsby"
-import React, { Fragment, useEffect, useState } from "react"
-import { ContentSeparator } from "../components/layout/contentSeparator"
-import { FullscreenIntro } from "../components/layout/fullscreenIntro"
-import { Grid } from "../components/layout/grid"
-import Layout from "../components/layout/layout"
-import Seo from "../components/seo"
-import { onHoverLink } from "../customCursor"
-import { disableScroll, enableScroll } from "../utils/scrollBlocker"
+import { motion } from 'framer-motion'
+import { graphql, Link } from 'gatsby'
+import React, { Fragment, useEffect, useState } from 'react'
+
+import { ContentSeparator } from '../components/layout/contentSeparator'
+import { FullscreenIntro } from '../components/layout/fullscreenIntro'
+import { Grid } from '../components/layout/grid'
+import Layout from '../components/layout/layout'
+import Seo from '../components/seo'
+import { onHoverLink } from '../customCursor'
+import { disableScroll, enableScroll } from '../utils/scrollBlocker'
 
 const BlogIndex = ({ data, location }) => {
   /**
@@ -35,7 +36,10 @@ const BlogIndex = ({ data, location }) => {
     return "evening"
   }
 
-  const closeIntro = (): void => setShowIntro(false)
+  const closeIntro = (): void => {
+    console.log("TODO: uncomment close intro")
+    setShowIntro(false)
+  }
 
   /**
    * Render
@@ -44,7 +48,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} owner={author.name}>
       <Seo title={description} />
-      <FullscreenIntro show={showIntro} onClick={closeIntro} />
+      <FullscreenIntro show={showIntro} onMouseDownCapture={closeIntro} />
       <Grid>
         <section className="py-64 col-span-12 text-center ">
           <h1 className="heading-large mb-5">

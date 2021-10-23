@@ -1,15 +1,15 @@
-import * as React from "react"
-import { Header } from "./header"
-import { AnimatePresence } from "framer-motion"
-import { Footer } from "./footer"
+import Cursor from 'custom-cursor'
+import { AnimatePresence } from 'framer-motion'
+import * as React from 'react'
 
-import Cursor from "custom-cursor"
-import { SmoothLineDrawer } from "../SmoothLineDrawer"
-import { DrawProvider } from "../provider/DrawProvider"
+import { DrawProvider } from '../provider/DrawProvider'
+import { SmoothLineDrawer } from '../SmoothLineDrawer'
+import { Footer } from './footer'
+import { Header } from './header'
 
 const Layout = ({ location, owner, children }) => {
   React.useEffect(() => {
-    console.log("mount")
+    console.log("init Cursor")
     new Cursor({
       hoverTargets: ["a", ".swiper-slide"], // Have interaction on 'A' elements
       browserCursor: false,

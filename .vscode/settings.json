@@ -1,3 +1,36 @@
 {
-  "cSpell.words": ["frontmatter"]
+  "cSpell.words": ["frontmatter"],
+  "debug.allowBreakpointsEverywhere": true,
+  "editor.quickSuggestions": {
+    "comments": false,
+    "other": true,
+    "strings": true
+  },
+  "editor.rulers": [
+    {
+      "color": "#8bc34a",
+      "column": 80
+    },
+    {
+      "color": "#f44336",
+      "column": 100
+    }
+  ],
+  "editor.tabSize": 2,
+  "extensions.ignoreRecommendations": true,
+  "files.autoSave": "off",
+  "files.eol": "\n",
+  "i18n-ally.sourceLanguage": "en",
+  "importSorter.generalConfiguration.sortOnBeforeSave": true,
+  "importSorter.importStringConfiguration.hasSemicolon": false,
+  "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.type": "newLineEachExpressionAfterCountLimitExceptIfOnlyOne",
+  "importSorter.importStringConfiguration.tabSize": 2,
+  "importSorter.importStringConfiguration.trailingComma": "multiLine",
+  "javascript.format.semicolons": "remove",
+  "npm.autoDetect": "on",
+  "prettier.semi": false,
+  "typescript.format.semicolons": "remove",
+  "typescript.tsc.autoDetect": "on",
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "i18n-ally.keystyle": "nested"
 }

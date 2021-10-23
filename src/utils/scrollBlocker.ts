@@ -44,6 +44,8 @@ export const disableScroll = () => {
     window.addEventListener(wheelEvent, preventDefault, wheelOpt) // modern desktop
     window.addEventListener("touchmove", preventDefault, wheelOpt) // mobile
     window.addEventListener("keydown", preventDefaultForScrollKeys, false)
+    document.querySelector("body").style.maxHeight = "100vh"
+    document.querySelector("body").style.overflow = "hidden"
   } catch (e) {
     console.log(e)
   }
@@ -56,5 +58,7 @@ export const enableScroll = () => {
     window.removeEventListener(wheelEvent, preventDefault, wheelOpt)
     window.removeEventListener("touchmove", preventDefault, wheelOpt)
     window.removeEventListener("keydown", preventDefaultForScrollKeys, false)
+    document.querySelector("body").style.removeProperty("maxHeight")
+    document.querySelector("body").style.removeProperty("overflow")
   } catch (e) {}
 }

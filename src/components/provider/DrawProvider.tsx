@@ -1,11 +1,4 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-  useRef,
-  useState,
-} from "react"
+import React, { createContext, useContext, useEffect, useReducer, useRef, useState } from 'react'
 
 interface Point2D {
   x: number
@@ -126,20 +119,20 @@ export const DrawProvider: React.FC = props => {
         )
     }
 
-    window.onresize = setSvgSize
+    window.onresize = () => {
+      setTimeout(setSvgSize, 1000 * 2.5)
+    }
     window.onmousemove = onMouseMove
     window.onmousedown = onMouseDown
     window.onmouseup = onMouseUp
 
     setSvgSize()
-    console.log("setReadyToDraw")
     setReadyToDraw(true)
   }, [getScreenHeight, getScreenWidth, setReadyToDraw])
 
   /**
    * Render
    */
-  console.log(readyToDraw)
   return (
     <DrawContext.Provider
       value={{
