@@ -37,13 +37,29 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
             style={{ zIndex: 100 }}
             className="w-screen h-screen top-0 bottom-0 fixed"
           >
-            <div
+            <motion.div
               className={`bg-white absolute top-0 bottom-0 w-full h-full overflow-hidden`}
+              exit={{
+                opacity: [1, 0],
+              }}
+              transition={{
+                delay: 0.2,
+                duration: 1,
+                ease: "backOut",
+              }}
             >
               <motion.h1 className=" case__title-large top-1/4 -mt-20">
                 Goodmorning
               </motion.h1>
-              <div className="bottom-screen-wrapper">
+              <motion.div
+                className="bottom-screen-wrapper"
+                exit={{
+                  top: "100vh",
+                }}
+                transition={{
+                  duration: 0.3,
+                }}
+              >
                 <section className="relative h-full z-10 text-white flex flex-col">
                   <motion.h1 className="case__title-large  -mt-44">
                     Goodmorning
@@ -64,8 +80,8 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                 <motion.div
                   className="w-3 h-3 absolute top-1/2 left-1/2 bg-black"
                   animate={{
-                    translateX: [-500, -400, -300, 0, 2, -5, 0, 0, 0],
-                    translateY: [50, 0, -30, 0, 3, -4, 0, 0, 0],
+                    translateX: [-500, -400, -300, 0, 0, 12, 12, 12, 0],
+                    translateY: [50, 0, -30, 0, 0, -17, -21, -17, 0],
                     background: [
                       "#000",
                       "#000",
@@ -77,8 +93,8 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                       "#D5ADF6",
                       "#D5ADF6",
                     ],
-                    rotate: [0, 0, 0, 0, 0, 0, 0, 45, 90],
-                    scale: [1, 1, 1, 1, 12, 12, 8, 8, 500],
+                    rotate: [0, 0, 0, 0, 0, 0, 45, 45, 90],
+                    scale: [1, 1, 1, 1, 10.5, 10.5, 8, 8, 500],
                     borderRadius: [
                       "50%",
                       "50%",
@@ -88,20 +104,20 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                       "50%",
                       "50%",
                       "50%",
-                      "25%",
+                      "5%",
                     ],
                   }}
                   transition={{
                     delay: 1.5,
-                    duration: 1.5,
+                    duration: 2.5,
                     ease: "easeInOut",
                     times: [
-                      0, 0.02, 0.075, 0.2, 0.25, 0.35, 0.45, 0.5, 0.55, 1,
+                      0, 0.02, 0.075, 0.2, 0.25, 0.35, 0.45, 0.5, 0.51, 1,
                     ],
                   }}
                 ></motion.div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         )}
       </AnimatePresence>
