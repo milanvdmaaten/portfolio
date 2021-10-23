@@ -43,8 +43,8 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                 opacity: [1, 0],
               }}
               transition={{
-                delay: 0.2,
-                duration: 1,
+                delay: 0.15,
+                duration: 0.6,
                 ease: "backOut",
               }}
             >
@@ -80,8 +80,30 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                 <motion.div
                   className="w-3 h-3 absolute top-1/2 left-1/2 bg-black"
                   animate={{
-                    translateX: [-500, -400, -300, 0, 0, 12, 12, 12, 0],
-                    translateY: [50, 0, -30, 0, 0, -17, -21, -17, 0],
+                    top: [
+                      "50%",
+                      "30%",
+                      "25%",
+                      "2%",
+                      "2%",
+                      "5%",
+                      "8%",
+                      "8%",
+                      "50%",
+                    ],
+                    left: [
+                      "50%",
+                      "40%",
+                      "35%",
+                      "40%",
+                      "40%",
+                      "75%",
+                      "74%",
+                      "74%",
+                      "50%",
+                    ],
+                    // translateX: [-500, -400, -300, 0, 0, 12, 12, 12, 0],
+                    // translateY: [50, 0, -30, 0, 0, -17, -17, -17, 0],
                     background: [
                       "#000",
                       "#000",
@@ -94,7 +116,7 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                       "#D5ADF6",
                     ],
                     rotate: [0, 0, 0, 0, 0, 0, 45, 45, 90],
-                    scale: [1, 1, 1, 1, 10.5, 10.5, 8, 8, 500],
+                    scale: [1, 1, 1, 1, 10.5, 10.5, 10.5, 1, 500],
                     borderRadius: [
                       "50%",
                       "50%",
@@ -108,12 +130,10 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                     ],
                   }}
                   transition={{
-                    delay: 1.5,
+                    delay: 1,
                     duration: 2.5,
-                    ease: "easeInOut",
-                    times: [
-                      0, 0.02, 0.075, 0.2, 0.25, 0.35, 0.45, 0.5, 0.51, 1,
-                    ],
+                    ease: "easeIn",
+                    times: [0, 0.3, 0.35, 0.5, 0.6, 0.61, 0.7, 0.9, 0.95, 1],
                   }}
                 ></motion.div>
               </motion.div>
