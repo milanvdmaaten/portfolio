@@ -1,13 +1,14 @@
-import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import * as React from "react"
-import { Content } from "../components/content/content"
-import { ContentSeparator } from "../components/layout/contentSeparator"
-import { Grid } from "../components/layout/grid"
-import Layout from "../components/layout/layout"
-import { OtherPosts } from "../components/otherPosts"
-import Seo from "../components/seo"
-import Zoom from "react-reveal/Zoom"
+import { graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import * as React from 'react'
+import Zoom from 'react-reveal/Zoom'
+
+import { Content } from '../components/content/content'
+import { ContentSeparator } from '../components/layout/contentSeparator'
+import { Grid } from '../components/layout/grid'
+import { Layout } from '../components/layout/layout'
+import { OtherPosts } from '../components/otherPosts'
+import Seo from '../components/seo'
 
 const BlogPostTemplate = ({ data, location }) => {
   const author = data.site.siteMetadata.author

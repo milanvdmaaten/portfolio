@@ -70,7 +70,7 @@ body {
 }
 
 .case__title-large {
-  @apply leading-tight font-bold tracking-widest relative px-8;
+  @apply leading-tight font-bold tracking-wider relative text-center -mt-44;
   font-size: 256px;
 }
 
@@ -113,4 +113,8 @@ svg path {
   overflow-hidden
   top-1/3
   h-2/3;
+}
+
+.bg-primary {
+  background: #D5ADF6
 }

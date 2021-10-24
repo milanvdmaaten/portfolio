@@ -3,7 +3,7 @@ module.exports = {
     title: `Milan van der Maaten`,
     author: {
       name: `Milan van der Maaten`,
-      summary: `I’m an empathic UX designer who loves to make effortless experiences. Get to know me or check out my latest work.`,
+      summary: `I’m an empathic UX designer who loves to make effortless experiences.`,
     },
     description: `Portfolio website Milan van der Maaten.`,
     siteUrl: `https://xiduzo.netlify.app/`,

@@ -1,21 +1,34 @@
 import Cursor from 'custom-cursor'
 import { AnimatePresence } from 'framer-motion'
-import * as React from 'react'
+import React, { useEffect } from 'react'
 
 import { DrawProvider } from '../provider/DrawProvider'
 import { SmoothLineDrawer } from '../SmoothLineDrawer'
 import { Footer } from './footer'
 import { Header } from './header'
 
-const Layout = ({ location, owner, children }) => {
-  React.useEffect(() => {
+export const Layout = ({ location, owner, children }) => {
+  /**
+   * Side effects
+   */
+  useEffect(() => {
     console.log("init Cursor")
-    new Cursor({
+    const cursor = new Cursor({
       hoverTargets: ["a", ".swiper-slide"], // Have interaction on 'A' elements
       browserCursor: false,
-    }).mount()
+    })
+
+    cursor.mount()
+
+    return () => {
+      console.log("reset cursor")
+      document.querySelector("body").className = ""
+    }
   }, [])
 
+  /**
+   * Render
+   */
   return (
     <AnimatePresence exitBeforeEnter>
       <div id="layout">
@@ -29,5 +42,3 @@ const Layout = ({ location, owner, children }) => {
     </AnimatePresence>
   )
 }
-
-export default Layout

@@ -73,7 +73,13 @@ export const DrawProvider: React.FC = props => {
       document.documentElement.offsetWidth
     )
 
-  const setSvgSize = () => {
+  const createSvg = () => {
+    const layout = document.getElementById("layout")
+
+    try {
+      svg.remove()
+    } catch (e) {}
+
     const width = getScreenWidth()
     const height = getScreenHeight()
     svg.setAttribute("width", `${width}`)
@@ -85,6 +91,8 @@ export const DrawProvider: React.FC = props => {
     svg.style.position = "absolute"
     svg.style.width = "100%"
     svg.style.top = "0"
+
+    layout.appendChild(svg)
   }
 
   /**
@@ -93,10 +101,6 @@ export const DrawProvider: React.FC = props => {
   // Add drawing plane to the layout
   useEffect(() => {
     let isDrawing = false
-
-    const layout = document.getElementById("layout")
-
-    layout.appendChild(svg)
 
     const onMouseDown = () => (isDrawing = true)
     const onMouseUp = () => (isDrawing = false)
@@ -119,14 +123,12 @@ export const DrawProvider: React.FC = props => {
         )
     }
 
-    window.onresize = () => {
-      setTimeout(setSvgSize, 1000 * 2.5)
-    }
+    window.onresize = createSvg
     window.onmousemove = onMouseMove
     window.onmousedown = onMouseDown
     window.onmouseup = onMouseUp
 
-    setSvgSize()
+    createSvg()
     setReadyToDraw(true)
   }, [getScreenHeight, getScreenWidth, setReadyToDraw])
 

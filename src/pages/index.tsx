@@ -5,10 +5,9 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { ContentSeparator } from '../components/layout/contentSeparator'
 import { FullscreenIntro } from '../components/layout/fullscreenIntro'
 import { Grid } from '../components/layout/grid'
-import Layout from '../components/layout/layout'
+import { Layout } from '../components/layout/layout'
 import Seo from '../components/seo'
 import { onHoverLink } from '../customCursor'
-import { disableScroll, enableScroll } from '../utils/scrollBlocker'
 
 const BlogIndex = ({ data, location }) => {
   /**
@@ -29,11 +28,12 @@ const BlogIndex = ({ data, location }) => {
   const timeOfDay = (): string => {
     const time = new Date().getHours()
 
-    if (time < 6 || time >= 20) return "evening"
-    if (time >= 12) return "afternoon"
-    if (time >= 6) return "morning"
+    let text = "good"
+    if (time < 6 || time >= 20) text += "evening"
+    if (time >= 12) text += "afternoon"
+    if (time >= 6) text += "morning"
 
-    return "evening"
+    return text
   }
 
   const closeIntro = (): void => {
@@ -42,22 +42,26 @@ const BlogIndex = ({ data, location }) => {
   }
 
   /**
+   * Side effects
+   */
+  useEffect(() => {
+    setTimeout(closeIntro, 1000 * 5)
+  }, [closeIntro])
+
+  /**
    * Render
    */
-  console.log("render")
   return (
     <Layout location={location} owner={author.name}>
       <Seo title={description} />
-      <FullscreenIntro show={showIntro} onMouseDownCapture={closeIntro} />
-      <Grid>
-        <section className="py-64 col-span-12 text-center ">
-          <h1 className="heading-large mb-5">
-            Good {timeOfDay()} <br /> my name is {name}
-          </h1>
-          <h2 className="body-large max-w-3xl m-auto">{author.summary}</h2>
-        </section>
-      </Grid>
-      <Grid className="px-4">
+      <FullscreenIntro
+        title={timeOfDay()}
+        header={`My name is ${name}`}
+        subheader={author.summary}
+        show={showIntro}
+        onMouseDownCapture={closeIntro}
+      />
+      <Grid className="pt-24">
         {posts?.map(post => {
           const { slug } = post.fields
           const { title, tagline, date, drawColor } = post.frontmatter

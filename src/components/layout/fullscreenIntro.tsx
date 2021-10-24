@@ -6,13 +6,16 @@ import { Grid } from './grid'
 
 interface FullscreenIntroProps extends HTMLAttributes<HTMLElement> {
   show: boolean
+  title: string
+  header: string
+  subheader: string
 }
 
 export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
   /**
    * Component state
    */
-  const { show, ...htmlElementProps } = props
+  const { show, title, header, subheader, ...htmlElementProps } = props
 
   /**
    * Side effects
@@ -40,17 +43,27 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
             <motion.div
               className={`bg-white absolute top-0 bottom-0 w-full h-full overflow-hidden`}
               exit={{
+                top: ["0vh", "-100vh"],
                 opacity: [1, 0],
               }}
               transition={{
-                delay: 0.15,
+                delay: 0.3,
                 duration: 0.6,
                 ease: "backOut",
               }}
             >
-              <motion.h1 className=" case__title-large top-1/4 -mt-20">
-                Goodmorning
-              </motion.h1>
+              <motion.div
+                className="case__title-large top-1/3"
+                initial={{ left: "-200vw" }}
+                animate={{ left: "0" }}
+                transition={{
+                  duration: 0.3,
+                  delay: 1,
+                  type: "spring",
+                }}
+              >
+                {title}
+              </motion.div>
               <motion.div
                 className="bottom-screen-wrapper"
                 exit={{
@@ -61,79 +74,38 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                 }}
               >
                 <section className="relative h-full z-10 text-white flex flex-col">
-                  <motion.h1 className="case__title-large  -mt-44">
-                    Goodmorning
-                  </motion.h1>
-                  <Grid className="w-full body-medium flex-grow px-4">
-                    <div className="col-span-12 lg:col-span-6 pb-12 flex flex-col justify-end">
-                      <p>My name is Milan</p>
-                      <p>
-                        I’m an empathic UX designer who loves to make effortless
-                        experiences.
-                      </p>
-                    </div>
-                    <div className="col-span-12 lg:col-span-6 pb-12 flex flex-col justify-end">
-                      Click anywhere to continue
-                    </div>
+                  <motion.div
+                    className="case__title-large"
+                    initial={{ left: "200vw" }}
+                    animate={{ left: "0" }}
+                    transition={{
+                      duration: 0.3,
+                      delay: 1,
+                      type: "spring",
+                    }}
+                  >
+                    {title}
+                  </motion.div>
+                  <Grid className="w-10/12">
+                    <section className="col-span-12 body-large flex-grow flex flex-col justify-end pb-8">
+                      <h1>{header}</h1>
+                      <p>{subheader}</p>
+                    </section>
                   </Grid>
                 </section>
                 <motion.div
-                  className="w-3 h-3 absolute top-1/2 left-1/2 bg-black"
+                  className="w-3 h-3 absolute bg-primary"
                   animate={{
-                    top: [
-                      "50%",
-                      "30%",
-                      "25%",
-                      "2%",
-                      "2%",
-                      "5%",
-                      "8%",
-                      "8%",
-                      "50%",
-                    ],
-                    left: [
-                      "50%",
-                      "40%",
-                      "35%",
-                      "40%",
-                      "40%",
-                      "75%",
-                      "74%",
-                      "74%",
-                      "50%",
-                    ],
-                    // translateX: [-500, -400, -300, 0, 0, 12, 12, 12, 0],
-                    // translateY: [50, 0, -30, 0, 0, -17, -17, -17, 0],
-                    background: [
-                      "#000",
-                      "#000",
-                      "#000",
-                      "#000",
-                      "#D5ADF6",
-                      "#D5ADF6",
-                      "#D5ADF6",
-                      "#D5ADF6",
-                      "#D5ADF6",
-                    ],
-                    rotate: [0, 0, 0, 0, 0, 0, 45, 45, 90],
-                    scale: [1, 1, 1, 1, 10.5, 10.5, 10.5, 1, 500],
-                    borderRadius: [
-                      "50%",
-                      "50%",
-                      "50%",
-                      "50%",
-                      "50%",
-                      "50%",
-                      "50%",
-                      "50%",
-                      "5%",
-                    ],
+                    left: ["90%", "55%", "50%"],
+                    top: ["90%", "65%", "50%"],
+                    rotate: [45, 90, 135],
+                    scale: [0, 250, 1000],
+                    borderRadius: ["50%", "30%", "0%"],
                   }}
                   transition={{
-                    delay: 1,
-                    duration: 2.5,
-                    ease: "easeIn",
-                    times: [0, 0.3, 0.35, 0.5, 0.6, 0.61, 0.7, 0.9, 0.95, 1],
+                    duration: 0.33,
+                    delay: 0.75,
+                    type: "tween",
                   }}
                 ></motion.div>
               </motion.div>
