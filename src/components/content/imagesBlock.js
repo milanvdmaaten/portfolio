@@ -97,7 +97,7 @@ export const ImagesBlock = ({ content }) => {
                       </div>
                     </div>
                   )}
-                  <Fade fraction={1 / 4} duration={400} cascade triggerOnce>
+                  <Fade fraction={1 / 4} cascade triggerOnce>
                     <GatsbyImage
                       image={renderImage}
                       objectFit="initial"
