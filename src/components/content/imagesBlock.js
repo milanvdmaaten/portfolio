@@ -61,19 +61,19 @@ export const ImagesBlock = ({ content }) => {
           <div className={`${carrousel ? "swiper-wrapper" : "w-full"}`}>
             {images.map(({ image, alt, title, titlePosition }, index) => {
               const renderImage = getImage(image)
-              let arrowPosition = "transform justify-"
+              let arrowPosition = "transform"
               let titleSpacing = "transform"
               switch (titlePosition) {
                 case "left":
                   titleSpacing += " translate-x-1/4"
-                  arrowPosition += "start translate-x-1/4"
+                  arrowPosition += " justify-start translate-x-1/4"
                   break
                 case "right":
                   titleSpacing += " -translate-x-1/4"
-                  arrowPosition += "end -translate-x-1/4"
+                  arrowPosition += " justify-end -translate-x-1/4"
                   break
                 default:
-                  arrowPosition += "center"
+                  arrowPosition += " justify-center"
               }
               return (
                 <div
