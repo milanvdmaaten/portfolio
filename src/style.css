@@ -95,9 +95,9 @@ body {
   --mouse-border-color: transparent;
 }
 
-a:hover {
+/* a:hover {
   cursor: none;
-}
+} */
 
 svg path {
   @applytransition ease-in;

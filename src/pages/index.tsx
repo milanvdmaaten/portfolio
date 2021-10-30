@@ -1,15 +1,14 @@
-import { motion } from 'framer-motion'
-import { graphql, Link } from 'gatsby'
-import React, { Fragment, useEffect, useState } from 'react'
+import { graphql } from 'gatsby'
+import React, { useEffect, useState } from 'react'
 
+import { BlogPostLink } from '../components/BlogPostLink'
 import { ContentSeparator } from '../components/layout/contentSeparator'
-import { FullscreenIntro } from '../components/layout/fullscreenIntro'
+import { FullscreenIntro } from '../components/layout/FullscreenIntro'
 import { Grid } from '../components/layout/grid'
-import { Layout } from '../components/layout/layout'
+import { Layout } from '../components/layout/Layout'
 import Seo from '../components/seo'
-import { onHoverLink } from '../customCursor'
 
-const BlogIndex = ({ data, location }) => {
+const BlogIndex = ({ data }) => {
   /**
    * Component state
    */
@@ -21,6 +20,10 @@ const BlogIndex = ({ data, location }) => {
 
   // eslint-disable-next-line no-useless-escape
   const name = author?.name.match(/^([\w\-]+)/)[0]
+
+  /**
+   * Custom & 3th party hooks
+   */
 
   /**
    * Methods
@@ -52,7 +55,7 @@ const BlogIndex = ({ data, location }) => {
    * Render
    */
   return (
-    <Layout location={location} owner={author.name}>
+    <Layout owner={author.name}>
       <Seo title={description} />
       <FullscreenIntro
         title={timeOfDay()}
@@ -62,24 +65,9 @@ const BlogIndex = ({ data, location }) => {
         onMouseDownCapture={closeIntro}
       />
       <Grid className="pt-24">
-        {posts?.map(post => {
-          const { slug } = post.fields
-          const { title, tagline, date, drawColor } = post.frontmatter
-          return (
-            <Link
-              key={slug}
-              to={slug}
-              onMouseEnter={() => onHoverLink(drawColor)}
-              className="md:col-start-2 col-span-12 md:col-span-11 flex"
-            >
-              <h2 className="case__title">{title}</h2>
-              <div className="body-small">
-                <div>{tagline}</div>
-                <div>{date}</div>
-              </div>
-            </Link>
-          )
-        })}
+        {posts?.map(post => (
+          <BlogPostLink post={post} key={post.title} />
+        ))}
       </Grid>
       <ContentSeparator />
     </Layout>

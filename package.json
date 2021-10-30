@@ -34,9 +34,9 @@
     "netlify-cms-app": "^2.15.48",
     "prismjs": "^1.25.0",
     "react": "^17.0.1",
+    "react-awesome-reveal": "^3.8.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-reveal": "^1.2.2",
     "swiper": "^7.0.8"
   },
   "devDependencies": {

@@ -39,20 +39,14 @@ export const DrawProvider: React.FC = props => {
   })
   const [readyToDraw, setReadyToDraw] = useState(false)
   const drawMethod = useRef<Draw>()
-  const drawColor = useRef("#000")
-  const drawSize = useRef(8)
+  const [drawColor, setDrawColor] = useState("#000")
+  const [drawSize, setDrawSize] = useState(8)
 
   /**
    * Methods
    */
   const setDrawMethod = (method: Draw): void => {
     drawMethod.current = method
-  }
-  const setDrawColor = (color: string): void => {
-    drawColor.current = color
-  }
-  const setDrawSize = (size: number): void => {
-    drawSize.current = size
   }
 
   const getScreenHeight = (): number =>
@@ -116,11 +110,7 @@ export const DrawProvider: React.FC = props => {
 
       if (!isDrawing) return
       drawMethod.current &&
-        drawMethod.current(
-          { x: pageX, y: pageY },
-          drawSize.current,
-          drawColor.current
-        )
+        drawMethod.current({ x: pageX, y: pageY }, drawSize, drawColor)
     }
 
     window.onresize = createSvg
@@ -140,8 +130,8 @@ export const DrawProvider: React.FC = props => {
       value={{
         readyToDraw,
         svg,
-        drawColor: drawColor.current,
-        drawSize: drawSize.current,
+        drawColor,
+        drawSize,
         setDrawSize,
         setDrawMethod,
         setDrawColor,

@@ -3,22 +3,29 @@ import { AnimatePresence } from 'framer-motion'
 import React, { useEffect } from 'react'
 
 import { DrawProvider } from '../provider/DrawProvider'
+import { ScrollProvider } from '../provider/ScrollProvider'
 import { SmoothLineDrawer } from '../SmoothLineDrawer'
-import { Footer } from './footer'
-import { Header } from './header'
+import { Footer } from './Footer'
+import { Header } from './Header'
 
-export const Layout = ({ location, owner, children }) => {
+export const Layout = ({ owner, children }) => {
+  /**
+   * Component state
+   */
+  // eslint-disable-next-line no-useless-escape
+  const name = owner?.match(/^([\w\-]+)/)[0]
+
   /**
    * Side effects
    */
   useEffect(() => {
     console.log("init Cursor")
-    const cursor = new Cursor({
-      hoverTargets: ["a", ".swiper-slide"], // Have interaction on 'A' elements
-      browserCursor: false,
-    })
+    // const cursor = new Cursor({
+    //   hoverTargets: ["a", ".swiper-slide"], // Have interaction on 'A' elements
+    //   browserCursor: false,
+    // })
 
-    cursor.mount()
+    // cursor.mount()
 
     return () => {
       console.log("reset cursor")
@@ -32,12 +39,14 @@ export const Layout = ({ location, owner, children }) => {
   return (
     <AnimatePresence exitBeforeEnter>
       <div id="layout">
-        <DrawProvider>
-          <SmoothLineDrawer />
-          <Header />
-          <main>{children}</main>
-          <Footer owner={owner} />
-        </DrawProvider>
+        <ScrollProvider>
+          <DrawProvider>
+            <SmoothLineDrawer />
+            <Header owner={name} />
+            <main>{children}</main>
+            <Footer owner={owner} />
+          </DrawProvider>
+        </ScrollProvider>
       </div>
     </AnimatePresence>
   )

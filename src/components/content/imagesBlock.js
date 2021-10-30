@@ -98,7 +98,7 @@ export const ImagesBlock = ({ content }) => {
                   )}
                   <GatsbyImage
                     image={renderImage}
-                    objectFit={"initial"}
+                    objectFit="initial"
                     alt={alt}
                     className={`h-full w-full ${
                       !isFullWidth ? "filter drop-shadow-milan rounded-2xl" : ""

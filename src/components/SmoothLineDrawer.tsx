@@ -1,5 +1,6 @@
-import * as React from "react"
-import { useDraw } from "./provider/DrawProvider"
+import * as React from 'react'
+
+import { useDraw } from './provider/DrawProvider'
 
 // https://stackoverflow.com/a/45333834/4655177
 const lineProperties = (pointA: number[], pointB: number[]) => {
@@ -30,7 +31,11 @@ const controlPointCalc = (
   return [x, y]
 }
 
-const svgPathRender = (points: number[][], strokeWidth: number = 8) => {
+const svgPathRender = (
+  points: number[][],
+  strokeWidth: number = 8,
+  drawColor: string = "#000"
+) => {
   const d = points.reduce((acc, e, i, a) => {
     if (i > 0) {
       const cs = controlPointCalc(a[i - 1], a[i - 2], e)
@@ -42,7 +47,7 @@ const svgPathRender = (points: number[][], strokeWidth: number = 8) => {
   }, "")
 
   const newPath = document.createElementNS("http://www.w3.org/2000/svg", "path")
-  newPath.setAttribute("stroke", "black")
+  newPath.setAttribute("stroke", drawColor)
   newPath.setAttribute("fill", "none")
   newPath.setAttribute("stroke-width", `${strokeWidth}`)
   newPath.setAttribute("stroke-linecap", "round")
@@ -53,7 +58,7 @@ const svgPathRender = (points: number[][], strokeWidth: number = 8) => {
 }
 
 export const SmoothLineDrawer = () => {
-  const { readyToDraw, svg, drawSize, setDrawMethod } = useDraw()
+  const { readyToDraw, svg, drawSize, drawColor, setDrawMethod } = useDraw()
 
   // Create the canvas
   React.useEffect(() => {
@@ -64,7 +69,7 @@ export const SmoothLineDrawer = () => {
     const updateCurrentPath = () => {
       currentPath?.remove()
 
-      const smoothPath = svgPathRender(points, drawSize)
+      const smoothPath = svgPathRender(points, drawSize, drawColor)
       svg.appendChild(smoothPath)
       currentPath = smoothPath
     }

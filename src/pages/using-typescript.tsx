@@ -2,7 +2,7 @@ import { graphql, Link, PageProps } from 'gatsby'
 // If you don't want to use TypeScript you can delete this file!
 import * as React from 'react'
 
-import { Layout } from '../components/layout/layout'
+import { Layout } from '../components/layout/Layout'
 import Seo from '../components/seo'
 
 type DataProps = {
