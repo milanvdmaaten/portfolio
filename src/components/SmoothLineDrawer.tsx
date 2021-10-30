@@ -102,6 +102,7 @@ export const SmoothLineDrawer = () => {
       if (iteration > maxSteps) return element.remove()
 
       setTimeout(() => {
+        if (!element) return
         element.style.opacity = `${1 - iteration / (maxSteps - 1)}`
         fadePath(element, ++iteration)
       }, 10 * iteration)
@@ -127,12 +128,13 @@ export const SmoothLineDrawer = () => {
     }
 
     setDrawMethod(draw)
-    document.onmousedown = onMouseDown
-    document.onmouseup = onMouseUp
+    window.addEventListener("mousedown", onMouseDown)
+    window.addEventListener("mouseup", onMouseUp)
 
     return () => {
-      document.onmousedown = null
-      document.onmouseup = null
+      fadePath(currentPath)
+      window.removeEventListener("mousedown", onMouseDown)
+      window.removeEventListener("mouseup", onMouseUp)
     }
   }, [readyToDraw, svg, drawSize, setDrawMethod])
 

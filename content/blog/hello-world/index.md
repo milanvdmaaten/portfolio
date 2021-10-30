@@ -8,6 +8,7 @@ displayPosition: 1
 textColor: text-black
 backgroundColor: "#fff"
 drawColor: "#000"
+headerColor: "#fff"
 featuredImage: img-header.png
 content:
   - type: textBlock

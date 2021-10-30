@@ -19,13 +19,12 @@ export const Layout = ({ owner, children }) => {
    * Side effects
    */
   useEffect(() => {
-    console.log("init Cursor")
-    // const cursor = new Cursor({
-    //   hoverTargets: ["a", ".swiper-slide"], // Have interaction on 'A' elements
-    //   browserCursor: false,
-    // })
+    const cursor = new Cursor({
+      hoverTargets: ["a", ".swiper-slide"], // Have interaction on 'A' elements
+      browserCursor: false,
+    })
 
-    // cursor.mount()
+    cursor.mount()
 
     return () => {
       console.log("reset cursor")

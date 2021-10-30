@@ -65,8 +65,8 @@ const BlogIndex = ({ data }) => {
         onMouseDownCapture={closeIntro}
       />
       <Grid className="pt-24">
-        {posts?.map(post => (
-          <BlogPostLink post={post} key={post.title} />
+        {posts?.map((post, index) => (
+          <BlogPostLink post={post} key={index} />
         ))}
       </Grid>
       <ContentSeparator />
@@ -100,6 +100,9 @@ export const pageQuery = graphql`
           date(formatString: "YYYY")
           title
           drawColor
+          headerColor
+          backgroundColor
+          textColor
           tagline
           featuredImage {
             childImageSharp {

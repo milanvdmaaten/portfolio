@@ -32,7 +32,7 @@ const padZero = (str, len) => {
   return (zeros + str).slice(-len)
 }
 
-export const onHoverLink = color => {
+export const setCursorColor = color => {
   document.documentElement.style.setProperty("--mouse-color", color)
 
   const inverted = invertColor(color, true)

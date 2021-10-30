@@ -16,7 +16,7 @@ const UsingTypescript: React.FC<PageProps<DataProps>> = ({
   path,
   location,
 }) => (
-  <Layout owner="test" location={location}>
+  <Layout owner="test">
     <Seo title="Using TypeScript" />
     <h1>Gatsby supports TypeScript by default!</h1>
     <p>

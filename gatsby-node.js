@@ -130,6 +130,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       title: String
       tagline: String
       textColor: String
+      headerColor: String
       backgroundColor: String
       drawColor: String
       displayPosition: Int

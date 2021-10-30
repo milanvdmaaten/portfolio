@@ -2,6 +2,7 @@ import * as React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { ContentSeparator } from "../layout/contentSeparator"
 import Swiper from "swiper/bundle"
+import { Zoom } from "react-awesome-reveal"
 import { Grid } from "../layout/grid"
 
 export const ImagesBlock = ({ content }) => {
@@ -96,14 +97,23 @@ export const ImagesBlock = ({ content }) => {
                       </div>
                     </div>
                   )}
-                  <GatsbyImage
-                    image={renderImage}
-                    objectFit="initial"
-                    alt={alt}
-                    className={`h-full w-full ${
-                      !isFullWidth ? "filter drop-shadow-milan rounded-2xl" : ""
-                    }`}
-                  />
+                  <Zoom
+                    fraction={1 / 4}
+                    duration={isFullWidth || carrousel ? 0 : 400}
+                    cascade
+                    triggerOnce
+                  >
+                    <GatsbyImage
+                      image={renderImage}
+                      objectFit="initial"
+                      alt={alt}
+                      className={`h-full w-full ${
+                        !isFullWidth
+                          ? "filter drop-shadow-milan rounded-2xl"
+                          : ""
+                      }`}
+                    />
+                  </Zoom>
                   {index < images.length - 1 && (
                     <ContentSeparator size="mb-20" />
                   )}
@@ -112,7 +122,7 @@ export const ImagesBlock = ({ content }) => {
             })}
           </div>
           {carrousel && (
-            <div className="-mb-20">
+            <div className="">
               <div className="swiper-pagination"></div>
               <div className="swiper-button-prev"></div>
               <div className="swiper-button-next"></div>

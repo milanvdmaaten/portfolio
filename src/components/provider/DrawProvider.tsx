@@ -80,7 +80,7 @@ export const DrawProvider: React.FC = props => {
     svg.setAttribute("height", `${height}`)
     svg.setAttribute("viewBox", `0,0,${width}, ${height}`)
 
-    svg.style.zIndex = "-1"
+    svg.style.zIndex = "0"
     svg.style.height = height + "px"
     svg.style.position = "absolute"
     svg.style.width = "100%"
@@ -113,13 +113,20 @@ export const DrawProvider: React.FC = props => {
         drawMethod.current({ x: pageX, y: pageY }, drawSize, drawColor)
     }
 
-    window.onresize = createSvg
-    window.onmousemove = onMouseMove
-    window.onmousedown = onMouseDown
-    window.onmouseup = onMouseUp
+    window.addEventListener("resize", createSvg)
+    window.addEventListener("mousemove", onMouseMove)
+    window.addEventListener("mousedown", onMouseDown)
+    window.addEventListener("mouseup", onMouseUp)
 
     createSvg()
     setReadyToDraw(true)
+
+    return () => {
+      window.removeEventListener("resize", createSvg)
+      window.removeEventListener("mousemove", onMouseMove)
+      window.removeEventListener("mousedown", onMouseDown)
+      window.removeEventListener("mousedown", onMouseUp)
+    }
   }, [getScreenHeight, getScreenWidth, setReadyToDraw])
 
   /**

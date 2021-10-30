@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React, { FC } from 'react'
 
-import { onHoverLink } from '../customCursor'
+import { setCursorColor } from '../customCursor'
 import { useDraw } from './provider/DrawProvider'
 
 interface BlogPostLinkProps {
@@ -26,7 +26,7 @@ export const BlogPostLink: FC<BlogPostLinkProps> = props => {
    * Methods
    */
   const hoverPortfolioItem = (color: string): void => {
-    onHoverLink(color)
+    setCursorColor(color)
     setDrawColor(color)
   }
 
@@ -35,7 +35,7 @@ export const BlogPostLink: FC<BlogPostLinkProps> = props => {
       key={slug}
       to={slug}
       onMouseEnter={() => hoverPortfolioItem(drawColor)}
-      className="md:col-start-2 col-span-12 md:col-span-11 flex"
+      className="md:col-start-2 col-span-12 md:col-span-11 flex z-10"
     >
       <h2 className="case__title">{title}</h2>
       <div className="body-small">

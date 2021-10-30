@@ -66,7 +66,7 @@ body {
 }
 
 .case__title {
-  @apply text-9xl leading-tight font-bold tracking-widest mr-12;
+  @apply text-9xl leading-tight font-bold tracking-widest;
 }
 
 .case__title-large {
@@ -95,9 +95,9 @@ body {
   --mouse-border-color: transparent;
 }
 
-/* a:hover {
+a:hover {
   cursor: none;
-} */
+}
 
 svg path {
   @applytransition ease-in;

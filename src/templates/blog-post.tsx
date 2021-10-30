@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import * as React from 'react'
-import { Zoom } from 'react-awesome-reveal'
 
 import { BlogPostHeader } from '../components/BlogPostHeader'
 import { Content } from '../components/content/content'
@@ -11,20 +10,43 @@ import { Layout } from '../components/layout/Layout'
 import { OtherPosts } from '../components/otherPosts'
 import Seo from '../components/seo'
 
-const BlogPostTemplate = ({ data, location }) => {
+const BlogPostTemplate = ({ data }) => {
+  /**
+   * Component state
+   */
   const author = data.site.siteMetadata.author
 
   const { frontmatter, excerpt } = data.markdownRemark
-  const { tagline, title, content, featuredImage, drawColor } = frontmatter
+  const {
+    tagline,
+    title,
+    content,
+    featuredImage,
+    drawColor,
+    headerColor,
+    textColor,
+  } = frontmatter
 
   const image = getImage(featuredImage)
 
   const { edges } = data.allMarkdownRemark
 
+  /**
+   * Side effects
+   */
+
+  /**
+   * Render
+   */
   return (
     <Layout owner={author.name}>
       <Seo title={title} description={tagline || excerpt} />
-      <BlogPostHeader title={title} color={drawColor} />
+      <BlogPostHeader
+        title={title}
+        headerColor={headerColor}
+        drawColor={drawColor}
+        textColor={textColor}
+      />
       <GatsbyImage
         image={image}
         alt={tagline ?? ""}
@@ -40,9 +62,7 @@ const BlogPostTemplate = ({ data, location }) => {
       <article className="blog-post-content px-4 md:px-0">
         {content?.map((content, index) => (
           <React.Fragment key={index}>
-            <Zoom>
-              <Content content={content} />
-            </Zoom>
+            <Content content={content} />
             <ContentSeparator />
           </React.Fragment>
         ))}
@@ -114,6 +134,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         textColor
+        headerColor
         backgroundColor
         tagline
         date

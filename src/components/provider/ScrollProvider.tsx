@@ -27,6 +27,7 @@ export const ScrollProvider: FC = props => {
    */
   const addScrollListener = (listener: scrollListener): number => {
     const key = performance.now()
+    console.log(listener)
     scrollListeners.current[key] = listener
     console.log("addListener")
     listener(window.scrollY)
@@ -35,7 +36,7 @@ export const ScrollProvider: FC = props => {
   }
 
   const removeScrollListener = (key: number): void => {
-    scrollListeners.current[key] = undefined
+    delete scrollListeners.current[key]
   }
 
   /**
@@ -43,8 +44,10 @@ export const ScrollProvider: FC = props => {
    */
   useEffect(() => {
     const scrollEvent = (_: Event) => {
-      Object.values(scrollListeners.current).forEach(listener => {
-        listener(window.scrollY)
+      Object.keys(scrollListeners.current).forEach(key => {
+        const listener = scrollListeners.current[key]
+        if (typeof listener === "function") listener(window.scrollY)
+        else delete scrollListeners.current[key]
       })
     }
 
