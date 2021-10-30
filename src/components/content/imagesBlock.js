@@ -2,7 +2,7 @@ import * as React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { ContentSeparator } from "../layout/contentSeparator"
 import Swiper from "swiper/bundle"
-import { Zoom } from "react-awesome-reveal"
+import { Fade } from "react-awesome-reveal"
 import { Grid } from "../layout/grid"
 
 export const ImagesBlock = ({ content }) => {
@@ -97,12 +97,7 @@ export const ImagesBlock = ({ content }) => {
                       </div>
                     </div>
                   )}
-                  <Zoom
-                    fraction={1 / 4}
-                    duration={isFullWidth || carrousel ? 0 : 400}
-                    cascade
-                    triggerOnce
-                  >
+                  <Fade fraction={1 / 4} duration={400} cascade triggerOnce>
                     <GatsbyImage
                       image={renderImage}
                       objectFit="initial"
@@ -113,7 +108,7 @@ export const ImagesBlock = ({ content }) => {
                           : ""
                       }`}
                     />
-                  </Zoom>
+                  </Fade>
                   {index < images.length - 1 && (
                     <ContentSeparator size="mb-20" />
                   )}
