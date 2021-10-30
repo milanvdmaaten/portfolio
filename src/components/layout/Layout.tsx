@@ -5,8 +5,8 @@ import React, { useEffect } from 'react'
 import { DrawProvider } from '../provider/DrawProvider'
 import { ScrollProvider } from '../provider/ScrollProvider'
 import { SmoothLineDrawer } from '../SmoothLineDrawer'
-import { Footer } from './Footer'
 import { Header } from './Header'
+import { Footer } from './x'
 
 export const Layout = ({ owner, children }) => {
   /**
