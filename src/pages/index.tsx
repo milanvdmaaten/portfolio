@@ -33,8 +33,8 @@ const BlogIndex = ({ data }) => {
 
     let text = "good"
     if (time < 6 || time >= 20) text += "evening"
-    if (time >= 12) text += "afternoon"
-    if (time >= 6) text += "morning"
+    else if (time >= 12) text += "afternoon"
+    else if (time >= 6) text += "morning"
 
     return text
   }

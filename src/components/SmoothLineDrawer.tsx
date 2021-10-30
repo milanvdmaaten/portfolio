@@ -102,7 +102,7 @@ export const SmoothLineDrawer = () => {
       if (iteration > maxSteps) return element.remove()
 
       setTimeout(() => {
-        if (!element) return
+        if (element === undefined) return
         element.style.opacity = `${1 - iteration / (maxSteps - 1)}`
         fadePath(element, ++iteration)
       }, 10 * iteration)
