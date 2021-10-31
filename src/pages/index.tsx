@@ -64,7 +64,7 @@ const BlogIndex = ({ data }) => {
         show={showIntro}
         onMouseDownCapture={closeIntro}
       />
-      <Grid className="pt-24">
+      <Grid className="pt-60 md:pt-44">
         {posts?.map((post, index) => (
           <BlogPostLink post={post} key={index} />
         ))}
