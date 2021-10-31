@@ -2,7 +2,6 @@ import { Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React, { FC, useState } from 'react'
 
-import { setCursorColor } from '../customCursor'
 import { useDraw } from './provider/DrawProvider'
 
 interface BlogPostLinkProps {
@@ -28,16 +27,12 @@ export const BlogPostLink: FC<BlogPostLinkProps> = props => {
   /**
    * Methods
    */
-  const hoverPortfolioItem = (color: string): void => {
-    setCursorColor(color)
-    setDrawColor(color)
-  }
 
   return (
     <Link
       key={slug}
       to={slug}
-      onMouseEnter={() => hoverPortfolioItem(drawColor)}
+      onMouseEnter={() => setDrawColor(drawColor)}
       className="blog-post-link"
     >
       <GatsbyImage

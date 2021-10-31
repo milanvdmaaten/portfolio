@@ -78,7 +78,7 @@ export const DrawProvider: React.FC = props => {
       svg.style.top = "0"
 
       layout.appendChild(svg)
-    }, 1000 * 5) // Wait a bit so carrousels are initialized correctly
+    }, 1000 * 2.5) // Wait a bit so carrousels are initialized correctly
   }
 
   /**

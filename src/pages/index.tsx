@@ -16,7 +16,22 @@ const BlogIndex = ({ data }) => {
   const description = data.site.siteMetadata.description
   const posts = data.allMarkdownRemark.nodes
 
-  const [showIntro, setShowIntro] = useState(true)
+  const [showIntro, setShowIntro] = useState(() => {
+    const lastVisit = localStorage.getItem("lastVisit")
+
+    if (!lastVisit) {
+      localStorage.setItem("lastVisit", new Date().toUTCString())
+      return true
+    }
+
+    const date1 = new Date(lastVisit)
+    const date2 = new Date()
+    // @ts-ignore
+    const diffTime = Math.abs(date2 - date1)
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+
+    return diffDays > 1
+  })
 
   // eslint-disable-next-line no-useless-escape
   const name = author?.name.match(/^([\w\-]+)/)[0]
@@ -40,7 +55,6 @@ const BlogIndex = ({ data }) => {
   }
 
   const closeIntro = (): void => {
-    console.log("TODO: uncomment close intro")
     setShowIntro(false)
   }
 

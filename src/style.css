@@ -76,12 +76,16 @@ body {
 
 :root {
   --mouse-color: #000;
-  --mouse-border-color: transparent;
+  --mouse-border-color: rgba(0,0,0,.4);
   --accent-color: #D5ADF6;
 }
 
 a {
   @apply z-10 relative;
+}
+
+#layout > div:nth-child(2) {
+  border: 1px solid var(--mouse-border-color);
 }
 
 svg path {

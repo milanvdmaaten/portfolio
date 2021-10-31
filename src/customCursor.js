@@ -28,23 +28,25 @@ export const invertColor = (hex, bw) => {
 
   if (bw) {
     // http://stackoverflow.com/a/3943023/112731
-    return r * 0.299 + g * 0.587 + b * 0.114 > 186 ? "#000000" : "#FFFFFF"
+    return r * 0.299 + g * 0.587 + b * 0.114 > 186
+      ? { r: 0, g: 0, b: 0 }
+      : { r: 255, g: 255, b: 255 }
   }
   // invert color components
-  r = (255 - r).toString(16)
-  g = (255 - g).toString(16)
-  b = (255 - b).toString(16)
+  r = 255 - r
+  g = 255 - g
+  b = 255 - b
 
   // pad each with zeros and return
-  return "#" + padZero(r) + padZero(g) + padZero(b)
+  return { r, g, b }
 }
 
 export const setCursorColor = color => {
   document.documentElement.style.setProperty("--mouse-color", color)
 
-  const inverted = invertColor(color, true)
+  const { r, g, b } = invertColor(color, true)
   document.documentElement.style.setProperty(
     "--mouse-border-color",
-    inverted === "#000000" ? inverted : "transparent"
+    `rgb(${r},${g},${b})`
   )
 }
