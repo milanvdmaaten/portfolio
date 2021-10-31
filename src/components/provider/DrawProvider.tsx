@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useReducer, useRef, useState } from 'react'
 
+import { setCursorColor } from '../../customCursor'
 import { getScreenHeight, getScreenWidth } from '../../utils/screenSize'
 
 interface Point2D {
@@ -41,7 +42,7 @@ export const DrawProvider: React.FC = props => {
   })
   const [readyToDraw, setReadyToDraw] = useState(false)
   const drawMethod = useRef<Draw>()
-  const [drawColor, setDrawColor] = useState("#000")
+  const [drawColor, setStateDrawColor] = useState("#000")
   const [drawSize, setDrawSize] = useState(8)
 
   /**
@@ -49,6 +50,11 @@ export const DrawProvider: React.FC = props => {
    */
   const setDrawMethod = (method: Draw): void => {
     drawMethod.current = method
+  }
+
+  const setDrawColor = (color: string): void => {
+    setStateDrawColor(color)
+    setCursorColor(color)
   }
 
   const createSvg = () => {

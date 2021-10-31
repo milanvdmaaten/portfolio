@@ -94,7 +94,7 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                   </Grid>
                 </section>
                 <motion.div
-                  className="w-3 h-3 absolute bg-primary"
+                  className="w-3 h-3 absolute bg-accent"
                   animate={{
                     left: ["90%", "55%", "50%"],
                     top: ["90%", "65%", "50%"],

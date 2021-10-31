@@ -2,7 +2,7 @@ import * as React from 'react'
 
 export const Footer = ({ owner }) => {
   return (
-    <footer className="text-black bg-primary px-4">
+    <footer className="text-black bg-accent px-4">
       <div className="container m-auto pb-12 pt-96 flex justify-between">
         <span className="transform origin-bottom-left translate-x-20 -rotate-90">
           © {new Date().getFullYear()},

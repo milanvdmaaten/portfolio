@@ -35,14 +35,14 @@ export const BlogPostHeader: FC<BlogPostHeaderProps> = props => {
 
     const key = addScrollListener(listener)
     setDrawColor(drawColor)
-    setCursorColor(drawColor)
+    document.documentElement.style.setProperty("--accent-color", headerColor)
 
     return () => {
-      setDrawColor("#fff")
-      setCursorColor("#fff")
+      setDrawColor("#000000")
+      document.documentElement.style.setProperty("--accent-color", "#D5ADF6")
       removeScrollListener(key)
     }
-  }, [drawColor, addScrollListener, removeScrollListener])
+  }, [drawColor, headerColor, addScrollListener, removeScrollListener])
 
   /**
    * Render

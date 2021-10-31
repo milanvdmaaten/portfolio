@@ -1,5 +1,6 @@
 import { Link } from 'gatsby'
-import React, { FC } from 'react'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import React, { FC, useState } from 'react'
 
 import { setCursorColor } from '../customCursor'
 import { useDraw } from './provider/DrawProvider'
@@ -15,7 +16,9 @@ export const BlogPostLink: FC<BlogPostLinkProps> = props => {
   const { post } = props
 
   const { slug } = post.fields
-  const { title, tagline, date, drawColor } = post.frontmatter
+  const { title, tagline, date, drawColor, featuredImage } = post.frontmatter
+
+  const renderImage = getImage(featuredImage)
 
   /**
    * Custom & 3th party hooks
@@ -35,13 +38,21 @@ export const BlogPostLink: FC<BlogPostLinkProps> = props => {
       key={slug}
       to={slug}
       onMouseEnter={() => hoverPortfolioItem(drawColor)}
-      className="md:col-start-2 col-span-12 md:col-span-11 flex z-10"
+      className="blog-post-link"
     >
-      <h2 className="case__title">{title}</h2>
-      <div className="body-small">
-        <div>{tagline}</div>
-        <div>{date}</div>
-      </div>
+      <GatsbyImage
+        image={renderImage}
+        objectFit="initial"
+        alt={`alt`}
+        className={`blog-post-link-image`}
+      />
+      <section className="flex flex-col md:flex-row">
+        <h2 className="case__title">{title}</h2>
+        <div className="body-small">
+          <div>{tagline}</div>
+          <div>{date}</div>
+        </div>
+      </section>
     </Link>
   )
 }
