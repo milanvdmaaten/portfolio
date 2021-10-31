@@ -1,13 +1,22 @@
-import * as React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { ContentSeparator } from "../layout/contentSeparator"
-import Swiper from "swiper/bundle"
-import { Fade } from "react-awesome-reveal"
-import { Grid } from "../layout/grid"
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import React, { useEffect, useRef, useState } from 'react'
+import { Fade } from 'react-awesome-reveal'
+import Swiper from 'swiper'
+
+import { uuid } from '../../utils/uuid'
+import { ContentSeparator } from '../layout/contentSeparator'
+import { Grid } from '../layout/grid'
+import { useScroll } from '../provider/ScrollProvider'
 
 export const ImagesBlock = ({ content }) => {
+  /**
+   * Component state
+   */
   const { images, size, carrousel } = content
-  const swiperIdentifier = React.useRef(images[0].alt.replace(" ", "-"))
+
+  const [offsetTop, setOffsetTop] = useState(0)
+
+  const uniqueIdentifier = useRef(uuid())
 
   let imageColsClass = "col-start-0 col-span-12"
   let isFullWidth = false
@@ -31,8 +40,16 @@ export const ImagesBlock = ({ content }) => {
       break
   }
 
-  React.useEffect(() => {
-    new Swiper(`.swiper-${swiperIdentifier.current}`, {
+  /**
+   * Custom & 3th party hooks
+   */
+  const { addScrollListener, removeScrollListener } = useScroll()
+
+  /**
+   * Side effects
+   */
+  useEffect(() => {
+    new Swiper(`.swiper-${uniqueIdentifier.current}`, {
       slidesPerView: 1,
       loop: true,
       navigation: {
@@ -48,14 +65,36 @@ export const ImagesBlock = ({ content }) => {
         delay: 1000 * 2.5,
       },
     })
-  }, [swiperIdentifier])
+  }, [uniqueIdentifier])
 
+  useEffect(() => {
+    if (!isFullWidth) return
+
+    const element = document.getElementById(uniqueIdentifier.current)
+
+    if (element === null || element === undefined) return
+
+    const listener = scroll => {
+      const { offsetTop, offsetHeight } = element
+      setOffsetTop((scroll.position - offsetTop + offsetHeight) / 10)
+    }
+
+    const key = addScrollListener(listener)
+
+    return () => {
+      removeScrollListener(key)
+    }
+  }, [addScrollListener, removeScrollListener, isFullWidth])
+
+  /**
+   * Render
+   */
   return (
     <Grid fullWidth={isFullWidth}>
-      <div className={imageColsClass}>
+      <div className={imageColsClass} id={uniqueIdentifier.current}>
         <div
           className={
-            carrousel ? `swiper swiper-${swiperIdentifier.current}` : "w-full"
+            carrousel ? `swiper swiper-${uniqueIdentifier.current}` : "w-full"
           }
         >
           <div className={`${carrousel ? "swiper-wrapper" : "w-full"}`}>
@@ -79,9 +118,12 @@ export const ImagesBlock = ({ content }) => {
                 <div
                   key={index}
                   className={`${carrousel ? "swiper-slide" : ""}`}
+                  style={{
+                    marginTop: `-${offsetTop}px`,
+                  }}
                 >
                   {title && (
-                    <div className="overflow-hidden">
+                    <Fade triggerOnce className="overflow-hidden">
                       <h3
                         className={`caption-handwritten text-${titlePosition} ${titleSpacing}`}
                       >
@@ -95,14 +137,19 @@ export const ImagesBlock = ({ content }) => {
                           alt={`arrow pointing towards ${alt}`}
                         />
                       </div>
-                    </div>
+                    </Fade>
                   )}
-                  <Fade fraction={1 / 4} cascade triggerOnce>
+                  <Fade
+                    fraction={1 / 4}
+                    cascade
+                    triggerOnce
+                    className={uniqueIdentifier.current}
+                  >
                     <GatsbyImage
                       image={renderImage}
                       objectFit="initial"
                       alt={alt}
-                      className={`h-full w-full ${
+                      className={`h-full w-full ${uniqueIdentifier.current} ${
                         !isFullWidth
                           ? "filter drop-shadow-milan rounded-2xl"
                           : ""

@@ -7,7 +7,7 @@ import { Content } from '../components/content/content'
 import { ContentSeparator } from '../components/layout/contentSeparator'
 import { Grid } from '../components/layout/grid'
 import { Layout } from '../components/layout/Layout'
-import { OtherPosts } from '../components/otherPosts'
+import { OtherPosts } from '../components/OtherPosts'
 import Seo from '../components/seo'
 
 const BlogPostTemplate = ({ data }) => {
@@ -68,7 +68,11 @@ const BlogPostTemplate = ({ data }) => {
         ))}
       </article>
       <ContentSeparator />
-      <OtherPosts posts={edges.map(edge => edge.node)} author={author} />
+      <OtherPosts
+        backgroundColor={headerColor}
+        posts={edges.map(edge => edge.node)}
+        author={author}
+      />
     </Layout>
   )
 }

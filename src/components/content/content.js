@@ -1,5 +1,5 @@
 import * as React from "react"
-import { ImagesBlock } from "./imagesBlock"
+import { ImagesBlock } from "./ImagesBlock"
 
 import { TextBlock } from "./textBlock"
 

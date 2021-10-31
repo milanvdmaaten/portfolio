@@ -25,9 +25,12 @@ export const BlogPostHeader: FC<BlogPostHeaderProps> = props => {
   const { addScrollListener, removeScrollListener } = useScroll()
   const { setDrawColor } = useDraw()
 
+  /**
+   * Side effects
+   */
   useEffect(() => {
-    const listener = (pageY: number): void => {
-      setTitleLeft(pageY)
+    const listener = (scroll): void => {
+      setTitleLeft(scroll.position)
     }
 
     const key = addScrollListener(listener)
@@ -41,13 +44,16 @@ export const BlogPostHeader: FC<BlogPostHeaderProps> = props => {
     }
   }, [drawColor, addScrollListener, removeScrollListener])
 
+  /**
+   * Render
+   */
   return (
     <section
       style={{ background: headerColor ?? "#fff" }}
       className={`pt-64 ${textColor}`}
     >
       <h1
-        className="case__title whitespace-nowrap overflow-hidden"
+        className="case__title whitespace-nowrap overflow-hidden uppercase"
         style={{
           marginLeft: `-${titleLeft}px`,
         }}

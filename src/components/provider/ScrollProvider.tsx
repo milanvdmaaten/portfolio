@@ -1,6 +1,11 @@
 import React, { createContext, FC, useContext, useEffect, useRef, useState } from 'react'
 
-type scrollListener = (pageY: number) => void
+import { getScreenHeight } from '../../utils/screenSize'
+
+type scrollListener = (scrollPos: {
+  position: number
+  pxToBottom: number
+}) => void
 
 interface ScrollContextState {
   addScrollListener: (listener: scrollListener) => number
@@ -20,17 +25,18 @@ export const ScrollProvider: FC = props => {
    */
   const { children } = props
 
-  const scrollListeners = useRef<{ [index: number]: Function }>({})
+  const scrollListeners = useRef<{ [index: number]: scrollListener }>({})
 
   /**
    * Methods
    */
   const addScrollListener = (listener: scrollListener): number => {
     const key = performance.now()
-    console.log(listener)
     scrollListeners.current[key] = listener
-    console.log("addListener")
-    listener(window.scrollY)
+
+    const position = window.scrollY
+    const pxToBottom = getScreenHeight() - position
+    listener({ position, pxToBottom })
 
     return key
   }
@@ -45,9 +51,16 @@ export const ScrollProvider: FC = props => {
   useEffect(() => {
     const scrollEvent = (_: Event) => {
       Object.keys(scrollListeners.current).forEach(key => {
-        const listener = scrollListeners.current[key]
-        if (typeof listener === "function") listener(window.scrollY)
-        else delete scrollListeners.current[key]
+        const listener = scrollListeners.current[key] as scrollListener
+
+        if (typeof listener !== "function") {
+          delete scrollListeners.current[key]
+          return
+        }
+
+        const position = window.scrollY
+        const pxToBottom = getScreenHeight() - position
+        listener({ position, pxToBottom })
       })
     }
 
@@ -83,5 +96,12 @@ export const ScrollProvider: FC = props => {
 export const useScroll = () => {
   const context = useContext(ScrollContext)
 
+  /**
+   * Side effects
+   */
+
+  /**
+   * Return
+   */
   return context
 }

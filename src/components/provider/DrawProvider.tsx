@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useEffect, useReducer, useRef, useState } from 'react'
 
+import { getScreenHeight, getScreenWidth } from '../../utils/screenSize'
+
 interface Point2D {
   x: number
   y: number
@@ -49,24 +51,6 @@ export const DrawProvider: React.FC = props => {
     drawMethod.current = method
   }
 
-  const getScreenHeight = (): number =>
-    Math.max(
-      document.body.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.clientHeight,
-      document.documentElement.scrollHeight,
-      document.documentElement.offsetHeight
-    )
-
-  const getScreenWidth = (): number =>
-    Math.max(
-      document.body.scrollWidth,
-      document.body.offsetWidth,
-      document.documentElement.clientWidth,
-      document.documentElement.scrollWidth,
-      document.documentElement.offsetWidth
-    )
-
   const createSvg = () => {
     const layout = document.getElementById("layout")
 
@@ -74,19 +58,21 @@ export const DrawProvider: React.FC = props => {
       svg.remove()
     } catch (e) {}
 
-    const width = getScreenWidth()
-    const height = getScreenHeight()
-    svg.setAttribute("width", `${width}`)
-    svg.setAttribute("height", `${height}`)
-    svg.setAttribute("viewBox", `0,0,${width}, ${height}`)
+    setTimeout(() => {
+      const width = getScreenWidth()
+      const height = getScreenHeight()
+      svg.setAttribute("width", `${width}`)
+      svg.setAttribute("height", `${height}`)
+      svg.setAttribute("viewBox", `0,0,${width}, ${height}`)
 
-    svg.style.zIndex = "0"
-    svg.style.height = height + "px"
-    svg.style.position = "absolute"
-    svg.style.width = "100%"
-    svg.style.top = "0"
+      svg.style.zIndex = "0"
+      svg.style.height = height + "px"
+      svg.style.position = "absolute"
+      svg.style.width = "100%"
+      svg.style.top = "0"
 
-    layout.appendChild(svg)
+      layout.appendChild(svg)
+    }, 1000 * 5) // Wait a bit so carrousels are initialized correctly
   }
 
   /**
@@ -126,6 +112,7 @@ export const DrawProvider: React.FC = props => {
       window.removeEventListener("mousemove", onMouseMove)
       window.removeEventListener("mousedown", onMouseDown)
       window.removeEventListener("mousedown", onMouseUp)
+      svg.remove()
     }
   }, [getScreenHeight, getScreenWidth, setReadyToDraw])
 
