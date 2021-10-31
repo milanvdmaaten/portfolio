@@ -69,7 +69,7 @@ export const OtherPosts: FC<OtherPostsProps> = props => {
         {Array.from({ length: 20 }).map(_ => "more work ")}
       </h3>
       <nav
-        className="py-32 -mt-16 relative"
+        className="pt-52 -mt-16 relative"
         style={{ backgroundColor: backgroundColor }}
       >
         <div className="swiper swiper-other-posts">

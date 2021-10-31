@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { FC, HTMLAttributes, useEffect } from 'react'
+import Typewriter from 'typewriter-effect/dist/core'
 
 import { disableScroll, enableScroll } from '../../utils/scrollBlocker'
 import { Grid } from './grid'
@@ -29,6 +30,26 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
     enableScroll()
   }, [show])
 
+  useEffect(() => {
+    const headerEl = document.getElementById("header")
+    const subheaderEl = document.getElementById("subheader")
+
+    const headerWriter = new Typewriter(headerEl, {
+      loop: false,
+      delay: 75,
+      cursor: "",
+    })
+
+    const subheaderWriter = new Typewriter(subheaderEl, {
+      loop: false,
+      delay: 50,
+      cursor: "",
+    })
+
+    headerWriter.pauseFor(1500).typeString(header).start()
+    subheaderWriter.pauseFor(3250).typeString(subheader).start()
+  }, [header, subheader])
+
   /**
    * render
    */
@@ -47,7 +68,7 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                 opacity: [1, 0],
               }}
               transition={{
-                delay: 0.3,
+                delay: 4.5,
                 duration: 0.6,
                 ease: "backOut",
               }}
@@ -70,6 +91,7 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                   top: "100vh",
                 }}
                 transition={{
+                  delay: 4.2,
                   duration: 0.3,
                 }}
               >
@@ -88,8 +110,8 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                   </motion.div>
                   <Grid className="w-10/12">
                     <section className="col-span-12 body-large flex-grow flex flex-col justify-end pb-8">
-                      <h1>{header}</h1>
-                      <p>{subheader}</p>
+                      <h1 id="header"></h1>
+                      <p id="subheader"></p>
                     </section>
                   </Grid>
                 </section>
@@ -107,7 +129,7 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                     delay: 0.75,
                     type: "tween",
                   }}
-                ></motion.div>
+                />
               </motion.div>
             </motion.div>
           </div>

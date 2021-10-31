@@ -74,31 +74,15 @@ body {
   font-size: 256px;
 }
 
-.custom-cursor {
-  @apply w-3 h-3 rounded-full transition ease-in-out border-2;
-  transition-property: width, height ;
-  z-index: 1000;
-  background-color: var(--mouse-color);
-  border-color: var(--mouse-border-color)
-}
-
-.custom-cursor-hover--swiper-slide .custom-cursor {
-  @apply w-32 h-12;
-}
-
-.custom-cursor-hover--a .custom-cursor {
-  @apply w-32 h-32;
-}
-
 :root {
   --mouse-color: #000;
   --mouse-border-color: transparent;
   --accent-color: #D5ADF6;
 }
 
-/* a:hover {
-  cursor: none;
-} */
+a {
+  @apply z-10 relative;
+}
 
 svg path {
   @apply transition ease-in;
@@ -121,7 +105,7 @@ svg path {
 }
 
 .blog-post-link {
-  @apply md:col-start-2 col-span-12 md:col-span-11 z-10 flex flex-col relative mb-20 md:mb-0;
+  @apply md:col-start-2 col-span-12 md:col-span-11 flex flex-col mb-8;
 }
 
 .blog-post-link:hover .blog-post-link-image {

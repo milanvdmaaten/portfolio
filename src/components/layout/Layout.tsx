@@ -1,7 +1,7 @@
-import Cursor from 'custom-cursor'
 import { AnimatePresence } from 'framer-motion'
 import React, { useEffect } from 'react'
 
+import { Cursor } from '../Cursor'
 import { DrawProvider } from '../provider/DrawProvider'
 import { ScrollProvider } from '../provider/ScrollProvider'
 import { SmoothLineDrawer } from '../SmoothLineDrawer'
@@ -18,19 +18,6 @@ export const Layout = ({ owner, children }) => {
   /**
    * Side effects
    */
-  useEffect(() => {
-    // const cursor = new Cursor({
-    //   hoverTargets: ["a", ".swiper-slide"], // Have interaction on 'A' elements
-    //   browserCursor: false,
-    // })
-
-    // cursor.mount()
-
-    return () => {
-      console.log("reset cursor")
-      document.querySelector("body").className = ""
-    }
-  }, [])
 
   /**
    * Render
@@ -40,6 +27,7 @@ export const Layout = ({ owner, children }) => {
       <div id="layout">
         <ScrollProvider>
           <DrawProvider>
+            <Cursor />
             <SmoothLineDrawer />
             <Header owner={name} />
             <main>{children}</main>
