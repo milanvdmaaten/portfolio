@@ -24,7 +24,7 @@ export const hexToRgb = hex => {
 }
 
 export const invertColor = (hex, bw) => {
-  const { r, g, b } = hexToRgb(hex)
+  let { r, g, b } = hexToRgb(hex)
 
   if (bw) {
     // http://stackoverflow.com/a/3943023/112731

@@ -15,11 +15,17 @@ export const Cursor: FC = () => {
   /**
    * Render
    */
-  return (
-    <AnimatedCursor
-      innerSize={drawSize}
-      color={`${r}, ${g}, ${b}`}
-      outerScale={15}
-    />
-  )
+  try {
+    // We need to try because AnimatedCursor needs window
+    // Which is not available in CI/CD pipeline
+    return (
+      <AnimatedCursor
+        innerSize={drawSize}
+        color={`${r}, ${g}, ${b}`}
+        outerScale={15}
+      />
+    )
+  } catch {
+    return null
+  }
 }
