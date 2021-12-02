@@ -1,9 +1,13 @@
 ---
-title: My Second Post!
+title: Floorplanner
+tagline: test
+fullWidth: true
 hasContent: true
-featuredImage: img-06.png
+date: 2015-05-06T23:46:37.121Z
+displayPosition: 1
+textColor: text-black
 drawColor: "#ffcc00"
 headerColor: "#ffcc00"
-textColor: "text-black"
-date: "2015-05-06T23:46:37.121Z"
+backgroundColor: "#ffffff"
+featuredImage: img-06.png
 ---
