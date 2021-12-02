@@ -17,6 +17,7 @@ const BlogIndex = ({ data }) => {
   const posts = data.allMarkdownRemark.nodes
 
   const [showIntro, setShowIntro] = useState(() => {
+    if (typeof localStorage === "undefined") return
     const lastVisit = localStorage.getItem("lastVisit")
 
     if (!lastVisit) {
