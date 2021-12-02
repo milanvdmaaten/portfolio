@@ -20,12 +20,10 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Tagline", name: "tagline", widget: "string" }
       - { label: "Full width", name: "fullWidth", widget: "boolean" }
-      - {
-          label: "Does this post has content?",
-          name: "hasContent",
-          widget: "boolean",
-          default: "false",
-        }
+      - label: "Does this post has content?"
+        name: "hasContent"
+        widget: "boolean"
+        default: "false"
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Display position", name: "displayPosition", widget: "number" }
       - label: "Text color"
@@ -46,12 +44,10 @@ collections:
             name: "textBlock"
             widget: "object"
             fields:
-              - {
-                  label: "Title",
-                  name: "title",
-                  widget: "string",
-                  required: false,
-                }
+              - label: "Title"
+                name: "title"
+                widget: "string"
+                required: false
               - { label: "Text", name: "body", widget: "markdown" }
           - label: "Images"
             name: "imagesBlock"
@@ -66,32 +62,26 @@ collections:
                   - { label: "Medium", value: "medium" }
                   - { label: "Large", value: "large" }
                   - { label: "Full width", value: "fullWidth" }
-              - {
-                  label: "Carrousel",
-                  name: "carrousel",
-                  widget: "boolean",
-                  default: false,
-                  required: false,
-                }
+              - label: "Carrousel"
+                name: "carrousel"
+                widget: "boolean"
+                default: false
+                required: false
               - label: "Images"
                 name: "images"
                 widget: "list"
                 fields:
                   - { label: "Image", name: "image", widget: "image" }
                   - { label: Image Description, name: "alt", widget: string }
-                  - {
-                      label: Image title,
-                      name: "title",
-                      widget: string,
-                      required: false,
-                    }
-                  - {
-                    label: "Image title position",
-                    name: "titlePosition",
-                    widget: "select",
-                    default: "center",
+                  - label: Image title
+                    name: "title"
+                    widget: string
+                    required: false
+                  - label: "Image title position"
+                    name: "titlePosition"
+                    widget: "select"
+                    default: "center"
                     options:
                       - { label: "Left", value: "left" }
                       - { label: "Center", value: "center" }
                       - { label: "Right", value: "right" }
-                  }
