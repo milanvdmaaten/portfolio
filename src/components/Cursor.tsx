@@ -15,9 +15,7 @@ export const Cursor: FC = () => {
   /**
    * Render
    */
-  // We need to return null in CI/CD pipeline
-
-  if (!window) return null
+  if (typeof window === "undefined") return null
   return (
     <AnimatedCursor
       innerSize={drawSize * 1.5}
