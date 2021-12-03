@@ -1,15 +1,15 @@
 ---
-title: NPO
-tagline: A new concept and mobile design
+title: Floorplanner
+tagline: Improving usability with ux and visual design improvements
 fullWidth: true
 hasContent: true
 date: 2015-05-01T22:12:03.284Z
 displayPosition: 1
 textColor: text-black
-drawColor: "#000"
-headerColor: "#fff"
+drawColor: "#FEC15B"
+headerColor: "#FEC15B"
 backgroundColor: "#fff"
-featuredImage: npo.png
+featuredImage: floorplanner.png
 content:
   - type: textBlock
     title: About
