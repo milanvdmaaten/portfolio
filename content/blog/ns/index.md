@@ -26,4 +26,11 @@ content:
       earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
       voluptatibus maiores alias consequatur aut perferendis doloribus
       asperiores repellat."'
+  - type: imagesBlock
+    size: medium
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: ns.png
+        alt: nessy
 ---
