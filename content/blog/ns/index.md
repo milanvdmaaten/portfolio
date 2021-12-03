@@ -9,7 +9,7 @@ textColor: text-black
 drawColor: "#FFC917"
 headerColor: "#FFC917"
 backgroundColor: "#000000"
-featuredImage: header.jpg
+featuredImage: ns.png
 content:
   - type: textBlock
     title: NS - A design system of wordclass
