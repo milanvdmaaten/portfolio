@@ -1,6 +1,6 @@
 ---
 title: Floorplanner
-tagline: test
+tagline: Improving usability with ux and visual design improvements
 fullWidth: true
 hasContent: true
 date: 2015-05-06T23:46:37.121Z
