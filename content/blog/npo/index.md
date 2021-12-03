@@ -58,7 +58,7 @@ content:
       One of the design principles we created for the project states:
 
 
-      > *NPO Start is all about the content. We are proud of that, so we are happy to give it the stage it deserves. We'd rather have you watching than search endlessly.*
+      NPO Start is all about the content. We are proud of that, so we are happy to give it the stage it deserves. We'd rather have you watching than search endlessly.
 
 
       That's why the menu items are prioritized from most likely to watch something to less likely to watch something.
