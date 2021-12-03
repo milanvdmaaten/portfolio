@@ -76,4 +76,38 @@ content:
       - titlePosition: center
         image: menu.png
         alt: Menu items
+  - type: textBlock
+    title: ""
+    body: The content rows on the homepage are also prioritized from 'most
+      personalized content' to 'less personalized content'. Content rows as
+      'Continue watching' and 'My favorites' are for example positioned at the
+      top of the screen. This enlarges the chance to watch something as quick as
+      possible, and that's after all why a user opens the NPO app.
+  - type: imagesBlock
+    size: small
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: start2.png
+        alt: Most personalized content rows are positioned  at the top of the screen
+  - type: textBlock
+    title: ""
+    body: >-
+      ## **Transparant about data**
+
+
+      Another design principle we created is:
+
+
+      100% trustworthy: NPO Start is 100% reliable. We handle your time, attention and data with care. We think that's completely normal. And that's why you feel completely at ease with us.
+
+
+      That's why for example titles of content rows tell the user where certain recommendations are based on.
+  - type: imagesBlock
+    size: small
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: content-rows.png
+        alt: Personalized content rows
 ---
