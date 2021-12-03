@@ -33,4 +33,5 @@ content:
       - titlePosition: center
         image: ns.png
         alt: nessy
+        title: title
 ---
