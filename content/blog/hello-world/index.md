@@ -4,7 +4,7 @@ tagline: Improving usability with ux and visual design improvements
 fullWidth: true
 hasContent: true
 date: 2015-05-01T22:12:03.284Z
-displayPosition: 1
+displayPosition: 2
 textColor: text-black
 drawColor: "#FEC15B"
 headerColor: "#FEC15B"
