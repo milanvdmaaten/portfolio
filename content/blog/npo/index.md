@@ -1,15 +1,15 @@
 ---
-title: NPO test
-tagline: Improving usability with ux and visual design improvements
+title: NPO
+tagline: A new concept and mobile app design
 fullWidth: true
 hasContent: true
 date: 2021-12-03T12:14:49.144Z
 displayPosition: 1
 textColor: text-white
-drawColor: "#2A5699"
+drawColor: "#FF6E00"
 headerColor: "#2A5699"
 backgroundColor: "#0B1C36"
-featuredImage: nlziet.png
+featuredImage: npo.png
 content:
   - type: textBlock
     title: About
