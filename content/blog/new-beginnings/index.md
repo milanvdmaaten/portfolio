@@ -5,11 +5,11 @@ fullWidth: true
 hasContent: true
 date: 2015-05-28T22:40:32.169Z
 displayPosition: 4
-textColor: text-black
-drawColor: "#8A042F"
-headerColor: "#8A042F"
-backgroundColor: "#000000"
-featuredImage: nlziet-cover.png
+textColor: text-white
+drawColor: "#D93C6C"
+headerColor: "#03272B"
+backgroundColor: "#FFFFFF"
+featuredImage: nlziet.png
 content:
   - type: textBlock
     title: From broadcaster centered to content centered
