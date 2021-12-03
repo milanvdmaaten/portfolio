@@ -9,5 +9,5 @@ textColor: text-black
 drawColor: "#ffcc00"
 headerColor: "#ffcc00"
 backgroundColor: "#ffffff"
-featuredImage: img-06.png
+featuredImage: floorplanner.png
 ---
