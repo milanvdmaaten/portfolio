@@ -126,4 +126,71 @@ content:
       - titlePosition: center
         image: filter.png
         alt: Filters
+  - type: textBlock
+    body: >-
+      ## **Skip the process of searching what to watch.**
+
+
+      One of the big differences between watching content via streaming services vs. television is that the process to find something to watch takes longer via streaming services. A user first needs to search for something to watch before he starts watching. When watching something on tv it's just a matter of turning on the tv and start watching. That's why we tried to copy this pattern to the NPO platform. When the user selects the 'live tab' the last watched channel opens up. The live programme starts playing (without sound).
+  - type: imagesBlock
+    size: medium
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: live.png
+        alt: Tv guide image.
+  - type: textBlock
+    body: >-
+      ## **Exploring content without leaving the page**
+
+
+      Images don't tell directly where the show is about. Users need more context in order to decide if they want to watch a certain programme. That's why we created a bottomsheet which shows a summary where the programme is about. The advantage of showing this information in a bottomsheet is that the user can explore content quickly, instead of going back and forth between pages.
+  - type: imagesBlock
+    size: small
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: bottom-sheet.png
+        alt: Bottom sheet
+  - type: textBlock
+    body: >-
+      ## Project documentation
+
+
+      Prototypes
+
+
+      * [Prototype (v1) for concept interviews](https://www.figma.com/proto/tSUlfMOOuFSKjxy753avqC/NPO---Concept-v2.0?page-id=0%3A1&node-id=1%3A3&viewport=241%2C48%2C0.09&scaling=scale-down&starting-point-node-id=1%3A3)
+
+      * [Prototype (v2) for ux interviews](https://www.figma.com/proto/AF6DSjKctNTgAWqoGdXtnE/NPO---Concept-V3---Prototype---Onderzoek-2-(19-01-2021)?page-id=467%3A111695&node-id=467%3A111959&viewport=241%2C48%2C0.27&scaling=scale-down&starting-point-node-id=467%3A111979)
+
+
+      ### UX explorations
+
+
+      * [Main app structure](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=0%3A1)
+
+      * [Menu tab: Start](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=124%3A5219)
+
+      * [Menu tab: Explore](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=497%3A20970)
+
+      * [Onboarding](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=124%3A5219)
+
+      * [Live tv possibilities within the app](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=368%3A33)
+
+
+      ### Other
+
+
+      * [Inspiration and crazy idea sketches](https://www.figma.com/file/dnU6VXDW6iMFYVs61SVnRD/NPO---Ideation?node-id=0%3A1)
+
+      * [Sitemap 1st version (based on concept test)](https://www.figma.com/file/x8TvRNpAmf7zIkRkFckWzo/NPO---Concept-v1.0?node-id=435%3A3460)
+
+      * [Sitemap final](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/NPO---Concept-V3---%F0%9F%94%AE-Discovery?node-id=1901%3A56834)
+
+
+      ### Final design
+
+
+      * [Final main flow designs](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/NPO---Concept-V3---%F0%9F%94%AE-Discovery?node-id=225%3A19525)
 ---
