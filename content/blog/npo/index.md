@@ -25,4 +25,29 @@ content:
 
 
       Personalization is essential these days in order to conquer with other streaming services. At the other hand, personalization can make it more difficult to connect and enrich the Dutch public. That's why we together with NPO transformed the platform from a generic experience to a personal experience, with control to explore all content.
+    title: The challenge
+  - type: imagesBlock
+    size: fullWidth
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: floater.png
+        alt: Overview of the different cards
+  - type: textBlock
+    title: Solutions
+    body: >-
+      ## **Relevant content from the start**
+
+
+      In order to start with a personalized homescreen on the first landing, the user is asked to select favorite tv programmes before landing on the homepage.
+  - type: imagesBlock
+    size: medium
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: onboarding.png
+        alt: First use screen in which the user selects favorite programmes.
+      - titlePosition: center
+        image: home.png
+        alt: Start menu tab.
 ---
