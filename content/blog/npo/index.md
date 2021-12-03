@@ -9,7 +9,7 @@ textColor: text-white
 drawColor: "#2A5699"
 headerColor: "#2A5699"
 backgroundColor: "#0B1C36"
-featuredImage: npo.png
+featuredImage: nlziet.png
 content:
   - type: textBlock
     title: About
