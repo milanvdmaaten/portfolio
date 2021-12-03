@@ -110,4 +110,20 @@ content:
       - titlePosition: center
         image: content-rows.png
         alt: Personalized content rows
+  - type: textBlock
+    body: >-
+      ## **Explore content outside the bubble**
+
+
+      The 'Explore tab' contains content outside the users' bubble. An extensive set of filters helps to search implicitly for something to watch within the huge amount of content.
+  - type: imagesBlock
+    size: small
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: explore.png
+        alt: Menu explore tab
+      - titlePosition: center
+        image: filter.png
+        alt: Filters
 ---
