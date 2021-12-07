@@ -1,6 +1,6 @@
 ---
-title: Floor- planner
-tagline: Improving usability with ux and visual design improvements
+title: Floorplanner
+tagline: UX and visual design improvements
 fullWidth: true
 hasContent: true
 date: 2021-12-07T19:40:46.180Z
