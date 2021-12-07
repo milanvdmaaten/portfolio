@@ -6,8 +6,8 @@ hasContent: true
 date: 2021-12-03T12:14:49.144Z
 displayPosition: 1
 textColor: text-black
-drawColor: "#FF6E00"
-headerColor: "#2A5699"
+drawColor: "#2A5699"
+headerColor: "#FF6E00"
 backgroundColor: "#0B1C36"
 featuredImage: npo.png
 content:
