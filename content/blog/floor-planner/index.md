@@ -12,6 +12,11 @@ backgroundColor: "#fff"
 featuredImage: floorplanner.png
 content:
   - type: textBlock
+    body: |-
+      ###### My role: UX Design, UI Design, User interviews\
+      Year: 2021\
+      Project completed at Valsplat with my colleague Julian Neef
+  - type: textBlock
     title: About
     body: >-
       ## Roomplanner, part of Floorplanner
