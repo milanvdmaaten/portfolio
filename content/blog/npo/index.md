@@ -7,7 +7,7 @@ date: 2021-12-03T12:14:49.144Z
 displayPosition: 1
 textColor: text-black
 drawColor: "#2A5699"
-headerColor: "#FFA34E"
+headerColor: "#F56D1D"
 backgroundColor: "#0B1C36"
 featuredImage: npo.png
 content:
