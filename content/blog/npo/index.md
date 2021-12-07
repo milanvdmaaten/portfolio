@@ -41,7 +41,7 @@ content:
 
       In order to start with a personalized homescreen on the first landing, the user is asked to select favorite tv programmes before landing on the homepage.
   - type: imagesBlock
-    size: small
+    size: fullWidth
     carrousel: false
     images:
       - titlePosition: center
