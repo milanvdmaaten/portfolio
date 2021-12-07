@@ -1,5 +1,5 @@
 ---
-title: NLZIET2
+title: NLZIET
 tagline: A new concept and design for mobile, tablet and web
 fullWidth: true
 hasContent: true
