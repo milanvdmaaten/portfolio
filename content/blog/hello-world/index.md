@@ -5,10 +5,10 @@ fullWidth: true
 hasContent: true
 date: 2015-05-01T22:12:03.284Z
 displayPosition: 1
-textColor: text-black
-backgroundColor: "#fff"
+textColor: text-white
+backgroundColor: "#ffcc00"
 drawColor: "#000"
-headerColor: "#fff"
+headerColor: "#00ffcc"
 featuredImage: img-header.png
 content:
   - type: textBlock

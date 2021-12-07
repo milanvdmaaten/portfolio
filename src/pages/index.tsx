@@ -47,7 +47,7 @@ const BlogIndex = ({ data }) => {
   const timeOfDay = (): string => {
     const time = new Date().getHours()
 
-    let text = "good"
+    let text = "'"
     if (time < 6 || time >= 20) text += "evening"
     else if (time >= 12) text += "afternoon"
     else if (time >= 6) text += "morning"
@@ -74,7 +74,7 @@ const BlogIndex = ({ data }) => {
       <Seo title={description} />
       <FullscreenIntro
         title={timeOfDay()}
-        header={`My name is ${name}`}
+        header={`My name is ${name},`}
         subheader={author.summary}
         show={showIntro}
         onMouseDownCapture={closeIntro}

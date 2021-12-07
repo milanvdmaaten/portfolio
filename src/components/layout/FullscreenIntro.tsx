@@ -36,7 +36,7 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
 
     const headerWriter = new Typewriter(headerEl, {
       loop: false,
-      delay: 75,
+      delay: 50,
       cursor: "",
     })
 
@@ -46,8 +46,8 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
       cursor: "",
     })
 
-    headerWriter.pauseFor(1500).typeString(header).start()
-    subheaderWriter.pauseFor(3250).typeString(subheader).start()
+    headerWriter.pauseFor(1750).typeString(header).start()
+    subheaderWriter.pauseFor(3000).typeString(subheader).start()
   }, [header, subheader])
 
   /**

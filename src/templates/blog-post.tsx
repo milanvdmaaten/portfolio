@@ -23,6 +23,7 @@ const BlogPostTemplate = ({ data }) => {
     content,
     featuredImage,
     drawColor,
+    backgroundColor,
     headerColor,
     textColor,
   } = frontmatter
@@ -39,7 +40,11 @@ const BlogPostTemplate = ({ data }) => {
    * Render
    */
   return (
-    <Layout owner={author.name}>
+    <Layout
+      owner={author.name}
+      backgroundColor={backgroundColor}
+      textColor={textColor}
+    >
       <Seo title={title} description={tagline || excerpt} />
       <BlogPostHeader
         title={title}

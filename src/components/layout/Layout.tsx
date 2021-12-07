@@ -8,7 +8,12 @@ import { SmoothLineDrawer } from '../SmoothLineDrawer'
 import { Footer } from './Footer'
 import { Header } from './Header'
 
-export const Layout = ({ owner, children }) => {
+export const Layout = ({
+  owner,
+  backgroundColor = "#fff",
+  textColor = "text-black",
+  children,
+}) => {
   /**
    * Component state
    */
@@ -24,7 +29,13 @@ export const Layout = ({ owner, children }) => {
    */
   return (
     <AnimatePresence exitBeforeEnter>
-      <div id="layout">
+      <div
+        id="layout"
+        className={textColor}
+        style={{
+          backgroundColor: backgroundColor,
+        }}
+      >
         <ScrollProvider>
           <DrawProvider>
             <Cursor />
