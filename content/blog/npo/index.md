@@ -5,7 +5,7 @@ fullWidth: true
 hasContent: true
 date: 2021-12-03T12:14:49.144Z
 displayPosition: 1
-textColor: text-white
+textColor: text-black
 drawColor: "#FF6E00"
 headerColor: "#2A5699"
 backgroundColor: "#0B1C36"
