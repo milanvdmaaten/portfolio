@@ -21,26 +21,53 @@ content:
 
 
       Roomplanner is embedded within home and living product webshops. Users use Roomplanner to view the webshops' products in a room they created themselves.
+  - type: imagesBlock
+    size: medium
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: home-furniture-sofas.png
+        alt: Explore sofas
+  - type: textBlock
+    title: The challenge
+    body: >-
+      There are several challenges we solved during this project. First, the
+      tool is not very user-friendly, a lot of functionalities are spread over
+      the tool without any hierarchy. Next to that, the visual style of
+      Roomplanner doesn't fit the style of the webshops. Finally, the relevance
+      for webshops to embed Roomplanner within their webshop is to generate
+      leads. However, users don't see the point of leaving behind their email
+      address.
+
+
+      In order to solve these challenges, we conducted user interviews with the target audience of Roomplanner.
   - type: textBlock
     title: Solutions
     body: >-
       ## Adding step 1 to the step indicator
 
 
-      When opening Roomplanner, users pick a room type which is followed by step 2: selecting a room shape. A step indicator shows the current step to the user. However, this indicator is missing at step 1, which implies the user starts at step 2. That's why we added the step indicator to step 1 as well.
-  - type: textBlock
-    title: ""
-    body: >-
-      ## Indicators for interactive elements
-
-
-      At step 2 users are asked to select a room shape, followed by step 3: the room configurator in which windows can be added and dimensions of the room can be set. Step 2 and 3 offer the possibility to add windows and doors to the room. However, test results showed that no participant made use of this functionality. That's why indicators were added to the elements that could be manipulated on the screen.
-  - type: textBlock
-    body: >-
-      ## 1 Task per step
-
-
-      In general, the onboarding lacks of focus, and some functionalities are difficult to find. That's why we divided the onboarding in 5 steps. Each step focuses on one specific task which increases a users' focus within a specific step.
+      When opening Roomplanner, users pick a room type which is followed by step 2: selecting a room shape. A step indicator shows the current step to the user. However, this indicator is missing at step 1, which implies that users start the onboarding at step 2. That's why we added the step indicator to step 1 as well.
+  - type: imagesBlock
+    size: medium
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: img-old-design.png
+        alt: Old design of step 1 in the onboarding.
+        title: Old design of step 1 in the onboarding.
+      - titlePosition: center
+        image: img-old-design2.png
+        alt: Old design of step 2 on the onboarding.
+        title: Old design of step 2 on the onboarding.
+      - titlePosition: center
+        image: img-02.png
+        alt: New design of step 1 in the onboarding.
+        title: New design of step 1 in the onboarding.
+      - titlePosition: center
+        image: img-06.png
+        alt: New design of step 2 on the onboarding.
+        title: New design of step 2 on the onboarding.
   - type: textBlock
     body: |-
       My role: UX Design, UI Design, User interviews\
