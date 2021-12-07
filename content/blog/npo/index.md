@@ -41,7 +41,7 @@ content:
 
       In order to start with a personalized homescreen on the first landing, the user is asked to select favorite tv programmes before landing on the homepage.
   - type: imagesBlock
-    size: large
+    size: medium
     carrousel: false
     images:
       - titlePosition: left
@@ -90,7 +90,10 @@ content:
     images:
       - titlePosition: center
         image: home-midway.png
-        alt: Most personalized content rows are positioned  at the top of the screen
+        alt: Most personalized content rows are positioned  at the top of the 'Start'
+          screen.
+        title: Most personalized content rows are positioned  at the top of the 'Start'
+          screen.
   - type: textBlock
     title: ""
     body: >-
@@ -105,12 +108,13 @@ content:
 
       That's why for example titles of content rows tell the user where certain recommendations are based on.
   - type: imagesBlock
-    size: small
+    size: fullWidth
     carrousel: false
     images:
-      - titlePosition: center
+      - titlePosition: left
         image: content-rows.png
         alt: Personalized content rows
+        title: Personalized content rows
   - type: textBlock
     body: >-
       ## **Explore content outside the bubble**
@@ -118,15 +122,13 @@ content:
 
       The 'Explore tab' contains content outside the users' bubble. An extensive set of filters helps to search implicitly for something to watch within the huge amount of content.
   - type: imagesBlock
-    size: small
+    size: medium
     carrousel: false
     images:
       - titlePosition: center
         image: explore.png
         alt: Menu explore tab
-      - titlePosition: center
-        image: filter.png
-        alt: Filters
+        title: The menu tab 'Explore'
   - type: textBlock
     body: >-
       ## **Skip the process of searching what to watch.**
