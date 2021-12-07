@@ -58,6 +58,7 @@ collections:
                 widget: "select"
                 default: "medium"
                 options:
+                  - { label: "Extra small", value: "extra-small" }
                   - { label: "Small", value: "small" }
                   - { label: "Medium", value: "medium" }
                   - { label: "Large", value: "large" }

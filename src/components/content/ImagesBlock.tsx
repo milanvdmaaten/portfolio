@@ -22,11 +22,14 @@ export const ImagesBlock = ({ content }) => {
   let isFullWidth = false
 
   switch (size) {
+    case "extra-small":
+      imageColsClass += " md:col-start-5 md:col-end-9"
+      break
     case "small":
-      imageColsClass += " md:col-start-3 md:col-span-8"
+      imageColsClass += " md:col-start-3 md:col-end-11"
       break
     case "medium":
-      imageColsClass += " md:col-start-2 md:col-span-10"
+      imageColsClass += " md:col-start-2 md:col-end-12"
       break
     case "large":
       imageColsClass += " col-span-12"
