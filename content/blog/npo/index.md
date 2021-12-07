@@ -9,7 +9,7 @@ textColor: text-black
 drawColor: "#2A5699"
 headerColor: "#F56D1D"
 backgroundColor: "#0B1C36"
-featuredImage: npo.png
+featuredImage: header2.png
 content:
   - type: textBlock
     title: About
