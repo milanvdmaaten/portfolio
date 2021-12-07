@@ -1,6 +1,6 @@
 ---
 title: NPO
-tagline: New concept and mobile app design
+tagline: A new concept and mobile app design
 fullWidth: true
 hasContent: true
 date: 2021-12-03T12:14:49.144Z
@@ -156,10 +156,10 @@ content:
         alt: Bottom sheet
   - type: textBlock
     body: >-
-      ## Project documentation
+      # Project documentation
 
 
-      ### Prototypes
+      ## Prototypes
 
 
       [Prototype (v1) for concept interviews](https://www.figma.com/proto/tSUlfMOOuFSKjxy753avqC/NPO---Concept-v2.0?page-id=0%3A1&node-id=1%3A3&viewport=241%2C48%2C0.09&scaling=scale-down&starting-point-node-id=1%3A3)
@@ -168,9 +168,7 @@ content:
       [Prototype (v2) for ux interviews](https://www.figma.com/proto/AF6DSjKctNTgAWqoGdXtnE/NPO---Concept-V3---Prototype---Onderzoek-2-(19-01-2021)?page-id=467%3A111695&node-id=467%3A111959&viewport=241%2C48%2C0.27&scaling=scale-down&starting-point-node-id=467%3A111979)
 
 
-
-
-      ### UX explorations
+      ## UX explorations
 
 
       [Main app structure](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=0%3A1)
@@ -188,7 +186,7 @@ content:
       [Live tv possibilities within the app](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=368%3A33)
 
 
-      ### Other
+      ## Other
 
 
       [Inspiration and crazy idea sketches](https://www.figma.com/file/dnU6VXDW6iMFYVs61SVnRD/NPO---Ideation?node-id=0%3A1)
@@ -200,7 +198,7 @@ content:
       [Sitemap final](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/NPO---Concept-V3---%F0%9F%94%AE-Discovery?node-id=1901%3A56834)
 
 
-      ### Final design
+      ## Final design
 
 
       [Final main flow designs](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/NPO---Concept-V3---%F0%9F%94%AE-Discovery?node-id=225%3A19525)
