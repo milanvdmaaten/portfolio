@@ -156,9 +156,6 @@ content:
         alt: Bottom sheet
   - type: textBlock
     body: >-
-      # Project documentation
-
-
       ## Prototypes
 
 
@@ -208,4 +205,5 @@ content:
 
 
       [Final main flow designs](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/NPO---Concept-V3---%F0%9F%94%AE-Discovery?node-id=225%3A19525) ›
+    title: Project documentation
 ---
