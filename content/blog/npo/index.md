@@ -44,7 +44,7 @@ content:
     size: large
     carrousel: false
     images:
-      - titlePosition: center
+      - titlePosition: left
         image: onboarding.png
         alt: First use screen in which the user selects favorite programmes.
         title: First use flow
