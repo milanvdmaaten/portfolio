@@ -85,7 +85,7 @@ content:
       top of the screen. This enlarges the chance to watch something as quick as
       possible, and that's after all why a user opens the NPO app.
   - type: imagesBlock
-    size: medium
+    size: small
     carrousel: false
     images:
       - titlePosition: center
