@@ -1,6 +1,6 @@
 ---
 title: NPO
-tagline: A new concept and mobile app design
+tagline: A new concept and app design
 fullWidth: true
 hasContent: true
 date: 2021-12-03T12:14:49.144Z
@@ -62,11 +62,9 @@ content:
       That's why the menu items are prioritized from most likely to watch something to less likely to watch something:
 
 
-      ∙ Home: Content of and for you (inside the bubble)
+      ∙ Home: Content of and for you (inside the bubble)\
 
-
-      ∙ Explore: All content outside your current bubble.
-
+      ∙ Explore: All content outside your current bubble.\
 
       ∙ Live: A tv guide which immediately throws you back in the last channel you've been watching.
   - type: imagesBlock
@@ -114,7 +112,7 @@ content:
       - titlePosition: left
         image: content-rows.png
         alt: Personalized content rows
-        title: Personalized content rows
+        title: ""
   - type: textBlock
     body: >-
       ## **Explore content outside the bubble**
@@ -125,7 +123,7 @@ content:
     size: medium
     carrousel: false
     images:
-      - titlePosition: center
+      - titlePosition: left
         image: explore.png
         alt: Menu explore tab
         title: The menu tab 'Explore'
@@ -136,12 +134,13 @@ content:
 
       One of the big differences between watching content via streaming services vs. television is that the process to find something to watch takes longer via streaming services. A user first needs to search for something to watch before he starts watching. When watching something on tv it's just a matter of turning on the tv and start watching. That's why we tried to copy this pattern to the NPO platform. When the user selects the 'live tab' the last watched channel opens up. The live programme starts playing (without sound).
   - type: imagesBlock
-    size: medium
+    size: small
     carrousel: false
     images:
       - titlePosition: center
         image: live.png
-        alt: "Tv guide "
+        alt: Live tv
+        title: Menu tab 'Live'
   - type: textBlock
     body: >-
       ## **Exploring content without leaving the page**
@@ -154,7 +153,8 @@ content:
     images:
       - titlePosition: center
         image: bottom-sheet.png
-        alt: Bottom sheet
+        title: Bottom sheet example
+        alt: Bottom sheet example
   - type: textBlock
     body: >-
       ## Prototypes
