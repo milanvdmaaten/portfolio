@@ -76,6 +76,7 @@ content:
       - titlePosition: center
         image: menu.png
         alt: Menu items
+        title: Menu items
   - type: textBlock
     title: ""
     body: The content rows on the homepage are also prioritized from 'most
