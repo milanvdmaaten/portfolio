@@ -156,7 +156,7 @@ content:
         alt: Bottom sheet
   - type: textBlock
     body: >-
-      ## Prototypes
+      ### Prototypes
 
 
       [Prototype (v1) for concept interviews](https://www.figma.com/proto/tSUlfMOOuFSKjxy753avqC/NPO---Concept-v2.0?page-id=0%3A1&node-id=1%3A3&viewport=241%2C48%2C0.09&scaling=scale-down&starting-point-node-id=1%3A3) ›
@@ -167,7 +167,7 @@ content:
 
 
 
-      ## UX explorations
+      ### UX explorations
 
 
       [Main app structure](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=0%3A1) ›
@@ -187,7 +187,7 @@ content:
 
 
 
-      ## Other
+      ### Other
 
 
       [Inspiration and crazy idea sketches](https://www.figma.com/file/dnU6VXDW6iMFYVs61SVnRD/NPO---Ideation?node-id=0%3A1) ›
@@ -201,7 +201,7 @@ content:
 
 
 
-      ## Final design
+      ### Final design
 
 
       [Final main flow designs](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/NPO---Concept-V3---%F0%9F%94%AE-Discovery?node-id=225%3A19525) ›
