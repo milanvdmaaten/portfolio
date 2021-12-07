@@ -1,6 +1,6 @@
 ---
 title: NPO
-tagline: A new concept and mobile app design
+tagline: New concept and mobile app design
 fullWidth: true
 hasContent: true
 date: 2021-12-03T12:14:49.144Z
@@ -58,17 +58,18 @@ content:
       One of the design principles we created for the project states:
 
 
-      NPO Start is all about the content. We are proud of that, so we are happy to give it the stage it deserves. We'd rather have you watching than search endlessly.
+      *NPO Start is all about the content. We are proud of that, so we are happy to give it the stage it deserves. We'd rather have you watching than search endlessly.*
 
 
-      That's why the menu items are prioritized from most likely to watch something to less likely to watch something.
+      That's why the menu items are prioritized from most likely to watch something to less likely to watch something:\
 
+      \
 
-      * Home: Content of and for you (inside the bubble)
+      - Home: Content of and for you (inside the bubble)\
 
-      * Explore: All content outside your current bubble.
+      - Explore: All content outside your current bubble.\
 
-      * Live: A tv guide which immediately throws you back in the last channel you've been watching.
+      - Live: A tv guide which immediately throws you back in the last channel you've been watching.
   - type: imagesBlock
     size: small
     carrousel: false
