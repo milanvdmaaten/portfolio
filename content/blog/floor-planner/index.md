@@ -12,11 +12,6 @@ backgroundColor: "#fff"
 featuredImage: floorplanner.png
 content:
   - type: textBlock
-    body: |-
-      ###### My role: UX Design, UI Design, User interviews\
-      Year: 2021\
-      Project completed at Valsplat with my colleague Julian Neef
-  - type: textBlock
     title: About
     body: >-
       ## Roomplanner, part of Floorplanner
@@ -46,4 +41,10 @@ content:
 
 
       In general, the onboarding lacks of focus, and some functionalities are difficult to find. That's why we divided the onboarding in 5 steps. Each step focuses on one specific task which increases a users' focus within a specific step.
+  - type: textBlock
+    body: |-
+      My role: UX Design, UI Design, User interviews\
+      Year: 2021\
+      Project completed at Valsplat with my colleague Julian Neef
+    title: Project details
 ---
