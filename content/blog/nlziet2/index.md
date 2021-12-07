@@ -1,14 +1,14 @@
 ---
 title: NLZIET
-tagline: A new concept and design for mobile, tablet and web
+tagline: A new concept and app design.
 fullWidth: true
 hasContent: true
 date: 2021-12-07T21:51:42.236Z
 displayPosition: 4
-textColor: text-white
-drawColor: "#D93C6C"
-headerColor: "#03272B"
-backgroundColor: "#FFFFFF"
+textColor: text-black
+drawColor: "#DB3075"
+headerColor: "#ADF6D5"
+backgroundColor: "#000000"
 featuredImage: nlziet2.png
 content:
   - type: textBlock
