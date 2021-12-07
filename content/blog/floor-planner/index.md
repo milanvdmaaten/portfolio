@@ -1,5 +1,5 @@
 ---
-title: Floor-planner
+title: Floor- planner
 tagline: Improving usability with ux and visual design improvements
 fullWidth: true
 hasContent: true
