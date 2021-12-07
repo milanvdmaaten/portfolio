@@ -9,7 +9,7 @@ textColor: text-black
 drawColor: "#2A5699"
 headerColor: "#F56D1D"
 backgroundColor: "#0B1C36"
-featuredImage: header2.png
+featuredImage: header.png
 content:
   - type: textBlock
     title: About
@@ -85,11 +85,11 @@ content:
       top of the screen. This enlarges the chance to watch something as quick as
       possible, and that's after all why a user opens the NPO app.
   - type: imagesBlock
-    size: small
+    size: medium
     carrousel: false
     images:
       - titlePosition: center
-        image: start2.png
+        image: home-midway.png
         alt: Most personalized content rows are positioned  at the top of the screen
   - type: textBlock
     title: ""
