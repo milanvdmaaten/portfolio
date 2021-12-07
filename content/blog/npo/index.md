@@ -48,9 +48,6 @@ content:
         image: onboarding.png
         alt: First use screen in which the user selects favorite programmes.
         title: First use flow
-      - titlePosition: center
-        image: home.png
-        alt: Start menu tab.
   - type: textBlock
     body: >-
       ## **Prioritization of the platform structure**
