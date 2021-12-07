@@ -64,13 +64,13 @@ content:
       That's why the menu items are prioritized from most likely to watch something to less likely to watch something:
 
 
-      \- Home: Content of and for you (inside the bubble)
+      Home: Content of and for you (inside the bubble)
 
 
-      \- Explore: All content outside your current bubble.
+      Explore: All content outside your current bubble.
 
 
-      \- Live: A tv guide which immediately throws you back in the last channel you've been watching.
+      Live: A tv guide which immediately throws you back in the last channel you've been watching.
   - type: imagesBlock
     size: small
     carrousel: false
