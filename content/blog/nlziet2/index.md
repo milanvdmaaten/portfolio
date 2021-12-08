@@ -8,7 +8,7 @@ displayPosition: 4
 textColor: text-white
 drawColor: "#9300A6"
 headerColor: "#9300A6"
-backgroundColor: "#FFFFFF"
+backgroundColor: "#000000"
 featuredImage: header2.png
 content:
   - type: textBlock
