@@ -41,7 +41,7 @@ content:
 
       In order to start with a personalized homescreen on the first landing, the user is asked to select favorite tv programmes before landing on the homepage.
   - type: imagesBlock
-    size: small
+    size: extra-small
     carrousel: false
     images:
       - titlePosition: left
@@ -83,7 +83,7 @@ content:
       top of the screen. This enlarges the chance to watch something as quick as
       possible, and that's after all why a user opens the NPO app.
   - type: imagesBlock
-    size: small
+    size: extra-small
     carrousel: false
     images:
       - titlePosition: center
@@ -134,7 +134,7 @@ content:
 
       One of the big differences between watching content via streaming services vs. television is that the process to find something to watch takes longer via streaming services. A user first needs to search for something to watch before he starts watching. When watching something on tv it's just a matter of turning on the tv and start watching. That's why we tried to copy this pattern to the NPO platform. When the user selects the 'live tab' the last watched channel opens up. The live programme starts playing (without sound).
   - type: imagesBlock
-    size: small
+    size: extra-small
     carrousel: false
     images:
       - titlePosition: center
@@ -148,7 +148,7 @@ content:
 
       Images don't tell directly where the show is about. Users need more context in order to decide if they want to watch a certain programme. That's why we created a bottomsheet which shows a summary where the programme is about. The advantage of showing this information in a bottomsheet is that the user can explore content quickly, instead of going back and forth between pages.
   - type: imagesBlock
-    size: small
+    size: extra-small
     carrousel: false
     images:
       - titlePosition: center
