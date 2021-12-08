@@ -6,8 +6,8 @@ hasContent: true
 date: 2021-12-07T21:51:42.236Z
 displayPosition: 4
 textColor: text-white
-drawColor: "#9300A6"
-headerColor: "#9300A6"
+drawColor: "#992A8D"
+headerColor: "#992A8D"
 backgroundColor: "#000000"
 featuredImage: header2.png
 content:
