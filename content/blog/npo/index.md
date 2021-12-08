@@ -120,7 +120,7 @@ content:
 
       The 'Explore tab' contains content outside the users' bubble. An extensive set of filters helps to search implicitly for something to watch within the huge amount of content.
   - type: imagesBlock
-    size: medium
+    size: small
     carrousel: false
     images:
       - titlePosition: left
