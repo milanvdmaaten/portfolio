@@ -66,10 +66,10 @@ export const SmoothLineDrawer = () => {
     let currentPath: SVGPathElement
     let points = []
 
-    const updateCurrentPath = () => {
+    const updateCurrentPath = (path: number[][]) => {
       currentPath?.remove()
 
-      const smoothPath = svgPathRender(points, drawSize, drawColor)
+      const smoothPath = svgPathRender(path, drawSize, drawColor)
       svg.appendChild(smoothPath)
       currentPath = smoothPath
     }
@@ -85,25 +85,24 @@ export const SmoothLineDrawer = () => {
 
     const draw = (event?: { x: number; y: number }) => {
       if (!event) return
-      const smoothPathLength = 50
+      const minimalPathLength = 20
       const { x, y } = event
 
       const last = points[points.length - 1] ?? [0, 0]
       const length = Math.hypot(x - last[0], y - last[1])
 
-      if (length < smoothPathLength) return
-
+      if (length < minimalPathLength) return
       points.push([x, y])
-      updateCurrentPath()
+      updateCurrentPath(points)
     }
 
     const fadePath = (element: SVGPathElement, iteration: number = 0) => {
-      const maxSteps = 15
-      if (iteration > maxSteps) return element.remove()
+      const fadingSteps = 15
+      if (iteration > fadingSteps) return element.remove()
 
       setTimeout(() => {
         if (element === undefined) return
-        element.style.opacity = `${1 - iteration / (maxSteps - 1)}`
+        element.style.opacity = `${1 - iteration / (fadingSteps - 1)}`
         fadePath(element, ++iteration)
       }, 10 * iteration)
     }
@@ -112,18 +111,19 @@ export const SmoothLineDrawer = () => {
       const { pageX, pageY } = event
 
       points.push([pageX, pageY])
-      updateCurrentPath()
+      updateCurrentPath(points)
     }
 
     const onMouseUp = (event: MouseEvent) => {
       const { pageX, pageY } = event
 
       points.push([pageX, pageY])
-      updateCurrentPath()
+      updateCurrentPath(points)
 
       // Start fading
       fadePath(currentPath)
 
+      // Clear the previous points
       setNewPath()
     }
 

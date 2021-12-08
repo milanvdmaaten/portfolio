@@ -57,6 +57,20 @@ export const DrawProvider: React.FC = props => {
     setCursorColor(color)
   }
 
+  const setSvgDimensions = (_svg: SVGSVGElement): void => {
+    const width = getScreenWidth()
+    const height = getScreenHeight()
+    _svg.setAttribute("width", `${width}`)
+    _svg.setAttribute("height", `${height}`)
+    _svg.setAttribute("viewBox", `0,0,${width}, ${height}`)
+
+    _svg.style.zIndex = "0"
+    _svg.style.height = height + "px"
+    _svg.style.position = "absolute"
+    _svg.style.width = "100%"
+    _svg.style.top = "0"
+  }
+
   const createSvg = () => {
     const layout = document.getElementById("layout")
 
@@ -65,20 +79,12 @@ export const DrawProvider: React.FC = props => {
     } catch (e) {}
 
     setTimeout(() => {
-      const width = getScreenWidth()
-      const height = getScreenHeight()
-      svg.setAttribute("width", `${width}`)
-      svg.setAttribute("height", `${height}`)
-      svg.setAttribute("viewBox", `0,0,${width}, ${height}`)
+      setSvgDimensions(svg)
 
-      svg.style.zIndex = "0"
-      svg.style.height = height + "px"
-      svg.style.position = "absolute"
-      svg.style.width = "100%"
-      svg.style.top = "0"
+      svg.id = "drawSvg"
 
       layout.appendChild(svg)
-    }, 1000 * 2.5) // Wait a bit so carrousels are initialized correctly
+    }, 1000 * 5) // Wait a bit so carrousels are initialized correctly
   }
 
   /**

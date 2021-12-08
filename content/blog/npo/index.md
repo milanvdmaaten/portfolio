@@ -5,7 +5,7 @@ fullWidth: true
 hasContent: true
 date: 2021-12-03T12:14:49.144Z
 displayPosition: 1
-textColor: text-black
+textColor: text-white
 drawColor: "#2A5699"
 headerColor: "#F56D1D"
 backgroundColor: "#0B1C36"
@@ -13,7 +13,8 @@ featuredImage: npo.png
 content:
   - type: textBlock
     title: About
-    body: The streaming service of the Dutch public broadcaster offering live and
+    body:
+      The streaming service of the Dutch public broadcaster offering live and
       on-demand tv. Their goal is to connect and enrich the Dutch public with
       programmes that inform, inspire and entertain.
   - type: textBlock
@@ -88,9 +89,11 @@ content:
     images:
       - titlePosition: center
         image: home-midway.png
-        alt: Most personalized content rows are positioned  at the top of the 'Start'
+        alt:
+          Most personalized content rows are positioned  at the top of the 'Start'
           screen.
-        title: Most personalized content rows are positioned  at the top of the 'Start'
+        title:
+          Most personalized content rows are positioned  at the top of the 'Start'
           screen.
   - type: textBlock
     title: ""

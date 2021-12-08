@@ -8,7 +8,7 @@ import { ContentSeparator } from '../layout/contentSeparator'
 import { Grid } from '../layout/grid'
 import { useScroll } from '../provider/ScrollProvider'
 
-export const ImagesBlock = ({ content }) => {
+export const ImagesBlock = ({ content, textColor = "text-black" }) => {
   /**
    * Component state
    */
@@ -138,6 +138,9 @@ export const ImagesBlock = ({ content }) => {
                         <img
                           src="/assets/arrow.svg"
                           alt={`arrow pointing towards ${alt}`}
+                          className={
+                            textColor === "text-white" ? "filter invert" : ""
+                          }
                         />
                       </div>
                     </Fade>

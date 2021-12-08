@@ -67,7 +67,7 @@ const BlogPostTemplate = ({ data }) => {
       <article className="blog-post-content px-4 md:px-0">
         {content?.map((content, index) => (
           <React.Fragment key={index}>
-            <Content content={content} />
+            <Content content={content} textColor={textColor} />
             <ContentSeparator />
           </React.Fragment>
         ))}
