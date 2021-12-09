@@ -106,7 +106,7 @@ content:
 
       That's why for example titles of content rows tell the user where certain recommendations are based on.
   - type: imagesBlock
-    size: fullWidth
+    size: medium
     carrousel: false
     images:
       - titlePosition: left
