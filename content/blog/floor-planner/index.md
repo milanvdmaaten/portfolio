@@ -90,7 +90,6 @@ content:
     images:
       - titlePosition: left
         image: 07.png
-        alt: New design shows moving indicators and extra options when hovering a wall.
-        title: New design shows moving indicators and extra options when hovering a
-          wall.
+        alt: New design shows move indicators and extra options when hovering a wall.
+        title: New design shows move indicators and extra options when hovering a wall.
 ---
