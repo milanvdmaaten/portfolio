@@ -88,7 +88,7 @@ content:
     size: fullWidth
     carrousel: false
     images:
-      - titlePosition: left
+      - titlePosition: center
         image: 07.png
         alt: New design shows move indicators and extra options when hovering a wall.
         title: New design shows move indicators and extra options when hovering a wall.
