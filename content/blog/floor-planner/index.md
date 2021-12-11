@@ -57,7 +57,7 @@ content:
         alt: Old design of step 1 in the onboarding.
         title: Old design of step 1 in the onboarding.
       - titlePosition: center
-        image: img-old-design2.png
+        image: 03.png
         alt: Old design of step 2 on the onboarding.
         title: Old design of step 2 on the onboarding.
       - titlePosition: center
