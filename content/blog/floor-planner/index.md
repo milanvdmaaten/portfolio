@@ -69,9 +69,19 @@ content:
         alt: New design of step 2 on the onboarding.
         title: New design of step 2 on the onboarding.
   - type: textBlock
-    body: |-
-      My role: UX Design, UI Design, User interviews\
-      Year: 2021\
-      Project completed at Valsplat with my colleague Julian Neef
-    title: Project details
+    body: "At step 2 users are asked to select a room shape, followed by step 3: the
+      room configurator in which windows can be added and dimensions of the room
+      can be set. Step 2 and 3 offer the possibility to add windows and doors to
+      the room shape. However, the test results showed that no participant made
+      use of this functionality. That's why indicators were added to the
+      elements that could be manipulated on the screen, which trigger the user
+      to play with the shape and position of the elements on the screen."
+  - type: imagesBlock
+    size: medium
+    carrousel: false
+    images:
+      - titlePosition: left
+        image: 06.png
+        alt: Old design without indicators that walls and doors can be moved.
+        title: Old design without indication that walls and doors can be moved.
 ---
