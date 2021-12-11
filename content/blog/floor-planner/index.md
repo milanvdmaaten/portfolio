@@ -65,7 +65,7 @@ content:
         alt: New design of step 1 in the onboarding.
         title: New design of step 1 in the onboarding.
       - titlePosition: center
-        image: img-06.png
+        image: 05.png
         alt: New design of step 2 on the onboarding.
         title: New design of step 2 on the onboarding.
   - type: textBlock
