@@ -128,4 +128,10 @@ content:
         title: New home screen in which the room shape can be edited behind the 'Room
           settings' option.
         image: 10.png
+  - type: textBlock
+    body: >-
+      ### Replacing icons with labels
+
+
+      The interview results showed that participants were clicking back and forth between the menu items, because the icons didn't speak for themselves. That's why we replaced the icons with labels.
 ---
