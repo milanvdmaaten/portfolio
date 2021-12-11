@@ -84,4 +84,11 @@ content:
         image: 06.png
         alt: Old design without indicators that walls and doors can be moved.
         title: Old design without indication that walls and doors can be moved.
+  - type: imagesBlock
+    size: fullWidth
+    carrousel: false
+    images:
+      - titlePosition: left
+        image: 07.png
+        alt: New design shows moving indicators and extra options when hovering a wall.
 ---
