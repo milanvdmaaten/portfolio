@@ -164,4 +164,22 @@ content:
         image: 14.png
         alt: New design of the '3D' view functionality.
         title: New design of the '3D' view functionality.
+  - type: textBlock
+    body: >-
+      ## An easier way of painting surfaces
+
+
+      Another adjustment we made was the way walls and floors could be painted. Participants were confused by the fact that a wall could be painted from both sides, which doesn't make any sense because they are furnishing just one room. We removed the functionality to paint the outside of a wall. Next to that, we added the different surfaces that could be painted to the menu.
+  - type: imagesBlock
+    size: medium
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: 15.png
+        alt: Old way of painting the room.
+        title: Old way of painting the room.
+      - titlePosition: center
+        image: 16.png
+        alt: New way of painting the room.
+        title: New way of painting the room.
 ---
