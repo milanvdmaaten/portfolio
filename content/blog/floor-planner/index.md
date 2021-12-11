@@ -9,7 +9,7 @@ textColor: text-black
 drawColor: "#FEC15B"
 headerColor: "#FEC15B"
 backgroundColor: "#fff"
-featuredImage: floorplanner.png
+featuredImage: header.png
 content:
   - type: textBlock
     title: About
