@@ -182,4 +182,22 @@ content:
         image: 16.png
         alt: New way of painting the room.
         title: New way of painting the room.
+  - type: textBlock
+    body: >-
+      ## An easier way of exploring furniture
+
+
+      Participants experienced difficulties with finding furniture in the menu. Users start within their 'favorites' tab. Even when they didn't add any favorites yet. Next to that, the way furniture could be explored differs a lot from patterns users are familiar with in other webshops. That's why we added patterns of webshops to the way furniture could be explored.
+  - type: imagesBlock
+    size: medium
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: 17.png
+        alt: New way of exploring furniture.
+        title: New way of exploring furniture.
+      - titlePosition: center
+        image: 18.png
+        alt: New way of exploring furniture.
+        title: New way of exploring furniture.
 ---
