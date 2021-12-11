@@ -54,12 +54,12 @@ content:
     images:
       - titlePosition: center
         image: 02.png
-        alt: Old design of step 1 in the onboarding.
-        title: Old design of step 1 in the onboarding.
+        alt: Old design of onboarding step 1.
+        title: Old design of onboarding step 1.
       - titlePosition: center
         image: 03.png
-        alt: Old design of step 2 on the onboarding.
-        title: Old design of step 2 on the onboarding.
+        alt: Old design of onboarding step 2
+        title: Old design of onboarding step 2
       - titlePosition: center
         image: 04.png
         alt: New design of step 1 in the onboarding.
