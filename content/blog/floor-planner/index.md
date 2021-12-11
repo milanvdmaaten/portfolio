@@ -200,4 +200,31 @@ content:
         image: 18.png
         alt: New way of exploring furniture.
         title: New way of exploring furniture.
+  - type: textBlock
+    body: >-
+      ## Adding hierarchy to the checkout flow
+
+
+      The final modal which asks to leave behind the users’ email address in order to save the design, lacks  hierarchy. Too much irrelevant information is presented at the same time, which results in confusion.
+
+
+      That's why we split up the modal over 2 modals; the first one, which asks to leave behind an email address in order to save the design. The second one (less relevant) asks if the user wants some help with the design from an Ethan Ellan designer.
+  - type: imagesBlock
+    size: medium
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: 19.png
+        alt: Old modal in which design can be saved.
+        title: Old modal in which design can be saved.
+      - titlePosition: center
+        image: 20.png
+        alt: New modal in which design can be saved.
+        title: New modal in which design can be saved.
+      - titlePosition: center
+        image: 21.png
+        alt: New design of the second modal in which help of an Ethan Allen designer is
+          offered.
+        title: New design of the second modal in which help of an Ethan Allen designer
+          is offered.
 ---
