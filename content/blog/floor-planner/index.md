@@ -53,7 +53,7 @@ content:
     carrousel: false
     images:
       - titlePosition: center
-        image: img-old-design.png
+        image: 02.png
         alt: Old design of step 1 in the onboarding.
         title: Old design of step 1 in the onboarding.
       - titlePosition: center
