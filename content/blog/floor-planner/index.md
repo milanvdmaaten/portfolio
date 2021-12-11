@@ -109,4 +109,23 @@ content:
         image: 09.png
         alt: New onboarding
         title: New onboarding
+  - type: textBlock
+    body: >-
+      ### Adding focus to the homescreen
+
+
+      Users don't expect to change the roomshape once they finished the onboarding. It’s a process they’ve completed, so why doing it again?
+
+
+      That's why we moved this functionality from the home screen to 'room settings' in the menu. This contributes to goal of the homescreen; furnishing and styling the room.
+  - type: imagesBlock
+    size: medium
+    carrousel: false
+    images:
+      - titlePosition: center
+        alt: New home screen in which the room shape can be edited behind the 'Room
+          settings' option.
+        title: New home screen in which the room shape can be edited behind the 'Room
+          settings' option.
+        image: 10.png
 ---
