@@ -146,4 +146,22 @@ content:
         image: 12.png
         alt: New menu with labels.
         title: New menu with labels.
+  - type: textBlock
+    body: >-
+      ## 2D is edit mode, 3D is view mode
+
+
+      Another insight we gained was that users expect to move furniture in 2D and 3D mode. The difference between the two is that the 3D mode is a view only, and doesn't offer the possibility to move furniture. The switch component implies that 2D and 3D offer the same functionalities because they're presented next to each other. That's why we removed the '2D' label, because this is the default mode in which users are already editing. Next to that, we changed the label from '3D' to '3D view' which makes the functionality more clear.
+  - type: imagesBlock
+    size: medium
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: 13.png
+        alt: Old design in which '2D' and '3D' are presented next to each other.
+        title: Old design in which '2D' and '3D' are presented next to each other.
+      - titlePosition: center
+        image: 14.png
+        alt: New design of the '3D' view functionality.
+        title: New design of the '3D' view functionality.
 ---
