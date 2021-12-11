@@ -134,4 +134,16 @@ content:
 
 
       The interview results showed that participants were clicking back and forth between the menu items, because the icons didn't speak for themselves. That's why we replaced the icons with labels.
+  - type: imagesBlock
+    size: medium
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: 11.png
+        alt: Old menu without labels.
+        title: Old menu without labels.
+      - titlePosition: center
+        image: 12.png
+        alt: New menu with labels.
+        title: New menu with labels.
 ---
