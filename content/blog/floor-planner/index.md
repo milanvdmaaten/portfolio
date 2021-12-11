@@ -92,4 +92,21 @@ content:
         image: 07.png
         alt: New design shows move indicators and extra options when hovering a wall.
         title: New design shows move indicators and extra options when hovering a wall.
+  - type: textBlock
+    body: In general, the onboarding lacks of focus and some functionalities were
+      not found by the participants. That's why we divided the onboarding in 5
+      steps. Each step focuses on one goal which increases a users' focus within
+      a specific step.
+  - type: imagesBlock
+    size: medium
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: 08.png
+        alt: Old onboarding
+        title: Old onboarding
+      - titlePosition: center
+        image: 09.png
+        alt: New onboarding
+        title: New onboarding
 ---
