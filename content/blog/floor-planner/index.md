@@ -26,7 +26,7 @@ content:
     carrousel: false
     images:
       - titlePosition: center
-        image: img-01.png
+        image: 01.png
         alt: Explore sofas
   - type: textBlock
     title: The challenge
