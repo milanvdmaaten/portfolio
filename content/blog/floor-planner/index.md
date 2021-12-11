@@ -9,7 +9,7 @@ textColor: text-black
 drawColor: "#FEC15B"
 headerColor: "#FEC15B"
 backgroundColor: "#fff"
-featuredImage: header.png
+featuredImage: header2.png
 content:
   - type: textBlock
     title: About
@@ -26,7 +26,7 @@ content:
     carrousel: false
     images:
       - titlePosition: center
-        image: home-furniture-sofas.png
+        image: img-01.png
         alt: Explore sofas
   - type: textBlock
     title: The challenge
