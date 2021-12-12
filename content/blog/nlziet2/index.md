@@ -93,6 +93,8 @@ content:
         alt: Video on demand item
         title: Video on demand item
   - type: textBlock
+    body: "## [Experience NLZIET yourself](https://www.nlziet.nl/nl/) ›"
+  - type: textBlock
     title: Project documentation
     body: >-
       ### Prototypes
