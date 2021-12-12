@@ -81,7 +81,7 @@ content:
 
       Live content has different properties compared to VOD content (e.g. ads, and fast forwarding). That's why the color used for the progress bar differs between these two. In this way, the user won't be surprised by seeing ads during the show.
   - type: imagesBlock
-    size: extra-small
+    size: small
     carrousel: false
     images:
       - titlePosition: center
