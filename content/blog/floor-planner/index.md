@@ -236,14 +236,14 @@ content:
           is offered.
   - type: textBlock
     body: >-
-      
-
-      [Research report](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a053796e-978e-4943-bc03-bdd5371868c6/4724_-_Rapportage_Roomplanner.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211211%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211211T234634Z&X-Amz-Expires=86400&X-Amz-Signature=c66a153da8ca43f6d468436b6c4bd145bb8c035d2e031c39f5d34a4d0999e41f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Research%2520report%2520UX%2520interviews.pdf%22&x-id=GetObject) (Dutch)
-
-
-      [Final design in prototype](https://www.figma.com/proto/fSnmswH3v65iCCt9ockdql/Design-1.0-(Copy)?page-id=0%3A1&node-id=55%3A1704&viewport=241%2C48%2C0.5&scaling=scale-down&starting-point-node-id=55%3A1704) (with rational)
+      [Research
+      report](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a053796e-978e-4943-bc03-bdd5371868c6/4724_-_Rapportage_Roomplanner.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211211%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211211T234634Z&X-Amz-Expires=86400&X-Amz-Signature=c66a153da8ca43f6d468436b6c4bd145bb8c035d2e031c39f5d34a4d0999e41f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Research%2520report%2520UX%2520interviews.pdf%22&x-id=GetObject)
+      (Dutch) ›
 
 
-      [Final design](https://www.figma.com/file/fSnmswH3v65iCCt9ockdql/?node-id=0%3A1) (Figma)
+      [Final design in prototype](https://www.figma.com/proto/fSnmswH3v65iCCt9ockdql/Design-1.0-(Copy)?page-id=0%3A1&node-id=55%3A1704&viewport=241%2C48%2C0.5&scaling=scale-down&starting-point-node-id=55%3A1704) (with rational) ›
+
+
+      [Final design](https://www.figma.com/file/fSnmswH3v65iCCt9ockdql/?node-id=0%3A1) (Figma) ›
     title: Project documentation
 ---
