@@ -6,9 +6,9 @@ hasContent: true
 date: 2021-12-07T21:51:42.236Z
 displayPosition: 4
 textColor: text-white
-drawColor: "#992A8D"
-headerColor: "#012B35"
-backgroundColor: "#021013"
+drawColor: "#D63E6C"
+headerColor: "#00647B"
+backgroundColor: "#03181C"
 featuredImage: header3.png
 content:
   - type: textBlock
