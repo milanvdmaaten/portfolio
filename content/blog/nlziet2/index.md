@@ -7,9 +7,9 @@ date: 2021-12-07T21:51:42.236Z
 displayPosition: 4
 textColor: text-white
 drawColor: "#992A8D"
-headerColor: "#992A8D"
-backgroundColor: "#000000"
-featuredImage: header2.png
+headerColor: "#012B35"
+backgroundColor: "#021013"
+featuredImage: header3.png
 content:
   - type: textBlock
     title: About
