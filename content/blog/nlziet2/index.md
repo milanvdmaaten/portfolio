@@ -92,4 +92,39 @@ content:
         image: 06.png
         alt: Video on demand item
         title: Video on demand item
+  - type: textBlock
+    title: Project documentation
+    body: >-
+      ### Prototypes
+
+
+      [Prototype (v2) for UX interviews](https://www.figma.com/proto/tSUlfMOOuFSKjxy753avqC/NPO---Concept-v2.0?page-id=0%3A1&node-id=1%3A3&viewport=241%2C48%2C0.09&scaling=scale-down&starting-point-node-id=1%3A3) ›
+
+
+      ### UX explorations
+
+
+      [Wireframes Mobile & Tablet](https://www.figma.com/file/JvfgOpfjnBqfPZEgX8mW6d/UX-Design---MOBILE?node-id=10%3A0) ›
+
+
+      ### Other
+
+
+      [Mobile streaming apps inspiration overview](https://www.figma.com/file/JvfgOpfjnBqfPZEgX8mW6d/?node-id=4%3A3479) ›\
+
+      [Flowchart](https://www.figma.com/file/mVbJbKXUSd4DsuXLR3RFKo/Flowchart---MOBILE?node-id=1%3A897) ›\
+
+      [Sitemap](https://www.figma.com/file/mVbJbKXUSd4DsuXLR3RFKo/Flowchart---MOBILE?node-id=4%3A92) ›\
+
+      [Wireflows desktop](https://www.figma.com/file/oG8gNxWkHF2fU1mCvZe84y/?node-id=230%3A0) ›\
+
+      [Inspiration research desktop](https://www.figma.com/file/CXOOEp6boFosYiUSuKr3P8/?node-id=0%3A1) ›
+
+
+      ### Final design
+
+
+      [Mobile & tablet](https://www.figma.com/file/ggyO1XBT1XjHYVQksgKcHL/?node-id=2812%3A110377) ›\
+
+      [Desktop](https://www.figma.com/file/q78AG8Qa6sTWtNgF2yLw6P/%F0%9F%96%8C-Design-(Web)-(Copy)?node-id=93%3A7873) ›
 ---
