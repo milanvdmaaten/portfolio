@@ -7,8 +7,8 @@ date: 2021-12-03T12:14:49.144Z
 displayPosition: 1
 textColor: text-white
 drawColor: "#F56D1D"
-headerColor: "#2A5699"
-backgroundColor: "#0B1C36"
+headerColor: "#012B35"
+backgroundColor: "#021013"
 featuredImage: header3.png
 content:
   - type: textBlock
