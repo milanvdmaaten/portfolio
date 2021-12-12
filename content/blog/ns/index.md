@@ -5,10 +5,10 @@ fullWidth: true
 hasContent: "false"
 date: 2021-12-02T18:55:46.572Z
 displayPosition: 3
-textColor: text-black
+textColor: text-white
 drawColor: "#FFC917"
 headerColor: "#FFC917"
-backgroundColor: "#000000"
+backgroundColor: "#FFFFFF"
 featuredImage: ns.png
 content:
   - type: textBlock
