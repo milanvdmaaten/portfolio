@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from 'react'
 import Swiper from 'swiper'
 
+import { getScreenWidth } from '../utils/screenSize'
 import { BlogPostHeader } from './BlogPostHeader'
 import { Post } from './post'
 import { useScroll } from './provider/ScrollProvider'
@@ -9,13 +10,14 @@ interface OtherPostsProps {
   posts: any[]
   author: string
   backgroundColor: string
+  textColor: string
 }
 
 export const OtherPosts: FC<OtherPostsProps> = props => {
   /**
    * Component state
    */
-  const { posts, author, backgroundColor } = props
+  const { posts, author, backgroundColor, textColor = "" } = props
 
   const [titleRight, setTitleRight] = useState(2000)
 
@@ -43,16 +45,39 @@ export const OtherPosts: FC<OtherPostsProps> = props => {
    * Side effects
    */
   useEffect(() => {
-    setTimeout(() => {
+    const createSwiper = (): void => {
+      const width = getScreenWidth()
+      let slidesPerView = 1.25
+      let slidesOffsetBefore = 0
+
+      if (width > 960) {
+        slidesOffsetBefore = 0
+        slidesPerView = 2.25
+      }
+      if (width > 1200) {
+        slidesOffsetBefore = 208
+        slidesPerView = 3.5
+      }
+
       new Swiper(`.swiper-other-posts`, {
-        slidesPerView: 3.5,
-        slidesOffsetBefore: 208,
+        slidesPerView,
+        slidesOffsetBefore,
         loop: true,
         autoplay: {
           delay: 1000 * 5,
         },
       })
+    }
+
+    setTimeout(() => {
+      createSwiper()
     }, 1000 * 2)
+
+    window.addEventListener("resize", createSwiper)
+
+    return () => {
+      window.removeEventListener("resize", createSwiper)
+    }
   }, [])
 
   /**
@@ -77,7 +102,7 @@ export const OtherPosts: FC<OtherPostsProps> = props => {
             {[...posts, ...posts, ...posts, ...posts, ...posts, ...posts].map(
               (post, index) => (
                 <div className="swiper-slide px-12" key={index}>
-                  <Post post={post} author={author} />
+                  <Post post={post} author={author} textColor={textColor} />
                 </div>
               )
             )}

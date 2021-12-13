@@ -74,6 +74,7 @@ const BlogPostTemplate = ({ data }) => {
       </article>
       <ContentSeparator />
       <OtherPosts
+        textColor={textColor}
         backgroundColor={headerColor}
         posts={edges.map(edge => edge.node)}
         author={author}

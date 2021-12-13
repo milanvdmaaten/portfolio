@@ -76,8 +76,8 @@ body {
 
 :root {
   --mouse-color: #000;
-  --mouse-border-color: rgba(0,0,0,.4);
-  --accent-color: #D5ADF6;
+  --mouse-border-color: rgba(0, 0, 0, 0.4);
+  --accent-color: #d5adf6;
 }
 
 a {
@@ -90,12 +90,11 @@ a {
 
 svg path {
   @apply transition ease-in;
-  transition-property: 'opacity';
+  transition-property: "opacity";
 }
 
 .bottom-screen-wrapper {
-  @apply
-  absolute
+  @apply absolute
   bottom-0
   w-full
   bg-white
@@ -123,6 +122,12 @@ svg path {
 
 @media (min-width: 920px) {
   .blog-post-link-image {
-   position: absolute !important;
+    position: absolute !important;
+  }
+}
+
+@media (max-width: 920px) {
+  .blog-post-link-image {
+    margin-top: 0;
   }
 }

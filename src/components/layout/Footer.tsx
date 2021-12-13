@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-export const Footer = ({ owner }) => {
+export const Footer = ({ owner, textColor = "text-black" }) => {
   return (
-    <footer className="text-black bg-accent px-4">
+    <footer className={`bg-accent px-4 ${textColor}`}>
       <div className="container m-auto pb-12 pt-56 flex justify-between">
         <span className="transform origin-bottom-left translate-x-20 -rotate-90">
           © {new Date().getFullYear()},

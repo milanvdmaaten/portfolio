@@ -5,3 +5,5 @@
 # list item component
 
 # draw timer + confetti canon
+
+# other posts scale with screen

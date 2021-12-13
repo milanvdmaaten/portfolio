@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useReducer, useRef, useState } from 'react'
+import React, { createContext, useContext, useEffect, useRef, useState } from 'react'
 
 import { setCursorColor } from '../../customCursor'
 import { getScreenHeight, getScreenWidth } from '../../utils/screenSize'

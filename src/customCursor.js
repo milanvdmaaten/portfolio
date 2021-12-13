@@ -1,9 +1,3 @@
-const padZero = (str, len) => {
-  len = len || 2
-  var zeros = new Array(len).join("0")
-  return (zeros + str).slice(-len)
-}
-
 // https://stackoverflow.com/a/35970186/4655177
 export const hexToRgb = hex => {
   hex = hex ?? "#000"

@@ -42,7 +42,7 @@ export const Layout = ({
             <SmoothLineDrawer />
             <Header owner={name} />
             <main>{children}</main>
-            <Footer owner={owner} />
+            <Footer owner={owner} textColor={textColor} />
           </DrawProvider>
         </ScrollProvider>
       </div>

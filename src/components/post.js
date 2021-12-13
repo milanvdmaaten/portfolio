@@ -2,7 +2,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import * as React from "react"
 
-export const Post = ({ post, author }) => {
+export const Post = ({ post, author, textColor = "text-black" }) => {
   const { frontmatter, fields } = post
   const { slug } = fields
   const { featuredImage, tagline, title, date, fullWidth } = frontmatter
@@ -32,9 +32,15 @@ export const Post = ({ post, author }) => {
             </figcaption>
           </figure>
         </header>
-        <p className="body-small flex items-center">
-          <strong className="border-r-2 border-black pr-2 mr-2">{title}</strong>
-          {tagline}
+        <p className="body-small flex items-start">
+          <strong className="mr-2">{title}</strong>
+          <span
+            className={`border-l-2 pl-2 ${
+              textColor.includes("black") ? "border-black" : "border-white"
+            }`}
+          >
+            {tagline}
+          </span>
         </p>
         <p itemProp="datePublished" className="sr-only">
           {date}
