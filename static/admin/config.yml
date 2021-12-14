@@ -85,7 +85,8 @@ collections:
     path: "{{title}}/index"
     editor:
       preview: false
-    fields: *FIELDS
+    fields:
+      - *FIELDS
       - { label: "Featured Image", name: "featuredImage", widget: "image" }
   - name: "pages"
     label: "Pages"
