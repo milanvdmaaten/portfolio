@@ -5,19 +5,12 @@ import * as React from "react"
 export const Post = ({ post, author, textColor = "text-black" }) => {
   const { frontmatter, fields } = post
   const { slug } = fields
-  const { featuredImage, tagline, title, date, fullWidth } = frontmatter
-
-  const size = fullWidth ? "12" : "6"
+  const { featuredImage, tagline, title, date } = frontmatter
 
   const image = getImage(featuredImage)
 
   return (
-    <Link
-      to={slug}
-      itemProp="url"
-      key={slug}
-      className={`col-span-${size ?? 12}`}
-    >
+    <Link to={slug} itemProp="url" key={slug} className={`col-span-12`}>
       <article itemScope itemType="http://schema.org/Article">
         <header className="mb-4">
           <figure>
