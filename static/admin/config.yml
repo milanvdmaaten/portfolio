@@ -5,6 +5,77 @@ backend:
 media_folder: static/img
 public_folder: /img
 
+fields: &FIELDS
+  - { label: "Title", name: "title", widget: "string" }
+  - { label: "Tagline", name: "tagline", widget: "string" }
+  - { label: "Full width", name: "fullWidth", widget: "boolean" }
+  - { label: "Publish Date", name: "date", widget: "datetime" }
+  - { label: "Display position", name: "displayPosition", widget: "number" }
+  - label: "Text color"
+    name: "textColor"
+    widget: "select"
+    options:
+      - { label: "Black", value: "text-black" }
+      - { label: "White", value: "text-white" }
+  - { label: "Draw color", name: "drawColor", widget: "string" }
+  - { label: "Header background color", name: "headerColor", widget: "string" }
+  - {
+      label: "Content background color",
+      name: "backgroundColor",
+      widget: "string",
+    }
+  - { label: "Featured Image", name: "featuredImage", widget: "image" }
+  - label: "Content"
+    name: "content"
+    widget: "list"
+    types:
+      - label: "Text block"
+        name: "textBlock"
+        widget: "object"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+            required: false
+          - { label: "Text", name: "body", widget: "markdown" }
+      - label: "Images block"
+        name: "imagesBlock"
+        widget: "object"
+        fields:
+          - label: "Images size"
+            name: "size"
+            widget: "select"
+            default: "medium"
+            options:
+              - { label: "Extra small", value: "extra-small" }
+              - { label: "Small", value: "small" }
+              - { label: "Medium", value: "medium" }
+              - { label: "Large", value: "large" }
+              - { label: "Full width", value: "fullWidth" }
+          - label: "Should display as carrousel"
+            name: "carrousel"
+            widget: "boolean"
+            default: false
+            required: false
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: Image Description, name: "alt", widget: string }
+              - label: Image title
+                name: "title"
+                widget: string
+                required: false
+              - label: "Image title position"
+                name: "titlePosition"
+                widget: "select"
+                default: "center"
+                options:
+                  - { label: "Left", value: "left" }
+                  - { label: "Center", value: "center" }
+                  - { label: "Right", value: "right" }
+
 collections:
   - name: "blog"
     label: "Blog"
@@ -15,74 +86,16 @@ collections:
     public_folder: ""
     path: "{{title}}/index"
     editor:
-      preview: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Tagline", name: "tagline", widget: "string" }
-      - { label: "Full width", name: "fullWidth", widget: "boolean" }
-      - label: "Does this post has content?"
-        name: "hasContent"
-        widget: "boolean"
-        default: "false"
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Display position", name: "displayPosition", widget: "number" }
-      - label: "Text color"
-        name: "textColor"
-        widget: "select"
-        options:
-          - { label: "Black", value: "text-black" }
-          - { label: "White", value: "text-white" }
-      - { label: "Draw color", name: "drawColor", widget: "string" }
-      - { label: "Header color", name: "headerColor", widget: "string" }
-      - { label: "Content color", name: "backgroundColor", widget: "string" }
-      - { label: "Featured Image", name: "featuredImage", widget: "image" }
-      - label: "Content"
-        name: "content"
-        widget: "list"
-        types:
-          - label: "Text Block"
-            name: "textBlock"
-            widget: "object"
-            fields:
-              - label: "Title"
-                name: "title"
-                widget: "string"
-                required: false
-              - { label: "Text", name: "body", widget: "markdown" }
-          - label: "Images"
-            name: "imagesBlock"
-            widget: "object"
-            fields:
-              - label: "Images size"
-                name: "size"
-                widget: "select"
-                default: "medium"
-                options:
-                  - { label: "Extra small", value: "extra-small" }
-                  - { label: "Small", value: "small" }
-                  - { label: "Medium", value: "medium" }
-                  - { label: "Large", value: "large" }
-                  - { label: "Full width", value: "fullWidth" }
-              - label: "Carrousel"
-                name: "carrousel"
-                widget: "boolean"
-                default: false
-                required: false
-              - label: "Images"
-                name: "images"
-                widget: "list"
-                fields:
-                  - { label: "Image", name: "image", widget: "image" }
-                  - { label: Image Description, name: "alt", widget: string }
-                  - label: Image title
-                    name: "title"
-                    widget: string
-                    required: false
-                  - label: "Image title position"
-                    name: "titlePosition"
-                    widget: "select"
-                    default: "center"
-                    options:
-                      - { label: "Left", value: "left" }
-                      - { label: "Center", value: "center" }
-                      - { label: "Right", value: "right" }
+      preview: false
+    fields: *FIELDS
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    create: true
+    slug: "index"
+    media_folder: ""
+    public_folder: ""
+    path: "{{title}}/index"
+    editor:
+      preview: false
+    fields: *FIELDS

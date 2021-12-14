@@ -135,7 +135,6 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       drawColor: String
       displayPosition: Int
       fullWidth: Boolean
-      hasContent: Boolean
       date: Date @dateformat
       featuredImage: File @fileByRelativePath
       content: [Content]

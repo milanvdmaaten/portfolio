@@ -117,9 +117,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(
-      filter: { frontmatter: { hasContent: { eq: true } }, id: { ne: $id } }
-    ) {
+    allMarkdownRemark(filter: { id: { ne: $id } }) {
       edges {
         node {
           fields {
