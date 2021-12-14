@@ -1,8 +1,6 @@
 ---
 title: NPO
 tagline: A new concept and app design
-fullWidth: true
-hasContent: true
 date: 2021-12-03T12:14:49.144Z
 displayPosition: 1
 textColor: text-white

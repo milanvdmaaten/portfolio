@@ -1,8 +1,6 @@
 ---
 title: NLZIET
 tagline: A new concept and app design.
-fullWidth: true
-hasContent: true
 date: 2021-12-07T21:51:42.236Z
 displayPosition: 4
 textColor: text-black
@@ -13,7 +11,8 @@ featuredImage: header.png
 content:
   - type: textBlock
     title: About
-    body: The Dutch leading streaming service offering live and on-demand TV of the
+    body:
+      The Dutch leading streaming service offering live and on-demand TV of the
       Dutch premium broadcasters.
   - type: textBlock
     body: >-

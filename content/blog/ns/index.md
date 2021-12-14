@@ -1,8 +1,6 @@
 ---
 title: NS
 tagline: A design system of wordclass
-fullWidth: true
-hasContent: "false"
 date: 2021-12-02T18:55:46.572Z
 displayPosition: 3
 textColor: text-black

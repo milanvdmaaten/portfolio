@@ -7,10 +7,6 @@ module.exports = {
     },
     description: `Portfolio website Milan van der Maaten.`,
     siteUrl: `https://xiduzo.netlify.app/`,
-    social: {
-      instagram: `xiduz0`,
-      twitter: `xiduzo`,
-    },
   },
   plugins: [
     `gatsby-plugin-postcss`,
