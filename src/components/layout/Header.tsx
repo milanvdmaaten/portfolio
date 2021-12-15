@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 
 interface HeaderProps {
   owner: string
-  pages: {
+  pages?: {
     fields: {
       slug: string
     }
@@ -31,7 +31,7 @@ export const Header: FC<HeaderProps> = props => {
               Work
             </Link>
           </li>
-          {pages.map((page, index) => (
+          {pages?.map((page, index) => (
             <li key={index}>
               <Link to={page.fields.slug} className="p-2 ml-10">
                 {page.frontmatter.title}
