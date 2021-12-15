@@ -16,7 +16,7 @@ const BlogPostTemplate = ({ data }) => {
    */
   const author = data.site.siteMetadata.author
 
-  const { frontmatter, excerpt } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark
   const {
     tagline,
     title,
@@ -45,7 +45,7 @@ const BlogPostTemplate = ({ data }) => {
       backgroundColor={backgroundColor}
       textColor={textColor}
     >
-      <Seo title={title} description={tagline || excerpt} />
+      <Seo title={title} description={tagline} />
       <BlogPostHeader
         title={title}
         headerColor={headerColor}
@@ -137,7 +137,6 @@ export const pageQuery = graphql`
     }
     markdownRemark(id: { eq: $id }) {
       id
-      excerpt(pruneLength: 160)
       html
       frontmatter {
         title

@@ -2,14 +2,15 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  await createPosts({ graphql, actions, reporter })
+  await createPosts({ graphql, actions, reporter, collection: `blog` })
+  await createPosts({ graphql, actions, reporter, collection: `pages` })
 }
 
-const createPosts = async ({ graphql, actions, reporter }) => {
+const createPosts = async ({ graphql, actions, reporter, collection }) => {
   const { createPage } = actions
 
   // Define a template for blog post
-  const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
+  const blogPost = path.resolve(`./src/templates/post.tsx`)
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
@@ -18,6 +19,7 @@ const createPosts = async ({ graphql, actions, reporter }) => {
         allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: ASC }
           limit: 1000
+          filter: { fileAbsolutePath: { regex: "/${collection}/" } }
         ) {
           nodes {
             id
