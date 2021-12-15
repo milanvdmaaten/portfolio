@@ -10,6 +10,7 @@ fields: &FIELDS
   - { label: "Tagline", name: "tagline", widget: "string" }
   - { label: "Publish Date", name: "date", widget: "datetime" }
   - { label: "Display position", name: "displayPosition", widget: "number" }
+  - { label: "Featured Image", name: "featuredImage", widget: "image" }
   - label: "Text color"
     name: "textColor"
     widget: "select"
@@ -85,9 +86,7 @@ collections:
     path: "{{title}}/index"
     editor:
       preview: false
-    fields:
-      - *FIELDS
-      - { label: "Featured Image", name: "featuredImage", widget: "image" }
+    fields: *FIELDS
   - name: "pages"
     label: "Pages"
     folder: "content/pages"
