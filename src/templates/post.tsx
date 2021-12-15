@@ -117,7 +117,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(filter: { id: { ne: $id } }) {
+    allMarkdownRemark(
+      filter: { id: { ne: $id } }
+      fileAbsolutePath: { regex: "/blog/" }
+    ) {
       edges {
         node {
           fields {
