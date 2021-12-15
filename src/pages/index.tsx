@@ -12,10 +12,12 @@ const BlogIndex = ({ data }) => {
   /**
    * Component state
    */
-  const author = data.site.siteMetadata.author
-  const description = data.site.siteMetadata.description
-  const posts = data.allMarkdownRemark.nodes
-
+  const { site, allMarkdownRemark } = data
+  const { siteMetadata } = site
+  const { author, description } = siteMetadata
+  const { nodes } = allMarkdownRemark
+  const posts = nodes.filter(node => node.fileAbsolutePath.includes("/blog/"))
+  const pages = nodes.filter(node => node.fileAbsolutePath.includes("/page/"))
   const [showIntro, setShowIntro] = useState(() => {
     if (typeof localStorage === "undefined") return
     const lastVisit = localStorage.getItem("lastVisit")
@@ -70,7 +72,7 @@ const BlogIndex = ({ data }) => {
    * Render
    */
   return (
-    <Layout owner={author.name}>
+    <Layout owner={author.name} pages={pages}>
       <Seo title={description} />
       <FullscreenIntro
         title={timeOfDay()}
@@ -111,6 +113,7 @@ export const pageQuery = graphql`
         fields {
           slug
         }
+        fileAbsolutePath
         frontmatter {
           date(formatString: "YYYY")
           title

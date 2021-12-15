@@ -1,5 +1,5 @@
 ---
-title: NS
+title: About
 tagline: A design system of wordclass
 date: 2021-12-02T18:55:46.572Z
 displayPosition: 3

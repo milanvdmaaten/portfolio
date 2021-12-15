@@ -16,7 +16,7 @@ const BlogPostTemplate = ({ data }) => {
    */
   const author = data.site.siteMetadata.author
 
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter, id } = data.markdownRemark
   const {
     tagline,
     title,
@@ -32,6 +32,12 @@ const BlogPostTemplate = ({ data }) => {
 
   const { edges } = data.allMarkdownRemark
 
+  const nodes = edges.map(({ node }) => node)
+
+  const posts = nodes.filter(node => node.fileAbsolutePath.includes("/blog/"))
+  const pages = nodes.filter(node => node.fileAbsolutePath.includes("/page/"))
+  console.log(posts, id)
+
   /**
    * Side effects
    */
@@ -41,6 +47,7 @@ const BlogPostTemplate = ({ data }) => {
    */
   return (
     <Layout
+      pages={pages}
       owner={author.name}
       backgroundColor={backgroundColor}
       textColor={textColor}
@@ -76,7 +83,7 @@ const BlogPostTemplate = ({ data }) => {
       <OtherPosts
         textColor={textColor}
         backgroundColor={headerColor}
-        posts={edges.map(edge => edge.node)}
+        posts={posts.filter(post => post.id !== id)}
         author={author}
       />
     </Layout>
@@ -117,15 +124,14 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(
-      filter: { id: { ne: $id } }
-      fileAbsolutePath: { regex: "/blog/" }
-    ) {
+    allMarkdownRemark {
       edges {
         node {
+          id
           fields {
             slug
           }
+          fileAbsolutePath
           frontmatter {
             title
             tagline

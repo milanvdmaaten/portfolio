@@ -3,7 +3,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await createPosts({ graphql, actions, reporter, collection: `blog` })
-  await createPosts({ graphql, actions, reporter, collection: `pages` })
+  await createPosts({ graphql, actions, reporter, collection: `page` })
 }
 
 const createPosts = async ({ graphql, actions, reporter, collection }) => {

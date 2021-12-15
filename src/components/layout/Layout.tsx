@@ -13,6 +13,7 @@ export const Layout = ({
   backgroundColor = "#fff",
   textColor = "text-black",
   children,
+  pages,
 }) => {
   /**
    * Component state
@@ -40,7 +41,7 @@ export const Layout = ({
           <DrawProvider>
             <Cursor />
             <SmoothLineDrawer />
-            <Header owner={name} />
+            <Header owner={name} pages={pages} />
             <main>{children}</main>
             <Footer owner={owner} textColor={textColor} />
           </DrawProvider>
