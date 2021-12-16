@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import AnimatedCursor from 'react-animated-cursor'
 
-import { hexToRgb } from '../customCursor'
+import { hexToRgb } from '../utils/color'
 import { useDraw } from './provider/DrawProvider'
 
 export const Cursor: FC = () => {
@@ -9,8 +9,7 @@ export const Cursor: FC = () => {
    * Custom & 3th party hooks
    */
   const { drawSize, drawColor } = useDraw()
-
-  const { r, g, b } = hexToRgb(drawColor)
+  const { red, green, blue } = hexToRgb(drawColor)
 
   /**
    * Render
@@ -19,7 +18,7 @@ export const Cursor: FC = () => {
   return (
     <AnimatedCursor
       innerSize={drawSize * 1.5}
-      color={`${r}, ${g}, ${b}`}
+      color={`${red}, ${green}, ${blue}`}
       outerScale={15}
     />
   )

@@ -84,10 +84,6 @@ a {
   @apply z-10 relative;
 }
 
-#layout > div:nth-child(2) {
-  border: 1px solid var(--mouse-border-color);
-}
-
 svg path {
   @apply transition ease-in;
   transition-property: "opacity";

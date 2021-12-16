@@ -2,9 +2,9 @@ import { graphql } from 'gatsby'
 import React, { useEffect, useState } from 'react'
 
 import { BlogPostLink } from '../components/BlogPostLink'
-import { ContentSeparator } from '../components/layout/contentSeparator'
+import { ContentSeparator } from '../components/layout/ContentSeparator'
 import { FullscreenIntro } from '../components/layout/FullscreenIntro'
-import { Grid } from '../components/layout/grid'
+import { Grid } from '../components/layout/Grid'
 import { Layout } from '../components/layout/Layout'
 import Seo from '../components/seo'
 
@@ -49,7 +49,7 @@ const BlogIndex = ({ data }) => {
   const timeOfDay = (): string => {
     const time = new Date().getHours()
 
-    let text = "'"
+    let text = "`"
     if (time < 6 || time >= 20) text += "evening"
     else if (time >= 12) text += "afternoon"
     else if (time >= 6) text += "morning"

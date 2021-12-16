@@ -3,7 +3,7 @@ import React, { FC, HTMLAttributes, useEffect } from 'react'
 import Typewriter from 'typewriter-effect/dist/core'
 
 import { disableScroll, enableScroll } from '../../utils/scrollBlocker'
-import { Grid } from './grid'
+import { Grid } from './Grid'
 
 interface FullscreenIntroProps extends HTMLAttributes<HTMLElement> {
   show: boolean

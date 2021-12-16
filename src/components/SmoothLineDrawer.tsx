@@ -58,7 +58,7 @@ const svgPathRender = (
 }
 
 export const SmoothLineDrawer = () => {
-  const { readyToDraw, svg, drawSize, drawColor, setDrawMethod } = useDraw()
+  const { readyToDraw, svg, drawSize, drawColor, addDrawMethod } = useDraw()
 
   // Create the canvas
   React.useEffect(() => {
@@ -127,7 +127,7 @@ export const SmoothLineDrawer = () => {
       setNewPath()
     }
 
-    setDrawMethod(draw)
+    addDrawMethod(draw)
     window.addEventListener("mousedown", onMouseDown)
     window.addEventListener("mouseup", onMouseUp)
 
@@ -136,7 +136,7 @@ export const SmoothLineDrawer = () => {
       window.removeEventListener("mousedown", onMouseDown)
       window.removeEventListener("mouseup", onMouseUp)
     }
-  }, [readyToDraw, svg, drawSize, setDrawMethod])
+  }, [readyToDraw, svg, drawSize, addDrawMethod])
 
   return null
 }

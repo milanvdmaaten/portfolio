@@ -2,7 +2,6 @@ import React, { FC, useEffect, useState } from 'react'
 import Swiper from 'swiper'
 
 import { getScreenWidth } from '../utils/screenSize'
-import { BlogPostHeader } from './BlogPostHeader'
 import { Post } from './post'
 import { useScroll } from './provider/ScrollProvider'
 

@@ -94,7 +94,12 @@ export const ScrollProvider: FC = props => {
 }
 
 export const useScroll = () => {
+  /**
+   * State
+   */
   const context = useContext(ScrollContext)
+  if (!context)
+    throw new Error(`useScroll must be used within a ScrollProvider`)
 
   /**
    * Side effects

@@ -2,6 +2,7 @@ import { AnimatePresence } from 'framer-motion'
 import React, { useEffect } from 'react'
 
 import { Cursor } from '../Cursor'
+import { ConfettiProvider } from '../provider/ConfettiProvider'
 import { DrawProvider } from '../provider/DrawProvider'
 import { ScrollProvider } from '../provider/ScrollProvider'
 import { SmoothLineDrawer } from '../SmoothLineDrawer'
@@ -37,15 +38,17 @@ export const Layout = ({
           backgroundColor: backgroundColor,
         }}
       >
-        <ScrollProvider>
-          <DrawProvider>
-            <Cursor />
-            <SmoothLineDrawer />
-            <Header owner={name} pages={pages} />
-            <main>{children}</main>
-            <Footer owner={owner} textColor={textColor} />
-          </DrawProvider>
-        </ScrollProvider>
+        <ConfettiProvider>
+          <ScrollProvider>
+            <DrawProvider>
+              <Cursor />
+              <SmoothLineDrawer />
+              <Header owner={name} pages={pages} />
+              <main>{children}</main>
+              <Footer owner={owner} textColor={textColor} />
+            </DrawProvider>
+          </ScrollProvider>
+        </ConfettiProvider>
       </div>
     </AnimatePresence>
   )

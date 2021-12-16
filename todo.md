@@ -1,9 +1,7 @@
-# about page
-
 # change good morning animation
 
 # list item component
 
 # draw timer + confetti canon
 
-# other posts scale with screen
+# move confetti to own file like the smoothlinedrawer to calculate draw travel distance
