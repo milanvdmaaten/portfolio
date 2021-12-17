@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import AnimatedCursor from 'react-animated-cursor'
 
 import { hexToRgb } from '../utils/color'
-import { useDraw } from './provider/DrawProvider'
+import { useDraw } from './providers/DrawProvider'
 
 export const Cursor: FC = () => {
   /**

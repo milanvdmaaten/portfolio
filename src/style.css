@@ -127,3 +127,7 @@ svg path {
     margin-top: 0;
   }
 }
+
+#canvas-confetti {
+  @apply fixed w-full h-full z-0;
+}

@@ -1,17 +1,16 @@
 import React, { FC, useEffect, useState } from 'react'
 
-import { setCursorColor } from '../customCursor'
-import { useDraw } from './provider/DrawProvider'
-import { useScroll } from './provider/ScrollProvider'
+import { useDraw } from '../providers/DrawProvider'
+import { useScroll } from '../providers/ScrollProvider'
 
-interface BlogPostHeaderProps {
+interface PostHeaderProps {
   headerColor: string
   drawColor: string
   textColor: string
   title: string
 }
 
-export const BlogPostHeader: FC<BlogPostHeaderProps> = props => {
+export const PostHeader: FC<PostHeaderProps> = props => {
   /**
    * Component state
    */

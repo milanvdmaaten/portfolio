@@ -1,9 +1,9 @@
 import React, { FC, useEffect, useState } from 'react'
 import Swiper from 'swiper'
 
-import { getScreenWidth } from '../utils/screenSize'
+import { getScreenWidth } from '../../utils/screenSize'
+import { useScroll } from '../providers/ScrollProvider'
 import { Post } from './post'
-import { useScroll } from './provider/ScrollProvider'
 
 interface OtherPostsProps {
   posts: any[]

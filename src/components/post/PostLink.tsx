@@ -1,14 +1,14 @@
 import { Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 
-import { useDraw } from './provider/DrawProvider'
+import { useDraw } from '../providers/DrawProvider'
 
-interface BlogPostLinkProps {
+interface PostLinkProps {
   post: any
 }
 
-export const BlogPostLink: FC<BlogPostLinkProps> = props => {
+export const PostLink: FC<PostLinkProps> = props => {
   /**
    * Component state
    */

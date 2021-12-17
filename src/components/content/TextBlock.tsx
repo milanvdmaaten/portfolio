@@ -1,9 +1,18 @@
-import * as React from "react"
-import ReactMarkdown from "react-markdown"
-import { Grid } from "../layout/grid"
-import { Fade } from "react-awesome-reveal"
+import React, { FC } from 'react'
+import { Fade } from 'react-awesome-reveal'
+import ReactMarkdown from 'react-markdown'
 
-export const TextBlock = ({ content }) => {
+import { Grid } from '../layout/grid'
+
+interface TextBlockProps {
+  content: {
+    title: string
+    body: string
+  }
+}
+
+export const TextBlock: FC<TextBlockProps> = props => {
+  const { content } = props
   const { title, body } = content
   return (
     <Fade fraction={1 / 3} cascade triggerOnce className="relative z-50">

@@ -1,49 +1,26 @@
-import * as React from 'react'
+import React, { FC, useEffect } from 'react'
 
-import { useDraw } from './provider/DrawProvider'
-
-// https://stackoverflow.com/a/45333834/4655177
-const lineProperties = (pointA: number[], pointB: number[]) => {
-  const lengthX = pointB[0] - pointA[0]
-  const lengthY = pointB[1] - pointA[1]
-  return {
-    length: Math.sqrt(Math.pow(lengthX, 2) + Math.pow(lengthY, 2)),
-    angle: Math.atan2(lengthY, lengthX),
-  }
-}
-
-const controlPointCalc = (
-  current: number[],
-  previous: number[],
-  next: number[],
-  reverse?: boolean
-) => {
-  const c = current
-  const p = previous ? previous : c
-  const n = next ? next : c
-  const smoothing = 0.2
-  const o = lineProperties(p, n)
-  const rev = reverse ? Math.PI : 0
-
-  const x = c[0] + Math.cos(o.angle + rev) * o.length * smoothing
-  const y = c[1] + Math.sin(o.angle + rev) * o.length * smoothing
-
-  return [x, y]
-}
+import { controlPointCalc } from '../../utils/lineDrawer'
+import { useDraw } from '../providers/DrawProvider'
 
 const svgPathRender = (
   points: number[][],
   strokeWidth: number = 8,
   drawColor: string = "#000"
 ) => {
-  const d = points.reduce((acc, e, i, a) => {
-    if (i > 0) {
-      const cs = controlPointCalc(a[i - 1], a[i - 2], e)
-      const ce = controlPointCalc(e, a[i - 1], a[i + 1], true)
-      return `${acc} C ${cs[0]},${cs[1]} ${ce[0]},${ce[1]} ${e[0]},${e[1]}`
-    } else {
-      return `${acc} M ${e[0]},${e[1]}`
+  const drawPath = points.reduce((path, point, index, _points) => {
+    if (index > 0) {
+      const cs = controlPointCalc(_points[index - 1], _points[index - 2], point)
+      const ce = controlPointCalc(
+        point,
+        _points[index - 1],
+        _points[index + 1],
+        true
+      )
+      return `${path} C ${cs[0]},${cs[1]} ${ce[0]},${ce[1]} ${point[0]},${point[1]}`
     }
+
+    return `${path} M ${point[0]},${point[1]}`
   }, "")
 
   const newPath = document.createElementNS("http://www.w3.org/2000/svg", "path")
@@ -52,17 +29,23 @@ const svgPathRender = (
   newPath.setAttribute("stroke-width", `${strokeWidth}`)
   newPath.setAttribute("stroke-linecap", "round")
 
-  newPath.setAttribute("d", d)
+  newPath.setAttribute("d", drawPath)
 
   return newPath
 }
 
-export const SmoothLineDrawer = () => {
-  const { readyToDraw, svg, drawSize, drawColor, addDrawMethod } = useDraw()
+export const SmoothLineDrawer: FC = () => {
+  /**
+   * Custom hooks
+   */
+  const { svg, drawSize, drawColor, addDrawMethod, removeDrawMethod } =
+    useDraw()
 
+  /**
+   * Side effects
+   */
   // Create the canvas
-  React.useEffect(() => {
-    if (!readyToDraw) return
+  useEffect(() => {
     let currentPath: SVGPathElement
     let points = []
 
@@ -127,16 +110,20 @@ export const SmoothLineDrawer = () => {
       setNewPath()
     }
 
-    addDrawMethod(draw)
+    const drawer = addDrawMethod(draw)
     window.addEventListener("mousedown", onMouseDown)
     window.addEventListener("mouseup", onMouseUp)
 
     return () => {
       fadePath(currentPath)
+      removeDrawMethod(drawer)
       window.removeEventListener("mousedown", onMouseDown)
       window.removeEventListener("mouseup", onMouseUp)
     }
-  }, [readyToDraw, svg, drawSize, addDrawMethod])
+  }, [svg, drawSize, addDrawMethod, removeDrawMethod])
 
+  /**
+   * Render
+   */
   return null
 }

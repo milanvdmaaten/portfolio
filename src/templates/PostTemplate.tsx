@@ -2,15 +2,15 @@ import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import * as React from 'react'
 
-import { BlogPostHeader } from '../components/BlogPostHeader'
 import { Content } from '../components/content/content'
 import { ContentSeparator } from '../components/layout/contentSeparator'
 import { Grid } from '../components/layout/grid'
 import { Layout } from '../components/layout/Layout'
-import { OtherPosts } from '../components/OtherPosts'
+import { OtherPosts } from '../components/post/OtherPosts'
+import { PostHeader } from '../components/post/PostHeader'
 import Seo from '../components/seo'
 
-const BlogPostTemplate = ({ data }) => {
+const PostTemplate = ({ data }) => {
   /**
    * Component state
    */
@@ -36,7 +36,6 @@ const BlogPostTemplate = ({ data }) => {
 
   const posts = nodes.filter(node => node.fileAbsolutePath.includes("/blog/"))
   const pages = nodes.filter(node => node.fileAbsolutePath.includes("/page/"))
-  console.log(posts, id)
 
   /**
    * Side effects
@@ -53,7 +52,7 @@ const BlogPostTemplate = ({ data }) => {
       textColor={textColor}
     >
       <Seo title={title} description={tagline} />
-      <BlogPostHeader
+      <PostHeader
         title={title}
         headerColor={headerColor}
         drawColor={drawColor}
@@ -90,7 +89,7 @@ const BlogPostTemplate = ({ data }) => {
   )
 }
 
-export default BlogPostTemplate
+export default PostTemplate
 
 export const pageQuery = graphql`
   fragment ImagesBlock on Content {

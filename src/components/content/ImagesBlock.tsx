@@ -1,17 +1,27 @@
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 import { Fade } from 'react-awesome-reveal'
 import Swiper from 'swiper'
 
 import { uuid } from '../../utils/uuid'
 import { ContentSeparator } from '../layout/contentSeparator'
 import { Grid } from '../layout/grid'
-import { useScroll } from '../provider/ScrollProvider'
+import { useScroll } from '../providers/ScrollProvider'
 
-export const ImagesBlock = ({ content, textColor = "text-black" }) => {
+interface ImagesBlockProps {
+  textColor: "text-black" | "text-white"
+  content: {
+    size: string
+    carrousel: boolean
+    images: any[]
+  }
+}
+
+export const ImagesBlock: FC<ImagesBlockProps> = props => {
   /**
    * Component state
    */
+  const { content, textColor } = props
   const { images, size, carrousel } = content
 
   const [offsetTop, setOffsetTop] = useState(0)
@@ -70,6 +80,7 @@ export const ImagesBlock = ({ content, textColor = "text-black" }) => {
     })
   }, [uniqueIdentifier])
 
+  // Bit of parallax effect
   useEffect(() => {
     if (!isFullWidth) return
 
