@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
 import { ImagesBlock } from './ImagesBlock'
-import { TextBlock } from './textBlock'
+import { TextBlock } from './TextBlock'
 
 type TextBlockType = {
   title: string

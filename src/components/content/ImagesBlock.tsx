@@ -4,8 +4,8 @@ import { Fade } from 'react-awesome-reveal'
 import Swiper from 'swiper'
 
 import { uuid } from '../../utils/uuid'
-import { ContentSeparator } from '../layout/contentSeparator'
-import { Grid } from '../layout/grid'
+import { ContentSeparator } from '../layout/ContentSeparator'
+import { Grid } from '../layout/Grid'
 import { useScroll } from '../providers/ScrollProvider'
 
 interface ImagesBlockProps {

@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { Fade } from 'react-awesome-reveal'
 import ReactMarkdown from 'react-markdown'
 
-import { Grid } from '../layout/grid'
+import { Grid } from '../layout/Grid'
 
 interface TextBlockProps {
   content: {

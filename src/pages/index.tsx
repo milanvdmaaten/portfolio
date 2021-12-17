@@ -1,11 +1,11 @@
 import { graphql } from 'gatsby'
 import React, { useEffect, useState } from 'react'
 
-import { BlogPostLink } from '../components/BlogPostLink'
 import { ContentSeparator } from '../components/layout/ContentSeparator'
 import { FullscreenIntro } from '../components/layout/FullscreenIntro'
 import { Grid } from '../components/layout/Grid'
 import { Layout } from '../components/layout/Layout'
+import { PostLink } from '../components/post/PostLink'
 import Seo from '../components/seo'
 
 const BlogIndex = ({ data }) => {
@@ -83,7 +83,7 @@ const BlogIndex = ({ data }) => {
       />
       <Grid className="pt-60 md:pt-44">
         {posts?.map((post, index) => (
-          <BlogPostLink post={post} key={index} />
+          <PostLink post={post} key={index} />
         ))}
       </Grid>
       <ContentSeparator />
