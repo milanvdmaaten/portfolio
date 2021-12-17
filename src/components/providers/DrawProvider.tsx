@@ -172,8 +172,9 @@ export const DrawProvider: React.FC = props => {
         drawColor,
         drawSize,
         setDrawSize,
-        addDrawMethod,
         setDrawColor,
+        addDrawMethod,
+        removeDrawMethod,
       }}
     >
       {children}

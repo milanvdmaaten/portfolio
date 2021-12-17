@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from 'react'
 
-import { controlPointCalc } from '../../utils/lineDrawer'
+import { controlPoint } from '../../utils/lineDrawer'
 import { useDraw } from '../providers/DrawProvider'
 
 const svgPathRender = (
@@ -9,18 +9,12 @@ const svgPathRender = (
   drawColor: string = "#000"
 ) => {
   const drawPath = points.reduce((path, point, index, _points) => {
-    if (index > 0) {
-      const cs = controlPointCalc(_points[index - 1], _points[index - 2], point)
-      const ce = controlPointCalc(
-        point,
-        _points[index - 1],
-        _points[index + 1],
-        true
-      )
-      return `${path} C ${cs[0]},${cs[1]} ${ce[0]},${ce[1]} ${point[0]},${point[1]}`
-    }
+    if (index <= 0) return `${path} M ${point[0]},${point[1]}`
 
-    return `${path} M ${point[0]},${point[1]}`
+    const cs = controlPoint(_points[index - 1], _points[index - 2], point)
+    const ce = controlPoint(point, _points[index - 1], _points[index + 1], true)
+
+    return `${path} C ${cs[0]},${cs[1]} ${ce[0]},${ce[1]} ${point[0]},${point[1]}`
   }, "")
 
   const newPath = document.createElementNS("http://www.w3.org/2000/svg", "path")

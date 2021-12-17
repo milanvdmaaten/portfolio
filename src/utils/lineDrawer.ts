@@ -8,18 +8,18 @@ export const lineProperties = (pointA: number[], pointB: number[]) => {
   }
 }
 
-export const controlPointCalc = (
+export const controlPoint = (
   current: number[],
   previous: number[],
   next: number[],
   reverse?: boolean
 ) => {
   const smoothing = 0.2
-  const o = lineProperties(previous, next)
+  const line = lineProperties(previous, next)
   const rev = reverse ? Math.PI : 0
 
-  const x = current[0] + Math.cos(o.angle + rev) * o.length * smoothing
-  const y = current[1] + Math.sin(o.angle + rev) * o.length * smoothing
+  const x = current[0] + Math.cos(line.angle + rev) * line.length * smoothing
+  const y = current[1] + Math.sin(line.angle + rev) * line.length * smoothing
 
   return [x, y]
 }
