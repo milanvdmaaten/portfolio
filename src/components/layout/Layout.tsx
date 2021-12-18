@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 
 import { Cursor } from '../Cursor'
 import { SmoothLineDrawer } from '../drawers/SmoothLineDrawer'
-import { TotalDrawTime } from '../Drawers/TotalDrawTime'
+import { TotalDrawTime } from '../drawers/TotalDrawTime'
 import { ConfettiProvider } from '../providers/ConfettiProvider'
 import { DrawProvider } from '../providers/DrawProvider'
 import { ScrollProvider } from '../providers/ScrollProvider'
