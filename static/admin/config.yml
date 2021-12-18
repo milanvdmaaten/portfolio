@@ -87,9 +87,9 @@ collections:
     editor:
       preview: false
     fields: *FIELDS
-  - name: "pages"
-    label: "Pages"
-    folder: "content/pages"
+  - name: "page"
+    label: "Page"
+    folder: "content/page"
     create: true
     slug: "index"
     media_folder: ""
