@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import React, { FC, useEffect } from 'react'
 
 import { useConfetti } from '../providers/ConfettiProvider'
 import { useDraw } from '../providers/DrawProvider'

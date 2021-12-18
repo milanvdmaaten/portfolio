@@ -1,11 +1,11 @@
-import * as React from 'react'
+import React, { FC } from 'react'
 
 interface GridProps {
   className?: string
   fullWidth?: boolean
 }
 
-export const Grid: React.FC<GridProps> = props => {
+export const Grid: FC<GridProps> = props => {
   /**
    * State
    */

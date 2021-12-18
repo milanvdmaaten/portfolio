@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { FC } from 'react'
+import React, { FC } from 'react'
 
 import { TextColor } from '../../lib/types/textColor'
 

@@ -1,10 +1,10 @@
-import * as React from 'react'
+import React, { FC } from 'react'
 
 interface ContentSeparatorProps {
   size?: string
 }
 
-export const ContentSeparator: React.FC<ContentSeparatorProps> = props => {
+export const ContentSeparator: FC<ContentSeparatorProps> = props => {
   /**
    * State
    */
