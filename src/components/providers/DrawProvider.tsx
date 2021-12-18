@@ -2,7 +2,6 @@ import React, { createContext, useContext, useEffect, useRef, useState } from 'r
 
 import { getScreenHeight, getScreenWidth } from '../../utils/screenSize'
 import { uuid } from '../../utils/uuid'
-import { useConfetti } from './ConfettiProvider'
 
 interface Point2D {
   x: number
@@ -50,7 +49,6 @@ export const DrawProvider: React.FC = props => {
   /**
    * Custom & 3rd party hooks
    */
-  const { fire } = useConfetti()
 
   /**
    * Methods
@@ -122,25 +120,10 @@ export const DrawProvider: React.FC = props => {
         document.selection.empty()
       } catch (e) {}
 
-      const { pageX, pageY } = event
-
       if (!isDrawing) return
 
-      if (prevX === 0) prevX = pageX
-      if (prevY === 0) prevY = pageY
-
-      // https://www.unitconverters.net/typography/pixel-x-to-meter.htm
-      totalCmDrawLength +=
-        Math.hypot(pageX - prevX, pageY - prevY) * 0.0002645833
-
-      if (totalCmDrawLength > 10 && !firedConfetti) {
-        firedConfetti = true
-        fire({ origin: { x: 0, y: 1 }, angle: 20, spread: 150 })
-        fire({ origin: { x: 0.5, y: 0.5 }, angle: -20, spread: 150 })
-      }
-
       drawMethods.current.forEach(draw =>
-        draw({ x: pageX, y: pageY }, drawSize, drawColor)
+        draw({ x: event.pageX, y: event.pageY }, drawSize, drawColor)
       )
     }
 

@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 
 import { Cursor } from '../Cursor'
 import { SmoothLineDrawer } from '../drawers/SmoothLineDrawer'
+import { TotalDrawTime } from '../Drawers/TotalDrawTime'
 import { ConfettiProvider } from '../providers/ConfettiProvider'
 import { DrawProvider } from '../providers/DrawProvider'
 import { ScrollProvider } from '../providers/ScrollProvider'
@@ -43,6 +44,7 @@ export const Layout = ({
             <DrawProvider>
               <Cursor />
               <SmoothLineDrawer />
+              <TotalDrawTime />
               <Header owner={name} pages={pages} />
               <main>{children}</main>
               <Footer owner={owner} textColor={textColor} />

@@ -15,7 +15,7 @@ export const controlPoint = (
   reverse?: boolean
 ) => {
   const smoothing = 0.2
-  const line = lineProperties(previous, next)
+  const line = lineProperties(previous ?? current, next ?? current)
   const rev = reverse ? Math.PI : 0
 
   const x = current[0] + Math.cos(line.angle + rev) * line.length * smoothing
