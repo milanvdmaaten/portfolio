@@ -2,13 +2,11 @@ import React, { FC } from 'react'
 import { Fade } from 'react-awesome-reveal'
 import ReactMarkdown from 'react-markdown'
 
+import { Text } from '../../lib/types/content'
 import { Grid } from '../layout/Grid'
 
 interface TextBlockProps {
-  content: {
-    title: string
-    body: string
-  }
+  content: Text
 }
 
 export const TextBlock: FC<TextBlockProps> = props => {

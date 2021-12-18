@@ -1,24 +1,13 @@
 import React, { FC } from 'react'
 
+import { Content as ContentType, Images, Text } from '../../lib/types/content'
+import { TextColor } from '../../lib/types/textColor'
 import { ImagesBlock } from './ImagesBlock'
 import { TextBlock } from './TextBlock'
 
-type TextBlockType = {
-  title: string
-  body: string
-}
-
-type ImagesBlockType = {
-  size: string
-  carrousel: boolean
-  images: any[]
-}
-
-type Content = { type: string } & (TextBlockType | ImagesBlockType)
-
 interface ContentProps {
-  textColor: "text-black" | "text-white"
-  content: Content
+  textColor: TextColor
+  content: ContentType
 }
 
 export const Content: FC<ContentProps> = props => {
@@ -26,14 +15,9 @@ export const Content: FC<ContentProps> = props => {
 
   switch (content.type) {
     case "textBlock":
-      return <TextBlock content={content as TextBlockType} />
+      return <TextBlock content={content as Text} />
     case "imagesBlock":
-      return (
-        <ImagesBlock
-          content={content as ImagesBlockType}
-          textColor={textColor}
-        />
-      )
+      return <ImagesBlock content={content as Images} textColor={textColor} />
     default:
       return null
   }

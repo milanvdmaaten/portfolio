@@ -33,8 +33,6 @@ export const TotalDrawTime: FC = () => {
 
       prev = { x, y }
 
-      console.log(totalDrawLength)
-
       if (totalDrawLength > 10 && !firedConfetti) {
         firedConfetti = true
         fire({ origin: { x: 0, y: 1 }, angle: 20, spread: 150 })

@@ -3,18 +3,16 @@ import React, { FC, useEffect, useRef, useState } from 'react'
 import { Fade } from 'react-awesome-reveal'
 import Swiper from 'swiper'
 
+import { Images } from '../../lib/types/content'
+import { TextColor } from '../../lib/types/textColor'
 import { uuid } from '../../utils/uuid'
 import { ContentSeparator } from '../layout/ContentSeparator'
 import { Grid } from '../layout/Grid'
 import { useScroll } from '../providers/ScrollProvider'
 
 interface ImagesBlockProps {
-  textColor: "text-black" | "text-white"
-  content: {
-    size: string
-    carrousel: boolean
-    images: any[]
-  }
+  textColor: TextColor
+  content: Images
 }
 
 export const ImagesBlock: FC<ImagesBlockProps> = props => {

@@ -1,22 +1,25 @@
 import React, { FC, useEffect, useState } from 'react'
 import Swiper from 'swiper'
 
+import { TextColor } from '../../lib/types/textColor'
 import { getScreenWidth } from '../../utils/screenSize'
 import { useScroll } from '../providers/ScrollProvider'
-import { Post } from './post'
+import { Post } from './Post'
 
 interface OtherPostsProps {
   posts: any[]
-  author: string
+  author: {
+    name: string
+  }
   backgroundColor: string
-  textColor: string
+  textColor: TextColor
 }
 
 export const OtherPosts: FC<OtherPostsProps> = props => {
   /**
    * Component state
    */
-  const { posts, author, backgroundColor, textColor = "" } = props
+  const { posts, author, backgroundColor, textColor = "text-black" } = props
 
   const [titleRight, setTitleRight] = useState(2000)
 

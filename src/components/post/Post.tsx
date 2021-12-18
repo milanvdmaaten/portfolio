@@ -1,16 +1,39 @@
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
-import * as React from "react"
+import { Link } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { FC } from 'react'
 
-export const Post = ({ post, author, textColor = "text-black" }) => {
+import { TextColor } from '../../lib/types/textColor'
+
+interface PostProps {
+  post: any
+  author: {
+    name: string
+  }
+  textColor: TextColor
+}
+export const Post: FC<PostProps> = props => {
+  /**
+   * Component state
+   */
+  const { post, author, textColor = "text-black" } = props
   const { frontmatter, fields } = post
   const { slug } = fields
   const { featuredImage, tagline, title, date } = frontmatter
 
   const image = getImage(featuredImage)
 
+  console.log(post)
+  /**
+   * Render
+   */
   return (
-    <Link to={slug} itemProp="url" key={slug} className={`col-span-12`}>
+    <Link
+      to={slug}
+      itemProp="url"
+      key={slug}
+      className={`col-span-12`}
+      // onMouseEnter={() => setDrawColor(drawColor)}
+    >
       <article itemScope itemType="http://schema.org/Article">
         <header className="mb-4">
           <figure>
