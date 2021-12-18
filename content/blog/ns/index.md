@@ -6,7 +6,7 @@ displayPosition: 3
 textColor: text-black
 drawColor: "#FFC917"
 headerColor: "#FFC917"
-backgroundColor: "#000000"
+backgroundColor: "#FFFFFF"
 featuredImage: ns.png
 content:
   - type: textBlock

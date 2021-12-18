@@ -4,15 +4,14 @@ tagline: A new concept and app design
 date: 2021-12-03T12:14:49.144Z
 displayPosition: 1
 textColor: text-white
-drawColor: "#2A5699"
-headerColor: "#F56D1D"
+drawColor: "#F56D1D"
+headerColor: "#2A5699"
 backgroundColor: "#0B1C36"
-featuredImage: npo.png
+featuredImage: header3.png
 content:
   - type: textBlock
     title: About
-    body:
-      The streaming service of the Dutch public broadcaster offering live and
+    body: The streaming service of the Dutch public broadcaster offering live and
       on-demand tv. Their goal is to connect and enrich the Dutch public with
       programmes that inform, inspire and entertain.
   - type: textBlock
@@ -40,7 +39,7 @@ content:
 
       In order to start with a personalized homescreen on the first landing, the user is asked to select favorite tv programmes before landing on the homepage.
   - type: imagesBlock
-    size: medium
+    size: small
     carrousel: false
     images:
       - titlePosition: left
@@ -82,16 +81,14 @@ content:
       top of the screen. This enlarges the chance to watch something as quick as
       possible, and that's after all why a user opens the NPO app.
   - type: imagesBlock
-    size: small
+    size: extra-small
     carrousel: false
     images:
       - titlePosition: center
         image: home-midway.png
-        alt:
-          Most personalized content rows are positioned  at the top of the 'Start'
+        alt: Most personalized content rows are positioned  at the top of the 'Start'
           screen.
-        title:
-          Most personalized content rows are positioned  at the top of the 'Start'
+        title: Most personalized content rows are positioned  at the top of the 'Start'
           screen.
   - type: textBlock
     title: ""
@@ -107,7 +104,7 @@ content:
 
       That's why for example titles of content rows tell the user where certain recommendations are based on.
   - type: imagesBlock
-    size: fullWidth
+    size: medium
     carrousel: false
     images:
       - titlePosition: left
@@ -121,7 +118,7 @@ content:
 
       The 'Explore tab' contains content outside the users' bubble. An extensive set of filters helps to search implicitly for something to watch within the huge amount of content.
   - type: imagesBlock
-    size: medium
+    size: small
     carrousel: false
     images:
       - titlePosition: left
@@ -135,7 +132,7 @@ content:
 
       One of the big differences between watching content via streaming services vs. television is that the process to find something to watch takes longer via streaming services. A user first needs to search for something to watch before he starts watching. When watching something on tv it's just a matter of turning on the tv and start watching. That's why we tried to copy this pattern to the NPO platform. When the user selects the 'live tab' the last watched channel opens up. The live programme starts playing (without sound).
   - type: imagesBlock
-    size: small
+    size: extra-small
     carrousel: false
     images:
       - titlePosition: center
@@ -149,7 +146,7 @@ content:
 
       Images don't tell directly where the show is about. Users need more context in order to decide if they want to watch a certain programme. That's why we created a bottomsheet which shows a summary where the programme is about. The advantage of showing this information in a bottomsheet is that the user can explore content quickly, instead of going back and forth between pages.
   - type: imagesBlock
-    size: small
+    size: extra-small
     carrousel: false
     images:
       - titlePosition: center
@@ -158,46 +155,39 @@ content:
         alt: Bottom sheet example
   - type: textBlock
     body: >-
-      ## Prototypes
+      ### Prototypes
 
 
-      [Prototype (v1) for concept interviews](https://www.figma.com/proto/tSUlfMOOuFSKjxy753avqC/NPO---Concept-v2.0?page-id=0%3A1&node-id=1%3A3&viewport=241%2C48%2C0.09&scaling=scale-down&starting-point-node-id=1%3A3) ›
-
+      [Prototype (v1) for concept interviews](https://www.figma.com/proto/tSUlfMOOuFSKjxy753avqC/NPO---Concept-v2.0?page-id=0%3A1&node-id=1%3A3&viewport=241%2C48%2C0.09&scaling=scale-down&starting-point-node-id=1%3A3) ›\
 
       [Prototype (v2) for ux interviews](https://www.figma.com/proto/AF6DSjKctNTgAWqoGdXtnE/NPO---Concept-V3---Prototype---Onderzoek-2-(19-01-2021)?page-id=467%3A111695&node-id=467%3A111959&viewport=241%2C48%2C0.27&scaling=scale-down&starting-point-node-id=467%3A111979) ›
 
 
-      ## UX explorations
+      ### UX explorations
 
 
-      [Main app structure](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=0%3A1) ›
+      [Main app structure](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=0%3A1) ›\
 
+      [Menu tab: Start](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=124%3A5219) ›\
 
-      [Menu tab: Start](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=124%3A5219) ›
+      [Menu tab: Explore](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=497%3A20970) ›\
 
-
-      [Menu tab: Explore](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=497%3A20970) ›
-
-
-      [Onboarding](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=124%3A5219) ›
-
+      [Onboarding](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=124%3A5219) ›\
 
       [Live tv possibilities within the app](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=368%3A33) ›
 
 
-      ## Other
+      ### Other
 
 
-      [Inspiration and crazy idea sketches](https://www.figma.com/file/dnU6VXDW6iMFYVs61SVnRD/NPO---Ideation?node-id=0%3A1) ›
+      [Inspiration and crazy idea sketches](https://www.figma.com/file/dnU6VXDW6iMFYVs61SVnRD/NPO---Ideation?node-id=0%3A1) ›\
 
-
-      [Sitemap 1st version (based on concept test)](https://www.figma.com/file/x8TvRNpAmf7zIkRkFckWzo/NPO---Concept-v1.0?node-id=435%3A3460) ›
-
+      [Sitemap 1st version (based on concept test)](https://www.figma.com/file/x8TvRNpAmf7zIkRkFckWzo/NPO---Concept-v1.0?node-id=435%3A3460) ›\
 
       [Sitemap final](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/NPO---Concept-V3---%F0%9F%94%AE-Discovery?node-id=1901%3A56834) ›
 
 
-      ## Final design
+      ### Final design
 
 
       [Final main flow designs](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/NPO---Concept-V3---%F0%9F%94%AE-Discovery?node-id=225%3A19525) ›
