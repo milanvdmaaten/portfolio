@@ -1,6 +1,6 @@
 ---
 title: About
-tagline: An empathic UX Designer who loves to make effortless digital experiences.
+tagline: An empathic UX Designer who loves to make effortless experiences.
 date: 2021-12-02T18:55:46.572Z
 displayPosition: 3
 featuredImage: header.png
@@ -22,14 +22,6 @@ content:
 
 
       On a personal note, involving people and making them feel comfortable is something I value. I have been playing football for nearly 15 years, it taught me how to work together in a team, but also to be open minded and honest towards my teammates.
-  - type: imagesBlock
-    size: medium
-    carrousel: false
-    images:
-      - titlePosition: center
-        image: ns.png
-        alt: nessy
-        title: title
   - type: textBlock
     title: My comfort zone
     body: >-
@@ -39,4 +31,12 @@ content:
 
 
       However, the area in which my skills can be used the most is the UX discovery phase. Designing different UX directions for concepts, and thinking about the overall structure of digital products.
+  - type: imagesBlock
+    size: fullWidth
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: spacer.png
+        alt: nessy
+        title: ""
 ---
