@@ -3,11 +3,11 @@ title: NS
 tagline: A design system of wordclass
 date: 2021-12-02T18:55:46.572Z
 displayPosition: 3
+featuredImage: header.png
 textColor: text-black
-drawColor: "#FFC917"
+drawColor: "#FFB519"
 headerColor: "#FFC917"
 backgroundColor: "#FFFFFF"
-featuredImage: ns.png
 content:
   - type: textBlock
     title: NS - A design system of wordclass
