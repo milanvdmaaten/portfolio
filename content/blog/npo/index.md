@@ -10,6 +10,15 @@ headerColor: "#2A5699"
 backgroundColor: "#0B1C36"
 content:
   - type: textBlock
+    body: >-
+      My role: UX Design
+
+
+      Year: 2021
+
+
+      Project completed at Valsplat with my colleagues Caressa Fooij and Nils van den Broek
+  - type: textBlock
     title: About
     body: The streaming service of the Dutch public broadcaster offering live and
       on-demand tv. Their goal is to connect and enrich the Dutch public with
