@@ -32,6 +32,14 @@ content:
 
 
       However, my skills can be used the most in the UX discovery phase. Designing and challenging different UX directions for concepts and thinking about the overall structure of digital products.
+  - type: textBlock
+    body: >-
+      [CV](https://drive.google.com/file/d/1SZOGfKdpXyfaPjZaho2T3o1U0qg5MUl7/view?usp=sharing)
+      ›
+
+
+      [LinkedIn](https://www.linkedin.com/in/milan-van-der-maaten-307a1697/) ›
+    title: More about
   - type: imagesBlock
     size: fullWidth
     carrousel: false
@@ -40,9 +48,4 @@ content:
         image: spacer.png
         alt: nessy
         title: ""
-  - type: textBlock
-    body: Want to know more about me or get in touch? Check my
-      [CV](https://drive.google.com/file/d/1SZOGfKdpXyfaPjZaho2T3o1U0qg5MUl7/view?usp=sharing)
-      or send me a message via
-      [LinkedIn](https://www.linkedin.com/in/milan-van-der-maaten-307a1697/).
 ---
