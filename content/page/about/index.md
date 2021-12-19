@@ -1,13 +1,13 @@
 ---
-title: About
-tagline: A design system of wordclass
+title: Milan
+tagline: Milan
 date: 2021-12-02T18:55:46.572Z
 displayPosition: 3
-textColor: text-black
-drawColor: "#FFC917"
-headerColor: "#FFC917"
+featuredImage: header.png
+textColor: text-white
+drawColor: "#FFFFFF"
+headerColor: "#000000"
 backgroundColor: "#000000"
-featuredImage: ns.png
 content:
   - type: textBlock
     title: NS - A design system of wordclass
