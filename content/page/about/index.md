@@ -31,7 +31,7 @@ content:
       without losing sight of business needs and user needs. 
 
 
-      However, my skills can be used the most in the UX discovery phase. Designing different UX directions for concepts and thinking about the overall structure of digital products.
+      However, my skills can be used the most in the UX discovery phase. Design and challenge different UX directions for concepts and thinking about the overall structure of digital products.
   - type: imagesBlock
     size: fullWidth
     carrousel: false
