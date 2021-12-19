@@ -3,11 +3,11 @@ title: Floorplanner
 tagline: UX and visual design improvements
 date: 2021-12-07T19:40:46.180Z
 displayPosition: 2
+featuredImage: header2.png
 textColor: text-black
-drawColor: "#FEC15B"
+drawColor: "#46A7ED"
 headerColor: "#FEC15B"
 backgroundColor: "#fff"
-featuredImage: header2.png
 content:
   - type: textBlock
     body: |-
