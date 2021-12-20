@@ -3,12 +3,21 @@ title: NPO
 tagline: A new concept and app design
 date: 2021-12-03T12:14:49.144Z
 displayPosition: 1
+featuredImage: header3.png
 textColor: text-white
 drawColor: "#F56D1D"
 headerColor: "#2A5699"
 backgroundColor: "#0B1C36"
-featuredImage: header3.png
 content:
+  - type: textBlock
+    body: >-
+      My role: UX Design
+
+
+      Year: 2021
+
+
+      Project completed at Valsplat with my colleagues Caressa Fooij and Nils van den Broek
   - type: textBlock
     title: About
     body: The streaming service of the Dutch public broadcaster offering live and
@@ -155,18 +164,17 @@ content:
         alt: Bottom sheet example
   - type: textBlock
     body: >-
-      ### Prototypes
-
-
-      [Prototype (v1) for concept interviews](https://www.figma.com/proto/tSUlfMOOuFSKjxy753avqC/NPO---Concept-v2.0?page-id=0%3A1&node-id=1%3A3&viewport=241%2C48%2C0.09&scaling=scale-down&starting-point-node-id=1%3A3) ›\
+      [Prototype (v1) for concept
+      interviews](https://www.figma.com/proto/tSUlfMOOuFSKjxy753avqC/NPO---Concept-v2.0?page-id=0%3A1&node-id=1%3A3&viewport=241%2C48%2C0.09&scaling=scale-down&starting-point-node-id=1%3A3)
+      ›\
 
       [Prototype (v2) for ux interviews](https://www.figma.com/proto/AF6DSjKctNTgAWqoGdXtnE/NPO---Concept-V3---Prototype---Onderzoek-2-(19-01-2021)?page-id=467%3A111695&node-id=467%3A111959&viewport=241%2C48%2C0.27&scaling=scale-down&starting-point-node-id=467%3A111979) ›
-
-
-      ### UX explorations
-
-
-      [Main app structure](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=0%3A1) ›\
+    title: Prototypes
+  - type: textBlock
+    body: >-
+      [Main app
+      structure](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=0%3A1)
+      ›\
 
       [Menu tab: Start](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=124%3A5219) ›\
 
@@ -175,21 +183,20 @@ content:
       [Onboarding](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=124%3A5219) ›\
 
       [Live tv possibilities within the app](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/?node-id=368%3A33) ›
-
-
-      ### Other
-
-
-      [Inspiration and crazy idea sketches](https://www.figma.com/file/dnU6VXDW6iMFYVs61SVnRD/NPO---Ideation?node-id=0%3A1) ›\
+    title: UX explorations
+  - type: textBlock
+    body: >-
+      [Inspiration and crazy idea
+      sketches](https://www.figma.com/file/dnU6VXDW6iMFYVs61SVnRD/NPO---Ideation?node-id=0%3A1)
+      ›\
 
       [Sitemap 1st version (based on concept test)](https://www.figma.com/file/x8TvRNpAmf7zIkRkFckWzo/NPO---Concept-v1.0?node-id=435%3A3460) ›\
 
       [Sitemap final](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/NPO---Concept-V3---%F0%9F%94%AE-Discovery?node-id=1901%3A56834) ›
-
-
-      ### Final design
-
-
-      [Final main flow designs](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/NPO---Concept-V3---%F0%9F%94%AE-Discovery?node-id=225%3A19525) ›
-    title: Project documentation
+    title: Other documents
+  - type: textBlock
+    body: "[Main flow
+      designs](https://www.figma.com/file/CgAZFGxNf9E0ZPjRcu00jk/NPO---Concept-\
+      V3---%F0%9F%94%AE-Discovery?node-id=225%3A19525) ›"
+    title: Final design
 ---
