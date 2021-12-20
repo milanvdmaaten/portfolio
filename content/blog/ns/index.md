@@ -35,15 +35,15 @@ content:
       the Design System. Storybook was used by development to store the
       developed components.
     title: Tools we used
-  - type: imagesBlock
-    size: medium
-    carrousel: false
-    images:
-      - titlePosition: center
-        image: ns.png
-        alt: nessy
-        title: title
   - type: textBlock
     title: Start of the project
     body: The project started with an inventari....
+  - type: imagesBlock
+    size: fullWidth
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: component-inventarisation.png
+        alt: List of components after inventory
+        title: List of components after inventory
 ---
