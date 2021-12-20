@@ -6,28 +6,50 @@ media_folder: static/img
 public_folder: /img
 
 fields: &FIELDS
-  - { label: "Title", name: "title", widget: "string" }
-  - { label: "Tagline", name: "tagline", widget: "string" }
-  - { label: "Publish Date", name: "date", widget: "datetime" }
-  - { label: "Display position", name: "displayPosition", widget: "number" }
-  - { label: "Featured Image", name: "featuredImage", widget: "image" }
+  - label: "Title"
+    name: "title"
+    widget: "string"
+  - label: "Tagline"
+    name: "tagline"
+    widget: "string"
+  - label: "Publish Date"
+    name: "date"
+    widget: "datetime"
+  - label: "Display position"
+    name: "displayPosition"
+    widget: "number"
+  - label: "Featured Image"
+    name: "featuredImage"
+    widget: "image"
   - label: "Text color"
     name: "textColor"
     widget: "select"
     options:
       - { label: "Black", value: "text-black" }
       - { label: "White", value: "text-white" }
-  - { label: "Draw color", name: "drawColor", widget: "string" }
-  - { label: "Header background color", name: "headerColor", widget: "string" }
-  - {
-      label: "Content background color",
-      name: "backgroundColor",
-      widget: "string",
-    }
+  - label: "Draw color"
+    name: "drawColor"
+    widget: "string"
+  - label: "Header background color"
+    name: "headerColor"
+    widget: "string"
+  - label: "Content background color"
+    name: "backgroundColor"
+    widget: "string"
   - label: "Content"
     name: "content"
     widget: "list"
     types:
+      - label: "Call to action"
+        name: "callToAction"
+        widget: "object"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Link to"
+            name: "href"
+            widget: "string"
       - label: "Text block"
         name: "textBlock"
         widget: "object"
@@ -36,7 +58,9 @@ fields: &FIELDS
             name: "title"
             widget: "string"
             required: false
-          - { label: "Text", name: "body", widget: "markdown" }
+          - label: "Text"
+            name: "body"
+            widget: "markdown"
       - label: "Images block"
         name: "imagesBlock"
         widget: "object"
@@ -60,8 +84,12 @@ fields: &FIELDS
             name: "images"
             widget: "list"
             fields:
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: Image Description, name: "alt", widget: string }
+              - label: "Image"
+                name: "image"
+                widget: "image"
+              - label: "Image Description"
+                name: "alt"
+                widget: string
               - label: Image title
                 name: "title"
                 widget: string

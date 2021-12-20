@@ -98,6 +98,11 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       fields: Fields
     }
 
+    type CallToActionBlock @infer {
+      title: String
+      href: String
+    }
+
     type TextBlock @infer {
       title: String
       body: String
@@ -120,6 +125,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       type: String
       imagesBlocks: [ImagesBlock]
       textBlocks: [TextBlock]
+      callToActions: [CallToActionBlock]
     }
 
     type Frontmatter @infer {

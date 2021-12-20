@@ -9,4 +9,9 @@ export type Images = {
   images: any[]
 }
 
-export type Content = { type: string } & (Text | Images)
+export type CallToAction = {
+  title: string
+  href: string
+}
+
+export type Content = { type: string } & (Text | Images | CallToAction)

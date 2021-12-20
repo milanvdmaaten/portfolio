@@ -102,7 +102,7 @@ export const ImagesBlock: FC<ImagesBlockProps> = props => {
    * Render
    */
   return (
-    <Grid fullWidth={isFullWidth}>
+    <Grid fullWidth={isFullWidth} className="content--images">
       <div className={imageColsClass} id={uniqueIdentifier.current}>
         <div
           className={

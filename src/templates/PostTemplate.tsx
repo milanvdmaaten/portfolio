@@ -114,6 +114,12 @@ export const pageQuery = graphql`
     body
   }
 
+  fragment CallToActionBlock on Content {
+    type
+    title
+    href
+  }
+
   query BlogPostBySlug($id: String!) {
     site {
       siteMetadata {
@@ -162,6 +168,7 @@ export const pageQuery = graphql`
         content {
           ...ImagesBlock
           ...TextBlock
+          ...CallToActionBlock
         }
       }
     }

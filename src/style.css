@@ -69,6 +69,18 @@ body {
   @apply text-9xl leading-tight font-bold tracking-widest break-all;
 }
 
+.case__title {
+  text-shadow: -2px -2px 0 rgba(255, 255, 255, 0.4),
+    2px -2px 0 rgba(255, 255, 255, 0.4), -2px 2px 0 rgba(255, 255, 255, 0.4),
+    2px 2px 0 rgba(255, 255, 255, 0.4);
+}
+
+.case__metadata {
+  text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.6),
+    1px -1px 0 rgba(255, 255, 255, 0.6), -1px 1px 0 rgba(255, 255, 255, 0.6),
+    1px 1px 0 rgba(255, 255, 255, 0.6);
+}
+
 .case__title-large {
   @apply leading-tight font-bold tracking-wider relative text-center -mt-44;
   font-size: 256px;
@@ -130,4 +142,8 @@ svg path {
 
 #canvas-confetti {
   @apply fixed w-full h-full z-0;
+}
+
+.content--text a {
+  @apply underline;
 }

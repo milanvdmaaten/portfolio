@@ -33,7 +33,7 @@ export const PostLink: FC<PostLinkProps> = props => {
       key={slug}
       to={slug}
       onMouseEnter={() => setDrawColor(drawColor)}
-      className="blog-post-link"
+      className="case blog-post-link"
     >
       <GatsbyImage
         image={renderImage}
@@ -43,7 +43,7 @@ export const PostLink: FC<PostLinkProps> = props => {
       />
       <section className="flex flex-col md:flex-row">
         <h2 className="case__title">{title}</h2>
-        <div className="body-small">
+        <div className="body-small case__metadata">
           <div>{tagline}</div>
           <div>{date}</div>
         </div>
