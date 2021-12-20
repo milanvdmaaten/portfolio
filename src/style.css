@@ -61,7 +61,7 @@ body {
   @apply text-3xl leading-6 font-normal tracking-normal font-caveat lowercase;
 }
 
-.imagesBlock-arrow.justify-end img {
+.imagesBlock-arrow.inverted img {
   transform: scaleX(-1);
 }
 
@@ -69,13 +69,13 @@ body {
   @apply text-9xl leading-tight font-bold tracking-widest break-all;
 }
 
-.case__title {
+.case .case__title {
   text-shadow: -2px -2px 0 rgba(255, 255, 255, 0.4),
     2px -2px 0 rgba(255, 255, 255, 0.4), -2px 2px 0 rgba(255, 255, 255, 0.4),
     2px 2px 0 rgba(255, 255, 255, 0.4);
 }
 
-.case__metadata {
+.case .case__metadata {
   text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.6),
     1px -1px 0 rgba(255, 255, 255, 0.6), -1px 1px 0 rgba(255, 255, 255, 0.6),
     1px 1px 0 rgba(255, 255, 255, 0.6);
@@ -84,6 +84,10 @@ body {
 .case__title-large {
   @apply leading-tight font-bold tracking-wider relative text-center -mt-44;
   font-size: 256px;
+}
+
+.call_to_action {
+  @apply py-4 px-8 border-2 rounded-md;
 }
 
 :root {

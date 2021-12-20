@@ -114,16 +114,19 @@ export const ImagesBlock: FC<ImagesBlockProps> = props => {
               const renderImage = getImage(image)
               let arrowPosition = "transform"
               let titleSpacing = "transform"
+              let inverted = false
               switch (titlePosition) {
                 case "left":
                   titleSpacing += " translate-x-1/4"
                   arrowPosition += " justify-start translate-x-1/4"
                   break
                 case "right":
+                  inverted = true
                   titleSpacing += " -translate-x-1/4"
                   arrowPosition += " justify-end -translate-x-1/4"
                   break
                 default:
+                  if (Math.random() > 2 / 3) inverted = true
                   arrowPosition += " justify-center"
               }
               return (
@@ -142,7 +145,9 @@ export const ImagesBlock: FC<ImagesBlockProps> = props => {
                         {title}
                       </h3>
                       <div
-                        className={`imagesBlock-arrow pb-4 pt-2 flex ${arrowPosition}`}
+                        className={`imagesBlock-arrow pb-4 pt-2 flex ${arrowPosition} ${
+                          inverted && "inverted"
+                        }`}
                       >
                         <img
                           src="/assets/arrow.svg"

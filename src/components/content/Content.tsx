@@ -20,7 +20,12 @@ export const Content: FC<ContentProps> = props => {
     case "imagesBlock":
       return <ImagesBlock content={content as Images} textColor={textColor} />
     case "callToAction":
-      return <CallToActionBlock content={content as CallToAction} />
+      return (
+        <CallToActionBlock
+          content={content as CallToAction}
+          textColor={textColor}
+        />
+      )
     default:
       return null
   }
