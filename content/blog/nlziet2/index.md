@@ -18,7 +18,8 @@ content:
       Project completed at Valsplat with my colleague Julian Neef
   - type: textBlock
     title: About
-    body: NLZIET is the Dutch leading streaming service offering live and on-demand
+    body:
+      NLZIET is the Dutch leading streaming service offering live and on-demand
       TV of the Dutch premium broadcasters.
   - type: textBlock
     body: >-
@@ -63,7 +64,8 @@ content:
         alt: TV guide + player
         title: TV guide + player
   - type: textBlock
-    body: The possibility to check the tv guide while watching helps users to check
+    body:
+      The possibility to check the tv guide while watching helps users to check
       if there's something more exciting to watch without breaking their current
       watch flow.
   - type: imagesBlock
@@ -92,8 +94,9 @@ content:
         image: 06.png
         alt: Video on demand item
         title: Video on demand item
-  - type: textBlock
-    body: "## [Experience NLZIET yourself](https://www.nlziet.nl/nl/) ›"
+  - type: callToAction
+    title: Experience NLZIET yourself
+    href: https://www.nlziet.nl/nl/
   - type: textBlock
     title: Prototype
     body: "[Prototype (v2) for UX
