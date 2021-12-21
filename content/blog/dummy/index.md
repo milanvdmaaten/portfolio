@@ -4,10 +4,10 @@ tagline: UX and visual design improvements
 date: 2021-12-07T19:40:46.180Z
 displayPosition: 2
 featuredImage: header2.png
-textColor: text-black
+textColor: text-white
 drawColor: "#46A7ED"
 headerColor: "#FEC15B"
-backgroundColor: "#fff"
+backgroundColor: "#000"
 content:
   - type: callToAction
     title: Test

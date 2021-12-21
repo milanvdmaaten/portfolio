@@ -87,7 +87,11 @@ body {
 }
 
 .call_to_action {
-  @apply py-4 px-8 border-2 rounded-md;
+  @apply py-4 px-8 border-2 rounded-md flex border-gray-900 hover:bg-gray-200 focus:bg-gray-400;
+}
+
+.call_to_action.inverted {
+  @apply border-gray-200 text-white hover:bg-gray-800 focus:bg-gray-600;
 }
 
 :root {

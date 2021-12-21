@@ -20,15 +20,19 @@ export const CallToActionBlock: FC<CallToActionBlockProps> = props => {
    * Render
    */
   return (
-    <div className="w-full text-center">
+    <div className="flex justify-center">
       <Link
         to={href}
         target="_blank"
         className={`call_to_action ${
-          textColor.includes("black") ? "border-gray-600" : "border-gray-200"
+          textColor === "text-white" ? "inverted" : ""
         }`}
       >
-        {title}
+        <div className="mr-4">{title}</div>
+        <img
+          src="/assets/link_arrow.svg"
+          className={textColor === "text-white" ? "filter invert" : ""}
+        />
       </Link>
     </div>
   )

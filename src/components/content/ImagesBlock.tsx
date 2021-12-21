@@ -118,12 +118,12 @@ export const ImagesBlock: FC<ImagesBlockProps> = props => {
               switch (titlePosition) {
                 case "left":
                   titleSpacing += " translate-x-1/4"
-                  arrowPosition += " justify-start translate-x-1/4"
+                  arrowPosition += " justify-start translate-x-1/4 ml-4"
                   break
                 case "right":
                   inverted = true
                   titleSpacing += " -translate-x-1/4"
-                  arrowPosition += " justify-end -translate-x-1/4"
+                  arrowPosition += " justify-end -translate-x-1/4 mr-4"
                   break
                 default:
                   if (Math.random() > 2 / 3) inverted = true

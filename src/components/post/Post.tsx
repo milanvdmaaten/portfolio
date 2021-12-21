@@ -22,7 +22,6 @@ export const Post: FC<PostProps> = props => {
 
   const image = getImage(featuredImage)
 
-  console.log(post)
   /**
    * Render
    */
