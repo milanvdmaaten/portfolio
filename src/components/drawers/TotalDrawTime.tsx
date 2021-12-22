@@ -3,14 +3,14 @@ import React, { FC, useEffect, useRef, useState } from 'react'
 import { TextColor } from '../../lib/types/textColor'
 import { distanceCalculation } from '../../utils/drawing'
 import { useConfetti } from '../providers/ConfettiProvider'
-import { useDraw } from '../providers/DrawProvider'
+import { DrawEvent, useDraw } from '../providers/DrawProvider'
 
 interface TotalDrawTimeProps {
   drawTime: number
   textColor: TextColor
   localStorageKey?: string
   suffix?: string
-  calculator?: (event: MouseEvent, previousEvent: MouseEvent) => number
+  calculator?: (event: DrawEvent, previousEvent: DrawEvent) => number
 }
 
 export const TotalDrawTime: FC<TotalDrawTimeProps> = props => {
@@ -35,9 +35,9 @@ export const TotalDrawTime: FC<TotalDrawTimeProps> = props => {
    * Hooks
    */
   useEffect(() => {
-    let previousEvent: MouseEvent | undefined
+    let previousEvent: DrawEvent | undefined
 
-    const draw = (event?: MouseEvent) => {
+    const draw = (event?: DrawEvent) => {
       setTimeToGo(prev => {
         if (calculator) return prev - calculator(event, previousEvent ?? event)
 

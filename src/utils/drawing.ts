@@ -1,4 +1,16 @@
+import { DrawEvent } from '../components/providers/DrawProvider'
+
 export type Point2D = { x: number; y: number }
+
+export const getPointsFromEvent = (event: MouseEvent | TouchEvent): Point2D => {
+  const { pageX, pageY } = event as MouseEvent
+  const { targetTouches } = event as TouchEvent
+
+  const x = pageX ?? targetTouches[0].pageX
+  const y = pageY ?? targetTouches[0].pageY
+
+  return { x, y }
+}
 
 export const getPathLength = (a: Point2D, b: Point2D) =>
   Math.hypot(a.x - b.x, a.y - b.y)
@@ -55,12 +67,12 @@ export const smoothSvgPath = (
 }
 
 export const distanceCalculation = (
-  event: MouseEvent,
-  previousEvent: MouseEvent
+  event: DrawEvent,
+  previousEvent: DrawEvent
 ): number => {
   const pointDistance = getPathLength(
-    { x: event.pageX, y: event.pageY },
-    { x: previousEvent.pageX, y: previousEvent.pageY }
+    getPointsFromEvent(event),
+    getPointsFromEvent(previousEvent)
   )
 
   // We only want to calculate if the user "actually" draws something

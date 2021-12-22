@@ -3,7 +3,8 @@ import React, { createContext, useContext, useEffect, useRef, useState } from 'r
 import { getScreenHeight, getScreenWidth } from '../../utils/screenSize'
 import { uuid } from '../../utils/uuid'
 
-type Draw = (event: MouseEvent, size: number, color: string) => void
+export type DrawEvent = MouseEvent | TouchEvent
+type Draw = (event: DrawEvent, size: number, color: string) => void
 
 interface DrawContextState {
   readyToDraw: boolean
@@ -100,10 +101,10 @@ export const DrawProvider: React.FC = props => {
   useEffect(() => {
     let isDrawing = false
 
-    const onMouseDown = () => (isDrawing = true)
-    const onMouseUp = () => (isDrawing = false)
+    const onStart = () => (isDrawing = true)
+    const onStop = () => (isDrawing = false)
 
-    const onMouseMove = (event: MouseEvent): void => {
+    const onDraw = (event: DrawEvent): void => {
       try {
         window.getSelection().removeAllRanges()
         // @ts-ignore
@@ -116,18 +117,24 @@ export const DrawProvider: React.FC = props => {
     }
 
     window.addEventListener("resize", createSvg)
-    window.addEventListener("mousemove", onMouseMove)
-    window.addEventListener("mousedown", onMouseDown)
-    window.addEventListener("mouseup", onMouseUp)
+    window.addEventListener("mousemove", onDraw)
+    window.addEventListener("mousedown", onStart)
+    window.addEventListener("mouseup", onStop)
+    window.addEventListener("touchmove", onDraw)
+    window.addEventListener("touchstart", onStart)
+    window.addEventListener("touchend", onStop)
 
     createSvg()
     setReadyToDraw(true)
 
     return () => {
       window.removeEventListener("resize", createSvg)
-      window.removeEventListener("mousemove", onMouseMove)
-      window.removeEventListener("mousedown", onMouseDown)
-      window.removeEventListener("mousedown", onMouseUp)
+      window.removeEventListener("mousemove", onDraw)
+      window.removeEventListener("mousedown", onStart)
+      window.removeEventListener("mousedown", onStop)
+      window.removeEventListener("touchmove", onDraw)
+      window.removeEventListener("touchstart", onStart)
+      window.removeEventListener("touchend", onStop)
       svg.remove()
     }
   }, [getScreenHeight, getScreenWidth, setReadyToDraw])
@@ -156,7 +163,7 @@ export const DrawProvider: React.FC = props => {
 interface UseDrawProps {
   color?: string
   size?: number
-  drawMethod?: (point: MouseEvent) => void
+  drawMethod?: (event: DrawEvent) => void
 }
 
 export const useDraw = (props: UseDrawProps = {}) => {

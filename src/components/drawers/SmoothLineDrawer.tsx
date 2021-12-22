@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react'
 
-import { getPathLength, Point2D, smoothSvgPath } from '../../utils/drawing'
-import { useDraw } from '../providers/DrawProvider'
+import { getPathLength, getPointsFromEvent, Point2D, smoothSvgPath } from '../../utils/drawing'
+import { DrawEvent, useDraw } from '../providers/DrawProvider'
 
 export const SmoothLineDrawer: FC = () => {
   /**
@@ -35,16 +35,16 @@ export const SmoothLineDrawer: FC = () => {
       points = []
     }
 
-    const draw = (event?: MouseEvent) => {
+    const draw = (event?: DrawEvent) => {
       if (!event) return
       const minimalPathLength = 20
-      const { pageX, pageY } = event
+      const { x, y } = getPointsFromEvent(event)
 
       const last = points[points.length - 1] ?? { x: 0, y: 0 }
-      const length = getPathLength(last, { x: pageX, y: pageY })
+      const length = getPathLength(last, { x, y })
 
       if (length < minimalPathLength) return
-      points.push({ x: pageX, y: pageY })
+      points.push({ x, y })
       updateCurrentPath(points)
     }
 
@@ -59,17 +59,13 @@ export const SmoothLineDrawer: FC = () => {
       }, 10 * iteration)
     }
 
-    const onMouseDown = (event: MouseEvent) => {
-      const { pageX, pageY } = event
-
-      points.push({ x: pageX, y: pageY })
+    const onMouseDown = (event: DrawEvent) => {
+      points.push(getPointsFromEvent(event))
       updateCurrentPath(points)
     }
 
-    const onMouseUp = (event: MouseEvent) => {
-      const { pageX, pageY } = event
-
-      points.push({ x: pageX, y: pageY })
+    const onMouseUp = (event: DrawEvent) => {
+      points.push(getPointsFromEvent(event))
       updateCurrentPath(points)
 
       // Start fading
