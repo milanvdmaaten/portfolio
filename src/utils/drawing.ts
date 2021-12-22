@@ -41,6 +41,11 @@ const controlPoint = (
   return { x, y }
 }
 
+// Check if the user "actually" draws something
+const poorMansDrawValidator = (pathLength: number): boolean => {
+  return pathLength < 150
+}
+
 export const smoothSvgPath = (
   points: Point2D[],
   strokeWidth: number = 8,
@@ -70,19 +75,28 @@ export const distanceCalculation = (
   event: DrawEvent,
   previousEvent: DrawEvent
 ): number => {
-  const pointDistance = getPathLength(
+  const pathLength = getPathLength(
     getPointsFromEvent(event),
     getPointsFromEvent(previousEvent)
   )
 
-  // We only want to calculate if the user "actually" draws something
-  if (pointDistance > 50) return 0
+  if (!poorMansDrawValidator(pathLength)) return 0
 
   // https://www.unitconverters.net/typography/pixel-x-to-meter.htm
-  return pointDistance * 0.0002645833
+  return pathLength * 0.0002645833
 }
 
-export const timeCalculation = (
-  event: MouseEvent,
-  previousEvent: MouseEvent
-) => {}
+export const timeCalculation = (event: DrawEvent, previousEvent: DrawEvent) => {
+  const pathLength = getPathLength(
+    getPointsFromEvent(event),
+    getPointsFromEvent(previousEvent)
+  )
+
+  if (!poorMansDrawValidator(pathLength)) return 0
+
+  const { timeStamp } = event
+  const { timeStamp: previousTimeStamp } = previousEvent
+
+  // Return difference in seconds
+  return (timeStamp - previousTimeStamp) / 1000
+}
