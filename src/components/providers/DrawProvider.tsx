@@ -3,12 +3,7 @@ import React, { createContext, useContext, useEffect, useRef, useState } from 'r
 import { getScreenHeight, getScreenWidth } from '../../utils/screenSize'
 import { uuid } from '../../utils/uuid'
 
-interface Point2D {
-  x: number
-  y: number
-}
-
-type Draw = (point: Point2D, size: number, color: string) => void
+type Draw = (event: MouseEvent, size: number, color: string) => void
 
 interface DrawContextState {
   readyToDraw: boolean
@@ -108,11 +103,6 @@ export const DrawProvider: React.FC = props => {
     const onMouseDown = () => (isDrawing = true)
     const onMouseUp = () => (isDrawing = false)
 
-    let prevX = 0
-    let prevY = 0
-    let totalCmDrawLength = 0
-    let firedConfetti = false
-
     const onMouseMove = (event: MouseEvent): void => {
       try {
         window.getSelection().removeAllRanges()
@@ -122,9 +112,7 @@ export const DrawProvider: React.FC = props => {
 
       if (!isDrawing) return
 
-      drawMethods.current.forEach(draw =>
-        draw({ x: event.pageX, y: event.pageY }, drawSize, drawColor)
-      )
+      drawMethods.current.forEach(draw => draw(event, drawSize, drawColor))
     }
 
     window.addEventListener("resize", createSvg)
@@ -168,7 +156,7 @@ export const DrawProvider: React.FC = props => {
 interface UseDrawProps {
   color?: string
   size?: number
-  drawMethod?: (point: Point2D) => void
+  drawMethod?: (point: MouseEvent) => void
 }
 
 export const useDraw = (props: UseDrawProps = {}) => {

@@ -20,6 +20,7 @@ const BlogIndex = ({ data }) => {
   const pages = nodes.filter(node => node.fileAbsolutePath.includes("/page/"))
   const [showIntro, setShowIntro] = useState(() => {
     if (typeof localStorage === "undefined") return
+    return false
     const lastVisit = localStorage.getItem("lastVisit")
 
     localStorage.setItem("lastVisit", new Date().toUTCString())
@@ -55,6 +56,8 @@ const BlogIndex = ({ data }) => {
     return text
   }
 
+  const closeIntro = (): void => setShowIntro(false)
+
   /**
    * Side effects
    */
@@ -70,6 +73,7 @@ const BlogIndex = ({ data }) => {
         header={`My name is ${name},`}
         subheader={author.summary}
         show={showIntro}
+        close={closeIntro}
       />
       <Grid className="pt-60 md:pt-44">
         {posts?.map((post, index) => (

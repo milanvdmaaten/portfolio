@@ -5,7 +5,7 @@ export const Footer = ({ owner, textColor = "text-black" }) => {
    * Component state
    */
   const links: { title: string; href: string }[] = [
-    { title: "Phone", href: "tel:+1-816-831-9077" },
+    { title: "Phone", href: "tel:+31636548880" },
     { title: "Email", href: "mailto:mail@sanderboer.nl" },
     {
       title: "Linkedin",
@@ -21,14 +21,14 @@ export const Footer = ({ owner, textColor = "text-black" }) => {
    */
   return (
     <footer className={`bg-accent px-4 ${textColor}`}>
-      <div className="container m-auto pb-12 pt-56 flex justify-between">
-        <span className="transform origin-bottom-left translate-x-20 -rotate-90">
+      <div className="container m-auto pb-12 pt-56 flex justify-between flex-col md:flex-row">
+        <span className="transform origin-bottom-left md:translate-x-20 md:-rotate-90">
           © {new Date().getFullYear()},
           <br /> {owner}
         </span>
-        <ul className="flex">
+        <ul className="flex mt-10 flex-col md:flex-row">
           {links.map((link, index) => (
-            <li key={link.href} className={index < 1 ? "" : "ml-16"}>
+            <li key={link.href} className={index < 1 ? "" : "md:ml-16"}>
               <a
                 href={link.href}
                 rel="noreferrer"

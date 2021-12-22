@@ -1,32 +1,7 @@
 import React, { FC, useEffect } from 'react'
 
-import { controlPoint } from '../../utils/lineDrawer'
+import { getPathLength, Point2D, smoothSvgPath } from '../../utils/drawing'
 import { useDraw } from '../providers/DrawProvider'
-
-const svgPathRender = (
-  points: number[][],
-  strokeWidth: number = 8,
-  drawColor: string = "#000"
-) => {
-  const drawPath = points.reduce((path, point, index, _points) => {
-    if (index <= 0) return `${path} M ${point[0]},${point[1]}`
-
-    const cs = controlPoint(_points[index - 1], _points[index - 2], point)
-    const ce = controlPoint(point, _points[index - 1], _points[index + 1], true)
-
-    return `${path} C ${cs[0]},${cs[1]} ${ce[0]},${ce[1]} ${point[0]},${point[1]}`
-  }, "")
-
-  const newPath = document.createElementNS("http://www.w3.org/2000/svg", "path")
-  newPath.setAttribute("stroke", drawColor)
-  newPath.setAttribute("fill", "none")
-  newPath.setAttribute("stroke-width", `${strokeWidth}`)
-  newPath.setAttribute("stroke-linecap", "round")
-
-  newPath.setAttribute("d", drawPath)
-
-  return newPath
-}
 
 export const SmoothLineDrawer: FC = () => {
   /**
@@ -40,13 +15,13 @@ export const SmoothLineDrawer: FC = () => {
    */
   // Create the canvas
   useEffect(() => {
+    let points: Point2D[] = []
     let currentPath: SVGPathElement
-    let points = []
 
-    const updateCurrentPath = (path: number[][]) => {
+    const updateCurrentPath = (path: Point2D[]) => {
       currentPath?.remove()
 
-      const smoothPath = svgPathRender(path, drawSize, drawColor)
+      const smoothPath = smoothSvgPath(path, drawSize, drawColor)
       svg.appendChild(smoothPath)
       currentPath = smoothPath
     }
@@ -60,16 +35,16 @@ export const SmoothLineDrawer: FC = () => {
       points = []
     }
 
-    const draw = (event?: { x: number; y: number }) => {
+    const draw = (event?: MouseEvent) => {
       if (!event) return
       const minimalPathLength = 20
-      const { x, y } = event
+      const { pageX, pageY } = event
 
-      const last = points[points.length - 1] ?? [0, 0]
-      const length = Math.hypot(x - last[0], y - last[1])
+      const last = points[points.length - 1] ?? { x: 0, y: 0 }
+      const length = getPathLength(last, { x: pageX, y: pageY })
 
       if (length < minimalPathLength) return
-      points.push([x, y])
+      points.push({ x: pageX, y: pageY })
       updateCurrentPath(points)
     }
 
@@ -87,14 +62,14 @@ export const SmoothLineDrawer: FC = () => {
     const onMouseDown = (event: MouseEvent) => {
       const { pageX, pageY } = event
 
-      points.push([pageX, pageY])
+      points.push({ x: pageX, y: pageY })
       updateCurrentPath(points)
     }
 
     const onMouseUp = (event: MouseEvent) => {
       const { pageX, pageY } = event
 
-      points.push([pageX, pageY])
+      points.push({ x: pageX, y: pageY })
       updateCurrentPath(points)
 
       // Start fading

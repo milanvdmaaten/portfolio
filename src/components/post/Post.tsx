@@ -47,7 +47,7 @@ export const Post: FC<PostProps> = props => {
             </figcaption>
           </figure>
         </header>
-        <p className="body-small flex items-start">
+        <p className="body-small">
           <strong className="mr-2">{title}</strong>
           <span
             className={`border-l-2 pl-2 ${

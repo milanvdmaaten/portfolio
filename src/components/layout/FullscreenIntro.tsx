@@ -3,6 +3,7 @@ import React, { FC, HTMLAttributes, useEffect } from 'react'
 import Typewriter from 'typewriter-effect/dist/core'
 
 import { disableScroll, enableScroll } from '../../utils/scrollBlocker'
+import { useDraw } from '../providers/DrawProvider'
 import { Grid } from './Grid'
 
 interface FullscreenIntroProps extends HTMLAttributes<HTMLElement> {
@@ -10,13 +11,19 @@ interface FullscreenIntroProps extends HTMLAttributes<HTMLElement> {
   title: string
   header: string
   subheader: string
+  close: () => void
 }
 
 export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
   /**
    * Component state
    */
-  const { show, title, header, subheader, ...htmlElementProps } = props
+  const { show, title, header, subheader, close, ...htmlElementProps } = props
+
+  /**
+   * Custom & 3th party hooks
+   */
+  const { setDrawColor } = useDraw()
 
   /**
    * Side effects
@@ -31,8 +38,13 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
   }, [show])
 
   useEffect(() => {
+    setDrawColor("#fff")
+  }, [])
+
+  useEffect(() => {
     const headerEl = document.getElementById("header")
     const subheaderEl = document.getElementById("subheader")
+    const waitForAnimation = 2000
 
     const headerWriter = new Typewriter(headerEl, {
       loop: false,
@@ -46,8 +58,11 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
       cursor: "",
     })
 
-    headerWriter.pauseFor(1750).typeString(header).start()
-    subheaderWriter.pauseFor(3000).typeString(subheader).start()
+    headerWriter.pauseFor(waitForAnimation).typeString(header).start()
+    subheaderWriter
+      .pauseFor(waitForAnimation + header.length * 55 + 750)
+      .typeString(subheader)
+      .start()
   }, [header, subheader])
 
   /**
@@ -61,75 +76,46 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
             style={{ zIndex: 100 }}
             className="w-screen h-screen top-0 bottom-0 fixed"
           >
-            <motion.div
-              className={`bg-white absolute top-0 bottom-0 w-full h-full overflow-hidden`}
-              exit={{
-                top: ["0vh", "-100vh"],
-                opacity: [1, 0],
-              }}
-              transition={{
-                delay: 4.5,
-                duration: 0.6,
-                ease: "backOut",
-              }}
-            >
+            <motion.div className="bg-white absolute top-0 bottom-0 w-full h-full overflow-hidden">
               <motion.div
-                className="case__title-large top-1/3"
-                initial={{ left: "-200vw" }}
-                animate={{ left: "0" }}
+                className="bg-black w-full bottom-0 absolute"
+                initial={{ top: "100vh" }}
+                animate={{ top: "0vh" }}
                 transition={{
-                  duration: 0.3,
-                  delay: 1,
-                  type: "spring",
+                  duration: 0.45,
+                  delay: 0.5,
+                }}
+              ></motion.div>
+              <motion.div
+                className="case__title-large text-white"
+                initial={{ top: "75vh", opacity: 0 }}
+                animate={{ top: "50vh", opacity: 1 }}
+                transition={{
+                  duration: 0.75,
+                  delay: 0.7,
                 }}
               >
                 {title}
               </motion.div>
               <motion.div
-                className="bottom-screen-wrapper"
-                exit={{
-                  top: "100vh",
-                }}
+                className="bg-black w-full bottom-0 absolute"
+                initial={{ top: "100vh" }}
+                animate={{ top: "51vh" }}
                 transition={{
-                  delay: 4.2,
-                  duration: 0.3,
+                  duration: 1.3,
+                  delay: 0.9,
+                  type: "spring",
                 }}
               >
                 <section className="relative h-full z-10 text-white flex flex-col">
-                  <motion.div
-                    className="case__title-large"
-                    initial={{ left: "200vw" }}
-                    animate={{ left: "0" }}
-                    transition={{
-                      duration: 0.3,
-                      delay: 1,
-                      type: "spring",
-                    }}
-                  >
-                    {title}
-                  </motion.div>
                   <Grid className="w-10/12">
                     <section className="col-span-12 body-large flex-grow flex flex-col justify-end pb-8">
-                      <h1 id="header"></h1>
-                      <p id="subheader"></p>
+                      <h1 id="header" />
+                      <p id="subheader" />
+                      <p id="drawIndicator" />
                     </section>
                   </Grid>
                 </section>
-                <motion.div
-                  className="w-3 h-3 absolute bg-accent"
-                  animate={{
-                    left: ["90%", "55%", "50%"],
-                    top: ["90%", "65%", "50%"],
-                    rotate: [45, 90, 135],
-                    scale: [0, 250, 1000],
-                    borderRadius: ["50%", "30%", "0%"],
-                  }}
-                  transition={{
-                    duration: 0.33,
-                    delay: 0.75,
-                    type: "tween",
-                  }}
-                />
               </motion.div>
             </motion.div>
           </div>
