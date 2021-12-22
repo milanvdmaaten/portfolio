@@ -22,10 +22,8 @@ const BlogIndex = ({ data }) => {
     if (typeof localStorage === "undefined") return
     const lastVisit = localStorage.getItem("lastVisit")
 
-    if (!lastVisit) {
-      localStorage.setItem("lastVisit", new Date().toUTCString())
-      return true
-    }
+    localStorage.setItem("lastVisit", new Date().toUTCString())
+    if (!lastVisit) return true
 
     const date1 = new Date(lastVisit)
     const date2 = new Date()
@@ -57,16 +55,9 @@ const BlogIndex = ({ data }) => {
     return text
   }
 
-  const closeIntro = (): void => {
-    setShowIntro(false)
-  }
-
   /**
    * Side effects
    */
-  useEffect(() => {
-    setTimeout(closeIntro, 1000 * 5)
-  }, [closeIntro])
 
   /**
    * Render
@@ -79,7 +70,6 @@ const BlogIndex = ({ data }) => {
         header={`My name is ${name},`}
         subheader={author.summary}
         show={showIntro}
-        onMouseDownCapture={closeIntro}
       />
       <Grid className="pt-60 md:pt-44">
         {posts?.map((post, index) => (

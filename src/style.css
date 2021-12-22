@@ -87,7 +87,15 @@ body {
 }
 
 .call_to_action {
-  @apply py-4 px-8 border-2 rounded-md flex border-gray-900 hover:bg-gray-200 focus:bg-gray-400;
+  @apply py-4 px-8 border-2 rounded-md flex border-gray-900 hover:bg-gray-200 focus:bg-gray-400 transition-all duration-300;
+}
+
+.call_to_action img {
+  @apply transition-all duration-100 transform;
+}
+
+.call_to_action:hover img {
+  @apply translate-x-1;
 }
 
 .call_to_action.inverted {

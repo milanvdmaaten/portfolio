@@ -39,7 +39,7 @@ export const PostLink: FC<PostLinkProps> = props => {
         image={renderImage}
         objectFit="initial"
         alt={`alt`}
-        className={`blog-post-link-image`}
+        className={`blog-post-link-image drop-shadow-milan`}
       />
       <section className="flex flex-col md:flex-row">
         <h2 className="case__title">{title}</h2>

@@ -1,12 +1,28 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 
+import { TextColor } from '../../lib/types/textColor'
 import { useConfetti } from '../providers/ConfettiProvider'
 import { useDraw } from '../providers/DrawProvider'
 
-export const TotalDrawTime: FC = () => {
+interface TotalDrawTimeProps {
+  drawTime: number
+  textColor: TextColor
+  localStorageKey?: string
+  suffix?: string
+}
+
+export const TotalDrawTime: FC<TotalDrawTimeProps> = props => {
   /**
    * State
    */
+  const { drawTime, textColor, localStorageKey, suffix } = props
+
+  const [timeToGo, setTimeToGo] = useState(
+    (localStorageKey && Number(localStorage.getItem(localStorageKey))) ??
+      drawTime
+  )
+  const drawThreshold = useRef(25)
+  const callbackFired = useRef(false)
 
   /**
    * Custom & 3rd party hooks
@@ -15,29 +31,43 @@ export const TotalDrawTime: FC = () => {
   const { fire } = useConfetti()
 
   /**
+   * Methods
+   */
+  const calculation = (
+    event?: { x: number; y: number },
+    previousEvent?: { prevX: number; prevY: number }
+  ): number => {
+    const { x = 0, y = 0 } = event
+    const { prevX = 0, prevY = 0 } = previousEvent
+
+    const pointDistance = Math.hypot(x - prevX, y - prevY)
+
+    // We only want to calculate if the user "actually" draws something
+
+    if (pointDistance <= drawThreshold.current) return 0
+
+    // https://www.unitconverters.net/typography/pixel-x-to-meter.htm
+    return pointDistance * 0.0002645833
+  }
+
+  /**
    * Hooks
    */
   useEffect(() => {
-    let prev = { x: 0, y: 0 }
-    let totalDrawLength = 0
-    let firedConfetti = false
+    let previousEvent = { prevX: 0, prevY: 0 }
 
     const draw = (event?: { x: number; y: number }) => {
       const { x, y } = event
 
-      // https://www.unitconverters.net/typography/pixel-x-to-meter.htm
-      const pointDistance = Math.hypot(x - prev.x, y - prev.y)
-      // Prevent jumps in the screen
-      // We only want to calculate if the user "actually" draws something
-      if (pointDistance <= 50) totalDrawLength += pointDistance * 0.0002645833
+      setTimeToGo(prev => prev - calculation(event, previousEvent))
 
-      prev = { x, y }
+      previousEvent = { prevX: x, prevY: y }
 
-      if (totalDrawLength > 1 && !firedConfetti) {
-        firedConfetti = true
-        fire({ origin: { x: 0, y: 1 }, angle: 20, spread: 150 })
-        fire({ origin: { x: 0.5, y: 0.5 }, angle: -20, spread: 150 })
-      }
+      // if (totalDrawLength > drawTime && !firedConfetti) {
+      //   firedConfetti = true
+      //   fire({ origin: { x: 0, y: 1 }, angle: 20, spread: 150 })
+      //   fire({ origin: { x: 0.5, y: 0.5 }, angle: -20, spread: 150 })
+      // }
     }
 
     const drawer = addDrawMethod(draw)
@@ -45,9 +75,27 @@ export const TotalDrawTime: FC = () => {
     return () => {
       removeDrawMethod(drawer)
     }
-  }, [addDrawMethod, removeDrawMethod])
+  }, [addDrawMethod, removeDrawMethod, drawTime])
+
+  useEffect(() => {
+    if (callbackFired.current) return
+
+    if (timeToGo <= 0) {
+      fire({ origin: { x: 0, y: 1 }, angle: 20, spread: 150 })
+      fire({ origin: { x: 0.5, y: 0.5 }, angle: -20, spread: 150 })
+      callbackFired.current = true
+    }
+  }, [timeToGo])
+
   /**
    * Render
    */
-  return null
+  return (
+    <div
+      className={`fixed z-50 bottom-5 right-5 heading-extra-small ${textColor}`}
+    >
+      {Math.max(timeToGo, 0).toFixed(2)}
+      <span className="body-medium">{suffix ?? "s"}</span>
+    </div>
+  )
 }

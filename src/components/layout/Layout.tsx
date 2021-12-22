@@ -1,6 +1,7 @@
 import { AnimatePresence } from 'framer-motion'
 import React, { useEffect } from 'react'
 
+import { TextColor } from '../../lib/types/textColor'
 import { Cursor } from '../Cursor'
 import { SmoothLineDrawer } from '../drawers/SmoothLineDrawer'
 import { TotalDrawTime } from '../drawers/TotalDrawTime'
@@ -44,7 +45,7 @@ export const Layout = ({
             <DrawProvider>
               <Cursor />
               <SmoothLineDrawer />
-              <TotalDrawTime />
+              <TotalDrawTime drawTime={10} textColor={textColor as TextColor} />
               <Header owner={name} pages={pages} />
               <main>{children}</main>
               <Footer owner={owner} textColor={textColor} />

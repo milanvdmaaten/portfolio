@@ -42,7 +42,7 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
 
     const subheaderWriter = new Typewriter(subheaderEl, {
       loop: false,
-      delay: 50,
+      delay: 35,
       cursor: "",
     })
 
