@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react'
 
 import { TextColor } from '../../lib/types/textColor'
-import { distanceCalculation } from '../../utils/drawing'
+import { distanceCalculation, timeCalculation } from '../../utils/drawing'
 import { useConfetti } from '../providers/ConfettiProvider'
 import { DrawEvent, useDraw } from '../providers/DrawProvider'
 
@@ -41,7 +41,7 @@ export const TotalDrawTime: FC<TotalDrawTimeProps> = props => {
       setTimeToGo(prev => {
         if (calculator) return prev - calculator(event, previousEvent ?? event)
 
-        return prev - distanceCalculation(event, previousEvent ?? event)
+        return prev - timeCalculation(event, previousEvent ?? event)
       })
       previousEvent = event
     }
@@ -71,7 +71,7 @@ export const TotalDrawTime: FC<TotalDrawTimeProps> = props => {
       className={`fixed z-50 bottom-5 right-5 heading-extra-small ${textColor}`}
     >
       {Math.max(timeToGo, 0).toFixed(2)}
-      <span className="body-medium">{suffix ?? "m"}</span>
+      <span className="body-medium">{suffix ?? "s"}</span>
     </div>
   )
 }
