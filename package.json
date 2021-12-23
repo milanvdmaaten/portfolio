@@ -38,12 +38,14 @@
     "react-awesome-reveal": "3.8.1",
     "react-dom": "17.0.2",
     "react-helmet": "6.1.0",
+    "react-modal": "^3.14.4",
     "swiper": "7.3.3",
-    "typewriter-effect": "2.18.2",
-    "tailwindcss": "2.2.16"
+    "tailwindcss": "2.2.16",
+    "typewriter-effect": "2.18.2"
   },
   "devDependencies": {
     "@types/canvas-confetti": "1.4.2",
+    "@types/react-modal": "^3.13.1",
     "autoprefixer": "10.4.0",
     "gatsby-plugin-postcss": "5.4.0",
     "postcss": "8.4.5",

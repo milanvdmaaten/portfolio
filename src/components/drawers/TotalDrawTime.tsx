@@ -76,7 +76,7 @@ export const TotalDrawTime: FC<TotalDrawTimeProps> = props => {
    */
   return (
     <div
-      style={{ zIndex: 1000 }}
+      style={{ zIndex: 60 }}
       className={`fixed bottom-5 right-5 heading-extra-small ${textColor}`}
     >
       {Math.max(countDown, 0).toFixed(2)}

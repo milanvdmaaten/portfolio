@@ -83,7 +83,7 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
   return (
     <section {...htmlElementProps}>
       <TotalDrawTime
-        initialValue={0.5}
+        initialValue={1}
         textColor="text-white"
         suffix="m"
         calculator={distanceCalculation}

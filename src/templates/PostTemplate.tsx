@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React, { FC, Fragment, useEffect, useState } from 'react'
+import Modal from 'react-modal'
 
 import { Content } from '../components/content/Content'
 import { TotalDrawTime } from '../components/drawers/TotalDrawTime'
@@ -14,6 +15,7 @@ import { useConfetti } from '../components/providers/ConfettiProvider'
 import Seo from '../components/seo'
 import { TextColor } from '../lib/types/textColor'
 import { timeCalculation } from '../utils/drawing'
+import { disableScroll, enableScroll } from '../utils/scrollBlocker'
 
 interface PostTemplateProps {
   data: any
@@ -25,11 +27,13 @@ interface DrawerProps {
 
 // TODO: move to a separate file?
 // Wee need this to be able to have access to `useConfetti`
-const Drawer: FC<DrawerProps> = props => {
+const EmailTrigger: FC<DrawerProps> = props => {
   /**
    * Component state
    */
   const { textColor = "text-black" } = props
+
+  const [modelOpened, setModelOpened] = useState(false)
   /**
    * Custom & 3th party hooks
    */
@@ -38,7 +42,13 @@ const Drawer: FC<DrawerProps> = props => {
   /**
    * Methods
    */
+  const closeModel = (): void => {
+    enableScroll()
+    setModelOpened(false)
+  }
+
   const drawCallback = () => {
+    disableScroll()
     const base = { origin: { x: 1, y: 1 }, angle: 135 }
 
     fire({
@@ -60,19 +70,73 @@ const Drawer: FC<DrawerProps> = props => {
       spread: 120,
       startVelocity: 45,
     })
+
+    setTimeout(() => {
+      setModelOpened(true)
+    }, 500)
   }
 
   /**
    * Render
    */
   return (
-    <TotalDrawTime
-      textColor={textColor}
-      initialValue={15}
-      suffix={"s"}
-      calculator={timeCalculation}
-      callback={drawCallback}
-    />
+    <Fragment>
+      <Modal
+        isOpen={modelOpened}
+        shouldCloseOnEsc
+        shouldCloseOnOverlayClick
+        onRequestClose={closeModel}
+        style={{
+          overlay: {
+            zIndex: 70,
+          },
+          content: {
+            zIndex: 71,
+            background: textColor === "text-black" ? "#fff" : "#000",
+          },
+        }}
+      >
+        <article
+          className={`text-center p-10 flex flex-col justify-between h-full ${textColor}`}
+        >
+          <h1 className="heading-large">Hi there,</h1>
+          <section className="body-large">
+            <p className="mb-2">Your drawings looked beautiful 🎨</p>
+            <p>In just another 10 seconds we could arrange a chat!</p>
+          </section>
+          <div className="flex justify-center">
+            <a
+              className={`call_to_action ${
+                textColor === "text-white" ? "inverted" : ""
+              }`}
+              href="mailto:mail@sanderboer.nl?subject=Let's talk&body=Hi, I'd like to talk about your work,"
+            >
+              <div>Let's arrange a chat</div>
+              <img
+                src="/assets/link_arrow.svg"
+                className={`ml-4 ${
+                  textColor === "text-white" ? "filter invert" : ""
+                }`}
+              />
+            </a>
+          </div>
+        </article>
+
+        <button
+          onClick={closeModel}
+          className={`underline absolute top-4 right-4 ${textColor}`}
+        >
+          close
+        </button>
+      </Modal>
+      <TotalDrawTime
+        textColor={textColor}
+        initialValue={10}
+        suffix={"s"}
+        calculator={timeCalculation}
+        callback={drawCallback}
+      />
+    </Fragment>
   )
 }
 const PostTemplate: FC<PostTemplateProps> = props => {
@@ -126,7 +190,7 @@ const PostTemplate: FC<PostTemplateProps> = props => {
       textColor={textColor}
     >
       <Seo title={title} description={tagline} />
-      <Drawer textColor={textColor} />
+      <EmailTrigger textColor={textColor} />
       <AnimatePresence>
         {entryAnimation && (
           <section className="z-40 fixed w-full bottom-0 top-0">

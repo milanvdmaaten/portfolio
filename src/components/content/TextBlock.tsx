@@ -10,8 +10,15 @@ interface TextBlockProps {
 }
 
 export const TextBlock: FC<TextBlockProps> = props => {
+  /**
+   * Component state
+   */
   const { content } = props
   const { title, body } = content
+
+  /**
+   * Render
+   */
   return (
     <Fade fraction={1 / 3} cascade triggerOnce className="relative z-30">
       <Grid className="content--text">

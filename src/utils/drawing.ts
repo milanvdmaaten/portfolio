@@ -97,6 +97,9 @@ export const timeCalculation = (event: DrawEvent, previousEvent: DrawEvent) => {
   const { timeStamp } = event
   const { timeStamp: previousTimeStamp } = previousEvent
 
+  const timeDiff = (timeStamp - previousTimeStamp) / 1000
+  if (timeDiff > 0.02) return 0
+
   // Return difference in seconds
-  return (timeStamp - previousTimeStamp) / 1000
+  return timeDiff
 }

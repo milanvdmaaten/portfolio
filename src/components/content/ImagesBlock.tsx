@@ -25,6 +25,7 @@ export const ImagesBlock: FC<ImagesBlockProps> = props => {
   const [offsetTop, setOffsetTop] = useState(0)
 
   const uniqueIdentifier = useRef(uuid())
+  const invertImageArrowPointers = useRef<Map<number, boolean>>(new Map())
 
   let imageColsClass = "col-start-0 col-span-12"
   let isFullWidth = false
@@ -126,7 +127,14 @@ export const ImagesBlock: FC<ImagesBlockProps> = props => {
                   arrowPosition += " justify-end -translate-x-1/4 mr-4"
                   break
                 default:
-                  if (Math.random() > 2 / 3) inverted = true
+                  if (!invertImageArrowPointers.current.get(index)) {
+                    invertImageArrowPointers.current.set(
+                      index,
+                      Math.random() > 2 / 3
+                    )
+                  }
+
+                  inverted = invertImageArrowPointers.current.get(index)
                   arrowPosition += " justify-center"
               }
               return (
