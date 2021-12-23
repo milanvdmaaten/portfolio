@@ -1,138 +1,21 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import React, { FC, Fragment, useEffect, useState } from 'react'
-import Modal from 'react-modal'
+import React, { FC, useEffect, useState } from 'react'
 
-import { CallToActionBlock } from '../components/content/CallToActionBlock'
 import { Content } from '../components/content/Content'
-import { TotalDrawTime } from '../components/drawers/TotalDrawTime'
+import { EmailTrigger } from '../components/drawers/EmailTrigger'
 import { ContentSeparator } from '../components/layout/ContentSeparator'
 import { Grid } from '../components/layout/Grid'
 import { Layout } from '../components/layout/Layout'
 import { OtherPosts } from '../components/post/OtherPosts'
 import { PostHeader } from '../components/post/PostHeader'
-import { useConfetti } from '../components/providers/ConfettiProvider'
 import Seo from '../components/seo'
-import { TextColor } from '../lib/types/textColor'
-import { timeCalculation } from '../utils/drawing'
-import { disableScroll, enableScroll } from '../utils/scrollBlocker'
 
 interface PostTemplateProps {
   data: any
 }
 
-interface DrawerProps {
-  textColor: TextColor
-}
-
-// TODO: move to a separate file?
-// Wee need this to be able to have access to `useConfetti`
-const EmailTrigger: FC<DrawerProps> = props => {
-  /**
-   * Component state
-   */
-  const { textColor = "text-black" } = props
-
-  const [modelOpened, setModelOpened] = useState(false)
-  /**
-   * Custom & 3th party hooks
-   */
-  const { fire } = useConfetti()
-
-  /**
-   * Methods
-   */
-  const closeModel = (): void => {
-    enableScroll()
-    setModelOpened(false)
-  }
-
-  const drawCallback = () => {
-    disableScroll()
-    const base = { origin: { x: 1, y: 1 }, angle: 135 }
-
-    fire({
-      ...base,
-      spread: 26,
-      startVelocity: 55,
-      particleRatio: 0.25,
-    })
-    fire({ ...base, spread: 60 })
-    fire({
-      ...base,
-      spread: 100,
-      decay: 0.91,
-      scalar: 0.8,
-      particleRatio: 0.35,
-    })
-    fire({
-      ...base,
-      spread: 120,
-      startVelocity: 45,
-    })
-
-    setTimeout(() => {
-      setModelOpened(true)
-    }, 500)
-  }
-
-  /**
-   * Render
-   */
-  return (
-    <Fragment>
-      <Modal
-        isOpen={modelOpened}
-        shouldCloseOnEsc
-        shouldCloseOnOverlayClick
-        onRequestClose={closeModel}
-        style={{
-          overlay: {
-            zIndex: 70,
-          },
-          content: {
-            zIndex: 71,
-            background: textColor === "text-black" ? "#fff" : "#000",
-          },
-        }}
-      >
-        <article
-          className={`text-center p-10 flex flex-col justify-between h-full ${textColor}`}
-        >
-          <h1 className="heading-large">Hi there,</h1>
-          <section className="body-large">
-            <p className="mb-2">Your drawings looked beautiful 🎨</p>
-            <p>In just another 10 seconds we could arrange a chat!</p>
-          </section>
-          <div className="flex justify-center">
-            <CallToActionBlock
-              content={{
-                title: "Let's chat",
-                href: "mailto:mail@sanderboer.nl?subject=Let's talk&body=Hi, I'd like to talk about your work,",
-              }}
-              textColor={textColor}
-            />
-          </div>
-        </article>
-
-        <button
-          onClick={closeModel}
-          className={`underline absolute top-4 right-4 ${textColor}`}
-        >
-          close
-        </button>
-      </Modal>
-      <TotalDrawTime
-        textColor={textColor}
-        initialValue={10}
-        suffix={"s"}
-        calculator={timeCalculation}
-        callback={drawCallback}
-      />
-    </Fragment>
-  )
-}
 const PostTemplate: FC<PostTemplateProps> = props => {
   /**
    * Component state
@@ -193,8 +76,7 @@ const PostTemplate: FC<PostTemplateProps> = props => {
               initial={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{
-                duration: 0.2,
-                type: "tween",
+                duration: 0.3,
                 delay: 0.15,
               }}
             />

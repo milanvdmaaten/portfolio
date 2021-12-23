@@ -68,7 +68,6 @@ export const DrawProvider: React.FC = props => {
     _svg.setAttribute("height", `${height}`)
     _svg.setAttribute("viewBox", `0,0,${width}, ${height}`)
 
-    _svg.style.zIndex = "0"
     _svg.style.height = height + "px"
     _svg.style.position = "absolute"
     _svg.style.width = "100%"
@@ -82,8 +81,9 @@ export const DrawProvider: React.FC = props => {
       svg.remove()
     } catch (e) {}
 
-    layout.appendChild(svg)
+    svg.style.zIndex = "0"
     svg.id = "drawSvg"
+    layout.appendChild(svg)
 
     setTimeout(() => {
       setSvgDimensions(svg)

@@ -163,3 +163,23 @@ svg path {
 .content--text a {
   @apply underline;
 }
+
+.modal {
+  @apply z-50 fixed w-screen h-screen top-0 left-0 flex justify-center items-center;
+}
+
+.modal__backdrop {
+  @apply absolute w-full h-full bg-gray-900;
+}
+
+.modal__content {
+  @apply rounded-md drop-shadow bg-gray-100 p-16 m-4 relative;
+}
+
+.modal__content > article {
+  min-height: 50vh;
+}
+
+.modal.dark .modal__content {
+  @apply bg-gray-800;
+}

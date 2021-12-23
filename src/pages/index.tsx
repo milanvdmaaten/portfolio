@@ -32,9 +32,9 @@ const BlogIndex = ({ data }) => {
     const date2 = new Date()
     // @ts-ignore
     const diffTime = Math.abs(date2 - date1)
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+    const diffHours = Math.ceil(diffTime / (1000 * 60 * 60))
 
-    return diffDays > 1
+    return diffHours > 2
   })
 
   // eslint-disable-next-line no-useless-escape
@@ -77,13 +77,11 @@ const BlogIndex = ({ data }) => {
         show={showIntro}
         close={closeIntro}
       />
-      {!showIntro && (
-        <Grid className="pt-60 md:pt-44">
-          {posts?.map((post, index) => (
-            <PostLink post={post} key={index} />
-          ))}
-        </Grid>
-      )}
+      <Grid className="pt-60 md:pt-44">
+        {posts?.map((post, index) => (
+          <PostLink post={post} key={index} />
+        ))}
+      </Grid>
       <ContentSeparator />
     </Layout>
   )

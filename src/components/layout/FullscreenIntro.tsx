@@ -41,12 +41,16 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
    */
   useEffect(() => {
     if (show) {
+      setTimeout(() => {
+        document.getElementById("drawSvg").style.zIndex = "100"
+        console.log(document.getElementById("drawSvg"))
+      }, 1)
       return disableScroll()
     }
 
-    return () => {
-      enableScroll()
-    }
+    setDrawColor("#000")
+    document.getElementById("drawSvg").style.zIndex = "0"
+    enableScroll()
   }, [show])
 
   useEffect(() => {
@@ -56,6 +60,8 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
   useEffect(() => {
     const headerEl = document.getElementById("header")
     const subheaderEl = document.getElementById("subheader")
+    const drawIndicatorEl = document.getElementById("drawIndicator")
+
     const waitForAnimation = 1850
 
     const headerWriter = new Typewriter(headerEl, {
@@ -70,11 +76,18 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
       cursor: "",
     })
 
+    const drawIndicatorWriter = new Typewriter(drawIndicatorEl, {
+      loop: false,
+      delay: 50,
+      cursor: "",
+    })
+
     headerWriter.pauseFor(waitForAnimation).typeString(header).start()
     subheaderWriter
       .pauseFor(waitForAnimation + header.length * 55 + 750)
       .typeString(subheader)
       .start()
+    drawIndicatorWriter.pauseFor(100).typeString("Draw to continue").start()
   }, [header, subheader])
 
   /**
@@ -83,7 +96,7 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
   return (
     <section {...htmlElementProps}>
       <TotalDrawTime
-        initialValue={1}
+        initialValue={2}
         textColor="text-white"
         suffix="m"
         calculator={distanceCalculation}
@@ -144,6 +157,10 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                     <section className="col-span-12 body-large flex-grow flex flex-col justify-end pb-8">
                       <h1 id="header" />
                       <p id="subheader" />
+                      <p
+                        id="drawIndicator"
+                        className="caption-handwritten absolute bottom-16 right-16 transform -rotate-12"
+                      />
                     </section>
                   </Grid>
                 </section>

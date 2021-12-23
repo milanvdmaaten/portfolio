@@ -58,7 +58,7 @@ export const PostHeader: FC<PostHeaderProps> = props => {
         animate={{ opacity: 1, left: "0vw" }}
         transition={{
           duration: 0.25,
-          delay: 0.75,
+          delay: 0.8,
         }}
         style={{
           marginLeft: `-${titleLeft}px`,
