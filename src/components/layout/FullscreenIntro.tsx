@@ -114,7 +114,7 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                 exit={{
                   top: "100vh",
                 }}
-              ></motion.div>
+              />
               <motion.div
                 className="case__title-large text-white"
                 initial={{ top: "80vh", opacity: 0.1 }}

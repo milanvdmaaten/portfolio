@@ -10,13 +10,71 @@ import { Grid } from '../components/layout/Grid'
 import { Layout } from '../components/layout/Layout'
 import { OtherPosts } from '../components/post/OtherPosts'
 import { PostHeader } from '../components/post/PostHeader'
+import { useConfetti } from '../components/providers/ConfettiProvider'
 import Seo from '../components/seo'
+import { TextColor } from '../lib/types/textColor'
 import { timeCalculation } from '../utils/drawing'
 
 interface PostTemplateProps {
   data: any
 }
 
+interface DrawerProps {
+  textColor: TextColor
+}
+
+// TODO: move to a separate file?
+// Wee need this to be able to have access to `useConfetti`
+const Drawer: FC<DrawerProps> = props => {
+  /**
+   * Component state
+   */
+  const { textColor = "text-black" } = props
+  /**
+   * Custom & 3th party hooks
+   */
+  const { fire } = useConfetti()
+
+  /**
+   * Methods
+   */
+  const drawCallback = () => {
+    const base = { origin: { x: 1, y: 1 }, angle: 135 }
+
+    fire({
+      ...base,
+      spread: 26,
+      startVelocity: 55,
+      particleRatio: 0.25,
+    })
+    fire({ ...base, spread: 60 })
+    fire({
+      ...base,
+      spread: 100,
+      decay: 0.91,
+      scalar: 0.8,
+      particleRatio: 0.35,
+    })
+    fire({
+      ...base,
+      spread: 120,
+      startVelocity: 45,
+    })
+  }
+
+  /**
+   * Render
+   */
+  return (
+    <TotalDrawTime
+      textColor={textColor}
+      initialValue={15}
+      suffix={"s"}
+      calculator={timeCalculation}
+      callback={drawCallback}
+    />
+  )
+}
 const PostTemplate: FC<PostTemplateProps> = props => {
   /**
    * Component state
@@ -67,11 +125,13 @@ const PostTemplate: FC<PostTemplateProps> = props => {
       backgroundColor={backgroundColor}
       textColor={textColor}
     >
+      <Seo title={title} description={tagline} />
+      <Drawer textColor={textColor} />
       <AnimatePresence>
         {entryAnimation && (
-          <section className="z-10 absolute w-full bottom-0 top-0">
+          <section className="z-40 fixed w-full bottom-0 top-0">
             <motion.div
-              className="bg-white absolute w-full bottom-0 top-0"
+              className="bg-white fixed w-full bottom-0 top-0"
               initial={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{
@@ -79,9 +139,9 @@ const PostTemplate: FC<PostTemplateProps> = props => {
                 type: "tween",
                 delay: 0.15,
               }}
-            ></motion.div>
+            />
             <motion.div
-              className="absolute w-full bottom-0 top-0"
+              className="fixed w-full bottom-0 top-0"
               initial={{ top: "100vh", bottom: "0vh", opacity: 1 }}
               animate={{ top: "0vh" }}
               transition={{
@@ -90,17 +150,10 @@ const PostTemplate: FC<PostTemplateProps> = props => {
               }}
               exit={{ bottom: "100vh" }}
               style={{ background: headerColor }}
-            ></motion.div>
+            />
           </section>
         )}
       </AnimatePresence>
-      <Seo title={title} description={tagline} />
-      <TotalDrawTime
-        textColor={textColor}
-        initialValue={10}
-        suffix={"s"}
-        calculator={timeCalculation}
-      />
       <PostHeader
         title={title}
         headerColor={headerColor}

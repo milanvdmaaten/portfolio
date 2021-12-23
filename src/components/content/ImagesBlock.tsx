@@ -177,7 +177,7 @@ export const ImagesBlock: FC<ImagesBlockProps> = props => {
                     />
                   </Fade>
                   {index < images.length - 1 && (
-                    <ContentSeparator size="mb-20" />
+                    <ContentSeparator className="mb-20" />
                   )}
                 </div>
               )
