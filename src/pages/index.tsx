@@ -6,6 +6,7 @@ import { FullscreenIntro } from '../components/layout/FullscreenIntro'
 import { Grid } from '../components/layout/Grid'
 import { Layout } from '../components/layout/Layout'
 import { PostLink } from '../components/post/PostLink'
+import { useDraw } from '../components/providers/DrawProvider'
 import Seo from '../components/seo'
 
 const BlogIndex = ({ data }) => {
@@ -18,9 +19,9 @@ const BlogIndex = ({ data }) => {
   const { nodes } = allMarkdownRemark
   const posts = nodes.filter(node => node.fileAbsolutePath.includes("/blog/"))
   const pages = nodes.filter(node => node.fileAbsolutePath.includes("/page/"))
+
   const [showIntro, setShowIntro] = useState(() => {
     if (typeof localStorage === "undefined") return
-    return false
     const lastVisit = localStorage.getItem("lastVisit")
 
     localStorage.setItem("lastVisit", new Date().toUTCString())
@@ -75,11 +76,13 @@ const BlogIndex = ({ data }) => {
         show={showIntro}
         close={closeIntro}
       />
-      <Grid className="pt-60 md:pt-44">
-        {posts?.map((post, index) => (
-          <PostLink post={post} key={index} />
-        ))}
-      </Grid>
+      {!showIntro && (
+        <Grid className="pt-60 md:pt-44">
+          {posts?.map((post, index) => (
+            <PostLink post={post} key={index} />
+          ))}
+        </Grid>
+      )}
       <ContentSeparator />
     </Layout>
   )

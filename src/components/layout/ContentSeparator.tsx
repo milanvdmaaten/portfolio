@@ -1,17 +1,17 @@
 import React, { FC } from 'react'
 
 interface ContentSeparatorProps {
-  size?: string
+  className?: string
 }
 
 export const ContentSeparator: FC<ContentSeparatorProps> = props => {
   /**
    * State
    */
-  const { size } = props
+  const { className } = props
 
   /**
    * Render
    */
-  return <div className={size ?? "mb-40 md:mb-52"}></div>
+  return <div className={className ?? "mb-40 md:mb-52"}></div>
 }

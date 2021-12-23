@@ -2,7 +2,9 @@ import { AnimatePresence, motion } from 'framer-motion'
 import React, { FC, HTMLAttributes, useEffect } from 'react'
 import Typewriter from 'typewriter-effect/dist/core'
 
+import { distanceCalculation } from '../../utils/drawing'
 import { disableScroll, enableScroll } from '../../utils/scrollBlocker'
+import { TotalDrawTime } from '../drawers/TotalDrawTime'
 import { useDraw } from '../providers/DrawProvider'
 import { Grid } from './Grid'
 
@@ -26,15 +28,25 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
   const { setDrawColor } = useDraw()
 
   /**
+   * Methods
+   */
+  const closeHandler = () => {
+    setDrawColor("#000")
+    close && close()
+    enableScroll()
+  }
+
+  /**
    * Side effects
    */
   useEffect(() => {
     if (show) {
-      disableScroll()
-      return
+      return disableScroll()
     }
 
-    enableScroll()
+    return () => {
+      enableScroll()
+    }
   }, [show])
 
   useEffect(() => {
@@ -44,7 +56,7 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
   useEffect(() => {
     const headerEl = document.getElementById("header")
     const subheaderEl = document.getElementById("subheader")
-    const waitForAnimation = 2000
+    const waitForAnimation = 1850
 
     const headerWriter = new Typewriter(headerEl, {
       loop: false,
@@ -70,25 +82,42 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
    */
   return (
     <section {...htmlElementProps}>
+      <TotalDrawTime
+        initialValue={0.5}
+        textColor="text-white"
+        suffix="m"
+        calculator={distanceCalculation}
+        callback={closeHandler}
+      />
       <AnimatePresence>
         {show && (
-          <div
-            style={{ zIndex: 100 }}
-            className="w-screen h-screen top-0 bottom-0 fixed"
-          >
-            <motion.div className="bg-white absolute top-0 bottom-0 w-full h-full overflow-hidden">
+          <div className="w-screen h-screen top-0 bottom-0 fixed z-50">
+            <motion.div
+              className="bg-white absolute top-0 bottom-0 w-full h-full overflow-hidden"
+              initial={{ opacity: 1 }}
+              transition={{
+                duration: 1,
+                delay: 0.7,
+              }}
+              exit={{
+                opacity: 0,
+              }}
+            >
               <motion.div
                 className="bg-black w-full bottom-0 absolute"
                 initial={{ top: "100vh" }}
                 animate={{ top: "0vh" }}
                 transition={{
-                  duration: 0.45,
-                  delay: 0.5,
+                  duration: 0.8,
+                  delay: 0.45,
+                }}
+                exit={{
+                  top: "100vh",
                 }}
               ></motion.div>
               <motion.div
                 className="case__title-large text-white"
-                initial={{ top: "75vh", opacity: 0 }}
+                initial={{ top: "80vh", opacity: 0.1 }}
                 animate={{ top: "50vh", opacity: 1 }}
                 transition={{
                   duration: 0.75,
@@ -102,9 +131,12 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                 initial={{ top: "100vh" }}
                 animate={{ top: "51vh" }}
                 transition={{
-                  duration: 1.3,
-                  delay: 0.9,
+                  duration: 1.25,
+                  delay: 0.85,
                   type: "spring",
+                }}
+                exit={{
+                  top: "100vh",
                 }}
               >
                 <section className="relative h-full z-10 text-white flex flex-col">
@@ -112,7 +144,6 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                     <section className="col-span-12 body-large flex-grow flex flex-col justify-end pb-8">
                       <h1 id="header" />
                       <p id="subheader" />
-                      <p id="drawIndicator" />
                     </section>
                   </Grid>
                 </section>

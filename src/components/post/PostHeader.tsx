@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import React, { FC, useEffect, useState } from 'react'
 
 import { useDraw } from '../providers/DrawProvider'
@@ -49,16 +50,22 @@ export const PostHeader: FC<PostHeaderProps> = props => {
   return (
     <section
       style={{ background: headerColor ?? "#fff" }}
-      className={`pt-64 ${textColor}`}
+      className={`pt-64 ${textColor} overflow-hidden`}
     >
-      <h1
-        className="case__title whitespace-nowrap overflow-hidden uppercase"
+      <motion.h1
+        className="case__title whitespace-nowrap overflow-hidden uppercase relative"
+        initial={{ opacity: 0, left: "15vw" }}
+        animate={{ opacity: 1, left: "0vw" }}
+        transition={{
+          duration: 0.25,
+          delay: 0.75,
+        }}
         style={{
           marginLeft: `-${titleLeft}px`,
         }}
       >
         {Array.from({ length: 20 }).map(_ => `${title} `)}
-      </h1>
+      </motion.h1>
     </section>
   )
 }

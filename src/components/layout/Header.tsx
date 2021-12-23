@@ -18,7 +18,7 @@ export const Header: FC<HeaderProps> = props => {
   const { owner, pages } = props
 
   return (
-    <header className="px-12 pt-6 -mb-14 z-50 sticky top-0 overflow-hidden">
+    <header className="px-12 pt-6 -mb-14 z-50 sticky top-0 overflow-hidden z-20">
       <div className="heading-small">
         <Link className="absolute mt-2" to="/">
           {owner}

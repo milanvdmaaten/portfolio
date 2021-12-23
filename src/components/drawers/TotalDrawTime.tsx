@@ -6,22 +6,30 @@ import { useConfetti } from '../providers/ConfettiProvider'
 import { DrawEvent, useDraw } from '../providers/DrawProvider'
 
 interface TotalDrawTimeProps {
-  drawTime: number
+  initialValue: number
   textColor: TextColor
   localStorageKey?: string
   suffix?: string
   calculator?: (event: DrawEvent, previousEvent: DrawEvent) => number
+  callback?: () => void
 }
 
 export const TotalDrawTime: FC<TotalDrawTimeProps> = props => {
   /**
    * State
    */
-  const { drawTime, textColor, localStorageKey, suffix, calculator } = props
+  const {
+    initialValue,
+    textColor,
+    localStorageKey,
+    suffix,
+    calculator,
+    callback,
+  } = props
 
-  const [timeToGo, setTimeToGo] = useState(
+  const [countDown, setCountdown] = useState(
     (localStorageKey && Number(localStorage.getItem(localStorageKey))) ??
-      drawTime
+      initialValue
   )
   const callbackFired = useRef(false)
 
@@ -29,7 +37,6 @@ export const TotalDrawTime: FC<TotalDrawTimeProps> = props => {
    * Custom & 3rd party hooks
    */
   const { addDrawMethod, removeDrawMethod } = useDraw()
-  const { fire } = useConfetti()
 
   /**
    * Hooks
@@ -38,7 +45,7 @@ export const TotalDrawTime: FC<TotalDrawTimeProps> = props => {
     let previousEvent: DrawEvent | undefined
 
     const draw = (event?: DrawEvent) => {
-      setTimeToGo(prev => {
+      setCountdown(prev => {
         if (calculator) return prev - calculator(event, previousEvent ?? event)
 
         return prev - timeCalculation(event, previousEvent ?? event)
@@ -51,26 +58,28 @@ export const TotalDrawTime: FC<TotalDrawTimeProps> = props => {
     return () => {
       removeDrawMethod(drawer)
     }
-  }, [addDrawMethod, removeDrawMethod, drawTime])
+  }, [addDrawMethod, removeDrawMethod, calculator])
 
   useEffect(() => {
     if (callbackFired.current) return
 
-    if (timeToGo <= 0) {
-      fire({ origin: { x: 0, y: 1 }, angle: 20, spread: 150 })
-      fire({ origin: { x: 0.5, y: 0.5 }, angle: -20, spread: 150 })
+    if (countDown <= 0) {
+      callback && callback()
+      // callback({ origin: { x: 0, y: 1 }, angle: 20, spread: 150 })
+      // callback({ origin: { x: 0.5, y: 0.5 }, angle: -20, spread: 150 })
       callbackFired.current = true
     }
-  }, [timeToGo])
+  }, [countDown, callback])
 
   /**
    * Render
    */
   return (
     <div
-      className={`fixed z-50 bottom-5 right-5 heading-extra-small ${textColor}`}
+      style={{ zIndex: 1000 }}
+      className={`fixed bottom-5 right-5 heading-extra-small ${textColor}`}
     >
-      {Math.max(timeToGo, 0).toFixed(2)}
+      {Math.max(countDown, 0).toFixed(2)}
       <span className="body-medium">{suffix ?? "s"}</span>
     </div>
   )

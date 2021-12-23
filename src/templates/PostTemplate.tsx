@@ -1,19 +1,28 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import * as React from 'react'
+import React, { FC, Fragment, useEffect, useState } from 'react'
 
 import { Content } from '../components/content/Content'
+import { TotalDrawTime } from '../components/drawers/TotalDrawTime'
 import { ContentSeparator } from '../components/layout/ContentSeparator'
 import { Grid } from '../components/layout/Grid'
 import { Layout } from '../components/layout/Layout'
 import { OtherPosts } from '../components/post/OtherPosts'
 import { PostHeader } from '../components/post/PostHeader'
 import Seo from '../components/seo'
+import { timeCalculation } from '../utils/drawing'
 
-const PostTemplate = ({ data }) => {
+interface PostTemplateProps {
+  data: any
+}
+
+const PostTemplate: FC<PostTemplateProps> = props => {
   /**
    * Component state
    */
+  const { data } = props
+
   const author = data.site.siteMetadata.author
 
   const { frontmatter, id } = data.markdownRemark
@@ -37,9 +46,16 @@ const PostTemplate = ({ data }) => {
   const posts = nodes.filter(node => node.fileAbsolutePath.includes("/blog/"))
   const pages = nodes.filter(node => node.fileAbsolutePath.includes("/page/"))
 
+  const [entryAnimation, setEntryAnimation] = useState(true)
+
   /**
    * Side effects
    */
+  useEffect(() => {
+    setTimeout(() => {
+      setEntryAnimation(false)
+    }, 600)
+  }, [])
 
   /**
    * Render
@@ -51,7 +67,40 @@ const PostTemplate = ({ data }) => {
       backgroundColor={backgroundColor}
       textColor={textColor}
     >
+      <AnimatePresence>
+        {entryAnimation && (
+          <section className="z-10 absolute w-full bottom-0 top-0">
+            <motion.div
+              className="bg-white absolute w-full bottom-0 top-0"
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{
+                duration: 0.2,
+                type: "tween",
+                delay: 0.15,
+              }}
+            ></motion.div>
+            <motion.div
+              className="absolute w-full bottom-0 top-0"
+              initial={{ top: "100vh", bottom: "0vh", opacity: 1 }}
+              animate={{ top: "0vh" }}
+              transition={{
+                duration: 0.25,
+                delay: 0,
+              }}
+              exit={{ bottom: "100vh" }}
+              style={{ background: headerColor }}
+            ></motion.div>
+          </section>
+        )}
+      </AnimatePresence>
       <Seo title={title} description={tagline} />
+      <TotalDrawTime
+        textColor={textColor}
+        initialValue={10}
+        suffix={"s"}
+        calculator={timeCalculation}
+      />
       <PostHeader
         title={title}
         headerColor={headerColor}

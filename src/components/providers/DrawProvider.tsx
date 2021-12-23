@@ -7,7 +7,6 @@ export type DrawEvent = MouseEvent | TouchEvent
 type Draw = (event: DrawEvent, size: number, color: string) => void
 
 interface DrawContextState {
-  readyToDraw: boolean
   svg?: SVGSVGElement
   drawColor: string
   drawSize: number
@@ -20,7 +19,6 @@ interface DrawContextState {
 const initialState: DrawContextState = {
   drawColor: "#000",
   drawSize: 8,
-  readyToDraw: false,
 }
 
 export const DrawContext = createContext<DrawContextState>(initialState)
@@ -37,7 +35,6 @@ export const DrawProvider: React.FC = props => {
       return el
     } catch (e) {}
   })
-  const [readyToDraw, setReadyToDraw] = useState(false)
   const drawMethods = useRef<Map<string, Draw>>(new Map())
   const [drawColor, setStateDrawColor] = useState("#000")
   const [drawSize, setDrawSize] = useState(8)
@@ -85,12 +82,11 @@ export const DrawProvider: React.FC = props => {
       svg.remove()
     } catch (e) {}
 
+    layout.appendChild(svg)
+    svg.id = "drawSvg"
+
     setTimeout(() => {
       setSvgDimensions(svg)
-
-      svg.id = "drawSvg"
-
-      layout.appendChild(svg)
     }, 1000 * 2.5) // Wait a bit so carrousels are initialized correctly
   }
 
@@ -125,7 +121,6 @@ export const DrawProvider: React.FC = props => {
     window.addEventListener("touchend", onStop)
 
     createSvg()
-    setReadyToDraw(true)
 
     return () => {
       window.removeEventListener("resize", createSvg)
@@ -137,7 +132,7 @@ export const DrawProvider: React.FC = props => {
       window.removeEventListener("touchend", onStop)
       svg.remove()
     }
-  }, [getScreenHeight, getScreenWidth, setReadyToDraw])
+  }, [getScreenHeight, getScreenWidth])
 
   /**
    * Render
@@ -145,7 +140,6 @@ export const DrawProvider: React.FC = props => {
   return (
     <DrawContext.Provider
       value={{
-        readyToDraw,
         svg,
         drawColor,
         drawSize,
