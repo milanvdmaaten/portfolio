@@ -27,13 +27,13 @@ export const Header: FC<HeaderProps> = props => {
       <nav className="float-right">
         <ul className="flex text-2xl">
           <li>
-            <Link to="/" className="p-2">
+            <Link to="/" className="p-2 underline">
               Work
             </Link>
           </li>
           {pages?.map((page, index) => (
             <li key={index}>
-              <Link to={page.fields.slug} className="p-2 ml-10">
+              <Link to={page.fields.slug} className="p-2 ml-10 underline">
                 {page.frontmatter.title}
               </Link>
             </li>

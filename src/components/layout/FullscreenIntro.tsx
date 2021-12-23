@@ -40,16 +40,22 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
    * Side effects
    */
   useEffect(() => {
-    if (show) {
+    const setDrawSvgZIndex = (zIndex: string) => {
       setTimeout(() => {
-        document.getElementById("drawSvg").style.zIndex = "100"
-        console.log(document.getElementById("drawSvg"))
-      }, 1)
+        const svg = document.getElementById("drawSvg")
+
+        if (!svg) return
+        svg.style.zIndex = zIndex
+      }, 100)
+    }
+
+    if (show) {
+      setDrawSvgZIndex("100")
       return disableScroll()
     }
 
     setDrawColor("#000")
-    document.getElementById("drawSvg").style.zIndex = "0"
+    setDrawSvgZIndex("0")
     enableScroll()
   }, [show])
 

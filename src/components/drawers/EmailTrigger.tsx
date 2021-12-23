@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import React, { FC, Fragment, useState } from 'react'
+import React, { FC, Fragment, useEffect, useState } from 'react'
 import Modal from 'react-modal'
 
 import { TextColor } from '../../lib/types/textColor'
@@ -21,7 +21,7 @@ export const EmailTrigger: FC<EmailTriggerProps> = props => {
 
   const [modalOpened, setModalOpened] = useState(false)
 
-  const drawTime = 5
+  const drawTime = 10
   /**
    * Custom & 3th party hooks
    */
@@ -80,6 +80,18 @@ export const EmailTrigger: FC<EmailTriggerProps> = props => {
     }, 1000)
   }
 
+  useEffect(() => {
+    if (!modalOpened) return
+
+    const keyListener = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeModal(e)
+    }
+
+    window.addEventListener("keydown", keyListener)
+
+    return () => window.removeEventListener("keydown", keyListener)
+  }, [modalOpened])
+
   /**
    * Render
    */
@@ -94,6 +106,7 @@ export const EmailTrigger: FC<EmailTriggerProps> = props => {
               className="modal__backdrop"
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.7 }}
+              exit={{ opacity: 0, transition: { duration: 0.3, delay: 0.6 } }}
               transition={{
                 duration: 0.5,
               }}
@@ -103,6 +116,7 @@ export const EmailTrigger: FC<EmailTriggerProps> = props => {
               className="modal__content"
               initial={{ top: "10vh", scale: 0.1 }}
               animate={{ top: 0, scale: 1 }}
+              exit={{ top: "10vh", scale: 0.1 }}
               transition={{
                 delay: 0.3,
                 duration: 0.7,

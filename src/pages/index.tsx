@@ -22,7 +22,6 @@ const BlogIndex = ({ data }) => {
 
   const [showIntro, setShowIntro] = useState(() => {
     if (typeof localStorage === "undefined") return
-    return true
     const lastVisit = localStorage.getItem("lastVisit")
 
     localStorage.setItem("lastVisit", new Date().toUTCString())
