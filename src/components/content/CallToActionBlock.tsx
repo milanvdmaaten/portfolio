@@ -1,4 +1,3 @@
-import { Link } from 'gatsby'
 import React, { FC } from 'react'
 
 import { CallToAction } from '../../lib/types/content'
@@ -21,8 +20,8 @@ export const CallToActionBlock: FC<CallToActionBlockProps> = props => {
    */
   return (
     <div className="flex justify-center">
-      <Link
-        to={href}
+      <a
+        href={href}
         target="_blank"
         className={`call_to_action ${
           textColor === "text-white" ? "inverted" : ""
@@ -35,7 +34,7 @@ export const CallToActionBlock: FC<CallToActionBlockProps> = props => {
             textColor === "text-white" ? "filter invert" : ""
           }`}
         />
-      </Link>
+      </a>
     </div>
   )
 }

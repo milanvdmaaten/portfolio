@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React, { FC, Fragment, useEffect, useState } from 'react'
 import Modal from 'react-modal'
 
+import { CallToActionBlock } from '../components/content/CallToActionBlock'
 import { Content } from '../components/content/Content'
 import { TotalDrawTime } from '../components/drawers/TotalDrawTime'
 import { ContentSeparator } from '../components/layout/ContentSeparator'
@@ -105,20 +106,13 @@ const EmailTrigger: FC<DrawerProps> = props => {
             <p>In just another 10 seconds we could arrange a chat!</p>
           </section>
           <div className="flex justify-center">
-            <a
-              className={`call_to_action ${
-                textColor === "text-white" ? "inverted" : ""
-              }`}
-              href="mailto:mail@sanderboer.nl?subject=Let's talk&body=Hi, I'd like to talk about your work,"
-            >
-              <div>Let's arrange a chat</div>
-              <img
-                src="/assets/link_arrow.svg"
-                className={`ml-4 ${
-                  textColor === "text-white" ? "filter invert" : ""
-                }`}
-              />
-            </a>
+            <CallToActionBlock
+              content={{
+                title: "Let's chat",
+                href: "mailto:mail@sanderboer.nl?subject=Let's talk&body=Hi, I'd like to talk about your work,",
+              }}
+              textColor={textColor}
+            />
           </div>
         </article>
 
