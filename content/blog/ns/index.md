@@ -63,4 +63,27 @@ content:
         image: component-inventarisation.png
         alt: Component inventarization
         title: Component inventarization
+  - type: textBlock
+    title: ""
+    body: >-
+      ### Component creation process
+
+
+      Each component went through a discovery and a design phase.\
+
+      The discovery phase consists of 4 steps: Inventory, Best practices, Context, Concept.
+  - type: imagesBlock
+    size: large
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: component-creation-process.png
+        alt: Component creation process
+        title: ""
+  - type: textBlock
+    body: >-
+      ### Step 1: Inventory
+
+
+      During the inventory step, we looked at the work that had already been done for this component. What does the component look like in Figma and which variations of the component do we encounter within the NS environments. For this we looked at the NS Android & iOS apps and the NS website. We captured screenshots of the component and placed them under the 'inventory' step in Figma.
 ---
