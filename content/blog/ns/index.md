@@ -55,4 +55,12 @@ content:
 
 
       The project started with an inventarization of all the components and fundamentals that live within the digital channels of NS.
+  - type: imagesBlock
+    size: fullWidth
+    carrousel: false
+    images:
+      - titlePosition: left
+        image: component-inventarisation.png
+        alt: Component inventarization
+        title: Component inventarization
 ---
