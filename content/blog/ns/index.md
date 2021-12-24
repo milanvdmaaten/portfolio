@@ -24,7 +24,7 @@ content:
       Netherlands.
   - type: textBlock
     body: >-
-      ### A fragmented and inconsistent landscape
+      ## A fragmented and inconsistent landscape
 
 
       NS has many different digital channels (NS app, NS.nl, NS International). Channels that were created independently of each other. Over time, this caused a fragmented and inconsistent digital landscape.\
@@ -33,7 +33,7 @@ content:
     title: Challenge
   - type: textBlock
     body: >-
-      ### Figma & Zeroheight
+      ## Figma & Zeroheight
 
 
       We used Figma to discover components, and create the style- and component libraries for web and app.\
@@ -41,7 +41,7 @@ content:
       Zeroheight was used as a documentation platform. Here we described per component its purpose, best practices, and accessibility and copy guidelines.
     title: Tools we used
   - type: imagesBlock
-    size: large
+    size: medium
     carrousel: false
     images:
       - titlePosition: center
@@ -51,7 +51,7 @@ content:
   - type: textBlock
     title: Start of the project
     body: >-
-      ### Inventorize components
+      ## Inventorize components
 
 
       The project started with an inventarization of all the components and fundamentals that live within the digital channels of NS.
@@ -66,7 +66,7 @@ content:
   - type: textBlock
     title: ""
     body: >-
-      ### Component creation process
+      ## Component creation process
 
 
       Each component went through a discovery and a design phase.\
@@ -82,8 +82,16 @@ content:
         title: ""
   - type: textBlock
     body: >-
-      ### Step 1: Inventory
+      ## Step 1: Inventory
 
 
       During the inventory step, we looked at the work that had already been done for this component. What does the component look like in Figma and which variations of the component do we encounter within the NS environments. For this we looked at the NS Android & iOS apps and the NS website. We captured screenshots of the component and placed them under the 'inventory' step in Figma.
+  - type: imagesBlock
+    size: fullWidth
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: discovery-example.png
+        alt: Discovery phase example of the 'Bottom Sheet' component
+        title: Discovery phase example of the 'Bottom Sheet' component
 ---
