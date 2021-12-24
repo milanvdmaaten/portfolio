@@ -73,7 +73,7 @@ content:
 
       The discovery phase consists of 4 steps: Inventory, Best practices, Context, Concept.
   - type: imagesBlock
-    size: large
+    size: medium
     carrousel: false
     images:
       - titlePosition: center
