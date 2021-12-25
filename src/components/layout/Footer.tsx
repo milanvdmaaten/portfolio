@@ -20,7 +20,7 @@ export const Footer = ({ owner, textColor = "text-black" }) => {
    * Render
    */
   return (
-    <footer className={`bg-accent px-4 ${textColor}`}>
+    <footer id="footer" className={`bg-accent px-4 ${textColor}`}>
       <div className="container m-auto pb-12 pt-56 flex justify-between flex-col md:flex-row">
         <span className="transform origin-bottom-left md:translate-x-20 md:-rotate-90">
           © {new Date().getFullYear()},

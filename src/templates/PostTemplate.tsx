@@ -10,6 +10,7 @@ import { Grid } from '../components/layout/Grid'
 import { Layout } from '../components/layout/Layout'
 import { OtherPosts } from '../components/post/OtherPosts'
 import { PostHeader } from '../components/post/PostHeader'
+import { PostProgress } from '../components/PostProgress'
 import Seo from '../components/seo'
 
 interface PostTemplateProps {
@@ -68,6 +69,7 @@ const PostTemplate: FC<PostTemplateProps> = props => {
     >
       <Seo title={title} description={tagline} />
       <EmailTrigger textColor={textColor} drawColor={drawColor} />
+      <PostProgress background={headerColor} />
       <AnimatePresence>
         {entryAnimation && (
           <section className="z-40 fixed w-full bottom-0 top-0">
