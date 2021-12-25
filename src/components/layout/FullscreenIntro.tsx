@@ -35,7 +35,6 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
    */
   const closeHandler = () => {
     setDrawColor("#000")
-    console.log("black")
 
     close && close()
     enableScroll()
@@ -55,6 +54,7 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
     }
 
     if (show) {
+      setDrawColor("#fff")
       setDrawSvgZIndex("100")
       return disableScroll()
     }
@@ -63,10 +63,6 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
     setDrawSvgZIndex("0")
     enableScroll()
   }, [show])
-
-  useEffect(() => {
-    setDrawColor("#fff")
-  }, [])
 
   useEffect(() => {
     const headerEl = document.getElementById("header")
