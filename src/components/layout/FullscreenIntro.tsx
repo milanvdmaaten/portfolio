@@ -21,6 +21,9 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
    * Component state
    */
   const { show, title, header, subheader, close, ...htmlElementProps } = props
+  const waitForAnimation = 1850
+  const waitForTyping =
+    waitForAnimation + (header.length + subheader.length) * 55 + 1250
 
   /**
    * Custom & 3th party hooks
@@ -32,6 +35,8 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
    */
   const closeHandler = () => {
     setDrawColor("#000")
+    console.log("black")
+
     close && close()
     enableScroll()
   }
@@ -66,9 +71,6 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
   useEffect(() => {
     const headerEl = document.getElementById("header")
     const subheaderEl = document.getElementById("subheader")
-    const drawIndicatorEl = document.getElementById("drawIndicator")
-
-    const waitForAnimation = 1850
 
     const headerWriter = new Typewriter(headerEl, {
       loop: false,
@@ -82,18 +84,11 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
       cursor: "",
     })
 
-    const drawIndicatorWriter = new Typewriter(drawIndicatorEl, {
-      loop: false,
-      delay: 50,
-      cursor: "",
-    })
-
     headerWriter.pauseFor(waitForAnimation).typeString(header).start()
     subheaderWriter
       .pauseFor(waitForAnimation + header.length * 55 + 750)
       .typeString(subheader)
       .start()
-    drawIndicatorWriter.pauseFor(100).typeString("Draw to continue").start()
   }, [header, subheader])
 
   /**
@@ -101,13 +96,6 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
    */
   return (
     <section {...htmlElementProps}>
-      <TotalDrawTime
-        initialValue={2}
-        textColor="text-white"
-        suffix="m"
-        calculator={distanceCalculation}
-        callback={closeHandler}
-      />
       <AnimatePresence>
         {show && (
           <div className="w-screen h-screen top-0 bottom-0 fixed z-50">
@@ -158,15 +146,57 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                   top: "100vh",
                 }}
               >
-                <section className="relative h-full z-10 text-white flex flex-col">
+                <section className="relative h-full z-10  flex flex-col">
                   <Grid className="w-10/12">
-                    <section className="col-span-12 body-large flex-grow flex flex-col justify-end pb-8">
+                    <section className="col-span-12 body-large flex-grow flex flex-col justify-end pb-8 text-white">
                       <h1 id="header" />
                       <p id="subheader" />
-                      <p
-                        id="drawIndicator"
-                        className="caption-handwritten absolute bottom-16 right-16 transform -rotate-12"
+                    </section>
+                    <section className="absolute bottom-0 right-0">
+                      <motion.div
+                        className="bg-white w-96 h-96 p-8 rounded-full"
+                        initial={{
+                          opacity: 0,
+                          scale: 0,
+                          x: "250px",
+                          y: "250px",
+                        }}
+                        animate={{
+                          opacity: 1,
+                          scale: 1,
+                          x: "175px",
+                          y: "175px",
+                        }}
+                        transition={{
+                          duration: 0.25,
+                          delay: waitForTyping / 1000,
+                          type: "spring",
+                        }}
                       />
+                      <motion.div
+                        className="absolute bottom-16 right-8 w-24"
+                        initial={{
+                          opacity: 0,
+                        }}
+                        animate={{
+                          opacity: 1,
+                        }}
+                        transition={{
+                          duration: 0.4,
+                          delay: waitForTyping / 1000,
+                        }}
+                      >
+                        <span className="caption-handwritten">
+                          Draw to continue
+                        </span>
+                        <TotalDrawTime
+                          initialValue={2}
+                          textColor="#000"
+                          suffix="m"
+                          calculator={distanceCalculation}
+                          callback={closeHandler}
+                        />
+                      </motion.div>
                     </section>
                   </Grid>
                 </section>

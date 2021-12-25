@@ -11,13 +11,14 @@ import { TotalDrawTime } from './TotalDrawTime'
 
 interface EmailTriggerProps {
   textColor: TextColor
+  drawColor: string
 }
 
 export const EmailTrigger: FC<EmailTriggerProps> = props => {
   /**
    * Component state
    */
-  const { textColor = "text-black" } = props
+  const { textColor = "text-black", drawColor = "#000" } = props
 
   const [modalOpened, setModalOpened] = useState(false)
 
@@ -116,7 +117,7 @@ export const EmailTrigger: FC<EmailTriggerProps> = props => {
               className="modal__content"
               initial={{ top: "10vh", scale: 0.1 }}
               animate={{ top: 0, scale: 1 }}
-              exit={{ top: "10vh", scale: 0.1 }}
+              exit={{ top: "60vh", scale: 0 }}
               transition={{
                 delay: 0.3,
                 duration: 0.7,
@@ -156,23 +157,8 @@ export const EmailTrigger: FC<EmailTriggerProps> = props => {
           </motion.div>
         )}
       </AnimatePresence>
-      {/* <Modal
-        isOpen={modelOpened}
-        shouldCloseOnEsc
-        shouldCloseOnOverlayClick
-        onRequestClose={closeModel}
-        style={{
-          overlay: {
-            zIndex: 70,
-          },
-          content: {
-            zIndex: 71,
-            background: textColor === "text-black" ? "#fff" : "#000",
-          },
-        }}
-      ></Modal> */}
       <TotalDrawTime
-        textColor={textColor}
+        textColor={drawColor}
         initialValue={drawTime}
         suffix={"s"}
         calculator={timeCalculation}

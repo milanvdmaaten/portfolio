@@ -67,7 +67,7 @@ const PostTemplate: FC<PostTemplateProps> = props => {
       textColor={textColor}
     >
       <Seo title={title} description={tagline} />
-      <EmailTrigger textColor={textColor} />
+      <EmailTrigger textColor={textColor} drawColor={drawColor} />
       <AnimatePresence>
         {entryAnimation && (
           <section className="z-40 fixed w-full bottom-0 top-0">

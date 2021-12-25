@@ -61,7 +61,20 @@ export const DrawProvider: React.FC = props => {
     document.documentElement.style.setProperty("--mouse-color", color)
   }
 
+  const resetSvgDimensions = (_svg: SVGSVGElement): void => {
+    _svg.setAttribute("width", "0")
+    _svg.setAttribute("height", "0")
+    _svg.setAttribute("viewBox", "0,0,0, 0")
+
+    _svg.style.height = "0px"
+    _svg.style.position = "absolute"
+    _svg.style.width = "100%"
+    _svg.style.top = "0"
+  }
+
   const setSvgDimensions = (_svg: SVGSVGElement): void => {
+    resetSvgDimensions(_svg)
+
     const width = getScreenWidth()
     const height = getScreenHeight()
     _svg.setAttribute("width", `${width}`)
@@ -85,9 +98,16 @@ export const DrawProvider: React.FC = props => {
     svg.id = "drawSvg"
     layout.appendChild(svg)
 
+    setSvgDimensions(svg)
+
+    // TODO: fix a trigger after carrousels have all been initiated
     setTimeout(() => {
       setSvgDimensions(svg)
     }, 1000 * 2.5) // Wait a bit so carrousels are initialized correctly
+
+    setTimeout(() => {
+      setSvgDimensions(svg)
+    }, 1000 * 10) // Just to be sure
   }
 
   /**

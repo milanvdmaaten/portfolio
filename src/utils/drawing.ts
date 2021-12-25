@@ -6,21 +6,23 @@ export const getPointsFromEvent = (event: MouseEvent | TouchEvent): Point2D => {
   const { pageX, pageY } = event as MouseEvent
   const { targetTouches } = event as TouchEvent
 
-  const x = pageX ?? targetTouches[0].pageX
-  const y = pageY ?? targetTouches[0].pageY
+  const x = pageX ?? targetTouches[0]?.pageX ?? undefined
+  const y = pageY ?? targetTouches[0]?.pageY ?? undefined
 
   return { x, y }
 }
 
-export const getPathLength = (a: Point2D, b: Point2D) =>
-  Math.hypot(a.x - b.x, a.y - b.y)
+export const getPathLength = (a: Point2D, b: Point2D) => {
+  if (Object.values(a).concat(Object.values(b)).includes(undefined)) return 0
+  return Math.hypot(a.x - b.x, a.y - b.y)
+}
 
 // https://stackoverflow.com/a/45333834/4655177
 const lineProperties = (a: Point2D, b: Point2D) => {
   const lengthX = b.x - a.x
   const lengthY = b.y - a.y
   return {
-    length: getPathLength(a, b), //Math.sqrt(Math.pow(lengthX, 2) + Math.pow(lengthY, 2)),
+    length: getPathLength(a, b),
     angle: Math.atan2(lengthY, lengthX),
   }
 }
@@ -52,10 +54,14 @@ export const smoothSvgPath = (
   drawColor: string = "#000"
 ) => {
   const drawPath = points.reduce((path, point, index, _points) => {
-    if (index <= 0) return `${path} M ${point.x},${point.y}`
+    if (!point.x || !point.y) return path
+    if (index <= 0) return `${path} M ${point.x ?? 0},${point.y ?? 0}`
 
     const cs = controlPoint(_points[index - 1], _points[index - 2], point)
     const ce = controlPoint(point, _points[index - 1], _points[index + 1], true)
+
+    if (Object.values(cs).concat(Object.values(ce)).includes(undefined))
+      return path
 
     return `${path} C ${cs.x},${cs.y} ${ce.x},${ce.y} ${point.x},${point.y}`
   }, "")
