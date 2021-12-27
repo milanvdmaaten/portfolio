@@ -128,7 +128,7 @@ export const EmailTrigger: FC<EmailTriggerProps> = props => {
                 className={`text-center flex flex-col justify-between h-full ${textColor}`}
               >
                 <h1 className="heading-large">Woaaauw,</h1>
-                <section className="body-large">
+                <section className="body-medium">
                   <p className="mb-2">
                     Your drawings looked beautiful <span id="confetti">🎉</span>
                   </p>

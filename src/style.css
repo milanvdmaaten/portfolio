@@ -87,7 +87,7 @@ body {
 }
 
 .call_to_action {
-  @apply py-4 px-8 border-2 rounded-md flex border-gray-900 hover:bg-gray-200 focus:bg-gray-400 transition-all duration-300;
+  @apply text-2xl py-4 px-8 border-2 rounded-md flex border-gray-900 hover:bg-gray-200 focus:bg-gray-400 transition-all duration-300;
 }
 
 .call_to_action img {
@@ -173,7 +173,7 @@ svg path {
 }
 
 .modal__content {
-  @apply rounded-md drop-shadow bg-gray-100 p-16 m-4 relative;
+  @apply rounded-md drop-shadow bg-gray-100 py-16 px-28 m-4 relative;
 }
 
 .modal__content > article {
