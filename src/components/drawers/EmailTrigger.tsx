@@ -67,10 +67,7 @@ export const EmailTrigger: FC<EmailTriggerProps> = props => {
       const boundingBox = document
         .getElementById("confetti")
         .getBoundingClientRect()
-      console.log(
-        (boundingBox.left * 100) / window.innerWidth,
-        (boundingBox.top * 100) / window.innerHeight
-      )
+
       confetti({
         origin: {
           x: (boundingBox.left * 100) / window.innerWidth / 100,

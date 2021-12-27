@@ -183,3 +183,15 @@ svg path {
 .modal.dark .modal__content {
   @apply bg-gray-800;
 }
+
+.header {
+  @apply px-12 pt-6 -mb-14 z-50 sticky top-0 overflow-hidden;
+  min-height: 56px;
+}
+
+@media (max-width: 920px) {
+  .header {
+    @apply px-4 pt-2;
+    min-height: 40px;
+  }
+}

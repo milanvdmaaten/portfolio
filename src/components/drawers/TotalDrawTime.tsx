@@ -75,7 +75,7 @@ export const TotalDrawTime: FC<TotalDrawTimeProps> = props => {
     <AnimatePresence>
       {countDown > 0 && (
         <motion.div
-          style={{ zIndex: 60, color: textColor }}
+          style={{ zIndex: 40, color: textColor }}
           className={`fixed bottom-5 right-5 heading-extra-small`}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}

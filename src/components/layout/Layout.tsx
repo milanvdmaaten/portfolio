@@ -1,5 +1,5 @@
 import { AnimatePresence } from 'framer-motion'
-import React, { useEffect } from 'react'
+import React, { FC } from 'react'
 
 import { TextColor } from '../../lib/types/textColor'
 import { Cursor } from '../Cursor'
@@ -10,16 +10,24 @@ import { ScrollProvider } from '../providers/ScrollProvider'
 import { Footer } from './Footer'
 import { Header } from './Header'
 
-export const Layout = ({
-  owner,
-  backgroundColor = "#fff",
-  textColor = "text-black",
-  children,
-  pages,
-}) => {
+interface LayoutProps {
+  owner: string
+  backgroundColor?: string
+  textColor?: TextColor
+  pages: any[]
+}
+
+export const Layout: FC<LayoutProps> = props => {
   /**
    * Component state
    */
+  const {
+    owner,
+    backgroundColor = "#fff",
+    textColor = "text-black",
+    children,
+    pages,
+  } = props
   // eslint-disable-next-line no-useless-escape
   const name = owner?.match(/^([\w\-]+)/)[0]
 
@@ -44,7 +52,7 @@ export const Layout = ({
             <DrawProvider>
               <Cursor />
               <SmoothLineDrawer />
-              <Header owner={name} pages={pages} />
+              <Header owner={name} pages={pages} textColor={textColor} />
               <main>{children}</main>
               <Footer owner={owner} textColor={textColor} />
             </DrawProvider>
