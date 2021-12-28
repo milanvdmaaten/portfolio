@@ -12,6 +12,7 @@ import { OtherPosts } from '../components/post/OtherPosts'
 import { PostHeader } from '../components/post/PostHeader'
 import { PostProgress } from '../components/PostProgress'
 import Seo from '../components/seo'
+import { isMobile } from '../utils/device'
 
 interface PostTemplateProps {
   data: any
@@ -68,7 +69,9 @@ const PostTemplate: FC<PostTemplateProps> = props => {
       textColor={textColor}
     >
       <Seo title={title} description={tagline} />
-      <EmailTrigger textColor={textColor} drawColor={drawColor} />
+      {!isMobile() && (
+        <EmailTrigger textColor={textColor} drawColor={drawColor} />
+      )}
       <PostProgress background={headerColor} />
       <AnimatePresence>
         {entryAnimation && (

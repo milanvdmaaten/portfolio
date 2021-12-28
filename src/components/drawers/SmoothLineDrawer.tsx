@@ -1,6 +1,6 @@
-import React, { FC, useEffect } from 'react'
+import { FC, useEffect } from 'react'
 
-import { Device, getDeviceType } from '../../utils/device'
+import { isMobile } from '../../utils/device'
 import { getPathLength, getPointsFromEvent, Point2D, smoothSvgPath } from '../../utils/drawing'
 import { DrawEvent, useDraw } from '../providers/DrawProvider'
 
@@ -78,10 +78,8 @@ export const SmoothLineDrawer: FC = () => {
 
     const drawer = addDrawMethod(draw)
 
-    if (getDeviceType() === Device.Desktop) {
-      window.addEventListener("mouseup", onMouseUp)
-      window.addEventListener("mousedown", onMouseDown)
-    }
+    window.addEventListener("mouseup", onMouseUp)
+    window.addEventListener("mousedown", onMouseDown)
 
     return () => {
       fadePath(currentPath)

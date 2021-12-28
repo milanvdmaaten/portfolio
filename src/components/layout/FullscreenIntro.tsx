@@ -2,8 +2,10 @@ import { AnimatePresence, motion } from 'framer-motion'
 import React, { FC, HTMLAttributes, useEffect } from 'react'
 import Typewriter from 'typewriter-effect/dist/core'
 
+import { isMobile } from '../../utils/device'
 import { distanceCalculation } from '../../utils/drawing'
 import { disableScroll, enableScroll } from '../../utils/scrollBlocker'
+import { SmoothLineDrawer } from '../drawers/SmoothLineDrawer'
 import { TotalDrawTime } from '../drawers/TotalDrawTime'
 import { useDraw } from '../providers/DrawProvider'
 import { Grid } from './Grid'
@@ -92,6 +94,7 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
    */
   return (
     <section {...htmlElementProps}>
+      {(show || !isMobile()) && <SmoothLineDrawer />}
       <AnimatePresence>
         {show && (
           <div className="w-screen h-screen top-0 bottom-0 fixed z-50">

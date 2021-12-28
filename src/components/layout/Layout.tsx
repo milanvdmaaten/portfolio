@@ -3,7 +3,6 @@ import React, { FC } from 'react'
 
 import { TextColor } from '../../lib/types/textColor'
 import { Cursor } from '../Cursor'
-import { SmoothLineDrawer } from '../drawers/SmoothLineDrawer'
 import { ConfettiProvider } from '../providers/ConfettiProvider'
 import { DrawProvider } from '../providers/DrawProvider'
 import { ScrollProvider } from '../providers/ScrollProvider'
@@ -51,7 +50,6 @@ export const Layout: FC<LayoutProps> = props => {
           <ScrollProvider>
             <DrawProvider>
               <Cursor />
-              <SmoothLineDrawer />
               <Header owner={name} pages={pages} textColor={textColor} />
               <main>{children}</main>
               <Footer owner={owner} textColor={textColor} />

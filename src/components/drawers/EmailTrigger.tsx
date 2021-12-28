@@ -1,12 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { FC, Fragment, useEffect, useState } from 'react'
-import Modal from 'react-modal'
 
 import { TextColor } from '../../lib/types/textColor'
 import { timeCalculation } from '../../utils/drawing'
 import { disableScroll, enableScroll } from '../../utils/scrollBlocker'
 import { CallToActionBlock } from '../content/CallToActionBlock'
 import { useConfetti } from '../providers/ConfettiProvider'
+import { SmoothLineDrawer } from './SmoothLineDrawer'
 import { TotalDrawTime } from './TotalDrawTime'
 
 interface EmailTriggerProps {
@@ -95,6 +95,7 @@ export const EmailTrigger: FC<EmailTriggerProps> = props => {
    */
   return (
     <Fragment>
+      <SmoothLineDrawer />
       <AnimatePresence>
         {modalOpened && (
           <motion.div
