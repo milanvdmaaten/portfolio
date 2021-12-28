@@ -129,7 +129,7 @@ export const Header: FC<HeaderProps> = props => {
               ))}
             </ul>
             <div
-              className="underline absolute text-center bottom-4 text-2xl w-screen p-2"
+              className="underline absolute text-center bottom-24 text-2xl w-screen p-2"
               onClick={toggleMenu}
             >
               close
