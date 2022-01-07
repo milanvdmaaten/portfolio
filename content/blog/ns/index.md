@@ -100,7 +100,20 @@ content:
       In this step we collected insights about the context of the component usage from designers, developers and research. We looked at the insights we gathered and wrote down questions and things we noticed. 
 
 
-      An example of something we always kept in mind during this step was accessibility. What is the current contrast ratio? Is the tapping area of the component smaller than 48px? Is the font size large enough? Etc. 
+      An example of something we noticed regarding the Bottom Sheet component was that there were a lot of different ways of closing the Bottom Sheet. In some cases the 'close' icon was positioned within the right top corner of the Bottom Sheet. While in other cases it was positioned right above the right top corner outside the Bottom Sheet.
+  - type: imagesBlock
+    size: fullWidth
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: close-bottom-sheet.png
+        alt: Observation of closing a Bottom Sheet within the NS environments
+        title: Observation of closing a Bottom Sheet within the NS environments
+  - type: textBlock
+    body: >-
+      Another thing we kept in mind during this step was accessibility. What is
+      the current contrast ratio? Is the tapping area of the component smaller
+      than 48px? Is the font size large enough? Etc. 
 
 
       Checking these things eventually helped us to make each component compliance with the WCAG2.0 guidelines.
