@@ -86,6 +86,7 @@ content:
 
 
       During the inventory step, we looked at the work that had already been done for this component. What does the current component look like in Figma. And which variations of the component do we encounter within the NS environments. For this we looked at the NS Android & iOS apps and the NS website. We captured screenshots of the component and placed them under the 'inventory' step in Figma.
+    title: The discovery phase
   - type: textBlock
     body: >-
       ## Step 2: Best practices
