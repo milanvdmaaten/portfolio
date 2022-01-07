@@ -91,7 +91,27 @@ content:
       ## Step 2: Best practices
 
 
-      During the inventory step, we looked at the work that had already been done for this component. What does the current component look like in Figma. And which variations of the component do we encounter within the NS environments. For this we looked at the NS Android & iOS apps and the NS website. We captured screenshots of the component and placed them under the 'inventory' step in Figma.
+      The aim of this step was to collect best practices related to this component. For this we used a variety of sources such as nngroup.com, material design, iOS guidelines and component.gallery. This last source is a collection of all kinds of different design systems from brands such as Uber, IBM and Salesforce.
+  - type: textBlock
+    body: >-
+      ## Step 3: Context
+
+
+      In this step we collected insights about the context of the component usage from designers, developers and research. We looked at the insights we gathered and wrote down questions and things we noticed. 
+
+
+      An example of something we always kept in mind during this step was accessibility. What is the current contrast ratio? Is the tapping area of the component smaller than 48px? Is the font size large enough? Etc. 
+
+
+      Checking these things eventually helped us to make each component compliance with the WCAG2.0 guidelines.
+  - type: textBlock
+    body: >-
+      ## Step 4: Concept
+
+
+      Finally, we designed one or more concepts of the component. During a weekly component review session with designers and developers from NS, we answered the questions from step 3. 
+
+      We made decisions and made sure that the component could be developed for iOS, Android, and web.
   - type: imagesBlock
     size: fullWidth
     carrousel: false
