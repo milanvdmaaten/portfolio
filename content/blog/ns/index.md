@@ -134,4 +134,45 @@ content:
         image: discovery-example.png
         alt: Discovery phase example of the 'Bottom Sheet' component
         title: Discovery phase example of the 'Bottom Sheet' component
+  - type: textBlock
+    title: The design phase
+    body: >-
+      ## Creating and documenting
+
+
+      The design phase consists of 2 steps. Creating the final design of the component and publishing it in the Figma NS library. And documenting the guidelines and best practices of the component in Zeroheight.
+  - type: textBlock
+    title: ""
+    body: >-
+      ## Creating the final design
+
+
+      Within a design system there are always components that are similar to each other, with only slight differences.
+
+
+      For example: We have multiple components for buttons, with separate components for various states and sizes, and with or without icon.
+
+
+      Figma offers the possibility to create variants. Variants are component combinations that can be grouped as a single component set. A set contains components with different properties and the values of an instance can be configured.
+  - type: imagesBlock
+    size: medium
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: step-indicator-variants-example.png
+        alt: Example of different variants of the 'Step Indicator' component
+        title: Example of different variants of the 'Step Indicator' component
+  - type: textBlock
+    body: When NS designers drag the 'Step Indicator' component on their canvas they
+      have the possibility to adjust the component to their needs. They van turn
+      the 'label' off, they can adjust the amount of 'steps' or change the size
+      bij switching to 'large viewports'.
+  - type: imagesBlock
+    size: small
+    carrousel: false
+    images:
+      - titlePosition: center
+        image: step-indicator-edit-variants.png
+        alt: Example of the designed presets for the 'Step Indicator' component.
+        title: Example of the designed presets for the 'Step Indicator' component.
 ---
