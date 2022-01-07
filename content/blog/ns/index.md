@@ -77,7 +77,7 @@ content:
     carrousel: false
     images:
       - titlePosition: center
-        image: component-creation-process.png
+        image: component-inventarisation2.png
         alt: Component creation process
         title: ""
   - type: textBlock
