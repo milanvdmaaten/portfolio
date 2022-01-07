@@ -172,7 +172,7 @@ content:
     size: small
     carrousel: false
     images:
-      - titlePosition: center
+      - titlePosition: right
         image: step-indicator-edit-variants.png
         alt: Properties and values of the Step Indicator component
         title: Properties and values of the Step Indicator component
@@ -180,7 +180,7 @@ content:
         image: properties-sticker.png
         alt: Properties and values of the Sticker component
         title: Properties and values of the Sticker component
-      - titlePosition: right
+      - titlePosition: center
         image: properties-message-inline.png
         alt: Properties and values of the Message Inline component
         title: Properties and values of the Message Inline component
