@@ -107,8 +107,8 @@ content:
     images:
       - titlePosition: center
         image: close-bottom-sheet.png
-        alt: Observation of closing a Bottom Sheet within the NS environments
-        title: Observation of closing a Bottom Sheet within the NS environments
+        alt: Observations of closing a Bottom Sheet within the NS environments
+        title: Observations of closing a Bottom Sheet within the NS environments
   - type: textBlock
     body: >-
       Another thing we kept in mind during this step was accessibility. What is
