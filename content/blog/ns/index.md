@@ -11,7 +11,7 @@ backgroundColor: "#FFFFFF"
 content:
   - type: textBlock
     body: >-
-      My role: UX Design
+      My role: UX/UI Design
 
 
       Year: 2021
