@@ -38,7 +38,7 @@ content:
 
       We used Figma to discover components, and create the style- and component libraries for web and app.\
 
-      Zeroheight was used as a documentation platform. Here we described per component its purpose, best practices, and accessibility and copy guidelines.
+      Zeroheight was used as a documentation platform. This is where per component its purpose, best practices, and accessibility and copy guidelines were documented.
     title: Tools we used
   - type: imagesBlock
     size: medium
@@ -54,7 +54,7 @@ content:
       ## Inventorize components
 
 
-      The project started with an inventarization of all the components and fundamentals that live within the digital channels of NS.
+      The project started with an inventarization of all the components and fundamentals that lived within the digital channels of NS.
   - type: imagesBlock
     size: fullWidth
     carrousel: false
@@ -62,7 +62,7 @@ content:
       - titlePosition: left
         image: component-inventarisation.png
         alt: Component inventarization
-        title: Component inventarization
+        title: ""
   - type: textBlock
     title: ""
     body: >-
@@ -85,7 +85,13 @@ content:
       ## Step 1: Inventory
 
 
-      During the inventory step, we looked at the work that had already been done for this component. What does the component look like in Figma and which variations of the component do we encounter within the NS environments. For this we looked at the NS Android & iOS apps and the NS website. We captured screenshots of the component and placed them under the 'inventory' step in Figma.
+      During the inventory step, we looked at the work that had already been done for this component. What does the current component look like in Figma. And which variations of the component do we encounter within the NS environments. For this we looked at the NS Android & iOS apps and the NS website. We captured screenshots of the component and placed them under the 'inventory' step in Figma.
+  - type: textBlock
+    body: >-
+      ## Step 2: Best practices
+
+
+      During the inventory step, we looked at the work that had already been done for this component. What does the current component look like in Figma. And which variations of the component do we encounter within the NS environments. For this we looked at the NS Android & iOS apps and the NS website. We captured screenshots of the component and placed them under the 'inventory' step in Figma.
   - type: imagesBlock
     size: fullWidth
     carrousel: false
