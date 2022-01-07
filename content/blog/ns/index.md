@@ -116,7 +116,7 @@ content:
       than 48px? Is the font size large enough? Etc. 
 
 
-      Checking these things eventually helped us to make each component compliance with the WCAG2.0 guidelines.
+      Checking these things eventually helped us to make each component compliance with the WCAG2.0 guidelines. And as a result that the NS environments can be used by everyone.
   - type: textBlock
     body: >-
       ## Step 4: Concept
