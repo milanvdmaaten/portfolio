@@ -150,7 +150,7 @@ content:
       Within a design system there are always components that are similar to each other, with only slight differences.
 
 
-      For example: We have multiple components for buttons, with separate components for various states and sizes, and with or without icon.
+      For example: A button needs to be available in various states and sizes, and with or without icon etc.
 
 
       Figma offers the possibility to create variants. Variants are component combinations that can be grouped as a single component set. A set contains components with different properties and the values of an instance can be configured.
@@ -164,15 +164,28 @@ content:
         title: Example of different variants of the 'Step Indicator' component
   - type: textBlock
     body: When NS designers drag the 'Step Indicator' component on their canvas they
-      have the possibility to adjust the component to their needs. They van turn
-      the 'label' off, they can adjust the amount of 'steps' or change the size
-      bij switching to 'large viewports'.
+      have the possibility to adjust the component to their needs. They can
+      switch the property 'Label' to 'off'. The property 'Steps' can be changed
+      to another amount or the property 'Viewport' can be changed to the
+      value  'Large'.
   - type: imagesBlock
     size: small
     carrousel: false
     images:
       - titlePosition: center
         image: step-indicator-edit-variants.png
-        alt: Example of the designed presets for the 'Step Indicator' component.
-        title: Example of the designed presets for the 'Step Indicator' component.
+        alt: Properties and values of the Step Indicator component
+        title: Properties and values of the Step Indicator component
+      - titlePosition: left
+        image: properties-sticker.png
+        alt: Properties and values of the Sticker component
+        title: Properties and values of the Sticker component
+      - titlePosition: right
+        image: properties-message-inline.png
+        alt: Properties and values of the Message Inline component
+        title: Properties and values of the Message Inline component
+      - titlePosition: left
+        image: properties-price.png
+        alt: Properties and values of the Price component
+        title: Properties and values of the Price component
 ---
