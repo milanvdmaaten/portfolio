@@ -28,7 +28,7 @@ content:
       The last few years I've been working on the full spectrum of the design
       process. From interviewing target audiences to having discussions with
       development about pixels. I know what to do in each stage of the process
-      without losing sight of business needs and user needs. 
+      without losing sight of business and user needs. 
 
 
       However, my skills can be used the most in the UX discovery phase. Designing and challenging different UX directions for concepts and thinking about the overall structure of digital products.
