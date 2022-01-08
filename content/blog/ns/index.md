@@ -201,7 +201,7 @@ content:
 
       The images within the Zeroheight component pages are connected with a Figma documentation file. In this way, when a component in the Figma library changes, the changes will be pushed to the Zeroheight environment too.
   - type: imagesBlock
-    size: large
+    size: medium
     carrousel: false
     images:
       - titlePosition: center
