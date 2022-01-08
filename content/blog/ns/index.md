@@ -165,9 +165,9 @@ content:
   - type: textBlock
     body: When NS designers drag the 'Step Indicator' component on their canvas they
       have the possibility to adjust the component to their needs. They can
-      switch the property 'Label' to 'off'. The property 'Steps' can be changed
-      to another amount and the property 'Viewport' can be changed to the
-      value  'Large'.
+      switch the value of the property 'Label' to 'off'. The value of the
+      'Steps' property can be changed to another amount and the value of the
+      'Viewport' property can be changed to 'Large'.
   - type: imagesBlock
     size: small
     carrousel: false
@@ -188,4 +188,13 @@ content:
         image: properties-price.png
         alt: Properties and values of the Price component
         title: Properties and values of the Price component
+  - type: textBlock
+    body: >-
+      ## Documenting in Zeroheight
+
+
+      We used Zeroheigt as a documentation platform. This is where everything about the design system is documented: A starting guide for designers and developers, Design principles, and Accessibility guidelines. 
+
+
+      Next to that, each component has its own page in which its purpose, best practices, and accessibility and copy guidelines are documented. In this way, designers of NS get to know which component they can use for the use case they're working on.
 ---
