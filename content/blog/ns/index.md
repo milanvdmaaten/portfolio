@@ -173,7 +173,7 @@ content:
     carrousel: false
     images:
       - titlePosition: center
-        image: step-indicator-edit-variants.png
+        image: properties-step-indicator.png
         alt: Properties and values of the Step Indicator component
         title: Properties and values of the Step Indicator component
       - titlePosition: left
