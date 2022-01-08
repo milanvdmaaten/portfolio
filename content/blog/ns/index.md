@@ -207,7 +207,7 @@ content:
       - titlePosition: center
         alt: Screenshot of a Zeroheight component page
         title: Screenshot of a Zeroheight component page
-        image: zeroheight-page.png
+        image: zeroheight-page-s.png
   - type: textBlock
     body: "[Checkout the Design System yourself](https://ns-design.zeroheight.com/)
       (coming soon) ›"
