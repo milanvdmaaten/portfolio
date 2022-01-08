@@ -22,7 +22,7 @@ export const EmailTrigger: FC<EmailTriggerProps> = props => {
 
   const [modalOpened, setModalOpened] = useState(false)
 
-  const drawTime = 10
+  const drawTime = 5
   /**
    * Custom & 3th party hooks
    */
@@ -137,8 +137,8 @@ export const EmailTrigger: FC<EmailTriggerProps> = props => {
                 <div className="flex justify-center">
                   <CallToActionBlock
                     content={{
-                      title: "Let's chat",
-                      href: "mailto:mail@sanderboer.nl?subject=Let's talk&body=Hi, I'd like to talk about your work,",
+                      title: "Let's chat!",
+                      href: "mailto:milanvandermaaten@gmail.com?subject=Let's chat!&body=Hi, I'd like to have a chat with you,",
                     }}
                     textColor={textColor}
                   />

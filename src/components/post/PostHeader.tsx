@@ -50,7 +50,7 @@ export const PostHeader: FC<PostHeaderProps> = props => {
   return (
     <section
       style={{ background: headerColor ?? "#fff" }}
-      className={`pt-64 ${textColor} overflow-hidden`}
+      className={`pt-56 md:pt-64 ${textColor} overflow-hidden`}
     >
       <motion.h1
         className="case__title whitespace-nowrap overflow-hidden uppercase relative"

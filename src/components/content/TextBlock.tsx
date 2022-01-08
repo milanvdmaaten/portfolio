@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import { Fade } from 'react-awesome-reveal'
 import ReactMarkdown from 'react-markdown'
 
@@ -15,6 +15,15 @@ export const TextBlock: FC<TextBlockProps> = props => {
    */
   const { content } = props
   const { title, body } = content
+
+  /**
+   * Side effects
+   */
+  useEffect(() => {
+    const links = document.querySelectorAll<HTMLLinkElement>(".content--text a")
+
+    links.forEach(link => (link.target = "_blank"))
+  }, [])
 
   /**
    * Render

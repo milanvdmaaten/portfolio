@@ -128,6 +128,17 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       callToActions: [CallToActionBlock]
     }
 
+    type Passwords {
+      password: String
+      name: String
+      valid: Date
+    }
+
+    type Password {
+      enabled: Boolean
+      passwords: [Passwords]
+    }
+
     type Frontmatter @infer {
       title: String
       tagline: String
@@ -139,6 +150,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       date: Date @dateformat
       featuredImage: File @fileByRelativePath
       content: [Content]
+      password: Password
     }
 
     type Fields {

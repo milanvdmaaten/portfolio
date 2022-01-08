@@ -103,7 +103,7 @@ export const OtherPosts: FC<OtherPostsProps> = props => {
           <div className="swiper-wrapper">
             {[...posts, ...posts, ...posts, ...posts, ...posts, ...posts].map(
               (post, index) => (
-                <div className="swiper-slide px-12" key={index}>
+                <div className="swiper-slide px-6 md:px-12" key={index}>
                   <Post post={post} author={author} textColor={textColor} />
                 </div>
               )

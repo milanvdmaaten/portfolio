@@ -20,7 +20,7 @@ export const Grid: FC<GridProps> = props => {
       className={
         fullWidth
           ? `w-full ${className}`
-          : `grid px-4 grid-cols-12 ${gaps} max-w-screen-3xl m-auto ${className}`
+          : `grid px-2 md:px-4 grid-cols-12 ${gaps} max-w-screen-3xl m-auto ${className}`
       }
     >
       {children}

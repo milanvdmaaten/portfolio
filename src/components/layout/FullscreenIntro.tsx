@@ -123,8 +123,8 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
               />
               <motion.div
                 className="case__title-large text-white"
-                initial={{ top: "80vh", opacity: 0.1 }}
-                animate={{ top: "50vh", opacity: 1 }}
+                initial={{ top: isMobile() ? "60vh" : "80vh", opacity: 0.1 }}
+                animate={{ top: isMobile() ? "30vh" : "50vh", opacity: 1 }}
                 transition={{
                   duration: 0.75,
                   delay: 0.7,
@@ -135,7 +135,7 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
               <motion.div
                 className="bg-black w-full bottom-0 absolute"
                 initial={{ top: "100vh" }}
-                animate={{ top: "51vh" }}
+                animate={{ top: isMobile() ? "18vh" : "51vh" }}
                 transition={{
                   duration: 1.25,
                   delay: 0.85,
@@ -173,7 +173,7 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                         }}
                       />
                       <motion.div
-                        className="absolute bottom-16 right-8 w-24"
+                        className="absolute bottom-24 md:bottom-16 right-8 w-24"
                         initial={{
                           opacity: 0,
                         }}

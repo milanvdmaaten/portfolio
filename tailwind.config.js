@@ -1,6 +1,6 @@
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: false, // or 'media' or 'class'
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  media: false,
   theme: {
     screens: {
       sm: "640px",
@@ -20,12 +20,9 @@ module.exports = {
     },
     extend: {
       dropShadow: {
-        milan: "0px 0px 90px rgba(0, 0, 0, 0.08)",
+        smooth: "0px 0px 90px rgba(0, 0, 0, 0.08)",
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }

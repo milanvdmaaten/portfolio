@@ -11,8 +11,33 @@ body {
   @apply mb-4 text-3xl leading-snug font-semibold tracking-wider;
 }
 
-.blog-post-content p {
+.blog-post-content p,
+.blog-post-content li {
   @apply text-2xl leading-9 font-normal tracking-normal;
+}
+
+.blog-post-content ol li {
+  @apply list-decimal ml-5 md:ml-0;
+}
+
+.blog-post-content ul li {
+  @apply list-disc;
+}
+
+.blog-post-content li {
+  @apply mb-2;
+}
+
+.blog-post-content li::marker {
+  @apply mb-2 font-caveat text-3xl text-gray-300;
+}
+
+.blog-post-content li:first-of-type {
+  @apply mt-8;
+}
+
+.blog-post-content li:last-of-type {
+  @apply mb-8;
 }
 
 .blog-post-content p:not(:last-of-type) {
@@ -69,6 +94,12 @@ body {
   @apply text-9xl leading-tight font-bold tracking-widest break-all;
 }
 
+@media (max-width: 920px) {
+  .case__title {
+    @apply text-6xl;
+  }
+}
+
 .case .case__title {
   text-shadow: -2px -2px 0 rgba(255, 255, 255, 0.4),
     2px -2px 0 rgba(255, 255, 255, 0.4), -2px 2px 0 rgba(255, 255, 255, 0.4),
@@ -86,20 +117,30 @@ body {
   font-size: 256px;
 }
 
+@media (max-width: 920px) {
+  .case__title-large {
+    @apply text-5xl -mt-32;
+  }
+}
+
 .call_to_action {
   @apply text-2xl py-4 px-8 border-2 rounded-md flex border-gray-900 hover:bg-gray-200 focus:bg-gray-400 transition-all duration-300;
 }
 
 .call_to_action img {
-  @apply transition-all duration-100 transform;
+  @apply transition-all duration-100;
 }
 
 .call_to_action:hover img {
-  @apply translate-x-1;
+  @apply translate-x-1 scale-105;
 }
 
 .call_to_action.inverted {
   @apply border-gray-200 text-white hover:bg-gray-800 focus:bg-gray-600;
+}
+
+.text-right {
+  text-align: right;
 }
 
 :root {

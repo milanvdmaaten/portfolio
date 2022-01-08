@@ -30,9 +30,7 @@ export const CallToActionBlock: FC<CallToActionBlockProps> = props => {
         <div>{title}</div>
         <img
           src="/assets/link_arrow.svg"
-          className={`ml-4 ${
-            textColor === "text-white" ? "filter invert" : ""
-          }`}
+          className={`ml-4 ${textColor === "text-white" ? "invert" : ""}`}
         />
       </a>
     </div>

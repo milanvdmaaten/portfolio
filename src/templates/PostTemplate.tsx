@@ -12,10 +12,35 @@ import { OtherPosts } from '../components/post/OtherPosts'
 import { PostHeader } from '../components/post/PostHeader'
 import { PostProgress } from '../components/PostProgress'
 import Seo from '../components/seo'
+import { TextColor } from '../lib/types/textColor'
 import { isMobile } from '../utils/device'
 
 interface PostTemplateProps {
-  data: any
+  data: {
+    markdownRemark: {
+      frontmatter: {
+        tagline: string
+        title: string
+        content: any
+        featuredImage: any
+        drawColor: string
+        backgroundColor: string
+        textColor: TextColor
+        headerColor: string
+        password: {
+          enabled: boolean
+          passwords: {
+            valid: string
+            password: string
+            title: string
+          }[]
+        }
+      }
+      id: string
+    }
+    site: any
+    allMarkdownRemark: any
+  }
 }
 
 const PostTemplate: FC<PostTemplateProps> = props => {
@@ -36,6 +61,7 @@ const PostTemplate: FC<PostTemplateProps> = props => {
     backgroundColor,
     headerColor,
     textColor,
+    password,
   } = frontmatter
 
   const image = getImage(featuredImage)
@@ -48,6 +74,9 @@ const PostTemplate: FC<PostTemplateProps> = props => {
   const pages = nodes.filter(node => node.fileAbsolutePath.includes("/page/"))
 
   const [entryAnimation, setEntryAnimation] = useState(true)
+  const [hasEnteredPassword, setHasEnteredPassword] = useState(
+    !password.enabled
+  )
 
   /**
    * Side effects
@@ -58,9 +87,27 @@ const PostTemplate: FC<PostTemplateProps> = props => {
     }, 600)
   }, [])
 
+  useEffect(() => {
+    if (!password.enabled) return
+
+    const _activePasswords = password.passwords
+      .filter(_password => new Date() < new Date(_password.valid))
+      .map(_password => _password.password)
+    const enteredPassword = prompt(`Enter password to visit ${title}`, "")
+
+    if (!_activePasswords.includes(enteredPassword)) {
+      alert("Incorrect password or password is not valid anymore")
+      return self.location.assign(self.location.origin)
+    }
+
+    setHasEnteredPassword(true)
+  }, [password])
+
   /**
    * Render
    */
+  if (!hasEnteredPassword) return null
+
   return (
     <Layout
       pages={pages}
@@ -108,7 +155,7 @@ const PostTemplate: FC<PostTemplateProps> = props => {
       <GatsbyImage
         image={image}
         alt={tagline ?? ""}
-        className="-mt-16 w-full max-h-screen"
+        className="-mt-8 md:-mt-16 w-full max-h-screen"
       />
       <ContentSeparator />
       <Grid>
@@ -117,7 +164,7 @@ const PostTemplate: FC<PostTemplateProps> = props => {
         </section>
       </Grid>
       <ContentSeparator />
-      <article className="blog-post-content px-4 md:px-0">
+      <article className="blog-post-content md:px-4 md:px-0">
         {content?.map((content, index) => (
           <React.Fragment key={index}>
             <Content content={content} textColor={textColor} />
@@ -207,6 +254,13 @@ export const pageQuery = graphql`
         tagline
         date
         drawColor
+        password {
+          enabled
+          passwords {
+            password
+            valid
+          }
+        }
         featuredImage {
           childImageSharp {
             gatsbyImageData

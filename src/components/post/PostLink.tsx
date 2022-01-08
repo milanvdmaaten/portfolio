@@ -39,12 +39,12 @@ export const PostLink: FC<PostLinkProps> = props => {
         image={renderImage}
         objectFit="initial"
         alt={`alt`}
-        className={`blog-post-link-image drop-shadow-milan`}
+        className={`blog-post-link-image drop-shadow-smooth`}
       />
       <section className="flex flex-col md:flex-row">
         <h2 className="case__title">{title}</h2>
         <div className="body-small case__metadata">
-          <div>{tagline}</div>
+          <div className="max-w-xs">{tagline}</div>
           <div>{date}</div>
         </div>
       </section>

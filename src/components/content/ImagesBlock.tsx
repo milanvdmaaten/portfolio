@@ -22,40 +22,33 @@ export const ImagesBlock: FC<ImagesBlockProps> = props => {
   const { content, textColor } = props
   const { images, size, carrousel } = content
 
-  const [offsetTop, setOffsetTop] = useState(0)
-
   const uniqueIdentifier = useRef(uuid())
   const invertImageArrowPointers = useRef<Map<number, boolean>>(new Map())
 
-  let imageColsClass = "col-start-0 col-span-12"
-  let isFullWidth = false
+  const imageColsClass = useRef("col-start-0 col-span-12")
+  const isFullWidth = useRef(false)
 
   switch (size) {
     case "extra-small":
-      imageColsClass += " md:col-start-5 md:col-end-9"
+      imageColsClass.current += " md:col-start-5 md:col-end-9"
       break
     case "small":
-      imageColsClass += " md:col-start-3 md:col-end-11"
+      imageColsClass.current += " md:col-start-3 md:col-end-11"
       break
     case "medium":
-      imageColsClass += " md:col-start-2 md:col-end-12"
+      imageColsClass.current += " md:col-start-2 md:col-end-12"
       break
     case "large":
-      imageColsClass += " col-span-12"
+      imageColsClass.current += " col-span-12"
       break
     case "fullWidth":
-      isFullWidth = true
-      imageColsClass += " w-full"
+      isFullWidth.current = true
+      imageColsClass.current += " w-full"
       break
     default:
-      imageColsClass += " w-full"
+      imageColsClass.current += " w-full"
       break
   }
-
-  /**
-   * Custom & 3th party hooks
-   */
-  const { addScrollListener, removeScrollListener } = useScroll()
 
   /**
    * Side effects
@@ -73,38 +66,17 @@ export const ImagesBlock: FC<ImagesBlockProps> = props => {
         type: "progressbar",
       },
       autoplay: {
-        pauseOnMouseEnter: true,
         delay: 1000 * 2.5,
       },
     })
   }, [uniqueIdentifier])
 
-  // Bit of parallax effect
-  useEffect(() => {
-    if (!isFullWidth) return
-
-    const element = document.getElementById(uniqueIdentifier.current)
-
-    if (element === null || element === undefined) return
-
-    const listener = scroll => {
-      const { offsetTop, offsetHeight } = element
-      setOffsetTop((scroll.position - offsetTop + offsetHeight) / 10)
-    }
-
-    const key = addScrollListener(listener)
-
-    return () => {
-      removeScrollListener(key)
-    }
-  }, [addScrollListener, removeScrollListener, isFullWidth])
-
   /**
    * Render
    */
   return (
-    <Grid fullWidth={isFullWidth} className="content--images">
-      <div className={imageColsClass} id={uniqueIdentifier.current}>
+    <Grid fullWidth={isFullWidth.current} className="content--images">
+      <div className={imageColsClass.current} id={uniqueIdentifier.current}>
         <div
           className={
             carrousel ? `swiper swiper-${uniqueIdentifier.current}` : "w-full"
@@ -113,17 +85,17 @@ export const ImagesBlock: FC<ImagesBlockProps> = props => {
           <div className={`${carrousel ? "swiper-wrapper" : "w-full"}`}>
             {images.map(({ image, alt, title, titlePosition }, index) => {
               const renderImage = getImage(image)
-              let arrowPosition = "transform"
-              let titleSpacing = "transform"
+              let arrowPosition = ""
+              let titleSpacing = ""
               let inverted = false
               switch (titlePosition) {
                 case "left":
-                  titleSpacing += " translate-x-1/4"
+                  titleSpacing += " md:translate-x-1/4"
                   arrowPosition += " justify-start translate-x-1/4 ml-4"
                   break
                 case "right":
                   inverted = true
-                  titleSpacing += " -translate-x-1/4"
+                  titleSpacing += " md:-translate-x-1/4"
                   arrowPosition += " justify-end -translate-x-1/4 mr-4"
                   break
                 default:
@@ -137,13 +109,11 @@ export const ImagesBlock: FC<ImagesBlockProps> = props => {
                   inverted = invertImageArrowPointers.current.get(index)
                   arrowPosition += " justify-center"
               }
+
               return (
                 <div
                   key={index}
                   className={`${carrousel ? "swiper-slide" : ""}`}
-                  style={{
-                    marginTop: `-${offsetTop}px`,
-                  }}
                 >
                   {title && (
                     <Fade triggerOnce className="overflow-hidden">
@@ -160,9 +130,7 @@ export const ImagesBlock: FC<ImagesBlockProps> = props => {
                         <img
                           src="/assets/arrow.svg"
                           alt={`arrow pointing towards ${alt}`}
-                          className={
-                            textColor === "text-white" ? "filter invert" : ""
-                          }
+                          className={textColor === "text-white" ? "invert" : ""}
                         />
                       </div>
                     </Fade>
@@ -178,8 +146,8 @@ export const ImagesBlock: FC<ImagesBlockProps> = props => {
                       objectFit="initial"
                       alt={alt}
                       className={`h-full w-full ${uniqueIdentifier.current} ${
-                        !isFullWidth
-                          ? "filter drop-shadow-milan rounded-2xl"
+                        !isFullWidth.current
+                          ? "drop-shadow-smooth rounded-2xl"
                           : ""
                       }`}
                     />

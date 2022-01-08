@@ -18,6 +18,7 @@ fields: &FIELDS
   - label: "Display position"
     name: "displayPosition"
     widget: "number"
+    default: 0
   - label: "Featured Image"
     name: "featuredImage"
     widget: "image"
@@ -36,6 +37,28 @@ fields: &FIELDS
   - label: "Content background color"
     name: "backgroundColor"
     widget: "string"
+  - label: "Password protection"
+    name: "password"
+    widget: "object"
+    fields:
+      - label: "Enabled"
+        name: "enabled"
+        widget: "boolean"
+        default: false
+      - label: "Passwords"
+        name: "passwords"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Name"
+            name: "name"
+            widget: "string"
+          - label: "Password"
+            name: "password"
+            widget: "string"
+          - label: "Valid until"
+            name: "valid"
+            widget: "date"
   - label: "Content"
     name: "content"
     widget: "list"
@@ -43,6 +66,7 @@ fields: &FIELDS
       - label: "Call to action"
         name: "callToAction"
         widget: "object"
+        summary: "{{fields.title}}"
         fields:
           - label: "Title"
             name: "title"
@@ -53,6 +77,7 @@ fields: &FIELDS
       - label: "Text block"
         name: "textBlock"
         widget: "object"
+        summary: "{{fields.title}} - {{fields.body}}"
         fields:
           - label: "Title"
             name: "title"
@@ -83,6 +108,7 @@ fields: &FIELDS
           - label: "Images"
             name: "images"
             widget: "list"
+            summary: "{{fields.alt}}"
             fields:
               - label: "Image"
                 name: "image"

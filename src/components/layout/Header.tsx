@@ -68,7 +68,7 @@ export const Header: FC<HeaderProps> = props => {
           src="/assets/menu.svg"
           alt="menu"
           className={`menu__button w-8 h-8 ${
-            textColor === "text-white" ? "filter invert" : ""
+            textColor === "text-white" ? "invert" : ""
           }`}
           onClick={toggleMenu}
         />
@@ -89,7 +89,7 @@ export const Header: FC<HeaderProps> = props => {
           >
             <ul className="flex flex-col text-white w-screen h-screen justify-center items-center text-6xl">
               <motion.li
-                className="my-6 transform"
+                className="my-6"
                 initial={{
                   y: "30px",
                   opacity: 0,
@@ -129,7 +129,7 @@ export const Header: FC<HeaderProps> = props => {
               ))}
             </ul>
             <div
-              className="underline absolute text-center bottom-24 text-2xl w-screen p-2"
+              className="underline absolute text-center bottom-36 text-2xl w-screen p-2"
               onClick={toggleMenu}
             >
               close
