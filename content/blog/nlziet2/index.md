@@ -18,15 +18,8 @@ content:
       Project completed at Valsplat with my colleague Julian Neef
   - type: textBlock
     title: About
-    body:
-      NLZIET is the Dutch leading streaming service offering live and on-demand
+    body: NLZIET is the Dutch leading streaming service offering live and on-demand
       TV of the Dutch premium broadcasters.
-  - type: textBlock
-    body: >-
-      ## From broadcaster centered to content centered
-
-
-      NLZIET started back in 2014 as a single access platform to all premium Dutch broadcasters’ streaming services and live television. That the service is powered by different broadcasters is directly reflected in the interface. Exploring new content means choosing a broadcaster to browse their content. This doesn’t really match how users consume television content as their content interests transcend broadcaster boundaries. That's why we together with NLZIET transformed the platform from a broadcaster-centered platform to a content-centered platform.
   - type: imagesBlock
     size: medium
     carrousel: false
@@ -64,10 +57,9 @@ content:
         alt: TV guide + player
         title: TV guide + player
   - type: textBlock
-    body:
-      The possibility to check the tv guide while watching helps users to check
-      if there's something more exciting to watch without breaking their current
-      watch flow.
+    body: The possibility to check the tv guide while watching helps users to check
+      if there's something more exciting to watch without interrupting their
+      current watch flow.
   - type: imagesBlock
     size: medium
     carrousel: false
