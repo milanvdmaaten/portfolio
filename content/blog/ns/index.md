@@ -197,4 +197,15 @@ content:
 
 
       Next to that, each component has its own page in which its purpose, best practices, and accessibility and copy guidelines are documented. In this way, designers of NS get to know which component they can use for the use case they're working on.
+
+
+      The images within the Zeroheight component pages are connected with a Figma documentation file. In this way, when a component in the Figma library changes, the changes will be pushed to the Zeroheight environment too.
+  - type: imagesBlock
+    size: large
+    carrousel: false
+    images:
+      - titlePosition: center
+        alt: Screenshot of a Zeroheight component page
+        title: Screenshot of a Zeroheight component page
+        image: zeroheight-page.png
 ---
