@@ -166,7 +166,7 @@ content:
     body: When NS designers drag the 'Step Indicator' component on their canvas they
       have the possibility to adjust the component to their needs. They can
       switch the property 'Label' to 'off'. The property 'Steps' can be changed
-      to another amount or the property 'Viewport' can be changed to the
+      to another amount and the property 'Viewport' can be changed to the
       value  'Large'.
   - type: imagesBlock
     size: small
