@@ -193,7 +193,7 @@ content:
       ## Documenting in Zeroheight
 
 
-      We used Zeroheigt as a documentation platform. This is where everything about the design system is documented: A starting guide for designers and developers, Design principles, and Accessibility guidelines. 
+      We used Zeroheight as a documentation platform. This is where everything about the design system is documented: A starting guide for designers and developers, Design principles, and Accessibility guidelines. 
 
 
       Next to that, each component has its own page in which its purpose, best practices, and accessibility and copy guidelines are documented. In this way, designers of NS get to know which component they can use for the use case they're working on.
