@@ -28,7 +28,7 @@ content:
       ## From a generic to a personal experience
 
 
-      NPO started back in 2003 as a website ([uitzendinggemist.nl](http://uitzendinggemist.nl)) on which live broadcasts could be replayed. The core of this product is still visible within the current platform. The lack of personalization makes it difficult to find something to watch. Episodes on tv show pages are still ordered in a lineair way, while no user starts with the last episode of a tv show.
+      NPO started back in 2003 as a website ([uitzendinggemist.nl](http://uitzendinggemist.nl)) on which live broadcasts could be replayed. The core of this product is still visible within the current platform. The lack of personalization makes it difficult to find something to watch. Episodes on tv show pages are still ordered in a lineair way, while no user starts a tv show with the last episode.
 
 
       Personalization is essential these days in order to conquer with other streaming services. At the other hand, personalization can make it more difficult to connect and enrich the Dutch public. That's why we together with NPO transformed the platform from a generic experience to a personal experience, with control to explore all content.
@@ -139,7 +139,7 @@ content:
       ## **Skip the process of searching what to watch.**
 
 
-      One of the big differences between watching content via streaming services vs. television is that the process to find something to watch takes longer via streaming services. A user first needs to search for something to watch before he starts watching. When watching something on tv it's just a matter of turning on the tv and start watching. That's why we tried to copy this pattern to the NPO platform. When the user selects the 'live tab' the last watched channel opens up. The live programme starts playing (without sound).
+      One of the big differences between watching content via streaming services vs. television is that the process to find something to watch takes longer via streaming services. A user first needs to search for something to watch before he starts watching. When watching something on tv it's just a matter of turning on the tv and start watching. That's why we tried to copy this pattern to the NPO platform. When the user selects the 'Live' menu tab the last watched channel opens up. The live programme starts playing (without sound).
   - type: imagesBlock
     size: extra-small
     carrousel: false
