@@ -22,7 +22,7 @@ content:
       ## Roomplanner, part of Floorplanner
 
 
-      Roomplanner is an extension of Floorplanner. A platform, based around a floor plan editor that runs in every browser. The tool gives users the ability to make great looking architectural visualisations of their home and interior in an easy and accessible way. Floorplanner was the first fully browser-based 2D & 3D planner, and since then over 25 million users worldwide have registered for a account and in together created over 40 million plans and a multitude of great 2D & 3D images.
+      Roomplanner is an extension of Floorplanner. A platform, based around a floor plan editor that runs in every browser. The tool gives users the ability to make great looking architectural visualisations of their home and interior in an easy and accessible way. Floorplanner was the first fully browser-based 2D & 3D planner, and since then over 25 million users worldwide have registered for an account and in together created over 40 million plans.
 
 
       Roomplanner is embedded within home and living product webshops. Users use Roomplanner to view the webshops' products in a room they created themselves.
@@ -79,7 +79,7 @@ content:
       can be set. Step 2 and 3 offer the possibility to add windows and doors to
       the room shape. However, the test results showed that no participant made
       use of this functionality. That's why indicators were added to the
-      elements that could be manipulated on the screen, which trigger the user
+      elements that could be manipulated on the screen. These trigger the user
       to play with the shape and position of the elements on the screen."
   - type: imagesBlock
     size: medium
@@ -122,7 +122,7 @@ content:
       Users don't expect to change the roomshape once they finished the onboarding. It’s a process they’ve completed, so why doing it again?
 
 
-      That's why we moved this functionality from the home screen to 'room settings' in the menu. This contributes to goal of the homescreen; furnishing and styling the room.
+      That's why we moved this functionality from the home screen to 'room settings' in the menu. This contributes to the goal of the homescreen; furnishing and styling the room.
   - type: imagesBlock
     size: medium
     carrousel: false
