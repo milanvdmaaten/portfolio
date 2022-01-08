@@ -17,7 +17,7 @@ content:
       Year: 2021
 
 
-      Project completed at Valsplat with my colleagues Jeffrey Lauwers, Niek van Bijnen (ux designers), and Julian Neef (Design evangelist).
+      Project completed at Valsplat with my colleagues Jeffrey Lauwers, Niek van Bijnen (UX Designers), and Julian Neef (Design evangelist).
   - type: textBlock
     title: About
     body: Nederlandse Spoorwegen (NS) is the leading railway company in The
@@ -29,7 +29,7 @@ content:
 
       NS has many different digital channels (NS app, NS.nl, NS International). Channels that were created independently of each other. Over time, this caused a fragmented and inconsistent digital landscape.\
 
-      Goal of this project was to create a single design language. A design system available for all designers and developers working on NS products.
+      The goal of this project was to create a design system. A single design language available for all designers and developers working on NS products.
     title: Challenge
   - type: textBlock
     body: >-
