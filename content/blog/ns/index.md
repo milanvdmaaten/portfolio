@@ -184,7 +184,7 @@ content:
         image: properties-message-inline.png
         alt: Properties and values of the Message Inline component
         title: Properties and values of the Message Inline component
-      - titlePosition: right
+      - titlePosition: left
         image: properties-price.png
         alt: Properties and values of the Price component
         title: Properties and values of the Price component
