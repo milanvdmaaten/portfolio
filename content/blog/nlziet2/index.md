@@ -47,7 +47,10 @@ content:
       ## **A guide for different use cases**
 
 
-      The goal of a tv guide is to get an overview of which shows have been broadcasted, are live or are upcoming. That's why the guide offers three tabs; *now and later*, *primetime*, and *everything.*
+      User research has shown that there are users who use the TV guide to see what is currently live. Others mainly use a guide to see whether there is anything interesting to watch in the evening. Finally, people mentioned that a guide offers an overview of all current programmes that are broadcasted on TV and therefore can have an inspiring effect.
+
+
+      In order to answer these three different needs we created different tabs within the tv guide; *now and later*, *primetime*, and *everything.* Each tab shows the programmes in a view designed for that specific timeframe.
   - type: imagesBlock
     size: extra-small
     carrousel: false
@@ -73,7 +76,7 @@ content:
       ## **A different color for live and vod items**
 
 
-      Live content has different properties compared to VOD content (e.g. ads, and fast forwarding). That's why the color used for the progress bar differs between these two. In this way, the user won't be surprised by seeing ads during the show.
+      Live content has different properties compared to VOD content (e.g. ads, and fast forwarding). One of the things we did in order to prepare a user for upcoming ads in live content is assigning different colors to the progress bar. Live content has a green progress bar, while VOD content has a pink progress bar.
   - type: imagesBlock
     size: small
     carrousel: false
