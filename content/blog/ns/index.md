@@ -9,7 +9,11 @@ drawColor: "#FFB519"
 headerColor: "#FFC917"
 backgroundColor: "#FFFFFF"
 password:
-  enabled: false
+  enabled: true
+  passwords:
+    - valid: 2022-01-09T17:59:33.209Z
+      password: ch3ckitout
+      name: Password
 content:
   - type: textBlock
     body: >-
@@ -165,8 +169,7 @@ content:
         alt: Example of different variants of the 'Step Indicator' component
         title: Example of different variants of the 'Step Indicator' component
   - type: textBlock
-    body:
-      When NS designers drag the 'Step Indicator' component on their canvas they
+    body: When NS designers drag the 'Step Indicator' component on their canvas they
       have the possibility to adjust the component to their needs. They can
       switch the value of the property 'Label' to 'off'. The value of the
       'Steps' property can be changed to another amount and the value of the
@@ -212,7 +215,6 @@ content:
         title: Screenshot of a Zeroheight component page
         image: zeroheight-page-s.png
   - type: textBlock
-    body:
-      "[Checkout the Design System yourself](https://ns-design.zeroheight.com/)
+    body: "[Checkout the Design System yourself](https://ns-design.zeroheight.com/)
       (coming soon) ›"
 ---
