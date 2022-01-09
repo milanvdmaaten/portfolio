@@ -1,12 +1,11 @@
 import { graphql } from 'gatsby'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import { ContentSeparator } from '../components/layout/ContentSeparator'
 import { FullscreenIntro } from '../components/layout/FullscreenIntro'
 import { Grid } from '../components/layout/Grid'
 import { Layout } from '../components/layout/Layout'
 import { PostLink } from '../components/post/PostLink'
-import { useDraw } from '../components/providers/DrawProvider'
 import Seo from '../components/seo'
 
 const BlogIndex = ({ data }) => {

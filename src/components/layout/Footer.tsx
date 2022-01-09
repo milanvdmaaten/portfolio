@@ -13,7 +13,7 @@ export const Footer = ({ owner, textColor = "text-black" }) => {
     },
     {
       title: "CV",
-      href: "https://www.figma.com/file/yydZwLT2QQjCj1olZjbd03/Portfolio-Milan?node-id=857%3A30993",
+      href: "https://drive.google.com/file/d/1SZOGfKdpXyfaPjZaho2T3o1U0qg5MUl7/view",
     },
   ]
   /**
