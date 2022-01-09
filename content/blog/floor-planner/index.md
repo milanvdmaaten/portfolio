@@ -8,6 +8,8 @@ textColor: text-black
 drawColor: "#46A7ED"
 headerColor: "#FEC15B"
 backgroundColor: "#fff"
+password:
+  enabled: false
 content:
   - type: textBlock
     body: |-
@@ -74,7 +76,8 @@ content:
         alt: New design of step 2 on the onboarding.
         title: New design of step 2 on the onboarding.
   - type: textBlock
-    body: "At step 2 users are asked to select a room shape, followed by step 3: the
+    body:
+      "At step 2 users are asked to select a room shape, followed by step 3: the
       room configurator in which windows can be added and dimensions of the room
       can be set. Step 2 and 3 offer the possibility to add windows and doors to
       the room shape. However, the test results showed that no participant made
@@ -98,7 +101,8 @@ content:
         alt: New design shows move indicators and extra options when hovering a wall.
         title: New design shows move indicators and extra options when hovering a wall.
   - type: textBlock
-    body: In general, the onboarding lacks of focus and some functionalities were
+    body:
+      In general, the onboarding lacks of focus and some functionalities were
       not found by the participants. That's why we divided the onboarding in 5
       steps. Each step focuses on one goal which increases a users' focus within
       a specific step.
@@ -128,9 +132,11 @@ content:
     carrousel: false
     images:
       - titlePosition: center
-        alt: New home screen in which the room shape can be edited behind the 'Room
+        alt:
+          New home screen in which the room shape can be edited behind the 'Room
           settings' option.
-        title: New home screen in which the room shape can be edited behind the 'Room
+        title:
+          New home screen in which the room shape can be edited behind the 'Room
           settings' option.
         image: 10.png
   - type: textBlock
@@ -228,9 +234,11 @@ content:
         title: New modal in which design can be saved.
       - titlePosition: center
         image: 21.png
-        alt: New design of the second modal in which help of an Ethan Allen designer is
+        alt:
+          New design of the second modal in which help of an Ethan Allen designer is
           offered.
-        title: New design of the second modal in which help of an Ethan Allen designer
+        title:
+          New design of the second modal in which help of an Ethan Allen designer
           is offered.
   - type: textBlock
     body: >-

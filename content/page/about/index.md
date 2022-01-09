@@ -8,6 +8,8 @@ textColor: text-white
 drawColor: "#FFFFFF"
 headerColor: "#000000"
 backgroundColor: "#000000"
+password:
+  enabled: false
 content:
   - type: textBlock
     title: About me

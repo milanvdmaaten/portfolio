@@ -8,6 +8,8 @@ textColor: text-white
 drawColor: "#D63E6C"
 headerColor: "#00647B"
 backgroundColor: "#03181C"
+password:
+  enabled: false
 content:
   - type: textBlock
     body: |-
@@ -18,7 +20,8 @@ content:
       Project completed at Valsplat with my colleague Julian Neef
   - type: textBlock
     title: About
-    body: NLZIET is the Dutch leading streaming service offering live and on-demand
+    body:
+      NLZIET is the Dutch leading streaming service offering live and on-demand
       TV of the Dutch premium broadcasters.
   - type: imagesBlock
     size: medium
@@ -60,7 +63,8 @@ content:
         alt: TV guide + player
         title: TV guide + player
   - type: textBlock
-    body: The possibility to check the tv guide while watching helps users to check
+    body:
+      The possibility to check the tv guide while watching helps users to check
       if there's something more exciting to watch without interrupting their
       current watch flow.
   - type: imagesBlock
