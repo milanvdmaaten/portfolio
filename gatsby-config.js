@@ -87,6 +87,7 @@ module.exports = {
         `,
         feeds: [
           {
+            title: `Milan van der Maaten`,
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {

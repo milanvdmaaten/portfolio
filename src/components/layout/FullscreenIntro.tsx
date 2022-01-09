@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import React, { FC, HTMLAttributes, useEffect } from 'react'
+import React, { FC, HTMLAttributes, useCallback, useEffect } from 'react'
 import Typewriter from 'typewriter-effect/dist/core'
 
 import { isMobile } from '../../utils/device'
@@ -25,7 +25,7 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
   const { show, title, header, subheader, close, ...htmlElementProps } = props
   const waitForAnimation = 1850
   const waitForTyping =
-    waitForAnimation + (header.length + subheader.length) * 55 + 1250
+    waitForAnimation + (header.length + subheader.length) * 50 + 1250
 
   /**
    * Custom & 3th party hooks
@@ -35,12 +35,12 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
   /**
    * Methods
    */
-  const closeHandler = () => {
+  const closeHandler = useCallback(() => {
     setDrawColor("#000")
 
     close && close()
     enableScroll()
-  }
+  }, [close, setDrawColor])
 
   /**
    * Side effects
@@ -88,6 +88,10 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
       .typeString(subheader)
       .start()
   }, [header, subheader])
+
+  useEffect(() => {
+    setTimeout(closeHandler, waitForTyping)
+  }, [waitForTyping, closeHandler])
 
   /**
    * render
@@ -150,52 +154,6 @@ export const FullscreenIntro: FC<FullscreenIntroProps> = props => {
                     <section className="col-span-12 body-large flex-grow flex flex-col justify-end pb-8 text-white">
                       <h1 id="header" />
                       <p id="subheader" />
-                    </section>
-                    <section className="absolute bottom-0 right-0">
-                      <motion.div
-                        className="bg-white w-96 h-96 p-8 rounded-full"
-                        initial={{
-                          opacity: 0,
-                          scale: 0,
-                          x: "250px",
-                          y: "250px",
-                        }}
-                        animate={{
-                          opacity: 1,
-                          scale: 1,
-                          x: "175px",
-                          y: "175px",
-                        }}
-                        transition={{
-                          duration: 0.25,
-                          delay: waitForTyping / 1000,
-                          type: "spring",
-                        }}
-                      />
-                      <motion.div
-                        className="absolute bottom-24 md:bottom-16 right-8 w-24"
-                        initial={{
-                          opacity: 0,
-                        }}
-                        animate={{
-                          opacity: 1,
-                        }}
-                        transition={{
-                          duration: 0.4,
-                          delay: waitForTyping / 1000,
-                        }}
-                      >
-                        <span className="caption-handwritten">
-                          Draw to continue
-                        </span>
-                        <TotalDrawTime
-                          initialValue={2}
-                          textColor="#000"
-                          suffix="m"
-                          calculator={distanceCalculation}
-                          callback={closeHandler}
-                        />
-                      </motion.div>
                     </section>
                   </Grid>
                 </section>
