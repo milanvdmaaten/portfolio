@@ -33,7 +33,7 @@ content:
       ## **A personalized landing**
 
 
-      Users mainly open NLZIET because they want to watch something. That's why NLZIET opens with content that fits the users' interests and inspires with similar new content.
+      Users open NLZIET because they want to watch something. To ensure that a user can start watching something as quickly as possible, the home screen is personalised. Only content that matches the user's watching behaviour is shown on the home screen.
   - type: imagesBlock
     size: extra-small
     carrousel: false
