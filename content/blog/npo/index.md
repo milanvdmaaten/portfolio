@@ -9,7 +9,11 @@ drawColor: "#F56D1D"
 headerColor: "#2A5699"
 backgroundColor: "#0B1C36"
 password:
-  enabled: false
+  enabled: true
+  passwords:
+    - valid: 2022-01-09T17:44:38.614Z
+      name: Test
+      password: ch3ckitout
 content:
   - type: textBlock
     body: >-
@@ -22,8 +26,7 @@ content:
       Project completed at Valsplat with my colleagues Caressa Fooij and Nils van den Broek
   - type: textBlock
     title: About
-    body:
-      The streaming service of the Dutch public broadcaster offering live and
+    body: The streaming service of the Dutch public broadcaster offering live and
       on-demand tv. Their goal is to connect and enrich the Dutch public with
       programmes that inform, inspire and entertain.
   - type: textBlock
@@ -98,11 +101,9 @@ content:
     images:
       - titlePosition: center
         image: home-midway.png
-        alt:
-          Most personalized content rows are positioned  at the top of the 'Start'
+        alt: Most personalized content rows are positioned  at the top of the 'Start'
           screen.
-        title:
-          Most personalized content rows are positioned  at the top of the 'Start'
+        title: Most personalized content rows are positioned  at the top of the 'Start'
           screen.
   - type: textBlock
     title: ""
