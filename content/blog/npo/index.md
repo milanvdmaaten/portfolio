@@ -25,7 +25,7 @@ content:
 
       Project completed at Valsplat with my colleagues Caressa Fooij and Nils van den Broek
   - type: textBlock
-    title: About
+    title: About NPO
     body: The streaming service of the Dutch public broadcaster offering live and
       on-demand tv. Their goal is to connect and enrich the Dutch public with
       programmes that inform, inspire and entertain.
@@ -34,10 +34,15 @@ content:
       ## From a generic to a personal experience
 
 
-      NPO started back in 2003 as a website ([uitzendinggemist.nl](http://uitzendinggemist.nl)) on which live broadcasts could be replayed. The core of this product is still visible within the current platform. The lack of personalization makes it difficult to find something to watch. Episodes on tv show pages are still ordered in a lineair way, while no user starts a tv show with the last episode.
+      NPO started back in 2003 as a website ([uitzendinggemist.nl](http://uitzendinggemist.nl)) on which tv programmes could be replayed. their current platform still uses archaic UX patterns and they offer no personalisation for repeat users. No personalisation however also helps them stand out against other competitors as it brings a sense of nostalgia about consuming media like we did back in the olden times (watch television) and helped users discover and explore new content leading to more enriched experiences. Personalisation in streaming services has become standard today due to OTT platforms like Netflix, Disney+ and Amazon Prime and NPO wants to match these expectations for their users. 
 
 
-      Personalization is essential these days in order to conquer with other streaming services. At the other hand, personalization can make it more difficult to connect and enrich the Dutch public. That's why we together with NPO transformed the platform from a generic experience to a personal experience, with control to explore all content.
+
+
+      #### Problem Statement
+
+
+      How might we serve 18 million different people with a personalised experience (inside their bubble) but also help users explore and discover new content (outside their bubble) in one app?
     title: The challenge
   - type: imagesBlock
     size: fullWidth
@@ -79,7 +84,7 @@ content:
 
       ∙ Explore: All content outside your current bubble.\
 
-      ∙ Live: A tv guide which immediately throws you back in the last channel you've been watching.
+      ∙ Live: A tv guide which instantly throws you back in the last channel you've been watching.
   - type: imagesBlock
     size: small
     carrousel: false
@@ -93,8 +98,8 @@ content:
     body: The content rows on the homepage are also prioritized from 'most
       personalized content' to 'less personalized content'. Content rows as
       'Continue watching' and 'My favorites' are for example positioned at the
-      top of the screen. This enlarges the chance to watch something as quick as
-      possible, and that's after all why a user opens the NPO app.
+      top of the screen. This enlarges the user's chance to tune in on something
+      as quick as possible.
   - type: imagesBlock
     size: extra-small
     carrousel: false
@@ -131,7 +136,7 @@ content:
       ## **Explore content outside the bubble**
 
 
-      The 'Explore tab' contains content outside the users' bubble. An extensive set of filters helps to search implicitly for something to watch within the huge amount of content.
+      The 'Explore tab' contains content outside the users' bubble. It shows content that isn't personalized. An extensive set of filters helps to search implicitly for something to watch within the huge amount of content.
   - type: imagesBlock
     size: small
     carrousel: false
