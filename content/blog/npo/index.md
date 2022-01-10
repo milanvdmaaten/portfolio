@@ -31,10 +31,17 @@ content:
       programmes that inform, inspire and entertain.
   - type: textBlock
     body: >-
-      ## From a generic to a personal experience
-
-
-      NPO started back in 2003 as a website ([uitzendinggemist.nl](http://uitzendinggemist.nl)) on which tv programmes could be replayed. their current platform still uses archaic UX patterns and they offer no personalisation for repeat users. No personalisation however also helps them stand out against other competitors as it brings a sense of nostalgia about consuming media like we did back in the olden times (watch television) and helped users discover and explore new content leading to more enriched experiences. Personalisation in streaming services has become standard today due to OTT platforms like Netflix, Disney+ and Amazon Prime and NPO wants to match these expectations for their users. 
+      NPO started back in 2003 as a website
+      ([uitzendinggemist.nl](http://uitzendinggemist.nl)) on which tv programmes
+      could be replayed. their current platform still uses archaic UX patterns
+      and they offer no personalisation for repeat users. No personalisation
+      however also helps them stand out against other competitors as it brings a
+      sense of nostalgia about consuming media like we did back in the olden
+      times (watch television) and helped users discover and explore new content
+      leading to more enriched experiences. Personalisation in streaming
+      services has become standard today due to OTT platforms like Netflix,
+      Disney+ and Amazon Prime and NPO wants to match these expectations for
+      their users. 
 
 
 
