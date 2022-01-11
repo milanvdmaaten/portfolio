@@ -98,7 +98,7 @@ content:
     body: The content rows on the homepage are also prioritized from 'most
       personalized content' to 'less personalized content'. Content rows as
       'Continue watching' and 'My favorites' are for example positioned at the
-      top of the screen. This enlarges the user's chance to tune in on something
+      top of the page. This enlarges the user's chance to tune in on something
       as quick as possible.
   - type: imagesBlock
     size: extra-small
@@ -150,7 +150,7 @@ content:
       ## **Skip the process of searching what to watch.**
 
 
-      One of the big differences between watching content via streaming services vs. television is that the process to find something to watch takes longer via streaming services. A user first needs to search for something to watch before he starts watching. When watching something on tv it's just a matter of turning on the tv and start watching. That's why we tried to copy this pattern to the NPO platform. When the user selects the 'Live' menu tab the last watched channel opens up. The live programme starts playing (without sound).
+      Research showed that one of the big differences between watching content via streaming services vs. television is that the process of finding something to watch takes longer via streaming services. A user first needs to search on the streaming service for something to watch before he starts watching. When watching something on tv it's just a matter of turning on the tv and start watching. In order to shorten the searching process, we copied copy this tv pattern to the NPO platform. When selecting the 'Live' menu tab the last watched channel opens up and the live program starts to play (without sound).
   - type: imagesBlock
     size: extra-small
     carrousel: false
@@ -164,7 +164,7 @@ content:
       ## **Exploring content without leaving the page**
 
 
-      Images don't tell directly where the show is about. Users need more context in order to decide if they want to watch a certain programme. That's why we created a bottomsheet which shows a summary where the programme is about. The advantage of showing this information in a bottomsheet is that the user can explore content quickly, instead of going back and forth between pages.
+      Images don't tell directly where the show is about. Users need more context in order to decide if they want to watch a certain program. That's why we created a bottomsheet which shows a summary where the programme is about. The advantage of showing this information in a bottomsheet is that the user can explore content quickly, instead of going back and forth between pages.
   - type: imagesBlock
     size: extra-small
     carrousel: false
