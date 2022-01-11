@@ -1,7 +1,7 @@
 ---
 title: NLZIET
 tagline: A new concept and app design.
-date: 2021-12-07T21:51:42.236Z
+date: 2020-05-13T20:51:42.236Z
 displayPosition: 4
 featuredImage: header3.png
 textColor: text-white
