@@ -24,10 +24,10 @@ content:
       ## Roomplanner, part of Floorplanner
 
 
-      Roomplanner is an extension of Floorplanner. A platform, based around a floor plan editor that runs in every browser. The tool gives users the ability to make great looking architectural visualisations of their home and interior in an easy and accessible way. Floorplanner was the first fully browser-based 2D & 3D planner, and since then over 25 million users worldwide have registered for an account and in together created over 40 million plans.
+      Roomplanner is an extension of Floorplanner. A platform, based around a floor plan editor that runs in every browser. The tool gives users the ability to make great looking architectural visualisations of their home and interior. 
 
 
-      Roomplanner is embedded within home and living product webshops. Users use Roomplanner to view the webshops' products in a room they created themselves.
+      The Roomplanner extension is embedded within home and living webshops. Users use Roomplanner to view the webshops' products in a room they created themselves.
   - type: imagesBlock
     size: medium
     carrousel: false
@@ -38,16 +38,16 @@ content:
   - type: textBlock
     title: The challenge
     body: >-
-      There are several challenges we solved during this project. First, the
-      tool is not very user-friendly, a lot of functionalities are spread over
-      the tool without any hierarchy. Next to that, the visual style of
+      There are several challenges we solved during this project. First,
+      Roomplanner is not very user-friendly, a lot of functionalities are spread
+      over the tool without any hierarchy. Next to that, the visual style of
       Roomplanner doesn't fit the style of the webshops. Finally, the relevance
       for webshops to embed Roomplanner within their webshop is to generate
       leads. However, users don't see the point of leaving behind their email
       address.
 
 
-      In order to solve these challenges, we conducted user interviews with the target audience of Roomplanner.
+      In order to solve these challenges, we conducted 5 user interviews with the target audience of Roomplanner.
   - type: textBlock
     title: Solutions
     body: >-
@@ -76,14 +76,13 @@ content:
         alt: New design of step 2 on the onboarding.
         title: New design of step 2 on the onboarding.
   - type: textBlock
-    body:
-      "At step 2 users are asked to select a room shape, followed by step 3: the
+    body: "At step 2 users are asked to select a room shape, followed by step 3: the
       room configurator in which windows can be added and dimensions of the room
       can be set. Step 2 and 3 offer the possibility to add windows and doors to
-      the room shape. However, the test results showed that no participant made
-      use of this functionality. That's why indicators were added to the
-      elements that could be manipulated on the screen. These trigger the user
-      to play with the shape and position of the elements on the screen."
+      the room shape. However, test results showed that no participant made use
+      of this functionality. That's why indicators were added to the interactive
+      elements. These indicate the user that the shape and position of the
+      elements can be manipulated."
   - type: imagesBlock
     size: medium
     carrousel: false
@@ -101,8 +100,7 @@ content:
         alt: New design shows move indicators and extra options when hovering a wall.
         title: New design shows move indicators and extra options when hovering a wall.
   - type: textBlock
-    body:
-      In general, the onboarding lacks of focus and some functionalities were
+    body: In general, the onboarding lacks of focus and some functionalities were
       not found by the participants. That's why we divided the onboarding in 5
       steps. Each step focuses on one goal which increases a users' focus within
       a specific step.
@@ -123,20 +121,18 @@ content:
       ## Adding focus to the homescreen
 
 
-      Users don't expect to change the roomshape once they finished the onboarding. It’s a process they’ve completed, so why doing it again?
+      Test results showed that users don't expect to change the roomshape once they finished the onboarding. It’s a process they’ve completed, so why do it again?
 
 
-      That's why we moved this functionality from the home screen to 'room settings' in the menu. This contributes to the goal of the homescreen; furnishing and styling the room.
+      That's why we moved this functionality from the home screen to 'room settings' in the menu. Moving this functionality also contributes to the goal of the homescreen; furnishing and styling the room.
   - type: imagesBlock
     size: medium
     carrousel: false
     images:
       - titlePosition: center
-        alt:
-          New home screen in which the room shape can be edited behind the 'Room
+        alt: New home screen in which the room shape can be edited behind the 'Room
           settings' option.
-        title:
-          New home screen in which the room shape can be edited behind the 'Room
+        title: New home screen in which the room shape can be edited behind the 'Room
           settings' option.
         image: 10.png
   - type: textBlock
@@ -162,7 +158,7 @@ content:
       ## 2D is edit mode, 3D is view mode
 
 
-      Another insight we gained was that users expect to move furniture in 2D and 3D mode. The difference between the two is that the 3D mode is a view only, and doesn't offer the possibility to move furniture. The switch component implies that 2D and 3D offer the same functionalities because they're presented next to each other. That's why we removed the '2D' label, because this is the default mode in which users are already editing. Next to that, we changed the label from '3D' to '3D view' which makes the functionality more clear.
+      Another insight we gained was that users expect to move furniture in 2D and 3D mode. The difference between the two is that the 3D mode is a view only, and doesn't offer the possibility to move furniture. The switch component implies that 2D and 3D offer the same functionalities because they're presented next to each other. That's why we removed the '2D' label, because this is the default mode in which users are already editing. Next to that, we renamed the label from '3D' to '3D view' which makes the functionality more clear.
   - type: imagesBlock
     size: medium
     carrousel: false
@@ -180,7 +176,7 @@ content:
       ## An easier way of painting surfaces
 
 
-      Another adjustment we made was the way walls and floors could be painted. Participants were confused by the fact that a wall could be painted from both sides, which doesn't make any sense because they are furnishing just one room. We removed the functionality to paint the outside of a wall. Next to that, we added the different surfaces that could be painted to the menu.
+      Another adjustment we made was the way walls and floors could be painted. Participants were confused by the fact that a wall could be painted from both sides, which doesn't make any sense since they are furnishing just one room. We removed the functionality to paint the outside of a wall. Next to that, we added the different surfaces that could be painted to the menu.
   - type: imagesBlock
     size: medium
     carrousel: false
@@ -234,11 +230,9 @@ content:
         title: New modal in which design can be saved.
       - titlePosition: center
         image: 21.png
-        alt:
-          New design of the second modal in which help of an Ethan Allen designer is
+        alt: New design of the second modal in which help of an Ethan Allen designer is
           offered.
-        title:
-          New design of the second modal in which help of an Ethan Allen designer
+        title: New design of the second modal in which help of an Ethan Allen designer
           is offered.
   - type: textBlock
     body: >-
