@@ -9,7 +9,7 @@ drawColor: "#FFB519"
 headerColor: "#FFC917"
 backgroundColor: "#FFFFFF"
 password:
-  enabled: true
+  enabled: false
   passwords:
     - valid: 2022-01-09T17:59:33.209Z
       password: ch3ckitout
