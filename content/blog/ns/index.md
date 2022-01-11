@@ -98,16 +98,16 @@ content:
       ## Step 2: Best practices
 
 
-      The aim of this step was to collect best practices related to this component. For this we used a variety of sources such as nngroup.com, material design, iOS guidelines and component.gallery. This last source is a collection of all kinds of different design systems from brands such as Uber, IBM and Salesforce.
+      The aim of this step was to collect component related best practices. For this we used a variety of sources such as nngroup.com, material design, iOS guidelines and component.gallery. This last source is a collection of all kinds of different design systems from brands such as Uber, IBM and Salesforce.
   - type: textBlock
     body: >-
       ## Step 3: Context
 
 
-      In this step we collected insights about the context of the component usage from designers, developers and research. We looked at the insights we gathered and wrote down questions and things we noticed. 
+      In this step we collected insights about the context of the component usage from designers, developers and researchers. We looked at the insights we gathered and wrote down questions and things we noticed. 
 
 
-      An example of something we noticed regarding the Bottom Sheet component was that there were a lot of different ways of closing the Bottom Sheet. In some cases the 'close' icon was positioned within the right top corner of the Bottom Sheet. While in other cases it was positioned right above the right top corner outside the Bottom Sheet.
+      An example of something we noticed regarding the Bottom Sheet component was that there were a lot of different ways of closing a Bottom Sheet. In some cases the 'close' icon was positioned within the right top corner of the Bottom Sheet. While in other cases it was positioned right above the right top corner outside the Bottom Sheet.
   - type: imagesBlock
     size: fullWidth
     carrousel: false
@@ -169,11 +169,12 @@ content:
         alt: Example of different variants of the 'Step Indicator' component
         title: Example of different variants of the 'Step Indicator' component
   - type: textBlock
-    body: When NS designers drag the 'Step Indicator' component on their canvas they
-      have the possibility to adjust the component to their needs. They can
-      switch the value of the property 'Label' to 'off'. The value of the
-      'Steps' property can be changed to another amount and the value of the
-      'Viewport' property can be changed to 'Large'.
+    body: We designed each component in a way that when NS designers for example
+      drag the 'Step Indicator' component on their canvas they have the
+      possibility to adjust the component to their needs. They can switch the
+      value of the property 'Label' to 'off'. The value of the 'Steps' property
+      can be changed to another amount and the value of the 'Viewport' property
+      can be changed to 'Large'.
   - type: imagesBlock
     size: small
     carrousel: false
