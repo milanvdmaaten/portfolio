@@ -20,9 +20,23 @@ content:
       Project completed at Valsplat with my colleague Julian Neef
   - type: textBlock
     title: About
-    body:
-      NLZIET is the Dutch leading streaming service offering live and on-demand
+    body: NLZIET is the Dutch leading streaming service offering live and on-demand
       TV of the Dutch premium broadcasters.
+  - type: textBlock
+    title: Challenge
+    body: >-
+      ## From broadcaster centered to content centered
+
+
+      NLZIET started back in 2014 as a single access platform to all premium Dutch broadcasters’ streaming services and live television. That the service is powered by different broadcasters is directly reflected in the interface. Exploring new content means choosing a broadcaster to browse their content. This doesn’t really match how users consume television content as their content interests transcend broadcaster boundaries. 
+
+
+
+
+      ## Problem statement
+
+
+      How might we transform the platform from a broadcaster centered platform to a content centered platform?
   - type: imagesBlock
     size: medium
     carrousel: false
@@ -36,7 +50,8 @@ content:
       ## **A personalized landing**
 
 
-      Users open NLZIET because they want to watch something. To ensure that a user can start watching something as quickly as possible, the home screen is personalised. Only content that matches the user's watching behaviour is shown on the home screen.
+      Users open NLZIET because they want to start watching something. To ensure that a user can start watching something as quickly as possible, the home screen is personalized. Only content that matches a user's watching behaviour is shown on the home screen.
+    title: Solutions
   - type: imagesBlock
     size: extra-small
     carrousel: false
@@ -50,7 +65,7 @@ content:
       ## **A guide for different use cases**
 
 
-      User research has shown that there are users who use the TV guide to see what is currently live. Others mainly use a guide to see whether there is anything interesting to watch in the evening. Finally, people mentioned that a guide offers an overview of all current programmes that are broadcasted on TV and therefore can have an inspiring effect.
+      User research showed that some people use a TV guide to see what is currently live. Others use a guide to see whether there is anything interesting to watch in the evening. Lastly, people mentioned that a guide offers an overview of all current programmes that are broadcasted on TV and therefore can have an inspiring effect.
 
 
       In order to answer these three different needs we created different tabs within the tv guide; *now and later*, *primetime*, and *everything.* Each tab shows the programmes in a view designed for that specific timeframe.
@@ -63,8 +78,7 @@ content:
         alt: TV guide + player
         title: TV guide + player
   - type: textBlock
-    body:
-      The possibility to check the tv guide while watching helps users to check
+    body: The possibility to check the tv guide while watching helps users to check
       if there's something more exciting to watch without interrupting their
       current watch flow.
   - type: imagesBlock
