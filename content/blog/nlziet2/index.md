@@ -1,6 +1,6 @@
 ---
 title: NLZIET
-tagline: A new concept and app design.
+tagline: A new concept and design for app and desktop.
 date: 2020-05-13T20:51:42.236Z
 displayPosition: 4
 featuredImage: header3.png
