@@ -25,12 +25,12 @@ content:
   - type: textBlock
     title: Challenge
     body: >-
-      ## From broadcaster centered to content centered
-
-
-      NLZIET started back in 2014 as a single access platform to all premium Dutch broadcasters’ streaming services and live television. That the service is powered by different broadcasters is directly reflected in the interface. Exploring new content means choosing a broadcaster to browse their content. This doesn’t really match how users consume television content as their content interests transcend broadcaster boundaries. 
-
-
+      NLZIET started back in 2014 as a single access platform to all premium
+      Dutch broadcasters’ streaming services and live television. That the
+      service is powered by different broadcasters is directly reflected in the
+      interface. Exploring new content means choosing a broadcaster to browse
+      their content. This doesn’t really match how users consume television
+      content as their content interests transcend broadcaster boundaries. 
 
 
       ## Problem statement
