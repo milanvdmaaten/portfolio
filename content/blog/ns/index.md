@@ -216,6 +216,7 @@ content:
         title: Screenshot of a Zeroheight component page
         image: zeroheight-page-s.png
   - type: textBlock
-    body: "[Checkout the Design System yourself](https://ns-design.zeroheight.com/)
-      (coming soon) ›"
+    body: "[Checkout the Design System
+      yourself](https://zeroheight.com/4a05a30ad/v/latest/p/87423c-nessie--ns-d\
+      esign-system)  ›"
 ---
