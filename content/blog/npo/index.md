@@ -11,7 +11,7 @@ backgroundColor: "#0B1C36"
 password:
   enabled: true
   passwords:
-    - valid: 2022-01-30T17:44:38.614Z
+    - valid: 2022-06-01T16:44:38.614Z
       name: Password
       password: ch3ckitout
 content:
